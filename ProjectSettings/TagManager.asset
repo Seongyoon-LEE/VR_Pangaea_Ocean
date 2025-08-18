@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Meteor
+  - ManaSprite
+  - HealthSprite
   layers:
   - Default
   - TransparentFX
@@ -13,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Suimono_Water
+  - Suimono_Depth
+  - Suimono_Screen
   - 
   - 
   - 
