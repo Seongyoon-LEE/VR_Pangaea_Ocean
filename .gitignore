@@ -1,0 +1,46 @@
+# ===== Unity =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/            # 개인 에디터 prefs (공유 불필요)
+*.pidb
+*.mdb
+*.opendb
+*.VC.db
+
+# 빌드/패키지 산출물
+*.apk
+*.aab
+*.ipa
+*.exe
+*.app
+*.xcworkspace/
+*.xcodeproj/
+*.unitypackage
+
+# IDE & 툴
+.vs/
+.idea/
+.vscode/                 # 팀이 공유하고 싶다면 이 줄은 지워도 됨
+*.csproj
+*.sln
+*.user
+*.suo
+*.tmp
+*.booproj
+*.svd
+
+# OS 잡파일
+.DS_Store
+Thumbs.db
+
+# 충돌/크래시 덤프
+*.stacktrace
+
+# (선택) Addressables 로컬 빌드 산출물
+Assets/AddressableAssetsData/*/addressables_content_state.bin
+ServerData/
