@@ -355,6 +355,44 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-4010501624833327319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: Metro
+  m_EditorClassIdentifier: 
+  features:
+  - {fileID: 1062731759787177059}
+  - {fileID: 2549907441548025098}
+  - {fileID: -4916995845665871437}
+  - {fileID: -4267002869527881409}
+  - {fileID: 543139954579248208}
+  - {fileID: -8002914522004413746}
+  - {fileID: 1378550800617428857}
+  - {fileID: 8538314175691244035}
+  - {fileID: -5468467667757279183}
+  - {fileID: -9127970714972299929}
+  - {fileID: 4336501419012582691}
+  - {fileID: 2569536635843464507}
+  - {fileID: 2231397507493796297}
+  - {fileID: 8797855093917270296}
+  - {fileID: 7758727046600153949}
+  - {fileID: 7017281087514710259}
+  - {fileID: 1142291978897871892}
+  m_renderMode: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
 --- !u!114 &-3220941769136055287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,8 +655,8 @@ MonoBehaviour:
   - {fileID: 4582037208108882224}
   - {fileID: -1166049131635117149}
   - {fileID: -2473177443709905160}
-  - {fileID: 1295146234884968000}
-  - {fileID: 1669129914981544824}
+  - {fileID: -4010501624833327319}
+  - {fileID: 8142461174168721179}
 --- !u!114 &7011460192921560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,6 +1212,28 @@ MonoBehaviour:
   required: 0
   cacheSize: 1048576
   perThreadCacheSize: 51200
+--- !u!114 &8142461174168721179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  features:
+  - {fileID: 6387403882512146612}
+  m_renderMode: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
 --- !u!114 &8264251503808821163
 MonoBehaviour:
   m_ObjectHideFlags: 0
