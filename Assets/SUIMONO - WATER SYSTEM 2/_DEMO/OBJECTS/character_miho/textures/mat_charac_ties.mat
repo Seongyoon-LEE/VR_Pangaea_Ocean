@@ -96,7 +96,7 @@ Material:
     - _RimColor2: {r: 0.26, g: 0.19, b: 0.16, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1957974266430228053
+--- !u!114 &9213497486260574060
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

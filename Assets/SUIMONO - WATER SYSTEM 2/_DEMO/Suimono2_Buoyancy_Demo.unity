@@ -123,6 +123,44 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!84 &28790411
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &71442685
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemTime: 0
-  systemLocalTime: 9.287427
+  systemLocalTime: 5.5899334
   flowSpeed: 0.084
   flowDirection: 180
   useBeaufortScale: 1
@@ -198,7 +236,7 @@ MonoBehaviour:
   underwaterDepth: 5
   useDX9Settings: 0
   moduleObject: {fileID: 1141402723}
-  suimonoVersionNumber: 2.1.14
+  suimonoVersionNumber: 2.1.13
   showGeneral: 1
   typeIndex: 0
   editorIndex: 1
@@ -245,7 +283,7 @@ MonoBehaviour:
   useTexNormal3: {fileID: 2800000, guid: fb77700eb10ac344db495df815b29823, type: 3}
   showWaves: 0
   customWaves: 0
-  localTime: 1.5602877
+  localTime: 0.9391088
   beaufortVal: 0.7782609
   showShore: 0
   shorelineHeight: 0.397
@@ -506,8 +544,8 @@ MonoBehaviour:
     <data_underDarkRange>(50)
 
 '
-  dir: C:/Users/WD/Documents/Unity3DProject/Project/VR_Sea/VR_Pangaea_Ocean/Assets\SUIMONO
-    - WATER SYSTEM 2/RESOURCES/
+  dir: G:/PROJECTS/SUIMONO 2.0/SUIMONO_V2.1.13 (base 2019.4)/Assets\SUIMONO - WATER
+    SYSTEM 2/RESOURCES/
   baseDir: SUIMONO - WATER SYSTEM 2/RESOURCES/
   presetSaveName: my custom preset
   presetFile: 
@@ -523,8 +561,8 @@ MonoBehaviour:
   skybox: {fileID: 2100000, guid: 554bce0067616814984a97648b13e102, type: 2}
   d: 2
   dn: 2
-  pdir: C:/Users/WD/Documents/Unity3DProject/Project/VR_Sea/VR_Pangaea_Ocean/Assets\SUIMONO
-    - WATER SYSTEM 2/RESOURCES//SUIMONO_PRESETS_Built-In Presets
+  pdir: G:/PROJECTS/SUIMONO 2.0/SUIMONO_V2.1.13 (base 2019.4)/Assets\SUIMONO - WATER
+    SYSTEM 2/RESOURCES//SUIMONO_PRESETS_Built-In Presets
   f: 28
   px: 14
   nx: 28
@@ -545,7 +583,7 @@ MonoBehaviour:
   - 50
   retData: 
   retVal: 1
---- !u!21 &121034628
+--- !u!21 &97075500
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -654,7 +692,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionTex:
-        m_Texture: {fileID: 1473550207}
+        m_Texture: {fileID: 1882687505}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Surface1:
@@ -858,6 +896,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134605287}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &220233363
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &223990428
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 121034628}
+  - {fileID: 97075500}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1052,44 +1128,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 501012c1fa8de05479f6fd4731eafc3d, type: 3}
   - {fileID: 2800000, guid: 7eb72942547ee9e48a4298b1281a52a4, type: 3}
   useTex: {fileID: 0}
---- !u!84 &269213790
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &282407369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,44 +1322,6 @@ RectTransform:
   m_AnchoredPosition: {x: -121, y: 99}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &323857861
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 128
-  m_Height: 128
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &341758151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,44 +1480,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370203239}
   m_CullTransparentMesh: 0
---- !u!84 &403866827
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &428944440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1628,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1473550207}
+  renderTexDiff: {fileID: 1882687505}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -1715,7 +1677,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1473550207}
+  m_TargetTexture: {fileID: 1882687505}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -2232,7 +2194,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 2037083881}
+  renderTexDiff: {fileID: 1316912879}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -2281,7 +2243,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 268433663
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 2037083881}
+  m_TargetTexture: {fileID: 1316912879}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -2344,7 +2306,7 @@ MonoBehaviour:
   resolution: 128
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1558289023}
+  renderTexDiff: {fileID: 1113736406}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -2393,7 +2355,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1024
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1558289023}
+  m_TargetTexture: {fileID: 1113736406}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -2489,7 +2451,6 @@ GameObject:
   - component: {fileID: 892960303}
   - component: {fileID: 892960302}
   - component: {fileID: 892960304}
-  - component: {fileID: 892960305}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2592,29 +2553,6 @@ MonoBehaviour:
   lightDegrees: 10
   dayColor: {r: 1, g: 0.968, b: 0.933, a: 1}
   sunsetColor: {r: 0.77, g: 0.33, b: 0, a: 1}
---- !u!114 &892960305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892960301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &927276973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2643,44 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!84 &962508891
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 128
+  m_Height: 128
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &972067684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2818,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099697925}
   m_CullTransparentMesh: 0
+--- !u!84 &1113736406
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 128
+  m_Height: 128
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1141402719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,7 +3033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suimonoVersionNumber: 2.1.14
-  systemTime: 9.324196
+  systemTime: 5.923267
   autoSetLayers: 1
   layerWater: Suimono_Water
   layerWaterNum: 8
@@ -3074,9 +3088,9 @@ MonoBehaviour:
   defaultSplashSound: []
   transitionStrength: 1
   currentObjectIsOver: 1
-  currentObjectDepth: -2.1871688
-  currentTransitionDepth: -2.1871688
-  currentSurfaceLevel: 0.7128313
+  currentObjectDepth: -2.860831
+  currentTransitionDepth: -2.860831
+  currentSurfaceLevel: 0.039169084
   underwaterThreshold: 0.1
   suimonoObject: {fileID: 71442687}
   suimonoModuleLibrary: {fileID: 1141402722}
@@ -3088,16 +3102,16 @@ MonoBehaviour:
   showTenkoku: 1
   tenkokuUseReflect: 1
   heightValues:
-  - 0.7128313
-  - 0.7128313
+  - 0.039169084
+  - 0.039169084
   - 0
-  - -2.1871688
+  - -2.860831
   - 1
   - 0
   - 180
   - 0.084
-  - 0.31362614
-  - -2.1871688
+  - 0.017233318
+  - -2.860831
   - 1
   - 1
   isForward: 0
@@ -3110,32 +3124,32 @@ MonoBehaviour:
   heightTexR: {fileID: 2800000, guid: fb77700eb10ac344db495df815b29823, type: 3}
   heightObject: {fileID: 223990429}
   relativePos: {x: 0.4815, y: 0.76925004}
-  texCoord: {x: 246.52803, y: 0, z: -5.5776367}
-  texCoord1: {x: 184.896, y: 0, z: 395.25043}
-  texCoordT: {x: 246.52803, y: 0, z: -5.5776367}
-  texCoordT1: {x: 123.26399, y: 0, z: 296.78644}
-  texCoordR: {x: 7.7040024, y: 0, z: -12.656603}
-  texCoordR1: {x: 7.7040043, y: 0, z: -37.62121}
-  heightVal0: {r: 0.5137255, g: 0.454902, b: 1, a: 0.0929804}
-  heightVal1: {r: 0.30588236, g: 0.654902, b: 1, a: 0.116058834}
-  heightValT0: {r: 0.654902, g: 0.5568628, b: 0.9607844, a: 0.12864706}
-  heightValT1: {r: 0.6039216, g: 0.5058824, b: 0.97647065, a: 0.4118824}
-  heightValR0: {r: 0.4784314, g: 0.57254905, b: 0.9960785, a: 0.040529415}
-  heightValR1: {r: 0.56078434, g: 0.62352943, b: 1, a: 0.044725493}
+  texCoord: {x: 246.52802, y: 0, z: 153.44417}
+  texCoord1: {x: 184.896, y: 0, z: 355.49496}
+  texCoordT: {x: 246.52802, y: 0, z: 153.44417}
+  texCoordT1: {x: 123.26399, y: 0, z: 257.03098}
+  texCoordR: {x: 7.7040014, y: 0, z: -2.71774}
+  texCoordR1: {x: 7.704003, y: 0, z: -17.74348}
+  heightVal0: {r: 0.31764707, g: 0.63529414, b: 1, a: 0.038431376}
+  heightVal1: {r: 0.54509807, g: 0.37254903, b: 1, a: 0.18109804}
+  heightValT0: {r: 0.45882353, g: 0.50980395, b: 0.9882353, a: 0.14962746}
+  heightValT1: {r: 0.5019608, g: 0.6, b: 0.9882353, a: 0.10766667}
+  heightValR0: {r: 0.44313726, g: 0.56078434, b: 1, a: 0}
+  heightValR1: {r: 0.47058824, g: 0.4745098, b: 1, a: 0}
   localTime: 0
-  row: 38
-  pixIndex: 55815
-  pixCol: {r: 0.56078434, g: 0.62352943, b: 1, a: 0.044725493}
+  row: 18
+  pixIndex: 60935
+  pixCol: {r: 0.47058824, g: 0.4745098, b: 1, a: 0}
   t: 32
   y: 32
   dir: {x: 0, y: 0, z: 0}
   pivotPoint: {x: 0, y: 0, z: 0}
-  useLocalTime: 1.5602877
+  useLocalTime: 0.9391088
   flow_dirC: {x: 0.00000008742278, y: -1}
-  flowSpeed0: {x: 0.00000013640468, y: -1.5602877}
-  flowSpeed1: {x: 0.00000003410117, y: -0.39007193}
-  flowSpeed2: {x: 0.0000000085252925, y: -0.09751798}
-  flowSpeed3: {x: 0.000000017050585, y: -0.19503596}
+  flowSpeed0: {x: 0.0000000820995, y: -0.9391088}
+  flowSpeed1: {x: 0.000000020524874, y: -0.2347772}
+  flowSpeed2: {x: 0.0000000051312186, y: -0.0586943}
+  flowSpeed3: {x: 0.000000010262437, y: -0.1173886}
   tScale: 2
   oPos: {x: 0, y: 0}
 --- !u!1 &1160829284
@@ -3191,7 +3205,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 403866827}
+  renderTexDiff: {fileID: 220233363}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -3240,7 +3254,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 512
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 403866827}
+  m_TargetTexture: {fileID: 220233363}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -3728,6 +3742,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310858326}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1316912879
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1375248329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,82 +3891,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1141402720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1473550207
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
---- !u!84 &1558289023
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 128
-  m_Height: 128
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1636979189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4109,7 @@ MonoBehaviour:
   resolution: 128
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 323857861}
+  renderTexDiff: {fileID: 962508891}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -4182,7 +4158,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1024
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 323857861}
+  m_TargetTexture: {fileID: 962508891}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -4485,6 +4461,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864852293}
   m_CullTransparentMesh: 0
+--- !u!84 &1882687505
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 92
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1967574831
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,44 +9518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiScale: 1
---- !u!84 &2037083881
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &2048841004
 GameObject:
   m_ObjectHideFlags: 0
@@ -9625,7 +9601,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 269213790}
+  renderTexDiff: {fileID: 28790411}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -9674,7 +9650,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 268433663
   m_RenderingPath: 3
-  m_TargetTexture: {fileID: 269213790}
+  m_TargetTexture: {fileID: 28790411}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
