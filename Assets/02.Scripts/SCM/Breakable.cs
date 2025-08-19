@@ -5,19 +5,15 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     public bool isBreak = false;
-    public List<GameObject> breakablePieces;
+    public List<GameObject> breakablePieces; // 드래그 앤 드롭
     void Start()
     {
-        foreach (var piece in breakablePieces)
-        {
-            //piece.gameObject.SetActive(false);
-        }
     }
 
     
     void Update()
     {
-        // 테스트용
+        // 테스트용 인스펙터에서 부수기
         if (isBreak)
         {
             foreach (var piece in breakablePieces)
