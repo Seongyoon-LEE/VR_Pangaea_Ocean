@@ -44,3 +44,5 @@ Thumbs.db
 # (선택) Addressables 로컬 빌드 산출물
 Assets/AddressableAssetsData/*/addressables_content_state.bin
 ServerData/
+Assets/Resources/TrashMapData.json
+Assets/Resources/TrashMapData.json.meta
