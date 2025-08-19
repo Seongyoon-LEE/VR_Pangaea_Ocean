@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/KHB/Shaded Spectrum/Sun And Sea Beach Materials Pack/README.pdf.meta
 guid: 53b440172e5ca5a4087d942ce00ff5f8
 DefaultImporter:
+========
+guid: 6deb13f3c4967484580dc44531e71b1e
+NativeFormatImporter:
+>>>>>>>> feat/interactable:Assets/New Terrain 2.asset.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
