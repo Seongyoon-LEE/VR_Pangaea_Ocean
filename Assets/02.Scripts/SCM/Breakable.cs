@@ -14,21 +14,21 @@ public class Breakable : MonoBehaviour
         }
     }
 
-    // 테스트용
-    //void Update()
-    //{
-
-    //    if (isBreak)
-    //    {
-    //        foreach (var piece in breakablePieces)
-    //        {
-    //            piece.transform.parent = null;
-    //            piece.gameObject.GetComponent<Rigidbody>().useGravity = true;
-    //            piece.gameObject.GetComponent<MeshCollider>().enabled = true;
-    //        }
-    //        gameObject.SetActive(false);
-    //    }
-    //}
+    
+    void Update()
+    {
+        // 테스트용
+        if (isBreak)
+        {
+            foreach (var piece in breakablePieces)
+            {
+                piece.transform.parent = null;
+                piece.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                piece.gameObject.GetComponent<MeshCollider>().enabled = true;
+            }
+            gameObject.SetActive(false);
+        }
+    }
 
     public void Break()
     {
