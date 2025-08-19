@@ -9,12 +9,9 @@ public class VacuumCleaner : MonoBehaviour
     [Header("청소기 발사")]
     [SerializeField] ParticleSystem inhalationPS;
     [SerializeField] LayerMask layerMask; // 레이저가 충돌할 레이어를 지정합니다.
-    [SerializeField] Transform shootSource; // 레이저가 발사되는 위치
+    [SerializeField] Transform FirePos; // 레이저가 발사되는 위치
     [SerializeField] float rayDistance = 10f; // 레이저의 최대 거리
-    bool rayActivate = false;
-
     [SerializeField] InputActionProperty rightTriggerAction; // 오른쪽 트리거 액션
-
     bool isFiring;
 
     private void OnEnable()
@@ -32,7 +29,7 @@ public class VacuumCleaner : MonoBehaviour
                 rightTriggerAction.action.performed -= OnTriggerPressed;
                 rightTriggerAction.action.canceled -= OnTriggerReleased;
             }
-        }
+    }
         void OnTriggerPressed(InputAction.CallbackContext ctx)
         {
             if (inhalationPS != null && !isFiring)
@@ -51,23 +48,15 @@ public class VacuumCleaner : MonoBehaviour
                 inhalationPS.Stop();
             print("Stop");
 
-            //XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-            //grabInteractable.activated.AddListener((args) =>
-            //{
-            //    if (inhalationPS != null)
-            //        inhalationPS.Play();
-            //    print("asdf");
-            //    rayActivate = true; // 레이저 활성화
-            //});
-
-            //grabInteractable.deactivated.AddListener(x => StopShoot());
-
         }
 
         void Update()
         {
             if (isFiring) RaycastCheck();
-        }
+            inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
+
+    }
+
     public void StopShoot()
     {
         isFiring = false; // 발사 중지
@@ -77,9 +66,10 @@ public class VacuumCleaner : MonoBehaviour
     }
     void RaycastCheck()
     {
-        if (!shootSource) return;
-        if (Physics.Raycast(shootSource.position, shootSource.forward, out var hit, rayDistance, layerMask))
+        if (!FirePos) return;
+        if (Physics.Raycast(FirePos.position, FirePos.forward, out var hit, rayDistance, layerMask))
         {
+            Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
             hit.collider.gameObject.SetActive(false); // 레이저가 충돌한 오브젝트를 비활성화합니다.
         }
 

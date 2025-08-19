@@ -13,12 +13,11 @@ public class EquipmentChange : MonoBehaviour
     private Transform head;
     private GameObject ray;
     private float spawnDistance = 2f;
-    private int selectNum = 0;
     void Start()
     {
         canvas = GameObject.Find("Canvas_ChangUI").GetComponent<Canvas>().gameObject;
         canvas.SetActive(false);
-        head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).transform;
+        head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
         // 자식수 보고 세팅하기
         ray = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(3).gameObject;
         ray.SetActive(false);
@@ -30,13 +29,13 @@ public class EquipmentChange : MonoBehaviour
         if (inputChange.action.WasPressedThisFrame())
         {
             UIEnable();
-            canvas.transform.position = head.position + new Vector3(head.forward.x, 0f, head.forward.z).normalized * spawnDistance;
 
-            for (int i = 0; i < equipmentList.Length - 1; i++)
-            {
-                if (equipmentList[i].activeSelf)
-                    selectNum = i;
-            }
+        }
+        if (canvas.activeSelf)
+        {
+            canvas.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, head.forward.z).normalized * spawnDistance;
+            Quaternion rot = Quaternion.LookRotation(canvas.transform.position - head.position);
+            canvas.transform.rotation = Quaternion.Slerp(canvas.transform.rotation, rot, 5f * Time.deltaTime);
         }
     }
 
@@ -49,12 +48,12 @@ public class EquipmentChange : MonoBehaviour
 
             equipmentList[equipmentList.Length - 1].SetActive(equipmentList[0].activeSelf);
         }
+        UIEnable();
     }
 
     public void CloseBtn()
     {
         UIEnable();
-        EquipmentSelect(selectNum);
     }
     private void UIEnable()
     {
