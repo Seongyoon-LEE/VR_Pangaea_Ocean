@@ -80,7 +80,7 @@ public class VacuumCleaner : MonoBehaviour
         if (!shootSource) return;
         if (Physics.Raycast(shootSource.position, shootSource.forward, out var hit, rayDistance, layerMask))
         {
-            hit.collider.gameObject.SendMessage("Break", SendMessageOptions.DontRequireReceiver);
+            hit.collider.gameObject.SetActive(false); // 레이저가 충돌한 오브젝트를 비활성화합니다.
         }
 
     }
