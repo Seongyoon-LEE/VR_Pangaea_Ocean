@@ -47,15 +47,14 @@ public class VacuumCleaner : MonoBehaviour
             if (inhalationPS != null)
                 inhalationPS.Stop();
             print("Stop");
-
-        }
+        FirePos = transform.GetChild(2);
+    }
 
         void Update()
         {
             if (isFiring) RaycastCheck();
             inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
-
-    }
+        }
 
     public void StopShoot()
     {

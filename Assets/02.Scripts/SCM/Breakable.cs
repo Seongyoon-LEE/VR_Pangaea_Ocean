@@ -6,6 +6,7 @@ public class Breakable : MonoBehaviour
 {
     public bool isBreak = false;
     public List<GameObject> breakablePieces;
+
     void Start()
     {
         foreach (var piece in breakablePieces)
