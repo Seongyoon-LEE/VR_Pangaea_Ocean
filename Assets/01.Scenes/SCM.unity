@@ -2446,7 +2446,7 @@ GameObject:
   - component: {fileID: 751767730}
   - component: {fileID: 751767729}
   m_Layer: 0
-  m_Name: LeftMenu
+  m_Name: StateMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2493,7 +2493,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7267423659510696267, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 6199150043160143791, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   subInput:
     m_UseReference: 1
@@ -2506,7 +2506,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7075477615517911747, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: -6224364127914694766, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!114 &751767730
 MonoBehaviour:
@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 1451937875}
   - component: {fileID: 1451937876}
   m_Layer: 0
-  m_Name: RightMenu
+  m_Name: EquipmentMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3918,7 +3918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 758156509}
-  ray: {fileID: 183653182}
+  ray: {fileID: 1509252555}
   mainInput:
     m_UseReference: 1
     m_Action:
@@ -3930,7 +3930,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7075477615517911747, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: -6224364127914694766, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   subInput:
     m_UseReference: 1
@@ -3943,7 +3943,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7267423659510696267, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 6199150043160143791, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!114 &1451937876
 MonoBehaviour:
