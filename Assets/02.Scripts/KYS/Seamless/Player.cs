@@ -5,10 +5,44 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Ray mouseRay;
-    public List<int> trashIdList = new List<int>(); // 쓰레기 ID를 저장하는 리스트
+    [SerializeField] // 테스트 끝나면 지워도됨
+    private PlayerData _playerData; // 플레이어 데이터
+    public PlayerData PlayerData
+    {
+        get
+        {
+            return this._playerData;
+        }
+        set
+        {
+            this._playerData = value;
+            this.transform.position = new Vector3(value.posX, value.posY, value.posZ);
+            this.transform.rotation = Quaternion.Euler(value.rotX, value.rotY, value.rotZ);
+        }
+    }
+    private IEnumerator Start()
+    {
+        while (!DataManager.Instance.IsLoadingFinish) // 데이터 매니저가 로딩이 끝날 때까지 대기
+        {
+            yield return null;
+        }
+        if (DataManager.Instance.IsPlayerDataExist) // 플레이어 데이터가 존재한다면
+        {
+            this.PlayerData = DataManager.Instance.playerData; // 플레이어 데이터를 할당
+            DataManager.Instance.playerData = null;
+        }
+        else // 플레이어 데이터가 없다면
+        {
+            this.PlayerData = new PlayerData(); // 새로운 플레이어 데이터 생성
+        }
+    }
     //레이로 쓰래기 클릭 시 흡수
     private void Update()
     {
+        if(this.PlayerData.oxygen < 0)
+        {
+            this.PlayerDie();
+        }
         this.mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(mouseRay.origin, mouseRay.direction * 100, Color.red);
 
@@ -21,11 +55,40 @@ public class Player : MonoBehaviour
                 if (trashData != null)
                 {
                     trashData.Info.status = (int)TrashStatus.Clean;
-                    this.trashIdList.Add(trashData.Info.id); // 쓰레기 ID를 리스트에 추가, 플레이어 사망 시 원래대로 돌려놓음
+                    this.PlayerData.trashIdList.Add(trashData.Info.id,new Vector2Int(trashData.Info.cellX , trashData.Info.cellY)); 
+                    // 쓰레기 ID를 리스트에 추가, 플레이어 사망 시 원래대로 돌려놓음
+                    this.PlayerData.weight += trashData.Info.weight; // 가방 용량에 추가
                     trashData.Clean(); // 쓰레기 청소 함수 호출
                     trashData.gameObject.SetActive(false);
                 }
             }
         }
+    }
+    private void PlayerDie()
+    {
+        // 플레이어가 죽었을 때의 로직
+        this.transform.position = Vector3.zero; // 플레이어 위치 초기화(테스트용)
+        this.transform.rotation = Quaternion.identity; // 플레이어 회전 초기화(테스트용)
+
+        foreach (var trash in this.PlayerData.trashIdList)
+        {
+            DataManager.Instance.dicTrash[trash.Value].Find(x => x.id == trash.Key).status = (int)TrashStatus.Dirty; // 쓰레기 상태를 더러움으로 변경
+        }
+        
+
+        this.PlayerData.trashIdList.Clear(); // 쓰레기 ID 리스트 초기화
+        this.PlayerData.weight = 0; // 가방 용량 초기화
+        this.PlayerData.oxygen = 100; // 산소 초기화 (테스트용)
+    }
+    private void OnApplicationQuit()
+    {
+        this.PlayerData.posX = this.transform.position.x;
+        this.PlayerData.posY = this.transform.position.y;
+        this.PlayerData.posZ = this.transform.position.z;
+        this.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
+        this.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
+        this.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
+        DataManager.Instance.playerData = this.PlayerData; // 플레이어 데이터 저장
+        Debug.Log("플레이어 데이터 데이터 매니저에 들어감");
     }
 }

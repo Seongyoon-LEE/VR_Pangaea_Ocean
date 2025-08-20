@@ -35,7 +35,7 @@ public class Swing : MonoBehaviour
         Vector3 delta = tip.position - prevTipPos;
         curSpeed = delta.magnitude / Time.deltaTime;
         prevTipPos = tip.position;
-        print($"speed : {curSpeed:F2} m/s");
+        //print($"speed : {curSpeed:F2} m/s");
     }
 
     bool CanHitNow()
@@ -56,17 +56,21 @@ public class Swing : MonoBehaviour
         BigTrashTakeHit BigTrash = other.GetComponent<BigTrashTakeHit>();
         if(BigTrash != null)
         {
-            BigTrash.TakeHit();
+            //BigTrash.TakeHit();
             if(BigTrash.hitsLeft <= 0) // 광석 파괴
             BigTrash.SendMessage("Break", SendMessageOptions.DontRequireReceiver); // 파괴 메시지 전송
 
             lastHitTime = Time.time; // 히트 시간 갱신
         }
     }
-    
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.LogWarning("");
-        TryHit(other);
+        Debug.LogWarning("Collision Detected");
+        TryHit(collision.collider);
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.LogWarning("");
+    //    TryHit(other);
+    //}
 }

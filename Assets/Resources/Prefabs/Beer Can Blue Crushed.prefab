@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 132632712113901576}
   - component: {fileID: 745758571724565743}
   - component: {fileID: 8904420102873964685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beer Can Blue Crushed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

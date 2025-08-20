@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5637673220081203807}
   - component: {fileID: 7376254639700076654}
   - component: {fileID: 2518184473425075116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soda Can Red Crushed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
