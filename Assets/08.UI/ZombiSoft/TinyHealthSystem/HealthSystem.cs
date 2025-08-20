@@ -147,6 +147,7 @@ public class HealthSystem : MonoBehaviour
 	private void UpdateManaGlobe()
 	{
 		float ratio = manaPoint / maxManaPoint;
+		print(currentManaGlobe.rectTransform.rect.height * ratio - currentManaGlobe.rectTransform.rect.height);
 		currentManaGlobe.rectTransform.localPosition = new Vector3(0, currentManaGlobe.rectTransform.rect.height * ratio - currentManaGlobe.rectTransform.rect.height, 0);
 		manaText.text = manaPoint.ToString("0") + "/" + maxManaPoint.ToString("0");
 	}
