@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class TrashData : MonoBehaviour
 {
     [SerializeField] // 테스트 끝나면 지워도됨
     private TrashInfo _info;
+    public Action cleanAction;
     public TrashInfo Info
     {
         get
@@ -20,5 +22,8 @@ public class TrashData : MonoBehaviour
             //status(상태값)에 따라 변화하는 로직
         }
     }
-
+    public void Clean()
+    {
+        this.cleanAction();
+    }
 }
