@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5590913316158290279}
   - component: {fileID: 6173689585036810366}
   - component: {fileID: 3970412879691218047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soda Can Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

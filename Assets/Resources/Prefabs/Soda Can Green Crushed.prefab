@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5374573957995462540}
   - component: {fileID: 1905273620576162360}
   - component: {fileID: 1344148547585166396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soda Can Green Crushed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

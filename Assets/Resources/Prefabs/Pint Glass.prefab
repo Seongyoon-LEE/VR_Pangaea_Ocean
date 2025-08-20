@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5567387655342382981}
   - component: {fileID: 2413624861698414883}
   - component: {fileID: 4732713313922677224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pint Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

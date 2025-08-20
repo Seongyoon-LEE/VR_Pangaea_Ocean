@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 504436841142331395}
   - component: {fileID: 8338829881496697856}
   - component: {fileID: 2807734386927935457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Bottle Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

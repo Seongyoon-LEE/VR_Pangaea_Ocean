@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2326046861632103375}
   - component: {fileID: 8752663896218247648}
   - component: {fileID: 4186755267477584684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vodka Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1843972913558873217}
   - component: {fileID: 5961527471271267534}
   - component: {fileID: 7688161294676954701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beer Bottle Blue with Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}

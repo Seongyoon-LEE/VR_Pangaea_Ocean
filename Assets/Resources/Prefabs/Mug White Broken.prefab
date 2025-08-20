@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4978914102249524425}
   - component: {fileID: 2118818271627711892}
   - component: {fileID: 8637186979441707965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mug White Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}

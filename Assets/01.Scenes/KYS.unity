@@ -180,7 +180,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc705c945e7e740b2bccdcadc81d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashIdList: 
+  _playerData:
+    posX: 0
+    posY: 0
+    posZ: 0
+    rotX: 0
+    rotY: 0
+    rotZ: 0
+    oxygen: 100
+    weight: 0
 --- !u!1 &288117371
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +539,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da501773ba15eaf4987b42773f5dbdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    posX: 0
+    posY: 0
+    posZ: 0
+    rotX: 0
+    rotY: 0
+    rotZ: 0
+    oxygen: 100
+    weight: 0
 --- !u!4 &1321525025
 Transform:
   m_ObjectHideFlags: 0
