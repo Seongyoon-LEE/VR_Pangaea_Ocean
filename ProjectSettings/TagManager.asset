@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Meteor
   - BigTrash
+  - FxTemporaire
+  - Pickaxe
   layers:
   - Default
   - TransparentFX
