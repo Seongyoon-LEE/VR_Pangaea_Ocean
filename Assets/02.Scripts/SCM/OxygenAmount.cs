@@ -13,6 +13,11 @@ public class OxygenAmount : MonoBehaviour
         oxygenPoint = maxOxygenPoint;
     }
 
+    private void Update()
+    {
+        oxygenPoint -= Time.deltaTime;
+        oxygenPoint = Mathf.Clamp(oxygenPoint, 0, 100);
+    }
     private void LateUpdate()
     {
         if (currentManaGlobe.gameObject.activeInHierarchy)
@@ -21,7 +26,6 @@ public class OxygenAmount : MonoBehaviour
 
     private void UpdateOxygenAmount()
     {
-        // 에셋에 정의된 내용
         float ratio = oxygenPoint / maxOxygenPoint;
         currentManaGlobe.rectTransform.localPosition = new Vector3(0, currentManaGlobe.rectTransform.rect.height * ratio - currentManaGlobe.rectTransform.rect.height, 0);
 
