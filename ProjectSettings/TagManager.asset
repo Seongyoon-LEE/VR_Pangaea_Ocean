@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Meteor
+  - BigTrash
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Tresh
-  - 
-  - 
+  - Trash
+  - Tool
+  - BigTrash
   - 
   - 
   - 

@@ -12,7 +12,7 @@ public class Swing : MonoBehaviour
     public float hitCooldown = 0.15f; // 히트 쿨타임(연타 판정 방지)
 
     [Header("태그")]
-    public string oreTag = "Ore"; // 광석 태그
+    public string BigTrashTag = "BigTrash"; // 광석 태그
 
     Vector3 prevTipPos; // 이전 프레임 팁 위치
     float curSpeed; // 이번 프레임 팁 속도(거리/시간)
@@ -26,12 +26,18 @@ public class Swing : MonoBehaviour
 
     void Update()
     {
+        SwingSpeed();
+    }
+
+    private void SwingSpeed()
+    {
         // 팁 이동속도 계산 = (이번 프레임 -이전 프레임) 거리 / 시간
         Vector3 delta = tip.position - prevTipPos;
         curSpeed = delta.magnitude / Time.deltaTime;
         prevTipPos = tip.position;
         print($"speed : {curSpeed:F2} m/s");
     }
+
     bool CanHitNow()
     {
         if (curSpeed < hitSpeedThreshold) return false; // 속도 미달
@@ -40,23 +46,27 @@ public class Swing : MonoBehaviour
     }
     void TryHit(Collider other)
     {
-        if (!string.IsNullOrEmpty(oreTag))
+        if (!string.IsNullOrEmpty(BigTrashTag))
         {
-            if(!other.CompareTag(oreTag)) return; // 태그가 ore가 아니면 리턴
+            if(!other.CompareTag(BigTrashTag)) return; // 태그가 ore가 아니면 리턴
         }
-        if(!CanHitNow()) return; // 히트 가능 여부 확인
-        
+        if (!CanHitNow()) return; // 히트 가능 여부 확인
+
         // 광석에 히트 전달
-        Ore ore = other.GetComponent<Ore>();
-        if(ore != null)
+        BigTrashTakeHit BigTrash = other.GetComponent<BigTrashTakeHit>();
+        if(BigTrash != null)
         {
-            //ore.takeHit();
+            BigTrash.TakeHit();
+            if(BigTrash.hitsLeft <= 0) // 광석 파괴
+            BigTrash.SendMessage("Break", SendMessageOptions.DontRequireReceiver); // 파괴 메시지 전송
+
             lastHitTime = Time.time; // 히트 시간 갱신
-            //이펙트/사운드 호출
         }
     }
-    private void OnCollisionEnter(Collision c)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        TryHit(c.collider);
+        Debug.LogWarning("");
+        TryHit(other);
     }
 }
