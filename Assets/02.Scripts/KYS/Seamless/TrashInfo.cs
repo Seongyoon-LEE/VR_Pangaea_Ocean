@@ -12,6 +12,8 @@ public class TrashInfo
     public float posY;
     public float posZ;
 
+    public float height;
+
     //public Quaternion rotation;
     public float rotX;
     public float rotY;
