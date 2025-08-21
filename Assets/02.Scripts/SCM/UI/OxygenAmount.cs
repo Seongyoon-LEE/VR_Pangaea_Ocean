@@ -27,7 +27,8 @@ public class OxygenAmount : MonoBehaviour
     private void UpdateOxygenAmount()
     {
         float ratio = oxygenPoint / maxOxygenPoint;
-        currentManaGlobe.rectTransform.localPosition = new Vector3(0, currentManaGlobe.rectTransform.rect.height * ratio - currentManaGlobe.rectTransform.rect.height, 0);
+        float hight = currentManaGlobe.rectTransform.rect.height * 0.9f;
+        currentManaGlobe.rectTransform.localPosition = new Vector3(0, hight * ratio - hight, 0);
 
     }
 }

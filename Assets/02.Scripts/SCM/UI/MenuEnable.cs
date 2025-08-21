@@ -35,7 +35,7 @@ public class MenuEnable : ShowCanvas
         {
             // 다른 메뉴버튼 누르면 사라지게하기
             if (subInput.action.WasPressedThisFrame())
-                UIEnable(false);
+                canvas.SetActive(false);
         }
     }
 
@@ -44,17 +44,11 @@ public class MenuEnable : ShowCanvas
         base.UIEnable(isEnable);
     }
 
-    // 버튼 or 외부에서 사용
+    // 버튼
     public override void Close()
     {
         base.Close();
     }
-
-    
-    
-
-
-    
 
     
 }
