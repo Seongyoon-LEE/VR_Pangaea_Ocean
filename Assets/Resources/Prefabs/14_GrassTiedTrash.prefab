@@ -842,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7522772995794527727}
   - component: {fileID: 8522038192744017758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471429063340931831}
   - component: {fileID: 7726218300845510987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,7 @@ GameObject:
   - component: {fileID: 1214068782002744175}
   - component: {fileID: 47831396064534324}
   m_Layer: 0
-  m_Name: GrassTiedTrash
+  m_Name: 14_GrassTiedTrash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,7 +1425,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3399822e6d9544a84fd036e867bf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassHeight: 0
+  _info:
+    id: 0
+    cellX: 0
+    cellY: 0
+    kind: 0
+    status: 0
+    posX: 0
+    posY: 0
+    posZ: 0
+    height: 0
+    rotX: 0
+    rotY: 0
+    rotZ: 0
+    weight: 0
 --- !u!1 &4718403505937906931
 GameObject:
   m_ObjectHideFlags: 0
