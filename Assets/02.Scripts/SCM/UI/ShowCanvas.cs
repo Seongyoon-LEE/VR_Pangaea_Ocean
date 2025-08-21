@@ -28,14 +28,14 @@ public class ShowCanvas : MonoBehaviour
     }
 
     // Äµ¹ö½º¶û ·¹ÀÌ OnOff
-    protected virtual void UIEnable()
+    protected virtual void UIEnable(bool isEnable)
     {
-        canvas.SetActive(!canvas.activeSelf);
-        ray.SetActive(!ray.activeSelf);
+        canvas.SetActive(isEnable);
+        ray.SetActive(isEnable);
     }
 
     public virtual void Close()
     {
-        UIEnable();
+        UIEnable(false);
     }
 }

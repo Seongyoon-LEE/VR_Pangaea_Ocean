@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class MenuEnable : ShowCanvas
 {
-    public InputActionProperty mainInput; // 사용할 손 - 드래그 앤 드롭
-    public InputActionProperty subInput; // 사용하지 않는 손 - 드래그 앤 드롭
+    public InputActionProperty mainInput; // 사용하는 버튼 - 드래그 앤 드롭
+    public InputActionProperty subInput; // 사용하지 않는 버튼 - 드래그 앤 드롭
     
     protected override void Start()
     {
@@ -15,11 +15,11 @@ public class MenuEnable : ShowCanvas
 
     private void OnEnable()
     {
-        mainInput.action.started += x => UIEnable();
+        mainInput.action.started += x => UIEnable(!canvas.activeSelf);
     }
     private void OnDisable()
     {
-        mainInput.action.started -= x => UIEnable();
+        mainInput.action.started -= x => UIEnable(!canvas.activeSelf);
         mainInput.action.Disable();
     }
 
@@ -35,13 +35,13 @@ public class MenuEnable : ShowCanvas
         {
             // 다른 메뉴버튼 누르면 사라지게하기
             if (subInput.action.WasPressedThisFrame())
-                UIEnable();
+                UIEnable(false);
         }
     }
 
-    protected override void UIEnable()
+    protected override void UIEnable(bool isEnable)
     {
-        base.UIEnable();
+        base.UIEnable(isEnable);
     }
 
     // 버튼 or 외부에서 사용

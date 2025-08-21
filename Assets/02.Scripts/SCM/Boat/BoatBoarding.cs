@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BoatBoarding : ShowCanvas
 {
-    private readonly string boatTag = "Boat";
-    private Transform boatTr;
+    private readonly string playerTag = "Player";
+    private Transform playerTr;
     protected override void Start()
     {
         base.Start();
+        playerTr = GameObject.FindWithTag(playerTag).transform;
     }
 
     private void Update()
@@ -21,25 +23,23 @@ public class BoatBoarding : ShowCanvas
         base.FollowUI();
     }
 
-    protected override void UIEnable()
+    protected override void UIEnable(bool isEnable)
     {
-        base.UIEnable();
+        base.UIEnable(isEnable);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(boatTag))
+        if (other.CompareTag(playerTag))
         {
-            UIEnable();
-            boatTr = other.transform;
+            UIEnable(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(boatTag))
+        if (other.CompareTag(playerTag))
         {
-            UIEnable();
-            boatTr = null;
+            UIEnable(false);
         }
     }
 
@@ -50,10 +50,10 @@ public class BoatBoarding : ShowCanvas
 
     public void BoardingBtn()
     {
-        if (boatTr != null)
+        if (playerTr != null)
         {
-            UIEnable();
-            transform.position = boatTr.position + new Vector3(0, 1f, -2f);
+            playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
+            
         }
     }
 }

@@ -2,56 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatCtrl : ShowCanvas
+public class BoatGetOff : ShowCanvas
 {
     private readonly string playerTag = "Player";
-    private Transform cameraOffset;
-    private Vector3 offset = new Vector3(0, 1.5f, 3f);
-    public GameObject[] equipmentList; // 드래그 앤 드롭
+    private Transform playerTr;
+
     protected override void Start()
     {
         base.Start();
-        cameraOffset = GameObject.Find("Camera Offset").transform;
+        playerTr = GameObject.FindWithTag(playerTag).transform;
     }
 
     void Update()
     {
         FollowUI();
+        
     }
-
     protected override void FollowUI()
     {
         base.FollowUI();
     }
 
-    protected override void UIEnable()
+    protected override void UIEnable(bool isEnable)
     {
-        base.UIEnable();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(playerTag))
-        {
-            UIEnable();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(playerTag))
-        {
-            UIEnable();
-        }
+        base.UIEnable(isEnable);
     }
     public override void Close()
     {
         base.Close();
     }
 
-    public void BoatControll()
+    public void GetOff()
     {
-        UIEnable();
-        cameraOffset.position += offset;
+        Vector3 dir = (playerTr.position - transform.parent.position).normalized;
+        playerTr.position += dir * 4f;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            UIEnable(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            UIEnable(false);
+        }
+    }
+
 
 }
