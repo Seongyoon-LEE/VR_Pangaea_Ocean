@@ -83,20 +83,37 @@ public class TrashSpawnManager : MonoBehaviour
     {
         var x = Random.Range(0.1f, 0.9f);
         var z = Random.Range(0.1f, 0.9f);
-        float height = terrain.terrainData.GetInterpolatedHeight(x, z);
+        float y = terrain.terrainData.GetInterpolatedHeight(x, z);
 
         //trashinfo에 들어갈 내용
         var pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
-            , height + terrain.transform.position.y + Random.Range(0, 100f),
+            , y + terrain.transform.position.y,
             z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
+        
         int kind = Random.Range(0, this.poolCtrl.trashPrefabs.Count); // 쓰래기 종류값
         int status = (int)TrashStatus.Dirty; // eNum기반 쓰래기 상태값
 
-        //var rotation = Quaternion.identity; // 회전을 넣게 된다면 회전값
-        float rotX = Random.Range(0f, 360f);
-        float rotY = Random.Range(0f, 360f);
-        float rotZ = Random.Range(0f, 360f);
+        float rotX;
+        float rotY;
+        float rotZ;
+        float height;
+
+        if (kind == 13) // 임시 테스트용, 풀에 묶인 쓰레기의 종류값 13
+        {
+            rotX = 0;
+            rotY = 0;
+            rotZ = 0;
+            height = Random.Range(3, 6f); // 풀에 묶인 쓰레기는 회전값을 0으로 고정하고 높이를 랜덤으로 설정
+        }
+        else
+        {
+            rotX = Random.Range(0f, 360f);
+            rotY = Random.Range(0f, 360f);
+            rotZ = Random.Range(0f, 360f);
+            height = Random.Range(0, 50f);
+        }
+            
 
         return new TrashInfo
         {
@@ -108,10 +125,10 @@ public class TrashSpawnManager : MonoBehaviour
             posX = pos.x,
             posY = pos.y,
             posZ = pos.z,
+            height = height,
             rotX = rotX,
             rotY = rotY,
             rotZ = rotZ,
-            //weight = Random.Range(0f, 5f) // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
             weight = DataManager.Instance.dicWeight[kind].weight + Random.Range(-0.5f, 1f) // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
         }; // TrashInfo 오브젝트 생성
         // 이에 대해서 오브젝트를 생성하는게 아닌, json을 활용해서 데이터를 우선적으로 생성한다.

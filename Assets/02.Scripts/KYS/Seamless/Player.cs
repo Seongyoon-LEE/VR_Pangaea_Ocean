@@ -89,6 +89,5 @@ public class Player : MonoBehaviour
         this.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
         this.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
         DataManager.Instance.playerData = this.PlayerData; // 플레이어 데이터 저장
-        Debug.Log("플레이어 데이터 데이터 매니저에 들어감");
     }
 }
