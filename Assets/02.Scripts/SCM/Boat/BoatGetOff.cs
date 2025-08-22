@@ -16,24 +16,11 @@ public class BoatGetOff : ShowCanvas
     void Update()
     {
         FollowUI();
-        
-    }
-    protected override void FollowUI()
-    {
-        base.FollowUI();
-    }
-
-    protected override void UIEnable(bool isEnable)
-    {
-        base.UIEnable(isEnable);
-    }
-    public override void Close()
-    {
-        base.Close();
     }
 
     public void GetOff()
     {
+        // 바라보고 있는 방향 유지 한채 이동
         Vector3 dir = (playerTr.position - transform.parent.position).normalized;
         playerTr.position += dir * 4f;
     }

@@ -8,6 +8,7 @@ public class Breakable : MonoBehaviour
     public List<GameObject> breakablePieces; // 드래그 앤 드롭
     void Start()
     {
+        
     }
 
     

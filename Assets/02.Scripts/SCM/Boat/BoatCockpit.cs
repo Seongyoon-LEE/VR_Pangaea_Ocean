@@ -23,16 +23,6 @@ public class BoatCockpit : ShowCanvas
         FollowUI();
     }
 
-    protected override void FollowUI()
-    {
-        base.FollowUI();
-    }
-
-    protected override void UIEnable(bool isEnable)
-    {
-        base.UIEnable(isEnable);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
@@ -47,13 +37,11 @@ public class BoatCockpit : ShowCanvas
             UIEnable(false);
         }
     }
-    public override void Close()
-    {
-        base.Close();
-    }
 
+    // 보트 탑승 버튼 
     public void BoatControll()
     {
+        // 현재 장착 중인 장비 인덱스 값 저장
         for (int i = 0; i < equipmentList.Length; i++)
         {
             if (equipmentList[i].activeSelf)
@@ -65,7 +53,7 @@ public class BoatCockpit : ShowCanvas
 
         PlayerEnable(false);
     }
-
+    // 플레이어 이동
     public void PlayerEnable(bool isSetting)
     {
         isCockpit = !isSetting;
