@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum TrashStatus // 쓰레기 상태를 나타내는 eNum
@@ -65,11 +66,10 @@ public class TrashSpawnManager : MonoBehaviour
     }
     private void CreateTrashData(int cnt)
     {
-        for (int i = 0; i < cnt; i++) // cnt만큼 쓰레기 정보 생성
+        int i = 0;
+        for ( ; i < cnt; i++) // cnt만큼 쓰레기 정보 생성
         {
             var trashInfo = CreateTrash(i); // 쓰레기 정보를 생성하는 함수 호출
-
-
             var cellKey = new Vector2Int(trashInfo.cellX, trashInfo.cellY);
             if (!DataManager.Instance.dicTrash.ContainsKey(cellKey)) // 딕셔너리에 해당 키가 없으면 추가
             {
@@ -77,10 +77,63 @@ public class TrashSpawnManager : MonoBehaviour
             }
             //여기 아래에는 반드시 해당 key(cell)값에 List가 있으니까
             DataManager.Instance.dicTrash[cellKey].Add(trashInfo); // 해당 cell에 쓰레기 정보를 추가
+
+            //여기서 종류값 체크
+            //종류가 부숴지는 종류라면 내부에 포함된 쓰레기의 개수만큼 동일한 내용을 넣는다
+            if(trashInfo.kind == 13) // 묶인 쓰레기는 13번, 해초 쓰레기는 내부에 쓰레기 6개 포함
+            {
+                //위치는 같아야하고, 종류값만 12 이하의 숫자로 바꿔서 info 6개 생성
+                var innerCnt = i++ + 7;
+                for( ; i < innerCnt; i++) 
+                {
+                    var newTrashInfo = new TrashInfo // 기존 쓰레기 정보를 복사
+                    {
+                        id = i, // 새로운 ID 할당
+                        cellX = trashInfo.cellX,
+                        cellY = trashInfo.cellY,
+                        kind = Random.Range(0, 13), // 종류값을 0~12 사이로 랜덤하게 설정
+                        status = trashInfo.status, // 상태값은 기존 쓰레기와 동일하게 설정
+                        posX = trashInfo.posX,
+                        posY = trashInfo.posY,
+                        posZ = trashInfo.posZ,
+                        height = trashInfo.height, // 높이는 기존 쓰레기와 동일하게 설정
+                        rotX = Random.Range(0f, 360f),
+                        rotY = Random.Range(0f, 360f),
+                        rotZ = Random.Range(0f, 360f),
+                    };
+                    newTrashInfo.weight = DataManager.Instance.dicWeight[newTrashInfo.kind].weight + Random.Range(-0.5f, 1f); // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
+                    DataManager.Instance.dicTrash[cellKey].Add(newTrashInfo); // 해당 cell에 새로운 쓰레기 정보 추가
+                }
+            }
+            if (trashInfo.kind >= 14) // 부숴지는 쓰레기는 14번 이상
+            {
+                var innerCnt = i++ + 10;
+                for (; i< innerCnt; i++) //부숴지는 쓰레기는 내부에 쓰레기 10개 포함중
+                {
+                    var newTrashInfo = new TrashInfo
+                    {
+                        id = i, // 새로운 ID 할당
+                        cellX = trashInfo.cellX,
+                        cellY = trashInfo.cellY,
+                        kind = trashInfo.kind,
+                        status = trashInfo.status, // 상태값은 기존 쓰레기와 동일하게 설정
+                        posX = trashInfo.posX,
+                        posY = trashInfo.posY,
+                        posZ = trashInfo.posZ,
+                        height = trashInfo.height, // 높이는 기존 쓰레기와 동일하게 설정
+                        rotX = trashInfo.rotX,
+                        rotY = trashInfo.rotY,
+                        rotZ = trashInfo.rotZ
+                    };
+                    newTrashInfo.weight = DataManager.Instance.dicWeight[newTrashInfo.kind].weight + Random.Range(-0.5f, 1f); // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
+                    DataManager.Instance.dicTrash[cellKey].Add(newTrashInfo); // 해당 cell에 새로운 쓰레기 정보 추가
+                }
+            }
         }
     }
     private TrashInfo CreateTrash(int id)
     {
+        int kind = Random.Range(0, this.poolCtrl.trashPrefabs.Count); // 쓰래기 종류값
         var x = Random.Range(0.1f, 0.9f);
         var z = Random.Range(0.1f, 0.9f);
         float y = terrain.terrainData.GetInterpolatedHeight(x, z);
@@ -91,7 +144,7 @@ public class TrashSpawnManager : MonoBehaviour
             z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
         
-        int kind = Random.Range(0, this.poolCtrl.trashPrefabs.Count); // 쓰래기 종류값
+        
         int status = (int)TrashStatus.Dirty; // eNum기반 쓰래기 상태값
 
         float rotX;
@@ -176,12 +229,62 @@ public class TrashSpawnManager : MonoBehaviour
         this.loadCellList.Add(cell); // 로드된 Cell 리스트에 추가
         if (DataManager.Instance.dicTrash.ContainsKey(cell)) // 딕셔너리에 해당 Cell이 존재하면
         {
-            foreach (var trash in DataManager.Instance.dicTrash[cell]) // 해당 Cell에 있는 쓰레기 정보를 순회
+            int i = 0;
+            for(; i < DataManager.Instance.dicTrash[cell].Count; i++)
             {
                 // 쓰레기 로드 로직
-                if (trash.status == (int)TrashStatus.Clean) // 청소된 상태라면 로딩하지 않는다
+
+
+                //쓰레기를 받아왔는데, 종류값이 부숴지는 종류면-> 그 개수 만큼 건너 뛰고 로딩방법 변경
+                if (DataManager.Instance.dicTrash[cell][i].kind == 13) // 해초 쓰레기는 13번
+                {
+                    var list = new List<TrashInfo>();
+                    list.Add(DataManager.Instance.dicTrash[cell][i]); // 해당 쓰레기 정보를 리스트에 추가
+                    for (int j = 1; j < 7; j++) // 해초 쓰레기는 내부에 쓰레기 6개 포함(본인 미포함)
+                    {
+                        list.Add(DataManager.Instance.dicTrash[cell][i + j]); // 해당 쓰레기 정보를 리스트에 추가
+                    }
+                    i += 6; // 인덱스 넘기기
+                    if(DataManager.Instance.dicTrash[cell][i].status == (int)TrashStatus.Clean)
+                    {
+                        var trashCheck = list.Find(x => x.status != (int)TrashStatus.Clean);
+                        if(trashCheck == null)
+                        {
+                            return; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
+                        }
+                    }
+                    //여기로 나왔다면 청소를 했었는데 플레이어 사망등의 이유로 쓰레기가 원복된것
+                    DataManager.Instance.dicTrash[cell][i].status = (int)TrashStatus.Damaged;
+                    this.poolCtrl.GetGrassTrash(list);
                     return;
-                this.poolCtrl.GetTrash(trash); // 풀링 매니저에서 쓰레기 가져오기
+                }
+                if (DataManager.Instance.dicTrash[cell][i].kind >= 14) // 부숴지는 쓰레기는 14번 이상
+                {
+                    var list = new List<TrashInfo>();
+                    for (int j = 0; j < 10; j++) // 부숴지는 쓰레기는 내부에 쓰레기 10개 포함(본인 미포함)
+                    {
+                        list.Add(DataManager.Instance.dicTrash[cell][i + j]); // 해당 쓰레기 정보를 리스트에 추가
+                    }
+                    i += 9; // 인덱스 넘기기
+                    var trashCheck = list.Find(x => x.status != (int)TrashStatus.Clean);
+                    if (trashCheck == null)
+                    {
+                        return; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
+                    }
+                    //여기로 나왔다면 어떤식으로든 청소가 완료되지 않았었던것
+                    this.poolCtrl.GetBreakableTrash(list);
+                    return;
+                }
+
+                // 그 개수만큼의 info의 status가 전부 clean인지 확인, 만약 clean이라면 생성하지 않는다.
+                // 아니라면 우선 전체로 하나 만들고, 쓰레기 내부 Init에서 초기화한다
+                // info들로 리스트(List<trashInfo>)를 만들어서, 그 리스트를 넘겨주고, 그 리스트를 받은 Init이 내부 체크해서,
+                // damaged가 하나라도 있다면 부모 오브젝트 끄고 내부 레이어 변경시키고
+                // clean인건 비활성화, damaged인것만 활성화, dirty상태(일부만 주웠는데 플레이어가 사망해서 돌아감)도 활성화
+                // damaged없이 전부 dirty 상태라면 부모오브젝트를 활성화
+                if (DataManager.Instance.dicTrash[cell][i].status == (int)TrashStatus.Clean) // 청소된 상태라면 로딩하지 않는다
+                    return;
+                this.poolCtrl.GetTrash(DataManager.Instance.dicTrash[cell][i]); // 풀링 매니저에서 쓰레기 가져오기
             }
         }
     }

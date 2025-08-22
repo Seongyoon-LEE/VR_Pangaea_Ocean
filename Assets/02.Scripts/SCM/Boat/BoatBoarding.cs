@@ -18,16 +18,6 @@ public class BoatBoarding : ShowCanvas
         FollowUI();
     }
 
-    protected override void FollowUI()
-    {
-        base.FollowUI();
-    }
-
-    protected override void UIEnable(bool isEnable)
-    {
-        base.UIEnable(isEnable);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
@@ -43,11 +33,7 @@ public class BoatBoarding : ShowCanvas
         }
     }
 
-    public override void Close()
-    {
-        base.Close();
-    }
-
+    // 보트 탑승 버튼
     public void BoardingBtn()
     {
         if (playerTr != null)

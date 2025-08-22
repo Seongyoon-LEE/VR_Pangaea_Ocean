@@ -25,6 +25,7 @@ public class BoatMoveCtrl : MonoBehaviour
         transform.position += dir;
         transform.Rotate(Vector3.up * input.x * turnSpeed *  Time.deltaTime);
 
+        // 트리거 버튼 입력하면 조종 종료
         if (activateInput.action.WasPressedThisFrame())
         {
             cockpit.PlayerEnable(true);

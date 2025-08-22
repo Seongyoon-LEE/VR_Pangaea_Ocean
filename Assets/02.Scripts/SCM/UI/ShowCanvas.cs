@@ -16,7 +16,7 @@ public class ShowCanvas : MonoBehaviour
         ray.SetActive(false);
     }
 
-    protected virtual void FollowUI()
+    protected void FollowUI()
     {
         // 캔더스가 플레이어 따라다니는 로직
         if (canvas.activeSelf)
@@ -28,14 +28,31 @@ public class ShowCanvas : MonoBehaviour
     }
 
     // 캔버스랑 레이 OnOff
-    protected virtual void UIEnable(bool isEnable)
+    protected void UIEnable(bool isEnable)
     {
         canvas.SetActive(isEnable);
+
+        if (isEnable)
+            CanvasOnOff();
+        // 다른 캔버스에서 레이 끌 때 같이 꺼지는 것을 방지하기 위해 마지막에 실행
         ray.SetActive(isEnable);
     }
 
-    public virtual void Close()
+    // 다른 캔버스 종료하는 로직
+    private void CanvasOnOff()
+    {
+        var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
+        // 현재 상속 받고 있는 캔버스와 다른 캔버스 종료
+        foreach (ShowCanvas c in allCanvas)
+        {
+            if (c.canvas != canvas)
+                c.UIEnable(false);
+        }
+    }
+    public void Close()
     {
         UIEnable(false);
     }
+
+    
 }
