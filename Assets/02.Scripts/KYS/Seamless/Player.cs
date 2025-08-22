@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         this.mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(mouseRay.origin, mouseRay.direction * 100, Color.red);
 
-        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭
+        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭(테스트용)
         {
             RaycastHit hit;
             if (Physics.Raycast(mouseRay, out hit, 100f, 1 << 6)) // 6 : 쓰레기 레이어
@@ -54,14 +54,29 @@ public class Player : MonoBehaviour
                 TrashData trashData = hit.collider.GetComponent<TrashData>();
                 if (trashData != null)
                 {
-                    trashData.Info.status = (int)TrashStatus.Clean;
                     this.PlayerData.trashIdList.Add(trashData.Info.id,new Vector2Int(trashData.Info.cellX , trashData.Info.cellY)); 
                     // 쓰레기 ID를 리스트에 추가, 플레이어 사망 시 원래대로 돌려놓음
                     this.PlayerData.weight += trashData.Info.weight; // 가방 용량에 추가
                     trashData.Clean(); // 쓰레기 청소 함수 호출
-                    trashData.gameObject.SetActive(false);
+                    trashData.DisActivate();
                 }
             }
+            else if(Physics.Raycast(mouseRay, out hit, 100f, 1 << 8)) // 8 : 큰 쓰레기 레이어
+            {
+                var breakableTrash = hit.collider.GetComponent<BreakableTrash>();
+                if(breakableTrash != null)
+                {
+                    breakableTrash.Break(); // 쓰레기 파괴 함수 호출
+                }
+            }
+            else if(Physics.Raycast(mouseRay, out hit, 100f, 1 << 10)) // 10 : 풀 레이어
+            {
+                var grassTiedTrash = hit.collider.transform.GetComponentInParent<GrassTiedTrash>();
+                if (grassTiedTrash != null)
+                {
+                    grassTiedTrash.GrassCut(); // 풀 벨 때 함수 호출
+                }
+            } 
         }
     }
     private void PlayerDie()
