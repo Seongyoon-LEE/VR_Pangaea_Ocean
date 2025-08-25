@@ -21,9 +21,4 @@ public class MenuEnable : ShowCanvas
         mainInput.action.started -= x => UIEnable(!canvas.activeSelf);
         mainInput.action.Disable();
     }
-
-    void Update()
-    {
-        FollowUI();
-    }
 }

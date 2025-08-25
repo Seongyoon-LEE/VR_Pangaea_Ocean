@@ -16,6 +16,11 @@ public class ShowCanvas : MonoBehaviour
         ray.SetActive(false);
     }
 
+    protected virtual void Update()
+    {
+        FollowUI();
+    }
+
     protected void FollowUI()
     {
         // 캔더스가 플레이어 따라다니는 로직

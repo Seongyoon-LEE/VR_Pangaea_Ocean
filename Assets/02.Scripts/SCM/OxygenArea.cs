@@ -42,8 +42,10 @@ public class OxygenArea : MonoBehaviour
         while (true)
         {
             // 플레이어 산소량이 최대가 아니거나 회복 가능한 산소가 있을 때
+            //if (DataManager.Instance.playerData.oxygen < 100 && oxygenPoint > 0)
             if (GameManager.Instance.oxygenPoint < 100 && oxygenPoint > 0)
             {
+                //DataManager.Instance.playerData.oxygen++;
                 GameManager.Instance.oxygenPoint++;
                 oxygenPoint--;
 

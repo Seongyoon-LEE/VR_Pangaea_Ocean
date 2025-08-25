@@ -13,11 +13,6 @@ public class BoatBoarding : ShowCanvas
         playerTr = GameObject.FindWithTag(playerTag).transform;
     }
 
-    private void Update()
-    {
-        FollowUI();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
