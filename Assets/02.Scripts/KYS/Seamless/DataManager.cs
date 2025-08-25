@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     public Dictionary<Vector2Int, List<TrashInfo>> dicTrash = new Dictionary<Vector2Int, List<TrashInfo>>(); // 쓰레기 정보를 담을 딕셔너리
     public Dictionary<int, WeightData> dicWeight = new Dictionary<int, WeightData>(); // 쓰레기 종류별 무게 정보가 들어가는 딕셔너리
     public PlayerData playerData;
+    public bool PlayerDataSaved { private get; set; } // 플레이어 데이터가 저장되었는지 여부
 
     public bool IsLoadingFinish { get; private set; } = false; // 쓰레기 로딩이 끝났는지 여부
     public bool IsTrashDataExist { get; private set; } = false; // 쓰레기 데이터가 존재하는지 여부
@@ -64,7 +65,10 @@ public class DataManager : MonoBehaviour
     {
         string trashJson = null;
         string playerJson = null;
-        await PlayerDataCheckAsync(); // 플레이어 데이터가 할당되는거 대기
+        this.PlayerDataSaved = false; // 저장 시작 전에 false로 설정
+
+        await PlayerDataCheckAsync(); // 플레이어 데이터가 저장될 때까지 대기
+
 
         await Task.Run(() =>
         {
@@ -78,12 +82,14 @@ public class DataManager : MonoBehaviour
 
     async Task PlayerDataCheckAsync()
     {
-        // 비동기적으로 조건 확인
-        while (this.playerData == null)
+        while (!this.PlayerDataSaved)
         {
-            await Task.Yield(); // 다음 프레임까지 대기
+            await Task.Yield(); // 플레이어 데이터가 저장될 때까지 대기
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     private void OnApplicationQuit()
@@ -92,3 +98,5 @@ public class DataManager : MonoBehaviour
     }
 }
 
+//Application.persistentDataPath : 빌드할때 저장이 잘 안된다면 경로명으로 이거 사용
+//사용 예 : dataPath = Application.persistentDataPath + "/gameData.dat"

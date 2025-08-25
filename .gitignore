@@ -46,3 +46,6 @@ Assets/AddressableAssetsData/*/addressables_content_state.bin
 ServerData/
 Assets/Resources/TrashMapData.json
 Assets/Resources/TrashMapData.json.meta
+Assets/Resources/PlayerData.json
+Assets/Resources/PlayerData.json.meta
+UserSettings/Layouts/default-2022.dwlt

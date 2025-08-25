@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum TrashStatus // 쓰레기 상태를 나타내는 eNum
-{
-    Clean = 0,
-    Dirty = 1,
-    Damaged = 2
-}
+
 public class TrashSpawnManager : MonoBehaviour
 {
     public Terrain terrain; // 동적으로 생성될 수 있으니, Terrain을 받아오는 함수가 필요하다.
@@ -245,7 +240,7 @@ public class TrashSpawnManager : MonoBehaviour
                         list.Add(DataManager.Instance.dicTrash[cell][i + j]); // 해당 쓰레기 정보를 리스트에 추가
                     }
                     i += 6; // 인덱스 넘기기
-                    if(DataManager.Instance.dicTrash[cell][i].status == (int)TrashStatus.Clean)
+                    if(DataManager.Instance.dicTrash[cell][i - 6].status == (int)TrashStatus.Clean)
                     {
                         var trashCheck = list.Find(x => x.status != (int)TrashStatus.Clean);
                         if(trashCheck == null)
@@ -253,8 +248,13 @@ public class TrashSpawnManager : MonoBehaviour
                             return; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
                         }
                     }
+                    if (DataManager.Instance.dicTrash[cell][i - 6].status == (int)TrashStatus.Dirty) // 애초에 청소를 안했던 상태라면
+                    {
+                        this.poolCtrl.GetGrassTrash(list);
+                        return;
+                    }
                     //여기로 나왔다면 청소를 했었는데 플레이어 사망등의 이유로 쓰레기가 원복된것
-                    DataManager.Instance.dicTrash[cell][i].status = (int)TrashStatus.Damaged;
+                    DataManager.Instance.dicTrash[cell][i - 6].status = (int)TrashStatus.Damaged; // 위에서 i값을 더하고 있었기 때문에 -6을 해서 본래 해초가 바뀌도록
                     this.poolCtrl.GetGrassTrash(list);
                     return;
                 }
