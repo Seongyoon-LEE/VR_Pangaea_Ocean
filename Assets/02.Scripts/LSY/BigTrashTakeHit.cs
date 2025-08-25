@@ -4,41 +4,39 @@ using UnityEngine;
 
 public class BigTrashTakeHit : MonoBehaviour
 {
-    [Header("³»±¸µµ(2~3)")]
+    [Header("ë‚´êµ¬ë„(2~3)")]
     public int minHits = 1;
     public int maxHits = 3;
 
-    [Header("ÀÌÆåÆ®")]
-    public ParticleSystem hitEffect; // È÷Æ® ÀÌÆåÆ®
-    public ParticleSystem breakEffect; // ÆÄ±« ÀÌÆåÆ®
+    [Header("ì´í™íŠ¸")]
+    public ParticleSystem hitEffect; // íˆíŠ¸ ì´í™íŠ¸
+    public ParticleSystem breakEffect; // íŒŒê´´ ì´í™íŠ¸
+    Transform tip; // ê³¡ê´­ì´ ëë¶€ë¶„ íŠ¸ëœìŠ¤í¼
 
     public int hitsLeft;
     void Start()
     {
-        //2~3È¸ ·£´ı ¼³Á¤
+        //2~3íšŒ ëœë¤ ì„¤ì •
         hitsLeft = Random.Range(minHits, maxHits + 1);
-        //hitEffect.Stop(); // ½ÃÀÛ½Ã ÀÌÆåÆ® Á¤Áö
-        //breakEffect.Stop(); // ½ÃÀÛ½Ã ÀÌÆåÆ® Á¤Áö
+        tip = GameObject.FindWithTag("Pickaxe").transform;   
     }
-    private void OnCollisionEnter(Collision c)
+
+
+    public void PlayParticle()
     {
-        if (c.collider.CompareTag("Pickaxe"))
-        {
-            var contact = c.contacts[0]; // Ãæµ¹ ÁöÁ¡
-                                         //if (hitEffect)
-            var hitFX = Instantiate(hitEffect, contact.point, Quaternion.LookRotation(contact.normal));
-            hitFX.Play(); // ÀÌÆåÆ® Àç»ı
-            print(hitFX);
+            var hitFX = Instantiate(hitEffect, tip.position, Quaternion.LookRotation(-tip.forward));
+            hitFX.Play(); // ì´í™íŠ¸ ì¬ìƒ
             print($"Hits left: {hitsLeft}");
             hitsLeft--;
-            //Destroy(hitFX, 1f); // ÀÌÆåÆ® 1ÃÊ ÈÄ Á¦°Å  
-            if (hitsLeft <= 0) BreakEffect(); // ÆÄ±« ÀÌÆåÆ® ½ÇÇà
-        }
+            //Destroy(hitFX, 1f); // ì´í™íŠ¸ 1ì´ˆ í›„ ì œê±°  
+            if (hitsLeft <= 0) BreakEffect(); // íŒŒê´´ ì´í™íŠ¸ ì‹¤í–‰
+        
     }
-    void BreakEffect()
+
+    public void BreakEffect()
     {
-        if(breakEffect != null) Instantiate(breakEffect,transform.position, Quaternion.identity);
-        //breakEffect.Play(); // ÆÄ±« ÀÌÆåÆ® Àç»ı
-        Destroy(gameObject); // ¿ÀºêÁ§Æ® ÆÄ±«
+        var breakFX = Instantiate(breakEffect, transform.position, Quaternion.identity);
+        //breakEffect.Play(); // íŒŒê´´ ì´í™íŠ¸ ì¬ìƒ
+        Destroy(breakFX,1f); // ì˜¤ë¸Œì íŠ¸ íŒŒê´´
     }
 }
