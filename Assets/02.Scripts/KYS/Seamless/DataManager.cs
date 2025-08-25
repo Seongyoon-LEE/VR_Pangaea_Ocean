@@ -86,10 +86,6 @@ public class DataManager : MonoBehaviour
         {
             await Task.Yield(); // 플레이어 데이터가 저장될 때까지 대기
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     }
 
     private void OnApplicationQuit()
