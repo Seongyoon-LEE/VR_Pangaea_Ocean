@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
         if (DataManager.Instance.IsPlayerDataExist) // 플레이어 데이터가 존재한다면
         {
             this.PlayerData = DataManager.Instance.playerData; // 플레이어 데이터를 할당
-            DataManager.Instance.playerData = null;
         }
         else // 플레이어 데이터가 없다면
         {
@@ -97,12 +96,12 @@ public class Player : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        this.PlayerData.posX = this.transform.position.x;
-        this.PlayerData.posY = this.transform.position.y;
-        this.PlayerData.posZ = this.transform.position.z;
-        this.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
-        this.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
-        this.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
-        DataManager.Instance.playerData = this.PlayerData; // 플레이어 데이터 저장
+        DataManager.Instance.playerData.rotX = this.transform.rotation.eulerAngles.x;
+        DataManager.Instance.playerData.rotY = this.transform.rotation.eulerAngles.y;
+        DataManager.Instance.playerData.rotZ = this.transform.rotation.eulerAngles.z;
+        DataManager.Instance.playerData.posX = this.transform.position.x;
+        DataManager.Instance.playerData.posY = this.transform.position.y;
+        DataManager.Instance.playerData.posZ = this.transform.position.z;
+        DataManager.Instance.PlayerDataSaved = true;
     }
 }
