@@ -8,7 +8,7 @@ public class Swing : MonoBehaviour
     public Transform tip;
 
     [Header("속도 판정")]
-    public float hitSpeedThreshold = 2.5f; // 이 속도 이상일때만 히트
+    public float hitSpeedThreshold = 10f; // 이 속도 이상일때만 히트
     public float hitCooldown = 0.15f; // 히트 쿨타임(연타 판정 방지)
 
     [Header("태그")]
@@ -35,7 +35,6 @@ public class Swing : MonoBehaviour
         Vector3 delta = tip.position - prevTipPos;
         curSpeed = delta.magnitude / Time.deltaTime;
         prevTipPos = tip.position;
-        //print($"speed : {curSpeed:F2} m/s");
     }
 
     bool CanHitNow()
@@ -48,29 +47,35 @@ public class Swing : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(BigTrashTag))
         {
-            if(!other.CompareTag(BigTrashTag)) return; // 태그가 ore가 아니면 리턴
+            if(!other.CompareTag(BigTrashTag)) return; // 태그가 BigTrash가 아니면 리턴
         }
         if (!CanHitNow()) return; // 히트 가능 여부 확인
-
+        print(curSpeed);
         // 광석에 히트 전달
         BigTrashTakeHit BigTrash = other.GetComponent<BigTrashTakeHit>();
-        if(BigTrash != null)
+        BreakableTrash Breakable = other.GetComponent<BreakableTrash>();
+        print(BigTrash);
+        if (BigTrash != null)
         {
+            BigTrash.PlayParticle();
             //BigTrash.TakeHit();
-            if(BigTrash.hitsLeft <= 0) // 광석 파괴
-            BigTrash.SendMessage("Break", SendMessageOptions.DontRequireReceiver); // 파괴 메시지 전송
+            if (BigTrash.hitsLeft <= 0) // 광석 파괴
+            {
+                BigTrash.BreakEffect();
+                Breakable.Break();
+            }
+            
 
             lastHitTime = Time.time; // 히트 시간 갱신
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.LogWarning("Collision Detected");
-        TryHit(collision.collider);
-    }
-    //private void OnTriggerEnter(Collider other)
+    //private void OnCollisionEnter(Collision collision)
     //{
-    //    Debug.LogWarning("");
-    //    TryHit(other);
+    //    Debug.LogWarning("Collision Detected");
+    //    TryHit(collision.collider);
     //}
+    private void OnTriggerEnter(Collider other)
+    {
+        TryHit(other);
+    }
 }

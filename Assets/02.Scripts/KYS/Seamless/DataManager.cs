@@ -76,14 +76,14 @@ public class DataManager : MonoBehaviour
         Debug.Log("저장됨");
     }
 
-    async Task<bool> PlayerDataCheckAsync()
+    async Task PlayerDataCheckAsync()
     {
         // 비동기적으로 조건 확인
         while (this.playerData == null)
         {
             await Task.Yield(); // 다음 프레임까지 대기
         }
-        return true;
+
     }
 
     private void OnApplicationQuit()

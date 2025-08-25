@@ -2996,6 +2996,7 @@ GameObject:
   - component: {fileID: 8252654881429282981}
   - component: {fileID: 8471826834847890752}
   - component: {fileID: 3024906973725688847}
+  - component: {fileID: 5113706660271165657}
   m_Layer: 8
   m_Name: 15_PickUp
   m_TagString: Untagged
@@ -3105,6 +3106,25 @@ MonoBehaviour:
   - {fileID: 2143813956520396488}
   - {fileID: 7896675113492150737}
   modelParent: {fileID: 8747456494572315583}
+--- !u!114 &5113706660271165657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007441877729704773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce4bfc5406d6c8408d92e4b4ef1baa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHits: 1
+  maxHits: 3
+  hitEffect: {fileID: 5292830082072807135, guid: 409a05aabcb286e49a3095a857d52078,
+    type: 3}
+  breakEffect: {fileID: 8786822359077997505, guid: c1b2caa4371ba154fa8e57d2351d83e3,
+    type: 3}
+  hitsLeft: 0
 --- !u!1 &3153942939347933292
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class VacuumCleaner : MonoBehaviour
     [SerializeField] float rayDistance = 10f; // 레이저의 최대 거리
     [SerializeField] InputActionProperty rightTriggerAction; // 오른쪽 트리거 액션
     bool isFiring;
+    public Action onCleanAction;
 
     private void OnEnable()
     {
@@ -70,8 +72,9 @@ public class VacuumCleaner : MonoBehaviour
         {
             Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
             hit.collider.gameObject.SetActive(false); // 레이저가 충돌한 오브젝트를 비활성화합니다.
+            DataManager.Instance.playerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
+            onCleanAction();
         }
-
     }
 }
 

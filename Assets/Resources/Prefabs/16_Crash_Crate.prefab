@@ -4172,6 +4172,7 @@ GameObject:
   - component: {fileID: 3135642837754810198}
   - component: {fileID: 6078113887422388384}
   - component: {fileID: 1726481484409354580}
+  - component: {fileID: -2217399868389644125}
   m_Layer: 8
   m_Name: 16_Crash_Crate
   m_TagString: Untagged
@@ -4281,6 +4282,25 @@ MonoBehaviour:
   - {fileID: 4748468171958073131}
   - {fileID: 127590381759478491}
   modelParent: {fileID: 8408555857290642513}
+--- !u!114 &-2217399868389644125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253260280681299572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce4bfc5406d6c8408d92e4b4ef1baa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHits: 1
+  maxHits: 3
+  hitEffect: {fileID: 5292830082072807135, guid: 409a05aabcb286e49a3095a857d52078,
+    type: 3}
+  breakEffect: {fileID: 8786822359077997505, guid: c1b2caa4371ba154fa8e57d2351d83e3,
+    type: 3}
+  hitsLeft: 0
 --- !u!1 &5372035789561101143
 GameObject:
   m_ObjectHideFlags: 0
