@@ -27,7 +27,7 @@ public class BigTrashTakeHit : MonoBehaviour
             hitFX.Play(); // 이펙트 재생
             print($"Hits left: {hitsLeft}");
             hitsLeft--;
-            //Destroy(hitFX, 1f); // 이펙트 1초 후 제거  
+            Destroy(hitFX, 1f); // 이펙트 1초 후 제거  
             if (hitsLeft <= 0) BreakEffect(); // 파괴 이펙트 실행
         
     }
@@ -35,7 +35,7 @@ public class BigTrashTakeHit : MonoBehaviour
     public void BreakEffect()
     {
         var breakFX = Instantiate(breakEffect, transform.position, Quaternion.identity);
-        //breakEffect.Play(); // 파괴 이펙트 재생
+        breakEffect.Play(); // 파괴 이펙트 재생
         Destroy(breakFX,1f); // 오브젝트 파괴
     }
 }

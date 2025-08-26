@@ -34,7 +34,6 @@ public class BoatBoarding : ShowCanvas
         if (playerTr != null)
         {
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
-            
         }
     }
 }
