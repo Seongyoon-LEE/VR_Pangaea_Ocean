@@ -13,11 +13,7 @@ public class BoatGetOff : ShowCanvas
         playerTr = GameObject.FindWithTag(playerTag).transform;
     }
 
-    void Update()
-    {
-        FollowUI();
-    }
-
+    // 버튼 이벤트
     public void GetOff()
     {
         // 바라보고 있는 방향 유지 한채 이동

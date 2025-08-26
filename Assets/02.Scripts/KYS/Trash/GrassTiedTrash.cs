@@ -11,7 +11,7 @@ public class GrassTiedTrash : TrashData
     {
         this.grassObj = this.transform.GetChild(0);
         this.transform.position = new Vector3(this.Info.posX, this.Info.posY, this.Info.posZ);
-        this.grassObj.localScale = new Vector3(1, this.Info.height, 1);
+        this.grassObj.localScale = new Vector3(1, this.Info.height * 2, 1);
     }
     public void SetInnerTrash(List<GameObject> trashes)
     {
@@ -39,18 +39,20 @@ public class GrassTiedTrash : TrashData
         // 내부 쓰레기들의 청소상태를 체크해서 전부 청소 됐다면 이 쓰레기도 clean상태로 변경
         // 라는 내용의 코루틴 시작 시키고, 청소 다 됐으면 코루틴 종료,
         // 비활성화될때 코루틴 종료
+        StartCoroutine(CleanCheckRoutine());
     }
     IEnumerator CleanCheckRoutine()
     {
-        while(this.innerTrash.Find(x => x.GetComponent<TrashData>().Info.status != (int)TrashStatus.Clean) == null)
+        while (this.innerTrash == null)
         {
-            // 내부 쓰레기 중 청소되지 않은 쓰레기가 없을 때까지 대기
+            yield return null;
+        }
+        while(this.innerTrash.Find(x => x.GetComponent<TrashData>().Info.status != (int)TrashStatus.Clean) != null)
+        {
             yield return null;
         }
         // 모든 내부 쓰레기가 청소되었다면
         this.Info.status = (int)TrashStatus.Clean; // 이 쓰레기도 청소 상태로 변경
-        DataManager.Instance.dicTrash[new Vector2Int(this.Info.cellX, this.Info.cellY)]
-            .Find(x => x.id == this.Info.id).status = (int)TrashStatus.Clean; // 데이터 매니저에 청소 상태로 변경
     }
     public void GrassCut()
     {

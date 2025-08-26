@@ -18,11 +18,6 @@ public class BoatCockpit : ShowCanvas
         cockpitPos = transform.parent.GetChild(4).transform;
     }
 
-    void Update()
-    {
-        FollowUI();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))

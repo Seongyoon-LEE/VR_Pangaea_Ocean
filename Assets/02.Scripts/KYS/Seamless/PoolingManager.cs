@@ -80,7 +80,7 @@ public class PoolingManager : MonoBehaviour
         //풀이 필요는 하다
 
         List<GameObject> innerTrashList = new List<GameObject>();
-        for (int i = 1; i < infos.Count; i++)
+        for (int i = 1; i < infos.Count; i++) // 자기 자신 제외하고 반복
         {
             if (infos[i].status == (int)TrashStatus.Clean)
             {

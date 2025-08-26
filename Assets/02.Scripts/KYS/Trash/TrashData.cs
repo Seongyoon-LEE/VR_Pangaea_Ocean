@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
+public enum TrashStatus // 쓰레기 상태를 나타내는 eNum
+{
+    Clean = 0,
+    Dirty = 1,
+    Damaged = 2
+}
+
 public class TrashData : MonoBehaviour
 {
     [SerializeField] // 테스트 끝나면 지워도됨

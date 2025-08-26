@@ -17,13 +17,13 @@ public class OxygenAmount : MonoBehaviour
     {
         if (GameManager.Instance.isRecovery) return;
         oxygenTime += Time.deltaTime;
-        
     }
     private void LateUpdate()
     {
         if(oxygenTime >= 1f)
         {
             GameManager.Instance.oxygenPoint = Mathf.Clamp(--GameManager.Instance.oxygenPoint, 0, 100);
+            //GameManager.Instance.oxygenPoint = Mathf.Clamp(--DataManager.Instance.playerData.oxygen, 0, 100);
             oxygenTime = 0f;
         }
         if (currentManaGlobe.gameObject.activeInHierarchy)
@@ -33,8 +33,8 @@ public class OxygenAmount : MonoBehaviour
     private void UpdateOxygenAmount()
     {
         float ratio = GameManager.Instance.oxygenPoint / maxOxygenPoint;
+        //float ratio = DataManager.Instance.playerData.oxygen / maxOxygenPoint;
         float hight = currentManaGlobe.rectTransform.rect.height * 0.9f;
         currentManaGlobe.rectTransform.localPosition = new Vector3(0, hight * ratio - hight, 0);
-
     }
 }
