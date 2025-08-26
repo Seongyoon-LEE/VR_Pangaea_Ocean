@@ -57,7 +57,7 @@ public class Swing : MonoBehaviour
         print(BigTrash);
         if (BigTrash != null)
         {
-            BigTrash.PlayParticle();
+            BigTrash.PlayParticle(this.tip);
             //BigTrash.TakeHit();
             if (BigTrash.hitsLeft <= 0) // ±¤¼® ÆÄ±«
             {
