@@ -32,14 +32,21 @@ public class VacuumCleaner : MonoBehaviour
                 rightTriggerAction.action.canceled -= OnTriggerReleased;
             }
     }
-        void OnTriggerPressed(InputAction.CallbackContext ctx)
+    void OnTriggerPressed(InputAction.CallbackContext ctx)
+    {
+        // 시작하기전에 무게가 300이 넘으면 발사 안됨
+        if (DataManager.Instance.playerData.weight >= 300)
         {
-            if (inhalationPS != null && !isFiring)
-            {
-                inhalationPS.Play();
-                isFiring = true;
-            }
+            StopShoot();
+            return;
         }
+
+        if (inhalationPS != null && !isFiring)
+        {
+            inhalationPS.Play();
+            isFiring = true;
+        }
+    }
         void OnTriggerReleased(InputAction.CallbackContext ctx)
         {
             StopShoot();
@@ -52,11 +59,11 @@ public class VacuumCleaner : MonoBehaviour
         FirePos = transform.GetChild(2);
     }
 
-        void Update()
-        {
-            if (isFiring) RaycastCheck();
-            inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
-        }
+    void Update()
+    {
+        if (isFiring) RaycastCheck();
+        inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
+    }
 
     public void StopShoot()
     {
@@ -73,6 +80,10 @@ public class VacuumCleaner : MonoBehaviour
             Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
             hit.collider.gameObject.SetActive(false); // 레이저가 충돌한 오브젝트를 비활성화합니다.
             DataManager.Instance.playerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
+            if(DataManager.Instance.playerData.weight >= 300)
+            {
+                StopShoot();
+            }
             onCleanAction();
         }
     }

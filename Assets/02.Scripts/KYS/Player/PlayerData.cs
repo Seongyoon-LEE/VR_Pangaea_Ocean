@@ -32,5 +32,7 @@ public class PlayerData
     
     public float weight;
 
+    public int score;
+
     public Dictionary<int, Vector2Int> trashIdList = new Dictionary<int, Vector2Int>();
 }

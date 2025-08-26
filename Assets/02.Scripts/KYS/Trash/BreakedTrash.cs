@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakedTrash : TrashData
 {
-    public override void Init()
+    protected override void Init()
     {
 
     }

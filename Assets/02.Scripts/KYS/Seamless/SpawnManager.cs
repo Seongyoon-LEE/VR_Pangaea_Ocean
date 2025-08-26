@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 
-public class TrashSpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
     public Terrain terrain; // 동적으로 생성될 수 있으니, Terrain을 받아오는 함수가 필요하다.
     public PoolingManager poolCtrl; //코드에서 동적으로 할당
@@ -36,6 +36,8 @@ public class TrashSpawnManager : MonoBehaviour
         if (!DataManager.Instance.IsTrashDataExist) // 데이터가 없다면
         {
             CreateTrashData(200); // 쓰레기 데이터를 생성
+            //Obstacle도 여기서 생성해도 된다. 쓰래기 데이터가 있는데 장애물 데이터가 없는게 말이 안된다.
+            CreateObstacleData(50); // 장애물 데이터를 생성
         }
         //여기까지 왔다면 쓰레기 데이터 셋팅 완료
         this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));
@@ -181,6 +183,59 @@ public class TrashSpawnManager : MonoBehaviour
         }; // TrashInfo 오브젝트 생성
         // 이에 대해서 오브젝트를 생성하는게 아닌, json을 활용해서 데이터를 우선적으로 생성한다.
     }
+
+    //CreateObstacleData() // 장애물 데이터 생성 함수, 위의 CreateTrashData와 비슷한 방식으로
+    //안에 종류값에 따라서 추가로 생성 와바박 하는 내용이 필요없어진다.
+    private void CreateObstacleData(int cnt)
+    {
+        for (int i = 0; i < cnt; i++) // cnt만큼 쓰레기 정보 생성
+        {
+            var obstacleInfo = CreateObstacle(i); // 쓰레기 정보를 생성하는 함수 호출
+            var cellKey = new Vector2Int(obstacleInfo.cellX, obstacleInfo.cellY);
+            if (!DataManager.Instance.dicObstacle.ContainsKey(cellKey)) // 딕셔너리에 해당 키가 없으면 추가
+            {
+                DataManager.Instance.dicObstacle.Add(cellKey, new List<ObstacleInfo>());
+            }
+            //여기 아래에는 반드시 해당 key(cell)값에 List가 있으니까
+            DataManager.Instance.dicObstacle[cellKey].Add(obstacleInfo); // 해당 cell에 쓰레기 정보를 추가
+        }
+    }
+    //CreateObstacle() // 장애물 정보 생성 함수, 위의 CreateTrash와 비슷한 방식으로,
+    //단 안에 종류값 체크해서 생성되는 위치를 바꾸는 등의 내용이 추가된다.
+    private ObstacleInfo CreateObstacle(int id)
+    {
+        int kind = Random.Range(1, this.poolCtrl.obstaclePrefabs.Count); // 장애물 종류값
+                                                                         // 0번에 랜덤 스폰되지 않는 오징어 할당
+
+        // 단, 장애물은 종류값에 따라서 생성 설정이 달라질 수 있음
+        // 또한 장애물은 종류값에 따라서 최초 랜덤스폰이 되지않을 수 있음
+
+        var x = Random.Range(0.1f, 0.9f);
+        var z = Random.Range(0.1f, 0.9f);
+        float y = terrain.terrainData.GetInterpolatedHeight(x, z);
+
+        //trashinfo에 들어갈 내용
+        var pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
+            , y + terrain.transform.position.y + Random.Range(30, 70f),
+            z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
+        var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
+
+
+
+        return new ObstacleInfo
+        {
+            id = id, // 쓰레기 ID
+            cellX = cell.x,
+            cellY = cell.y,
+            kind = kind,
+            posX = pos.x,
+            posY = pos.y,
+            posZ = pos.z,
+
+        }; // TrashInfo 오브젝트 생성
+        // 이에 대해서 오브젝트를 생성하는게 아닌, json을 활용해서 데이터를 우선적으로 생성한다.
+    }
+
     public void CellMove(Vector2Int cell)// 셀 이동시 호출할 함수
     {
         var newLoadCellList = new List<Vector2Int>(); // 새로 로드할 Cell 리스트
@@ -191,14 +246,14 @@ public class TrashSpawnManager : MonoBehaviour
 
         foreach (var unloadCell in unloadList) // 현재 로드된 Cell 리스트에 있는 Cell들을 순회
         {
-            UnloadTrash(unloadCell); // 쓰레기 언로드 함수 호출
+            UnloadCell(unloadCell); // 쓰레기 언로드 함수 호출
         }
 
         var loadList = newLoadCellList.FindAll(x => !this.loadCellList.Contains(x)); // 새로 로드할 Cell 리스트에서 현재 로드된 Cell 리스트에 없는 Cell을 찾음
 
         foreach (var loadCell in loadList) // 새로 로드할 Cell 리스트에 있는 Cell들을 순회
         {
-            LoadTrash(loadCell); // 쓰레기 로딩 함수 호출
+            LoadCell(loadCell); // 쓰레기 로딩 함수 호출
         }
     }
     private List<Vector2Int> GetAdjacentCells(Vector2Int cell)
@@ -219,7 +274,7 @@ public class TrashSpawnManager : MonoBehaviour
         return adjacentCells; // 인접 Cell 리스트 반환
     }
 
-    private void LoadTrash(Vector2Int cell) // CellMove쪽에서 사용할 쓰레기 로딩용 함수
+    private void LoadCell(Vector2Int cell) // CellMove쪽에서 사용할 쓰레기 로딩용 함수
     {
         this.loadCellList.Add(cell); // 로드된 Cell 리스트에 추가
         if (DataManager.Instance.dicTrash.ContainsKey(cell)) // 딕셔너리에 해당 Cell이 존재하면
@@ -261,7 +316,7 @@ public class TrashSpawnManager : MonoBehaviour
                 if (DataManager.Instance.dicTrash[cell][i].kind >= 14) // 부숴지는 쓰레기는 14번 이상
                 {
                     var list = new List<TrashInfo>();
-                    for (int j = 0; j < 10; j++) // 부숴지는 쓰레기는 내부에 쓰레기 10개 포함(본인 미포함)
+                    for (int j = 0; j < 10; j++) // 부숴지는 쓰레기는 내부에 쓰레기 10개 포함(본인 포함)
                     {
                         list.Add(DataManager.Instance.dicTrash[cell][i + j]); // 해당 쓰레기 정보를 리스트에 추가
                     }
@@ -287,17 +342,26 @@ public class TrashSpawnManager : MonoBehaviour
                 this.poolCtrl.GetTrash(DataManager.Instance.dicTrash[cell][i]); // 풀링 매니저에서 쓰레기 가져오기
             }
         }
+        // Obstacle도 위와 비슷한 방식으로 여기에 if문 새로 써서 로드
+        if (DataManager.Instance.dicObstacle.ContainsKey(cell)) // 딕셔너리에 해당 Cell이 존재하면
+        {
+            for (int i = 0; i < DataManager.Instance.dicObstacle[cell].Count; i++)
+            {
+                this.poolCtrl.GetObstacle(DataManager.Instance.dicObstacle[cell][i]); // 풀링 매니저에서 장애물 가져오기
+            }
+        }
     }
-    private void UnloadTrash(Vector2Int cell) // CellMove쪽에서 사용할 쓰레기 언로드용 함수
+    private void UnloadCell(Vector2Int cell) // CellMove쪽에서 사용할 쓰레기 언로드용 함수
     {
         this.loadCellList.Remove(cell); // 로드된 Cell 리스트에서 제거
         if (DataManager.Instance.dicTrash.ContainsKey(cell)) // 딕셔너리에 해당 Cell이 존재하면
         {
-            foreach (var trash in DataManager.Instance.dicTrash[cell]) // 해당 Cell에 있는 쓰레기 정보를 순회
-            {
-                // 쓰레기 언로드 로직
-                this.poolCtrl.UnloadTrash(cell); // 풀링 매니저에서 쓰레기 언로드
-            }
+            this.poolCtrl.UnloadTrash(cell); // 풀링 매니저에서 쓰레기 언로드
+        }
+        // Obstacle도 위와 비슷한 방식으로 여기에 if문 새로 써서 언로드
+        if (DataManager.Instance.dicObstacle.ContainsKey(cell)) // 딕셔너리에 해당 Cell이 존재하면
+        {
+            this.poolCtrl.UnloadObstacle(cell); // 풀링 매니저에서 장애물 언로드
         }
     }
 }

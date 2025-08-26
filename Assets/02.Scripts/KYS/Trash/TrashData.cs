@@ -32,7 +32,7 @@ public class TrashData : MonoBehaviour
     {
         this.Info.status = (int)TrashStatus.Clean; // 쓰레기 상태를 청소로 변경
     }
-    public virtual void Init()
+    protected virtual void Init()
     {
         this.transform.position = new Vector3(this.Info.posX, this.Info.posY, this.Info.posZ);
         this.transform.rotation = Quaternion.Euler(this.Info.rotX, this.Info.rotY, this.Info.rotZ);

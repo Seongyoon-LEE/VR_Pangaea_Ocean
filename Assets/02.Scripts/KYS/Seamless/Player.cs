@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         else // 플레이어 데이터가 없다면
         {
             this.PlayerData = new PlayerData(); // 새로운 플레이어 데이터 생성
+            DataManager.Instance.playerData = this.PlayerData; // 데이터 매니저에 플레이어 데이터 할당
         }
     }
     //레이로 쓰래기 클릭 시 흡수
@@ -88,8 +89,6 @@ public class Player : MonoBehaviour
         {
             DataManager.Instance.dicTrash[trash.Value].Find(x => x.id == trash.Key).status = (int)TrashStatus.Dirty; // 쓰레기 상태를 더러움으로 변경
         }
-        
-
         this.PlayerData.trashIdList.Clear(); // 쓰레기 ID 리스트 초기화
         this.PlayerData.weight = 0; // 가방 용량 초기화
         this.PlayerData.oxygen = 100; // 산소 초기화 (테스트용)

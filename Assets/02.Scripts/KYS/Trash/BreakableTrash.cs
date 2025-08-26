@@ -52,7 +52,7 @@ public class BreakableTrash : TrashData
     }
     public void Break()
     {
-        
+        this.GetComponent<BoxCollider>().enabled = false; // 박스 콜라이더 비활성화
         foreach (var piece in breakablePieces)
         {
             piece.transform.parent = this.transform; // 비활성화할 모델 말고 그 상위를 부모로 설정
