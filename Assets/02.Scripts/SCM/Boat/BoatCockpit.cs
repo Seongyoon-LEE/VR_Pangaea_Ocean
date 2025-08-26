@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class BoatCockpit : ShowCanvas
@@ -16,6 +17,8 @@ public class BoatCockpit : ShowCanvas
         base.Start();
         playerTr = GameObject.FindWithTag(playerTag).transform;
         cockpitPos = transform.parent.GetChild(4).transform;
+        canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoatControll);
+        canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,6 +33,8 @@ public class BoatCockpit : ShowCanvas
         if (other.CompareTag(playerTag))
         {
             UIEnable(false);
+            if (!isCockpit)
+                ray.SetActive(true);
         }
     }
 
@@ -48,12 +53,13 @@ public class BoatCockpit : ShowCanvas
 
         PlayerEnable(false);
     }
+    
     // 플레이어 이동
     public void PlayerEnable(bool isSetting)
     {
         isCockpit = !isSetting;
         playerTr.position = isSetting ? transform.position : cockpitPos.position; // 위치
-        Quaternion rot = cockpitPos.rotation * Quaternion.Euler(0f, 180f, 0f);
+        Quaternion rot = cockpitPos.rotation * Quaternion.Euler(0f, 180f, 0f); // 방향 설정
         playerTr.rotation = isSetting ? rot : cockpitPos.rotation; // 회전 - 후방 : 전방
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;

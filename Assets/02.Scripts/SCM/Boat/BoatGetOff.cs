@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoatGetOff : ShowCanvas
 {
@@ -11,6 +12,8 @@ public class BoatGetOff : ShowCanvas
     {
         base.Start();
         playerTr = GameObject.FindWithTag(playerTag).transform;
+        canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
+        canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
     }
 
     // 버튼 이벤트

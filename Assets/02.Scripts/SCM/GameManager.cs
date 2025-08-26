@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum State
+    {
+        NOMAL, RECOVERY, VOLCANO, MAGMA
+    }
+    public State state = State.NOMAL;
     public static GameManager Instance;
-    public float oxygenPoint; // 플레이어 산소량
-    public bool isRecovery = false; // 산소량 회복 중 상태
     void Awake()
     {
         if (Instance == null)

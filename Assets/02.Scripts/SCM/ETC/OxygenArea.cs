@@ -24,7 +24,6 @@ public class OxygenArea : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            GameManager.Instance.isRecovery = true;
             StartCoroutine(OxygenHealing());
         }
     }
@@ -32,7 +31,7 @@ public class OxygenArea : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            GameManager.Instance.isRecovery = false;
+            GameManager.Instance.state = GameManager.State.NOMAL;
             StopAllCoroutines();
         }
     }
@@ -41,25 +40,29 @@ public class OxygenArea : MonoBehaviour
     {
         while (true)
         {
-            // 플레이어 산소량이 최대가 아니거나 회복 가능한 산소가 있을 때
-            //if (DataManager.Instance.playerData.oxygen < 100 && oxygenPoint > 0)
-            if (GameManager.Instance.oxygenPoint < 100 && oxygenPoint > 0)
+            // 회복 가능 산소를 다 사용하면 종료
+            if (oxygenPoint == 0)
             {
-                //DataManager.Instance.playerData.oxygen++;
-                GameManager.Instance.oxygenPoint++;
+                transform.gameObject.SetActive(false);
+                GameManager.Instance.state = GameManager.State.NOMAL;
+                break;
+            }
+
+            // 플레이어 산소량이 최대가 아닐 때 회복
+            // 최대 일 때는 감소도 증가도 하지 않고 대기상태
+            if (DataManager.Instance.playerData.oxygen < 100)
+            {
+                GameManager.Instance.state = GameManager.State.RECOVERY;
                 oxygenPoint--;
 
                 materialColor.a = alpha * (oxygenPoint / maxOxygen);
                 mr.material.color = materialColor;
             }
-            if (oxygenPoint == 0)
+            else
             {
-                transform.gameObject.SetActive(false);
-                GameManager.Instance.isRecovery = false;
-                break;
+                GameManager.Instance.state = (GameManager.State)99;
             }
-                
-
+            
             yield return OxygenTime;
         }
     }
