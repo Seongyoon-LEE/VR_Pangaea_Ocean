@@ -7,7 +7,7 @@ public class GrassTiedTrash : TrashData
     private Transform grassObj;
     private List<GameObject> innerTrash;
 
-    public override void Init()
+    protected override void Init()
     {
         this.grassObj = this.transform.GetChild(0);
         this.transform.position = new Vector3(this.Info.posX, this.Info.posY, this.Info.posZ);

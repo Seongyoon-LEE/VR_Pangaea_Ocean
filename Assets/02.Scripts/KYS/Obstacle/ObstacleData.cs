@@ -20,7 +20,16 @@ public class ObstacleData : MonoBehaviour
         set 
         {
             _info = value;
-
-        } 
+            this.Init();
+        }
+    }
+    protected virtual void Init()
+    {
+        this.transform.position = new Vector3(this.Info.posX, this.Info.posY, this.Info.posZ);
+    }
+    public virtual void DisActivate()
+    {
+        this.gameObject.SetActive(false); // 장애물 오브젝트 비활성화
+        // 상어의 경우 내부의 순찰 포인트를 자식오브젝트에서 뺐다가 비활성화시 다시 넣어야함
     }
 }

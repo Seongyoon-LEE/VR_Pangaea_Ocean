@@ -6,23 +6,38 @@ using UnityEngine;
 
 public class PoolingManager : MonoBehaviour
 {
-    public List<GameObject> trashPrefabs;
+    public List<GameObject> trashPrefabs; //쓰레기 프리팹 담아놓기
+    public List<GameObject> obstaclePrefabs; //장애물 프리팹 담아놓기
 
     List<List<GameObject>> trashPool; // 쓰래기 종류별로(List 하나)
+                                      // 종류별로 쓰레기(List 둘)
+    List<List<GameObject>> obstaclePool; // 장애물 종류별로(List 하나)
+                                         // 종류별로 장애물(List 둘)
+
     Dictionary<int, GameObject> parentObjs = new Dictionary<int, GameObject>(); // 쓰레기 종류별로 부모 오브젝트를 관리하는 딕셔너리
-    //종류별로 쓰레기(List 둘)
+    Dictionary<int, GameObject> obstacleParentObjs = new Dictionary<int, GameObject>(); // 장애물 종류별로 부모 오브젝트를 관리하는 딕셔너리
+
     List<GameObject> trashList; // 로딩중인 쓰래기 전체를 담는 리스트 (언로드 할때 필요함)
+    List<GameObject> obstacleList; // 로딩중인 장애물 전체를 담는 리스트 (언로드 할때 필요함)
 
     public void Init()
     {
         //start에서 풀 생성
         this.trashPool = new List<List<GameObject>>();
         this.trashList = new List<GameObject>();
-        //this.trashPrefabs = new List<GameObject>();
-        this.trashPrefabs = Resources.LoadAll<GameObject>("Prefabs").ToList().FindAll(x => x.GetComponent<TrashData>() != null);
+
+        this.obstaclePool = new List<List<GameObject>>();
+        this.obstacleList = new List<GameObject>();
+
+        this.trashPrefabs = Resources.LoadAll<GameObject>("Prefabs/Trashes").ToList().FindAll(x => x.GetComponent<TrashData>() != null);
+        this.obstaclePrefabs = Resources.LoadAll<GameObject>("Prefabs/Obstacles").ToList().FindAll(x => x.GetComponent<ObstacleData>() != null);
         for (int i = 0; i < this.trashPrefabs.Count; i++)
         {
             this.trashPool.Add(new List<GameObject>()); // 쓰레기 종류별로 풀 생성
+        }
+        for (int i = 0; i < this.obstaclePrefabs.Count; i++)
+        {
+            this.obstaclePool.Add(new List<GameObject>()); // 장애물 종류별로 풀 생성
         }
     }
     public GameObject GetTrash(TrashInfo info)
@@ -118,8 +133,38 @@ public class PoolingManager : MonoBehaviour
         this.trashList.Add(this.trashPool[infos[0].kind][trashPool[infos[0].kind].Count - 1]); // 로딩중인 쓰래기 리스트에 추가
 
     }
+    public void GetObstacle(ObstacleInfo info)
+    {
+        foreach (GameObject obstacle in this.obstaclePool[info.kind])
+        {
+            if (!obstacle.activeSelf)
+            {
+                obstacle.GetComponent<ObstacleData>().Info = info; // info를 넣어줌
+                obstacle.SetActive(true);
+                this.obstacleList.Add(obstacle); // 로딩중인 장애물 리스트에 추가
+            }
+        }
+        //여기로 나왔다는건 모든 풀이 활성화
+        //새로 생성 후 그걸 반환
+        CreateObstacle(info.kind);
+        this.obstaclePool[info.kind][obstaclePool[info.kind].Count - 1].GetComponent<ObstacleData>().Info = info;
+        this.obstaclePool[info.kind][obstaclePool[info.kind].Count - 1].SetActive(true);
+        this.obstacleList.Add(this.obstaclePool[info.kind][obstaclePool[info.kind].Count - 1]); // 로딩중인 장애물 리스트에 추가
+    }
 
-    public void CreateTrash(int kind)
+    private void CreateObstacle(int kind)
+    {
+        var obj = Instantiate(this.obstaclePrefabs[kind]); // kind값에 따라서 다른 프리팹을 생성
+        if (!this.obstacleParentObjs.ContainsKey(kind))
+        {
+            var parent = new GameObject("ObstacleParent_" + kind); // 장애물 종류별로 부모 오브젝트 생성
+            obstacleParentObjs.Add(kind, parent);
+        }
+        obj.transform.SetParent(this.obstacleParentObjs[kind].transform); // 부모 오브젝트에 자식으로 설정
+        this.obstaclePool[kind].Add(obj);//풀에 오브젝트 생성하기
+    }
+
+    private void CreateTrash(int kind)
     {
         var obj = Instantiate(this.trashPrefabs[kind]); // kind값에 따라서 다른 프리팹을 생성
         if (!this.parentObjs.ContainsKey(kind))
@@ -128,7 +173,6 @@ public class PoolingManager : MonoBehaviour
             parentObjs.Add(kind, parent);
         }
         obj.transform.SetParent(this.parentObjs[kind].transform); // 부모 오브젝트에 자식으로 설정
-        var trashData = obj.GetComponent<TrashData>();
         this.trashPool[kind].Add(obj);//풀에 오브젝트 생성하기
     }
     public void UnloadTrash(Vector2Int cell) // 셀값 받아서 해당 셀 언로드
@@ -140,6 +184,17 @@ public class PoolingManager : MonoBehaviour
         {
             trash.GetComponent<TrashData>().DisActivate(); // 해당 쓰레기 비활성화
             this.trashList.Remove(trash); // 로딩중인 쓰래기 리스트에서 제거
+        }
+    }
+    public void UnloadObstacle(Vector2Int cell)
+    {
+        var unloadObstacle = this.obstacleList.FindAll(x =>
+            cell == new Vector2Int(x.GetComponent<ObstacleData>().Info.cellX, x.GetComponent<ObstacleData>().Info.cellY) // 셀이 info에 있는 cell값과 같은것을 찾아서
+        );
+        foreach (var obstacle in unloadObstacle)
+        {
+            obstacle.GetComponent<ObstacleData>().DisActivate(); // 해당 장애물 비활성화
+            this.obstacleList.Remove(obstacle); // 로딩중인 장애물 리스트에서 제거
         }
     }
 }
