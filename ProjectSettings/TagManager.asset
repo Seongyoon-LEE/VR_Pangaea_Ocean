@@ -8,6 +8,9 @@ TagManager:
   - BigTrash
   - FxTemporaire
   - Pickaxe
+  - ManaSprite
+  - HealthSprite
+  - Key
   layers:
   - Default
   - TransparentFX
