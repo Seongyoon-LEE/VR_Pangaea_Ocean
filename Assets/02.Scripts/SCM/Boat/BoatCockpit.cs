@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -9,7 +10,7 @@ public class BoatCockpit : ShowCanvas
     private readonly string playerTag = "Player";
     private Transform playerTr;
     private Transform cockpitPos;
-    public GameObject[] equipmentList; // 드래그 앤 드롭
+    public List<GameObject> equipmentList; // 드래그 앤 드롭
     public int curEquipment;
     public bool isCockpit = false;
     protected override void Start()
@@ -42,14 +43,9 @@ public class BoatCockpit : ShowCanvas
     public void BoatControll()
     {
         // 현재 장착 중인 장비 인덱스 값 저장
-        for (int i = 0; i < equipmentList.Length; i++)
-        {
-            if (equipmentList[i].activeSelf)
-            {
-                curEquipment = i;
-                break;
-            }
-        }
+        curEquipment = equipmentList.FindIndex(e => e.activeSelf);
+        curEquipment = curEquipment != -1 ? curEquipment : 4;
+
 
         PlayerEnable(false);
     }

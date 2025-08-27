@@ -29,7 +29,6 @@ public class BoatMoveCtrl : MonoBehaviour
         if (activateInput.action.WasPressedThisFrame())
         {
             cockpit.PlayerEnable(true);
-
         }
     }
 }

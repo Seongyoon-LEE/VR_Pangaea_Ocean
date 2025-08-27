@@ -38,16 +38,8 @@ public class OxygenArea : MonoBehaviour
 
     IEnumerator OxygenHealing()
     {
-        while (true)
+        while (oxygenPoint > 0)
         {
-            // 회복 가능 산소를 다 사용하면 종료
-            if (oxygenPoint == 0)
-            {
-                transform.gameObject.SetActive(false);
-                GameManager.Instance.state = GameManager.State.NOMAL;
-                break;
-            }
-
             // 플레이어 산소량이 최대가 아닐 때 회복
             // 최대 일 때는 감소도 증가도 하지 않고 대기상태
             if (DataManager.Instance.playerData.oxygen < 100)
@@ -65,5 +57,8 @@ public class OxygenArea : MonoBehaviour
             
             yield return OxygenTime;
         }
+        // 회복 가능 산소를 다 사용되면
+        transform.gameObject.SetActive(false);
+        GameManager.Instance.state = GameManager.State.NOMAL;
     }
 }

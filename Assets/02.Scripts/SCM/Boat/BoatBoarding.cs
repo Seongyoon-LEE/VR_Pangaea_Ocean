@@ -44,12 +44,9 @@ public class BoatBoarding : ShowCanvas
         {
             isBoarding = true;
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
-            for (int i = 0; i < hand.equipmentList.Length; i++)
+            for (int i = 0; i < hand.equipmentList.Count; i++)
             {
-                if (i == 0 || i == 4)
-                    hand.equipmentList[i].SetActive(true);
-                else
-                    hand.equipmentList[i].SetActive(false);
+                hand.equipmentList[i].SetActive(i == 0 || i == 4);
             }
         }
     }
