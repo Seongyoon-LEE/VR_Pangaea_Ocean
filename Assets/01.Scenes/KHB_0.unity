@@ -476,9 +476,9 @@ MonoBehaviour:
   underwater: {fileID: 11400000, guid: 1168e1f840b0b764886f0eb8ea5b8c8a, type: 2}
   shallowColor: {r: 0.3, g: 0.7, b: 0.8, a: 1}
   deepColor: {r: 0, g: 0.05, b: 0.2, a: 1}
-  minUnderwaterEffect: 0
-  minFogDensity: 0
-  maxFogDensity: 0
+  minUnderwaterEffect: 0.09
+  minFogDensity: 2
+  maxFogDensity: 20
   sunLight: {fileID: 2123465817}
   surfaceIntensity: 1
   deepIntensity: 0.1
@@ -1377,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1776994424
 MonoBehaviour:
   m_ObjectHideFlags: 0
