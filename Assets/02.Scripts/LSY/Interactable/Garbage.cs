@@ -13,7 +13,7 @@ public class Garbage : MonoBehaviour
     void Start()
     {
         if (trashPileObj != null)
-            initPos = trashPileObj.transform.position; // 초기 위치 저장
+            initPos = trashPileObj.transform.localPosition; // 초기 위치 저장
         if(outLineCtrl == null)
             outLineCtrl = GetComponent<OutLineCtrl>();
 
@@ -84,7 +84,7 @@ public class Garbage : MonoBehaviour
         {
             // 기존 위치를 기준으로 높이를 더하여 위치 조정
             Vector3 newPos = initPos + new Vector3(0, heightOffset, 0);
-            trashPileObj.transform.position = newPos;
+            trashPileObj.transform.localPosition = newPos;
         }
     }
 }
