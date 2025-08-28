@@ -11,6 +11,8 @@ TagManager:
   - ManaSprite
   - HealthSprite
   - Key
+  - Boat
+  - Right
   layers:
   - Default
   - TransparentFX

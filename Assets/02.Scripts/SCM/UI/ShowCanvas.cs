@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowCanvas : MonoBehaviour
@@ -38,25 +39,42 @@ public class ShowCanvas : MonoBehaviour
         
     }
     // 캔버스랑 레이 OnOff
-    protected virtual void UIEnable(bool isEnable)
+    protected void UIEnable(bool isEnable, bool isLeft = false)
     {
-        if (isEnable)
-            CanvasOnOff();
+        CanvasOnOff(isEnable, isLeft);
 
-        canvas.SetActive(isEnable);
-        ray.SetActive(isEnable);
+        //if (isEnable)
+        //{ 
+        //    CanvasOnOff(isLeft);
+        //}
+        //canvas.SetActive(isEnable);
+        //ray.SetActive(isEnable);
     }
 
     // 다른 캔버스 종료하는 로직
-    private void CanvasOnOff()
+    private void CanvasOnOff(bool isEnable, bool isLeft)
     {
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
-        // 현재 상속 받고 있는 캔버스와 다른 캔버스 종료
+        // 현재 상속 받고 있는 다른 캔버스 종료
         foreach (ShowCanvas c in allCanvas)
         {
             if (c.canvas != canvas)
-                c.UIEnable(false);
+            {
+                //c.UIEnable(false);
+                c.canvas.SetActive(false);
+                if (DataManager.Instance.playerData.isBoarding && isLeft && !isEnable)
+                {
+                    c.ray.SetActive(c.ray.CompareTag("Right"));
+                }
+                else
+                {
+                    c.ray.SetActive(false);
+                }
+            }
         }
+        // 현재 캔버스
+        canvas.SetActive(isEnable);
+        ray.SetActive(isEnable);
     }
     public void Close()
     {

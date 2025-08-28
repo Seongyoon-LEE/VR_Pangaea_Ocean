@@ -23,6 +23,7 @@ public class BoatGetOff : ShowCanvas
         // 바라보고 있는 방향 유지 한채 이동
         Vector3 dir = (playerTr.position - transform.parent.position).normalized;
         playerTr.position += dir * 4f;
+        DataManager.Instance.playerData.isBoarding = false;
     }
     private void OnTriggerEnter(Collider other)
     {

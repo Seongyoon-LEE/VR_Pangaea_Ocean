@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 183653184}
   m_Layer: 0
   m_Name: Right Ray Interactor
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2899,6 +2899,7 @@ MonoBehaviour:
     oxygen: 100
     weight: 0
     score: 0
+    isBoarding: 0
 --- !u!4 &1493150617
 Transform:
   m_ObjectHideFlags: 0
