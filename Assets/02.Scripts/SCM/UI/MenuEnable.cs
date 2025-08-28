@@ -9,6 +9,7 @@ public class MenuEnable : ShowCanvas
     
     protected override void Start()
     {
+        canvas = transform.GetChild(0).gameObject;
         base.Start();
     }
 

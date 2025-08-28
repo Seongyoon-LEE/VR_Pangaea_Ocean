@@ -16,10 +16,7 @@ public class ShowCanvas : MonoBehaviour
         ray.SetActive(false);
     }
 
-    protected virtual void Update()
-    {
-        FollowUI();
-    }
+    
 
     protected void FollowUI()
     {
@@ -32,6 +29,14 @@ public class ShowCanvas : MonoBehaviour
         }
     }
 
+    protected virtual void Update()
+    {
+        if (canvas != null)
+        {
+            FollowUI();
+        }
+        
+    }
     // Äµ¹ö½º¶û ·¹ÀÌ OnOff
     protected void UIEnable(bool isEnable)
     {
