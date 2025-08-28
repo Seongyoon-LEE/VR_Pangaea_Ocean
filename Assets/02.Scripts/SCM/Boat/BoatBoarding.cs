@@ -34,7 +34,6 @@ public class BoatBoarding : ShowCanvas
         {
             UIEnable(false);
             ray.SetActive(isBoarding);
-            isBoarding = false;
         }
     }
 
