@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightMaterial : MonoBehaviour
 {
-    public List<Material> materials;
+    public List<Material> materials; // 드래그 앤 드랍 : 기본, 성공, 실패
     private MeshRenderer meshRenderer;
     void Start()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShowCanvas : MonoBehaviour
 {
-    public GameObject canvas; // 드래그 앤 드롭
+    public GameObject canvas;
     public GameObject ray; // 사용하는 방향 Ray - 드래그 앤 드롭
     private Transform head;
     private float spawnDistance = 2f;
@@ -38,13 +38,12 @@ public class ShowCanvas : MonoBehaviour
         
     }
     // 캔버스랑 레이 OnOff
-    protected void UIEnable(bool isEnable)
+    protected virtual void UIEnable(bool isEnable)
     {
-        canvas.SetActive(isEnable);
-
         if (isEnable)
             CanvasOnOff();
-        // 다른 캔버스에서 레이 끌 때 같이 꺼지는 것을 방지하기 위해 마지막에 실행
+
+        canvas.SetActive(isEnable);
         ray.SetActive(isEnable);
     }
 
