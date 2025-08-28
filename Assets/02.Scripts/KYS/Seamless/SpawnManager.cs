@@ -101,11 +101,12 @@ public class SpawnManager : MonoBehaviour
                     newTrashInfo.weight = DataManager.Instance.dicWeight[newTrashInfo.kind].weight + Random.Range(-0.5f, 1f); // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
                     DataManager.Instance.dicTrash[cellKey].Add(newTrashInfo); // 해당 cell에 새로운 쓰레기 정보 추가
                 }
+                i--;//위쪽에 생성하는 for문, 그리고 바깥쪽 전체 for문에서 i를 2번 더하게 되기에, 한번 뺌
             }
             if (trashInfo.kind >= 14) // 부숴지는 쓰레기는 14번 이상
             {
                 var innerCnt = i++ + 10;
-                for (; i< innerCnt; i++) //부숴지는 쓰레기는 내부에 쓰레기 10개 포함중
+                for (; i< innerCnt; i++) //부숴지는 쓰레기는 내부에 쓰레기 10개 포함중, 한개는 이미 생성됨
                 {
                     var newTrashInfo = new TrashInfo
                     {
@@ -125,6 +126,7 @@ public class SpawnManager : MonoBehaviour
                     newTrashInfo.weight = DataManager.Instance.dicWeight[newTrashInfo.kind].weight + Random.Range(-0.5f, 1f); // 쓰레기 무게, 종류에 따른 무게 + 랜덤값
                     DataManager.Instance.dicTrash[cellKey].Add(newTrashInfo); // 해당 cell에 새로운 쓰레기 정보 추가
                 }
+                i--;//위쪽에 생성하는 for문, 그리고 바깥쪽 전체 for문에서 i를 2번 더하게 되기에, 한번 뺌
             }
         }
     }

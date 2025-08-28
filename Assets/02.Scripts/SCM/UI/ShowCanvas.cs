@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowCanvas : MonoBehaviour
 {
-    public GameObject canvas; // 드래그 앤 드롭
+    public GameObject canvas;
     public GameObject ray; // 사용하는 방향 Ray - 드래그 앤 드롭
     private Transform head;
     private float spawnDistance = 2f;
@@ -16,10 +17,7 @@ public class ShowCanvas : MonoBehaviour
         ray.SetActive(false);
     }
 
-    protected virtual void Update()
-    {
-        FollowUI();
-    }
+    
 
     protected void FollowUI()
     {
@@ -32,27 +30,51 @@ public class ShowCanvas : MonoBehaviour
         }
     }
 
-    // 캔버스랑 레이 OnOff
-    protected void UIEnable(bool isEnable)
+    protected virtual void Update()
     {
-        canvas.SetActive(isEnable);
+        if (canvas != null)
+        {
+            FollowUI();
+        }
+        
+    }
+    // 캔버스랑 레이 OnOff
+    protected void UIEnable(bool isEnable, bool isLeft = false)
+    {
+        CanvasOnOff(isEnable, isLeft);
 
-        if (isEnable)
-            CanvasOnOff();
-        // 다른 캔버스에서 레이 끌 때 같이 꺼지는 것을 방지하기 위해 마지막에 실행
-        ray.SetActive(isEnable);
+        //if (isEnable)
+        //{ 
+        //    CanvasOnOff(isLeft);
+        //}
+        //canvas.SetActive(isEnable);
+        //ray.SetActive(isEnable);
     }
 
     // 다른 캔버스 종료하는 로직
-    private void CanvasOnOff()
+    private void CanvasOnOff(bool isEnable, bool isLeft)
     {
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
-        // 현재 상속 받고 있는 캔버스와 다른 캔버스 종료
+        // 현재 상속 받고 있는 다른 캔버스 종료
         foreach (ShowCanvas c in allCanvas)
         {
             if (c.canvas != canvas)
-                c.UIEnable(false);
+            {
+                //c.UIEnable(false);
+                c.canvas.SetActive(false);
+                if (DataManager.Instance.playerData.isBoarding && isLeft && !isEnable)
+                {
+                    c.ray.SetActive(c.ray.CompareTag("Right"));
+                }
+                else
+                {
+                    c.ray.SetActive(false);
+                }
+            }
         }
+        // 현재 캔버스
+        canvas.SetActive(isEnable);
+        ray.SetActive(isEnable);
     }
     public void Close()
     {

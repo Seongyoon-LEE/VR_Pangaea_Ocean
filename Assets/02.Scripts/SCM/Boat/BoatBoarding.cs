@@ -8,22 +8,22 @@ public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
     private Transform playerTr;
-    private bool isBoarding = false;
     private BoatCockpit hand;
     protected override void Start()
     {
-        base.Start();
         playerTr = GameObject.FindWithTag(playerTag).transform;
+        canvas = GameObject.Find("Canvas_Boarding").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         hand = transform.parent.transform.GetChild(2).GetComponent<BoatCockpit>();
+        base.Start();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
         {
-            isBoarding = false;
+            DataManager.Instance.playerData.isBoarding = false;
             UIEnable(true);
         }
     }
@@ -32,8 +32,7 @@ public class BoatBoarding : ShowCanvas
         if (other.CompareTag(playerTag))
         {
             UIEnable(false);
-            ray.SetActive(isBoarding);
-            isBoarding = false;
+            ray.SetActive(DataManager.Instance.playerData.isBoarding);
         }
     }
 
@@ -42,7 +41,7 @@ public class BoatBoarding : ShowCanvas
     {
         if (playerTr != null)
         {
-            isBoarding = true;
+            DataManager.Instance.playerData.isBoarding = true;
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
             for (int i = 0; i < hand.equipmentList.Count; i++)
             {

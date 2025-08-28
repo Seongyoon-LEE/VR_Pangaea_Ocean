@@ -10,10 +10,11 @@ public class BoatGetOff : ShowCanvas
 
     protected override void Start()
     {
-        base.Start();
         playerTr = GameObject.FindWithTag(playerTag).transform;
+        canvas = GameObject.Find("Canvas_GetOff").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
+        base.Start();
     }
 
     // 버튼 이벤트
@@ -22,6 +23,7 @@ public class BoatGetOff : ShowCanvas
         // 바라보고 있는 방향 유지 한채 이동
         Vector3 dir = (playerTr.position - transform.parent.position).normalized;
         playerTr.position += dir * 4f;
+        DataManager.Instance.playerData.isBoarding = false;
     }
     private void OnTriggerEnter(Collider other)
     {
