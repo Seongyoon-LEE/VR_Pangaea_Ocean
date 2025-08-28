@@ -8,15 +8,16 @@ public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
     private Transform playerTr;
-    private bool isBoarding = false;
+    public bool isBoarding = false;
     private BoatCockpit hand;
     protected override void Start()
     {
-        base.Start();
         playerTr = GameObject.FindWithTag(playerTag).transform;
+        canvas = GameObject.Find("Canvas_Boarding").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         hand = transform.parent.transform.GetChild(2).GetComponent<BoatCockpit>();
+        base.Start();
     }
 
     private void OnTriggerEnter(Collider other)

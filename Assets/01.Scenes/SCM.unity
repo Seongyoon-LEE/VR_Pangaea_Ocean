@@ -1015,11 +1015,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 187782954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc874c04f57860499dab0697981424f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a36a3512af8ecb4c80a6ee405858ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passM: {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
-  unPassM: {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
+  materials:
+  - {fileID: 2100000, guid: 54e000e3a05faf143bce6082ae793e5e, type: 2}
+  - {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
+  - {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
 --- !u!1 &372605478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5779418042418855683, guid: 45db5c5d4d99f3143818e8d7bd902e26,
@@ -1827,11 +1829,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 616965643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc874c04f57860499dab0697981424f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a36a3512af8ecb4c80a6ee405858ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passM: {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
-  unPassM: {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
+  materials:
+  - {fileID: 2100000, guid: 54e000e3a05faf143bce6082ae793e5e, type: 2}
+  - {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
+  - {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
 --- !u!4 &625360457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
@@ -2519,11 +2523,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 953331847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc874c04f57860499dab0697981424f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a36a3512af8ecb4c80a6ee405858ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passM: {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
-  unPassM: {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
+  materials:
+  - {fileID: 2100000, guid: 54e000e3a05faf143bce6082ae793e5e, type: 2}
+  - {fileID: 2100000, guid: 089e669a649cd1743b6ab3c143ed0914, type: 2}
+  - {fileID: 2100000, guid: c06296b1f3890a14385b9338e960c4d5, type: 2}
 --- !u!1 &1099058608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5059,18 +5065,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1758484149}
   m_SourcePrefab: {fileID: 100100000, guid: 45db5c5d4d99f3143818e8d7bd902e26, type: 3}
---- !u!1 &81189977736645532 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2049797563595037979, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2245313545325013679}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &201111872178547056 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3481319187965518559, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2245313545325013679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &277098477080661666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5275,6 +5269,11 @@ PrefabInstance:
       propertyPath: ray
       value: 
       objectReference: {fileID: 1509252555}
+    - target: {fileID: 4502079085162420449, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5928606172665612797, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5310,6 +5309,11 @@ PrefabInstance:
       propertyPath: ray
       value: 
       objectReference: {fileID: 1509252555}
+    - target: {fileID: 6422318288489849252, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6496007514649516318, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}
       propertyPath: m_Name
@@ -5527,12 +5531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6810683575481890668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3967583442321121893 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8044713226137728212, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2245313545325013679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4059641913344358447
 Transform:
   m_ObjectHideFlags: 0
@@ -5824,7 +5822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 201111872178547056}
+      objectReference: {fileID: 0}
     - target: {fileID: 6169414927350866490, guid: fba9338b60980a548b4d408a5ad981d9,
         type: 3}
       propertyPath: ray
@@ -5834,7 +5832,7 @@ PrefabInstance:
         type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 81189977736645532}
+      objectReference: {fileID: 0}
     - target: {fileID: 6169414927350866490, guid: fba9338b60980a548b4d408a5ad981d9,
         type: 3}
       propertyPath: equipmentList.Array.data[0]
@@ -5919,7 +5917,7 @@ PrefabInstance:
         type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 3967583442321121893}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6168,6 +6166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6810683575481890668}
   - component: {fileID: 7556813093191910784}
+  - component: {fileID: 7556813093191910785}
   m_Layer: 0
   m_Name: Rub
   m_TagString: Untagged
@@ -6288,6 +6287,18 @@ MonoBehaviour:
   m_OnLeverDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7556813093191910785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7556813093191910783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473b9116aa177664e8ebff45910de285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7714986948208692097
 Transform:
   m_ObjectHideFlags: 0

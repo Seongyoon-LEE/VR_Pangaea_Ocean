@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Puzzle : MonoBehaviour
 {
+    private enum State
+    {
+        NOMAL, TRUE, FALSE
+    }
     private readonly int hashIsOpen = Animator.StringToHash("isOpen");
     private XRKnob knob;
-    public List<GameObject> _light;
+    public List<LightMaterial> _light;
     public int curQuestion = 0;
     private int answerCount = 0;
     InteractionLayerMask originLayerMask;
@@ -36,13 +39,13 @@ public class Puzzle : MonoBehaviour
         if (knob.value >= 0.5 && knob.value < 0.7)
         {
             print("정답");
-            _light[curQuestion++].GetComponent<PuzzleMaterial>().OnPuzzleCorrect();
+            _light[curQuestion++].MaterialSetting((int)State.TRUE);
             answerCount++;
         }
         else
         {
             print("오답");
-            _light[curQuestion++].GetComponent<PuzzleMaterial>().OnPuzzleIncorrect();
+            _light[curQuestion++].MaterialSetting((int)State.FALSE);
         }
 
         if (answerCount == 3)
@@ -61,5 +64,13 @@ public class Puzzle : MonoBehaviour
         knob.value = Mathf.Clamp(knob.value, 0.0f, 1.0f);
         if (curQuestion < 3)
             knob.interactionLayers = originLayerMask;
+    }
+
+    public void LightClear()
+    {
+        foreach (var m in _light)
+        {
+            m.MaterialSetting((int)State.NOMAL);
+        }
     }
 }
