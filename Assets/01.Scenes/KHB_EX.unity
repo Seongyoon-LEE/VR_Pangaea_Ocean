@@ -2128,7 +2128,7 @@ MonoBehaviour:
   leftMoveAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Left Move
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: d7620c74-3932-45ca-9405-f8f1a9478b01
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   rightMoveAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Right Move
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 98384614-36fe-429e-8479-93892b6cc967
@@ -8343,7 +8343,7 @@ Transform:
   m_GameObject: {fileID: 6692476992298111412}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16643906, y: 1.039, z: 0}
+  m_LocalPosition: {x: 0.16643906, y: 1.039, z: 1.087}
   m_LocalScale: {x: 1.066785, y: 1.5719, z: 1.066785}
   m_ConstrainProportionsScale: 0
   m_Children: []
