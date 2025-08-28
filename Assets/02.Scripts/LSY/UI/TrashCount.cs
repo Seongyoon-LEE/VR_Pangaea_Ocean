@@ -10,6 +10,7 @@ public class TrashCount : MonoBehaviour
 {
     [SerializeField] TMP_Text trashCountText;
     [SerializeField] VacuumCleaner vacuumCleaner;
+    [SerializeField] Garbage garbageBox;
 
     void Start()
     {
@@ -18,6 +19,9 @@ public class TrashCount : MonoBehaviour
 
         if (vacuumCleaner == null)
             vacuumCleaner = FindObjectOfType<VacuumCleaner>(true);
+
+        if (garbageBox == null)
+            garbageBox = FindObjectOfType<Garbage>(true);
 
         trashCountText.text = DataManager.Instance.playerData.weight.ToString("F2") + " kg / 300 kg";
 
@@ -30,5 +34,11 @@ public class TrashCount : MonoBehaviour
                 trashCountText.color = Color.red;
             }
         };
+        garbageBox.onTrashSubmitted += () =>
+        {
+            trashCountText.text = DataManager.Instance.playerData.weight.ToString("F2") + " kg / 300 kg";
+            trashCountText.color = Color.white;
+        };
+
     }
 }

@@ -43,6 +43,8 @@ public class GarbageUI : MonoBehaviour
     }
     private void UpdateUI()
     {
+        cleanTrashCount = 0;
+        totalCnt = 0;
         foreach (var trashs in DataManager.Instance.dicTrash)
         {
             cleanTrashCount += trashs.Value.Count(x => x.status == (int)TrashStatus.Clean);

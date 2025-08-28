@@ -34,6 +34,7 @@ public class Garbage : MonoBehaviour
         int scoreToAdd = Mathf.RoundToInt(collectedWeight); // 현재 무게를 점수로 환산 (1:1 비율)
         DataManager.Instance.playerData.score += scoreToAdd; // 점수 추가
         DataManager.Instance.playerData.weight = 0; // 무게 초기화
+        DataManager.Instance.playerData.trashIdList.Clear(); // 수집한 쓰레기 ID 리스트 초기화
 
         Debug.Log($"쓰레기 제출 완료! {scoreToAdd}점 획득! (총 점수: {DataManager.Instance.playerData.score})");
         outLineCtrl?.OffOutline();
