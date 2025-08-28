@@ -28,9 +28,9 @@ Material:
   m_ValidKeywords:
   - _ENABLE_WAVES
   - _FOAM
-  - _FOAM_STYLE_STYLE3
+  - _FOAM_STYLE_STYLE1
   - _REFRACTION
-  - _TEXTUREID_TEX1
+  - _TEXTUREID_TEX2
   m_InvalidKeywords:
   - STYLE1
   - STYLE2

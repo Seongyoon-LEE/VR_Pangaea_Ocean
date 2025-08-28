@@ -34,5 +34,7 @@ public class PlayerData
 
     public int score;
 
+    public bool isBoarding = false;
+
     public Dictionary<int, Vector2Int> trashIdList = new Dictionary<int, Vector2Int>();
 }
