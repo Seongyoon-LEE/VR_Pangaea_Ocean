@@ -15,11 +15,11 @@ public class MenuEnable : ShowCanvas
 
     private void OnEnable()
     {
-        mainInput.action.started += x => UIEnable(!canvas.activeSelf);
+        mainInput.action.started += x => UIEnable(!canvas.activeSelf, true);
     }
     private void OnDisable()
     {
-        mainInput.action.started -= x => UIEnable(!canvas.activeSelf);
+        mainInput.action.started -= x => UIEnable(!canvas.activeSelf, true);
         mainInput.action.Disable();
     }
 }

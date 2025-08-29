@@ -8,7 +8,6 @@ public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
     private Transform playerTr;
-    public bool isBoarding = false;
     private BoatCockpit hand;
     protected override void Start()
     {
@@ -24,7 +23,7 @@ public class BoatBoarding : ShowCanvas
     {
         if (other.CompareTag(playerTag))
         {
-            isBoarding = false;
+            DataManager.Instance.playerData.isBoarding = false;
             UIEnable(true);
         }
     }
@@ -33,7 +32,7 @@ public class BoatBoarding : ShowCanvas
         if (other.CompareTag(playerTag))
         {
             UIEnable(false);
-            ray.SetActive(isBoarding);
+            ray.SetActive(DataManager.Instance.playerData.isBoarding);
         }
     }
 
@@ -42,7 +41,7 @@ public class BoatBoarding : ShowCanvas
     {
         if (playerTr != null)
         {
-            isBoarding = true;
+            DataManager.Instance.playerData.isBoarding = true;
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
             for (int i = 0; i < hand.equipmentList.Count; i++)
             {
