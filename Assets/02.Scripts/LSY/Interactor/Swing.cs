@@ -11,8 +11,8 @@ public class Swing : MonoBehaviour
     public float hitSpeedThreshold = 10f; // 이 속도 이상일때만 히트
     public float hitCooldown = 0.15f; // 히트 쿨타임(연타 판정 방지)
 
-    [Header("태그")]
-    public string BigTrashTag = "BigTrash"; // 광석 태그
+    [Header("레이어")]
+    public LayerMask hittableLayers;
 
     Vector3 prevTipPos; // 이전 프레임 팁 위치
     float curSpeed; // 이번 프레임 팁 속도(거리/시간)
@@ -45,35 +45,17 @@ public class Swing : MonoBehaviour
     }
     void TryHit(Collider other)
     {
-        if (!string.IsNullOrEmpty(BigTrashTag))
-        {
-            if(!other.CompareTag(BigTrashTag)) return; // 태그가 BigTrash가 아니면 리턴
-        }
+        // 부딪힌 레이어가 때릴수 있는 레이어인지 확인 
+        if ((hittableLayers.value & (1 << other.gameObject.layer)) == 0) return; 
         if (!CanHitNow()) return; // 히트 가능 여부 확인
-        print(curSpeed);
-        // 광석에 히트 전달
-        BigTrashTakeHit BigTrash = other.GetComponent<BigTrashTakeHit>();
-        BreakableTrash Breakable = other.GetComponent<BreakableTrash>();
-        print(BigTrash);
-        if (BigTrash != null)
-        {
-            BigTrash.PlayParticle(this.tip);
-            //BigTrash.TakeHit();
-            if (BigTrash.hitsLeft <= 0) // 광석 파괴
-            {
-                BigTrash.BreakEffect();
-                Breakable.Break();
-            }
-            
 
+        IHittable hittableObj = other.GetComponent<IHittable>();
+        if (hittableObj != null)
+        {
+            hittableObj.TakeHit(this.tip);
             lastHitTime = Time.time; // 히트 시간 갱신
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.LogWarning("Collision Detected");
-    //    TryHit(collision.collider);
-    //}
     private void OnTriggerEnter(Collider other)
     {
         TryHit(other);

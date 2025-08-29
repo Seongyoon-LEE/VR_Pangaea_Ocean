@@ -13,12 +13,10 @@ public class GarbageUI : MonoBehaviour
     [SerializeField] TMP_Text scoreText; // 점수 텍스트
 
     [Header("스크립트 참조")]
-    [SerializeField] BoatBoarding boatBoarding; // 보트 탑승 스크립트
     [SerializeField] Garbage garbage; // 쓰레기통 스크립트
  
     void Start()
     {
-        boatBoarding = GameObject.FindObjectOfType<BoatBoarding>(true);
         garbage = GameObject.FindObjectOfType<Garbage>(true);
         //제출이 끝나면 UI 새로고침 하라는 방송을 듣고 UpdateUI 함수 실행
         if(garbage != null)
@@ -31,6 +29,18 @@ public class GarbageUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        StartCoroutine(UiUpdateDelay());
+    }
+    private IEnumerator UiUpdateDelay()
+    {
+        while(DataManager.Instance == null)
+        {
+            yield return null;
+        }
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
         UpdateUI();
     }
 

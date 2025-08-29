@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigTrashTakeHit : MonoBehaviour
+public class BigTrashTakeHit : MonoBehaviour,IHittable
 {
     [Header("내구도(2~3)")]
     public int minHits = 1;
@@ -11,31 +11,41 @@ public class BigTrashTakeHit : MonoBehaviour
     [Header("이펙트")]
     public ParticleSystem hitEffect; // 히트 이펙트
     public ParticleSystem breakEffect; // 파괴 이펙트
-    //Transform tip; // 곡괭이 끝부분 트랜스폼
 
+    BreakableTrash breakable;
     public int hitsLeft;
+
     void Start()
     {
         //2~3회 랜덤 설정
         hitsLeft = Random.Range(minHits, maxHits + 1);
+        breakable = GetComponent<BreakableTrash>();
     }
-
-
-    public void PlayParticle(Transform tip)
+    public void TakeHit(Transform hitPoint)
     {
-            var hitFX = Instantiate(hitEffect, tip.position, Quaternion.LookRotation(-tip.forward));
-            hitFX.Play(); // 이펙트 재생
-            print($"Hits left: {hitsLeft}");
-            hitsLeft--;
-            Destroy(hitFX, 1f); // 이펙트 1초 후 제거  
-            if (hitsLeft <= 0) BreakEffect(); // 파괴 이펙트 실행
-        
+        hitsLeft--;
+        print($"BigTrash HitLeft : {hitsLeft}");
+
+        if (hitsLeft <= 0)
+        {
+            if (breakable != null)
+            {
+                breakable.Break();
+            }
+            BreakEffect(); // 파괴 이펙트 함수
+            //Destroy(gameObject, 0.1f);
+        }
+        else
+        {
+            var hitFX = Instantiate(hitEffect, hitPoint.position, Quaternion.LookRotation(-hitPoint.forward));
+            Destroy(hitFX.gameObject, 1f);
+        }
     }
 
     public void BreakEffect()
     {
         var breakFX = Instantiate(breakEffect, transform.position, Quaternion.identity);
         breakEffect.Play(); // 파괴 이펙트 재생
-        Destroy(breakFX,1f); // 오브젝트 파괴
+        Destroy(breakFX.gameObject,1f); // 오브젝트 파괴
     }
 }
