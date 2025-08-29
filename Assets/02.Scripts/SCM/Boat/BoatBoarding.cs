@@ -32,7 +32,7 @@ public class BoatBoarding : ShowCanvas
         if (other.CompareTag(playerTag))
         {
             UIEnable(false);
-            ray.SetActive(DataManager.Instance.playerData.isBoarding);
+            //ray.SetActive(DataManager.Instance.playerData.isBoarding);
         }
     }
 

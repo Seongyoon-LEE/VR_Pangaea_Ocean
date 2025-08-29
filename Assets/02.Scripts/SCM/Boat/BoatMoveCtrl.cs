@@ -19,7 +19,7 @@ public class BoatMoveCtrl : MonoBehaviour
     void Update()
     {
         if (!cockpit.isCockpit) return;
-
+        cockpit.ray.SetActive(false);
         Vector2 input = moveInput.action.ReadValue<Vector2>();
         Vector3 dir = transform.forward * input.y;
         transform.position += dir * moveSpeed * Time.deltaTime;
@@ -29,6 +29,7 @@ public class BoatMoveCtrl : MonoBehaviour
         if (activateInput.action.WasPressedThisFrame())
         {
             cockpit.PlayerEnable(true);
+            cockpit.ray.SetActive(true);
         }
     }
 }

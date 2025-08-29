@@ -41,40 +41,27 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스랑 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
-        CanvasOnOff(isEnable, isLeft);
-
-        //if (isEnable)
-        //{ 
-        //    CanvasOnOff(isLeft);
-        //}
-        //canvas.SetActive(isEnable);
-        //ray.SetActive(isEnable);
-    }
-
-    // 다른 캔버스 종료하는 로직
-    private void CanvasOnOff(bool isEnable, bool isLeft)
-    {
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
         // 현재 상속 받고 있는 다른 캔버스 종료
         foreach (ShowCanvas c in allCanvas)
         {
             if (c.canvas != canvas)
             {
-                //c.UIEnable(false);
                 c.canvas.SetActive(false);
-                if (DataManager.Instance.playerData.isBoarding && isLeft && !isEnable)
-                {
-                    c.ray.SetActive(c.ray.CompareTag("Right"));
-                }
-                else
-                {
-                    c.ray.SetActive(false);
-                }
+                // 탑승중에 UI가 꺼질 때 오른쪽 레이는 켜두기
+                c.ray.SetActive(DataManager.Instance.playerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
             }
         }
+        bool curRay = isEnable;
+        // 탑승중에 오른손이 현재 UI와 같이 꺼지는 것을 막기
+        if (DataManager.Instance.playerData.isBoarding && !isEnable && !isLeft)
+        {
+            curRay = true;
+        }
+
         // 현재 캔버스
         canvas.SetActive(isEnable);
-        ray.SetActive(isEnable);
+        ray.SetActive(curRay);
     }
     public void Close()
     {
