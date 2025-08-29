@@ -35,8 +35,6 @@ public class BoatCockpit : ShowCanvas
         if (other.CompareTag(playerTag))
         {
             UIEnable(false);
-            if (!isCockpit)
-                ray.SetActive(true);
         }
     }
 
@@ -61,7 +59,6 @@ public class BoatCockpit : ShowCanvas
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;
         playerTr.parent = isSetting ? null : transform.parent;
-
         equipmentList[curEquipment].SetActive(isSetting);
         if (curEquipment == 0) equipmentList[4].SetActive(isSetting);
     }
