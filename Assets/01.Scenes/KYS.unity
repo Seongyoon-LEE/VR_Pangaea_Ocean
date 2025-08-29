@@ -189,6 +189,8 @@ MonoBehaviour:
     rotZ: 0
     oxygen: 100
     weight: 0
+    score: 0
+    isBoarding: 0
 --- !u!1 &288117371
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +551,8 @@ MonoBehaviour:
     rotZ: 0
     oxygen: 100
     weight: 0
+    score: 0
+    isBoarding: 0
 --- !u!4 &1321525025
 Transform:
   m_ObjectHideFlags: 0
