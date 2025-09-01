@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// 왼손에 사용되는 메뉴들
 public class MenuEnable : ShowCanvas
 {
     public InputActionProperty mainInput; // 사용하는 버튼 - 드래그 앤 드롭
