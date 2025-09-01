@@ -13,9 +13,9 @@ public class Seaweed : MonoBehaviour, IHittable
         {
             // 해초 베이는 이펙트 생성 
             var cutFX = Instantiate(cutEffect,hitPoint.position,Quaternion.LookRotation(-hitPoint.forward));
-            Destroy(cutFX, 1f);
+            Destroy(cutFX.gameObject, 1f);
         }
         // 해초는 한방에 베이니까 바로 자기 자신 파괴 
-        Destroy(gameObject);
+        this.GetComponent<TrashData>().DisActivate();
     }
 }

@@ -23,6 +23,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
     }
     public void TakeHit(Transform hitPoint)
     {
+        
         hitsLeft--;
         print($"BigTrash HitLeft : {hitsLeft}");
 
