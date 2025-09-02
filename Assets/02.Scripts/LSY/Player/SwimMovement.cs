@@ -7,7 +7,7 @@ public class SwimMovement : MonoBehaviour
 {
     Transform cameraTr;
     CharacterController controller;
-    [SerializeField] float swimSpeed = 5f;
+    public float swimSpeed = 5f;
 
     [SerializeField] InputActionProperty leftMoveAction; // ¿ÞÂÊ Á¶ÀÌ½ºÆ½
     [SerializeField] InputActionProperty rightMoveAction; // ¿À¸¥ÂÊ Á¶ÀÌ½ºÆ½ 

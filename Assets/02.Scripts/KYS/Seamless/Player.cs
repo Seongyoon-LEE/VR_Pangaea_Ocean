@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         this.mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(mouseRay.origin, mouseRay.direction * 100, Color.red);
 
-        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭(테스트용)
+        /*if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭(테스트용)
         {
             RaycastHit hit;
             if (Physics.Raycast(mouseRay, out hit, 100f, 1 << 6)) // 6 : 쓰레기 레이어
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
                     grassTiedTrash.GrassCut(); // 풀 벨 때 함수 호출
                 }
             } 
-        }
+        }*/
     }
     private void PlayerDie()
     {

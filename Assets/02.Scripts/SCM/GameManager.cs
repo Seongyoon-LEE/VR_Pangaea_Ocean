@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     }
     public State state = State.NOMAL;
     public static GameManager Instance;
+    public int[] answerArr = { 4, 1, 6 }; // ΖΫΑρ Α¤΄δΏ΅ »ηΏλ(°ΕΊΟΐΜ µξ²®Αϊ, ΖΫΑρ Α¤΄δ)
     void Awake()
     {
         if (Instance == null)
