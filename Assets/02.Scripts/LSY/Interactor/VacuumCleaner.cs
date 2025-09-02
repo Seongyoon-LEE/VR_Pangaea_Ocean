@@ -78,7 +78,8 @@ public class VacuumCleaner : MonoBehaviour
         if (Physics.Raycast(FirePos.position, FirePos.forward, out var hit, rayDistance, layerMask))
         {
             Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
-            hit.collider.gameObject.SetActive(false); // 레이저가 충돌한 오브젝트를 비활성화합니다.
+            hit.collider.GetComponent<TrashData>().Clean();
+            hit.collider.GetComponent<TrashData>().DisActivate(); // 레이저가 충돌한 오브젝트를 비활성화합니다.
             DataManager.Instance.playerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
             if(DataManager.Instance.playerData.weight >= 300)
             {

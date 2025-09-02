@@ -11,7 +11,7 @@ public class GrassTiedTrash : TrashData
     {
         this.grassObj = this.transform.GetChild(0);
         this.transform.position = new Vector3(this.Info.posX, this.Info.posY - this.Info.height, this.Info.posZ);
-        this.grassObj.localScale = new Vector3(4, this.Info.height * 2, 4);
+        this.transform.localScale = new Vector3(1, this.Info.height * 2, 1);
     }
     public void SetInnerTrash(List<GameObject> trashes)
     {
