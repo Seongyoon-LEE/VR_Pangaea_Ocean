@@ -13,8 +13,8 @@ public class ShowCanvas : MonoBehaviour
     protected virtual void Start()
     {
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
-        canvas.SetActive(false);
-        ray.SetActive(false);
+        if (canvas != null) canvas.SetActive(false);
+        if (ray != null) ray.SetActive(false);
     }
 
     

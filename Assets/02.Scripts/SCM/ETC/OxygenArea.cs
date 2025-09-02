@@ -52,6 +52,7 @@ public class OxygenArea : MonoBehaviour
             }
             else
             {
+                // 산소량이 가득 찼을 때 산소 감소량 0으로
                 GameManager.Instance.state = (GameManager.State)99;
             }
             

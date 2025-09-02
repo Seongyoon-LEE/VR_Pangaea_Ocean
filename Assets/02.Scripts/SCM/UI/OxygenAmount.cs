@@ -21,11 +21,11 @@ public class OxygenAmount : MonoBehaviour
         {
             DataManager.Instance.playerData.oxygen += GameManager.Instance.state switch
             {
-                GameManager.State.NOMAL => -1,
-                GameManager.State.RECOVERY => 1,
-                GameManager.State.VOLCANO => -2,
-                GameManager.State.MAGMA => -(maxOxygenPoint * 0.1f),
-                _ => 0
+                GameManager.State.NOMAL => -1, // 평상시 수중
+                GameManager.State.RECOVERY => 1, // 회복
+                GameManager.State.VOLCANO => -2, // 화산지대
+                GameManager.State.MAGMA => -(maxOxygenPoint * 0.1f), // 용암에 닿았을 때
+                _ => 0 // 기타 사항
             };
             DataManager.Instance.playerData.oxygen = Mathf.Clamp(DataManager.Instance.playerData.oxygen, 0, maxOxygenPoint);
 
