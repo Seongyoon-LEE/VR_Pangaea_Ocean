@@ -5,11 +5,12 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     public bool isBreak = false;
-    private List<GameObject> breakablePieces; // 드래그 앤 드롭
-    public int minCount = 3; // 인스펙터에서 수정
-    public int maxCount = 6; // 인스펙터에서 수정
+    private List<GameObject> breakablePieces = new List<GameObject>(); // 드래그 앤 드롭
+    public int minCount = 3; // 인스펙터
+    public int maxCount = 6; // 인스펙터
     private int breakableCount;
     private Transform possiblePiece;
+    
     void Start()
     {
         possiblePiece = transform.GetChild(0);

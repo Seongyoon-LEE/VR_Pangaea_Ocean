@@ -9,13 +9,15 @@ public class BoatBoarding : ShowCanvas
     private readonly string playerTag = "Player";
     private Transform playerTr;
     private BoatCockpit hand;
+    private GameObject trashBoard;
     protected override void Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
-        canvas = GameObject.Find("Canvas_Boarding").gameObject;
+        canvas = GameObject.Find("Canvas_Boarding");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         hand = transform.parent.transform.GetChild(2).GetComponent<BoatCockpit>();
+        trashBoard = GameObject.Find("GarbageCanavs");
         base.Start();
     }
 
@@ -42,6 +44,8 @@ public class BoatBoarding : ShowCanvas
         {
             DataManager.Instance.playerData.isBoarding = true;
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
+            if (trashBoard != null) 
+                trashBoard.SetActive(true);
             for (int i = 0; i < hand.equipmentList.Count; i++)
             {
                 hand.equipmentList[i].SetActive(i == 0 || i == 4);
