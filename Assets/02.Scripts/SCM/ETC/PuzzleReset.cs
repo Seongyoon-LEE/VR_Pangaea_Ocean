@@ -7,14 +7,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PuzzleReset : MonoBehaviour
 {
     private XRLever lever;
-    private Puzzle puzzle;
+    [SerializeField]private Puzzle puzzle;
     InteractionLayerMask originLayerMask; // 레이어 설정
     void Start()
     {
         lever = GetComponent<XRLever>();
         originLayerMask = lever.interactionLayers;
+        puzzle = GameObject.Find("PuzzleWheel").GetComponent<Puzzle>(); // 조명 초기화 메서드 가져오기 위해서
         lever.selectExited.AddListener(x => LightClear());
-        puzzle = GameObject.Find("Wheel").GetComponent<Puzzle>(); // 조명 초기화 메서드 가져오기 위해서
     }
 
     void LightClear()
