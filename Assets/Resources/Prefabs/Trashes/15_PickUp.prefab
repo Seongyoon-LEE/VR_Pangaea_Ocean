@@ -3118,8 +3118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce4bfc5406d6c8408d92e4b4ef1baa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHits: 1
-  maxHits: 3
+  minHits: 3
+  maxHits: 10
   hitEffect: {fileID: 5292830082072807135, guid: 409a05aabcb286e49a3095a857d52078,
     type: 3}
   breakEffect: {fileID: 8786822359077997505, guid: c1b2caa4371ba154fa8e57d2351d83e3,

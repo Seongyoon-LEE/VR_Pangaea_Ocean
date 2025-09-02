@@ -15,7 +15,7 @@ public class TrashCount : MonoBehaviour
     void Start()
     {
         if(trashCountText == null)
-            trashCountText = transform.Find("Panel_Count").GetChild(0).GetComponent<TMP_Text>();
+            trashCountText = GameObject.Find("Panel_Count").GetComponentInChildren<TMP_Text>();
 
         if (vacuumCleaner == null)
             vacuumCleaner = FindObjectOfType<VacuumCleaner>(true);

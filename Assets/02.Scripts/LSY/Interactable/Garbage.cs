@@ -10,12 +10,17 @@ public class Garbage : MonoBehaviour
     Vector3 initPos; // 초기 위치 저장 변수 y값 0.0
     public Action onTrashSubmitted; // 쓰레기 제출시 실행할 델리게이트
     [SerializeField] OutLineCtrl outLineCtrl;
-    void Start()
+    IEnumerator Start()
     {
         if (trashPileObj != null)
             initPos = trashPileObj.transform.localPosition; // 초기 위치 저장
         if(outLineCtrl == null)
             outLineCtrl = GetComponent<OutLineCtrl>();
+
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
 
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
@@ -60,9 +65,10 @@ public class Garbage : MonoBehaviour
         float percentage = (float)cleanTrashCount / totalCnt;
 
         // 쓰레기 더미의 y 위치를 청소한 쓰레기 비율에 따라 조정
-        if (percentage >= 0.9f)
+        if (percentage >= 0.8f)
         {
-            SetTrashState(true, 0.6f); // 90% 이상 청소 시 가장 높은 상태
+            SetTrashState(true, 0.6f); // 80% 이상 청소 시 가장 높은 상태
+
         }
         else if (percentage >= 0.6f)
         {

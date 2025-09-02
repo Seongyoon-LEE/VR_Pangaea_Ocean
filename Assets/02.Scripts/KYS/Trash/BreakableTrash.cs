@@ -66,6 +66,7 @@ public class BreakableTrash : TrashData
     {
         // 풀에 넣을때 조각들을 다시 modelParent 부모로 갖게 돌려놓고, 위치 저장했던거 넣어주고, 중력이랑 콜라이더 끄고
         this.modelParent.gameObject.SetActive(true); // 모델 부모를 활성화
+        this.GetComponent<BoxCollider>().enabled = true;
         for (int i = 0; i < breakablePieces.Count; i++)
         {
             breakablePieces[i].transform.parent = this.modelParent; // 모델 부모로 설정
