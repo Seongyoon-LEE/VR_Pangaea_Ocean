@@ -12,7 +12,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
     public ParticleSystem hitEffect; // 히트 이펙트
     public ParticleSystem breakEffect; // 파괴 이펙트
 
-    BreakableTrash breakable;
+    BreakableTrash breakable;   
     public int hitsLeft;
 
     void Start()
