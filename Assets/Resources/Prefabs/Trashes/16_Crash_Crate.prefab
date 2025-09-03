@@ -161,6 +161,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &131644359988515536
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +726,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &1007539617347179263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +1935,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &2372187129795118288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5361880490482669990}
+  m_Layer: 8
+  m_Name: Im
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5361880490482669990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372187129795118288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3344629536849535418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2415676121782859160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +2932,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &4241212731254104798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3765,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &4895380350668015784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4195,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &5253260280681299572
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,6 +4230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8408555857290642513}
+  - {fileID: 5361880490482669990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3135642837754810198
@@ -4270,6 +4307,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
   breakablePieces:
   - {fileID: 5880017051624131134}
   - {fileID: 852445615353608329}
@@ -4277,11 +4315,9 @@ MonoBehaviour:
   - {fileID: 6143224564925600993}
   - {fileID: 5136542052195226983}
   - {fileID: 5496500299226450098}
-  - {fileID: 6818231158093480996}
-  - {fileID: 8918206478064410117}
   - {fileID: 4748468171958073131}
-  - {fileID: 127590381759478491}
-  modelParent: {fileID: 8408555857290642513}
+  modelParent_Po: {fileID: 8408555857290642513}
+  modelParent_Im: {fileID: 5361880490482669990}
 --- !u!114 &-2217399868389644125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4597,6 +4633,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &5567794598060614163
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,6 +5332,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &6143224564925600993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5495,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &6155885812238209513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6424,6 +6463,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!1 &6891289494895804164
 GameObject:
   m_ObjectHideFlags: 0
@@ -8147,3 +8187,4 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
