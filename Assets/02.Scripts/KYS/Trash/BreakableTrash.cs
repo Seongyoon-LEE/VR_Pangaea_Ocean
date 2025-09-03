@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public struct InitialTransform // TransformÀ» ±íÀº º¹»çÇÏ±â À§ÇÑ ±¸Á¶Ã¼
+public struct InitialTransform // Transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼
 {
     public Vector3 localPosition;
     public Quaternion localRotation;
@@ -18,71 +18,82 @@ public struct InitialTransform // TransformÀ» ±íÀº º¹»çÇÏ±â À§ÇÑ ±¸Á¶Ã¼
 }
 public class BreakableTrash : TrashData
 {
-    public List<GameObject> breakablePieces;
-    public Transform modelParent;
-    private List<InitialTransform> pieceTransformList = new List<InitialTransform>(); // Á¶°¢µéÀÇ TransformÀ» ÀúÀåÇÒ ¸®½ºÆ®
+    [SerializeField]
+    private List<GameObject> breakablePieces;
+    private List<GameObject> breakables = new List<GameObject>();
+    public Transform modelParent_Po;
+    public Transform modelParent_Im;
+    private List<InitialTransform> pieceTransformList = new List<InitialTransform>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     private void Start()
     {
-        // Á¶°¢µéÀÇ ±âº» À§Ä¡¸¦ ÀúÀå, ¿ÀºêÁ§Æ® Ç®·Î ´Ù½Ã »ç¿ëÇÒ ¶§ ÇØ´ç À§Ä¡·Î ÃÊ±âÈ­
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Ç®ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ê±ï¿½È­
         foreach (var piece in breakablePieces)
         {
-            pieceTransformList.Add(new InitialTransform(piece.transform)); // Á¶°¢µéÀÇ TransformÀ» ÀúÀå
+            pieceTransformList.Add(new InitialTransform(piece.transform)); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         
     }
     public void SetInnerTrash(List<TrashInfo> infos)
     {
-        //infos : ³»ºÎÀÇ ¾²·¹±â
-        this.Info = infos[0]; // Ã¹¹øÂ° Á¤º¸·Î ÃÊ±âÈ­, À§Ä¡ Àû¿ë¿ë
+        //infos : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        this.Info = infos[0]; // Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­, ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½
+        for (int i = 0; i < this.Info.count; i++)
+        {
+            this.breakables.Add(this.breakablePieces[i]);
+        }
         for (int i = 0; i < infos.Count; i++)
         {
-            breakablePieces[i].GetComponent<BreakedTrash>().Info = infos[i]; // info¸¦ ³Ö¾îÁÜ
+            breakables[i].GetComponent<BreakedTrash>().Info = infos[i]; // infoï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
         }
-        if (infos.Find(x => x.status == (int)TrashStatus.Clean) != null) // Ã»¼ÒµÈ Á¶°¢ÀÌ ÇÏ³ª¶óµµ ÀÖ´Ù¸é
+        if (infos.Find(x => x.status == (int)TrashStatus.Clean) != null) // Ã»ï¿½Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½
         {
             this.Break();
             for (int i = 0; i < infos.Count; i++)
             {
                 if (infos[i].status == (int)TrashStatus.Clean)
                 {
-                    this.breakablePieces[i].SetActive(false); // Ã»¼ÒµÈ Á¶°¢Àº ºñÈ°¼ºÈ­
+                    this.breakables[i].SetActive(false); // Ã»ï¿½Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
                 }
             }
         }
     }
     public void Break()
     {
-        this.GetComponent<BoxCollider>().enabled = false; // ¹Ú½º ÄÝ¶óÀÌ´õ ºñÈ°¼ºÈ­
-        foreach (var piece in breakablePieces)
+        this.GetComponent<BoxCollider>().enabled = false; // ï¿½Ú½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
+        foreach (var piece in breakables)
         {
-            piece.transform.parent = this.transform; // ºñÈ°¼ºÈ­ÇÒ ¸ðµ¨ ¸»°í ±× »óÀ§¸¦ ºÎ¸ð·Î ¼³Á¤
-            piece.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            piece.gameObject.GetComponent<MeshCollider>().enabled = true;
-            piece.gameObject.layer = 6; // ÀÏ¹Ý ¾²·¹±â ·¹ÀÌ¾î·Î º¯°æ
+            piece.transform.parent = this.transform; // ï¿½ï¿½È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            piece.GetComponent<Rigidbody>().useGravity = true;
+            piece.GetComponent<MeshCollider>().enabled = true;
+            piece.layer = 6; // ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
-        this.modelParent.gameObject.SetActive(false);
+        
+        this.modelParent_Po.gameObject.SetActive(false);
+        this.modelParent_Im.gameObject.SetActive(false);
     }
     public override void DisActivate()
     {
-        // Ç®¿¡ ³ÖÀ»¶§ Á¶°¢µéÀ» ´Ù½Ã modelParent ºÎ¸ð·Î °®°Ô µ¹·Á³õ°í, À§Ä¡ ÀúÀåÇß´ø°Å ³Ö¾îÁÖ°í, Áß·ÂÀÌ¶û ÄÝ¶óÀÌ´õ ²ô°í
-        this.modelParent.gameObject.SetActive(true); // ¸ðµ¨ ºÎ¸ð¸¦ È°¼ºÈ­
+        // Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ modelParent ï¿½Î¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ö°ï¿½, ï¿½ß·ï¿½ï¿½Ì¶ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½
+        this.modelParent_Po.gameObject.SetActive(true); // ï¿½ï¿½ ï¿½Î¸ï¿½ È°ï¿½ï¿½È­
+        this.modelParent_Im.gameObject.SetActive(true);
         this.GetComponent<BoxCollider>().enabled = true;
-        for (int i = 0; i < breakablePieces.Count; i++)
+        for (int i = 0; i < breakables.Count; i++)
         {
-            breakablePieces[i].transform.parent = this.modelParent; // ¸ðµ¨ ºÎ¸ð·Î ¼³Á¤
-            //ÀÌ°Ô OnDisable¿¡¼­ ºÎ¸ð ¼³Á¤ °ü·ÃÀÌ ½ÇÇàÇÒ¼ö°¡ ¾ø¾î¼­, µû·Î ¸¸µé¾î¼­ ÀÌ°Å ¸ÕÀú ÇÏ°í ²¨Áú¼öÀÖµµ·Ï ¸¸µé¾ú´Ù
+            breakables[i].transform.parent = this.modelParent_Po; // ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            //ï¿½Ì°ï¿½ OnDisableï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î¼­, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-            breakablePieces[i].transform.localPosition = pieceTransformList[i].localPosition; // ÃÊ±â À§Ä¡·Î µÇµ¹¸²
-            breakablePieces[i].transform.localRotation = pieceTransformList[i].localRotation; // ÃÊ±â È¸ÀüÀ¸·Î µÇµ¹¸²
-            breakablePieces[i].transform.localScale = pieceTransformList[i].localScale; // ÃÊ±â ½ºÄÉÀÏ·Î µÇµ¹¸²
-            breakablePieces[i].GetComponent<Rigidbody>().useGravity = false; // Áß·Â ºñÈ°¼ºÈ­
-            breakablePieces[i].GetComponent<Rigidbody>().velocity = Vector3.zero; // ¼Óµµ ÃÊ±âÈ­
-            breakablePieces[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero; // È¸Àü¼Óµµ ÃÊ±âÈ­
-            breakablePieces[i].GetComponent<MeshCollider>().enabled = false; // ÄÝ¶óÀÌ´õ ºñÈ°¼ºÈ­
+            breakables[i].transform.localPosition = pieceTransformList[i].localPosition; // ï¿½Ê±ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Çµï¿½ï¿½ï¿½
+            breakables[i].transform.localRotation = pieceTransformList[i].localRotation; // ï¿½Ê±ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Çµï¿½ï¿½ï¿½
+            breakables[i].transform.localScale = pieceTransformList[i].localScale; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½Çµï¿½ï¿½ï¿½
+            breakables[i].GetComponent<Rigidbody>().useGravity = false; // ï¿½ß·ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
+            breakables[i].GetComponent<Rigidbody>().velocity = Vector3.zero; // ï¿½Óµï¿½ ï¿½Ê±ï¿½È­
+            breakables[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero; // È¸ï¿½ï¿½ï¿½Óµï¿½ ï¿½Ê±ï¿½È­
+            breakables[i].GetComponent<MeshCollider>().enabled = false; // ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
 
-            breakablePieces[i].SetActive(true); // Á¶°¢µéÀ» È°¼ºÈ­
-            breakablePieces[i].layer = 8; // Å« ¾²·¹±â ·¹ÀÌ¾î·Î º¯°æ
+            breakables[i].SetActive(true); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
+            breakables[i].layer = 8; // Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
+        breakables.Clear();
         base.DisActivate();
     }
 }
