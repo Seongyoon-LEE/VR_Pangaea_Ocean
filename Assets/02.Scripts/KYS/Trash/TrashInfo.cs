@@ -20,4 +20,6 @@ public class TrashInfo
     public float rotZ;
 
     public float weight;
+
+    public int count = 0; // 특정 종류 쓰레기의 경우에 내부 포함 개수
 }
