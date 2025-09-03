@@ -7,11 +7,23 @@ using UnityEngine.InputSystem;
 public class MenuEnable : ShowCanvas
 {
     public InputActionProperty mainInput; // 사용하는 버튼 - 드래그 앤 드롭
-    
+    private Transform hand;
     protected override void Start()
     {
         canvas = transform.GetChild(0).gameObject;
+        hand = GameObject.Find("LeftHandUIPos").transform;
         base.Start();
+        
+    }
+
+    protected override void FollowUI()
+    {
+        if (canvas.activeSelf)
+        {
+            canvas.transform.position = hand.position + hand.up * 0.3f;
+            //Quaternion rot = Quaternion.LookRotation(canvas.transform.position - hand.position);
+            canvas.transform.rotation = hand.rotation * Quaternion.Euler(0, -90, 0);
+        }
     }
 
     private void OnEnable()
@@ -22,5 +34,14 @@ public class MenuEnable : ShowCanvas
     {
         mainInput.action.started -= x => UIEnable(!canvas.activeSelf, true);
         mainInput.action.Disable();
+    }
+
+    public List<GameObject> GetEquipments()
+    {
+        return equipmentsList;
+    }
+    public void SetEquipment(GameObject item)
+    {
+        equipmentsList.Add(item);
     }
 }

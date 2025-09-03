@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class EquipmentChange : MonoBehaviour
 {
-    public List<GameObject> equipmentList; // 드래그 앤 드롭
+    public List<GameObject> equipmentList = new List<GameObject>();
+    private readonly int maxCount = 7; // equipmentList 최대 카운트 수
 
-
+    private void Start()
+    {
+        var menu = transform.GetComponent<MenuEnable>();
+        equipmentList = menu.GetEquipments();
+    }
     public void EquipmentSelect(int select)
     {
-        if (select > equipmentList.Count - 1) return;
+        if (select > equipmentList.Count - 1) return; // 비어있다면 return
         for (int i = 1; i < equipmentList.Count; i++)
         {
             equipmentList[i].SetActive(i == select);
         }
         // Hand 왼손, 오른손 같이 활성, 비활성화
         equipmentList[0].SetActive(equipmentList[1].activeSelf);
-        GetComponent<MenuEnable>().Close();
+        GetComponent<MenuEnable>().Close(); // UI 종료
+
     }
 
 }

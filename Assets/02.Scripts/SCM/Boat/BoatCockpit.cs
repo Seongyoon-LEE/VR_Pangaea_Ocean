@@ -10,7 +10,6 @@ public class BoatCockpit : ShowCanvas
     private readonly string playerTag = "Player";
     private Transform playerTr;
     private Transform cockpitPos;
-    public List<GameObject> equipmentList; // 드래그 앤 드롭
     public int curEquipment;
     public bool isCockpit = false;
     protected override void Start()
@@ -42,8 +41,8 @@ public class BoatCockpit : ShowCanvas
     public void BoatControll()
     {
         // 현재 장착 중인 장비 인덱스 값 저장
-        curEquipment = equipmentList.FindIndex(e => e.activeSelf);
-        curEquipment = curEquipment != -1 ? curEquipment : 4;
+        curEquipment = equipmentsList.FindIndex(e => e.activeSelf);
+        curEquipment = curEquipment != -1 ? curEquipment : 0;
 
 
         PlayerEnable(false);
@@ -59,8 +58,8 @@ public class BoatCockpit : ShowCanvas
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;
         playerTr.parent = isSetting ? null : transform.parent;
-        equipmentList[curEquipment].SetActive(isSetting);
-        if (curEquipment == 0) equipmentList[4].SetActive(isSetting);
+        equipmentsList[curEquipment].SetActive(isSetting);
+        if (curEquipment == 0) equipmentsList[1].SetActive(isSetting);
     }
 
 }
