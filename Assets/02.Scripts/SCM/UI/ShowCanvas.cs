@@ -49,12 +49,12 @@ public class ShowCanvas : MonoBehaviour
             {
                 c.canvas.SetActive(false);
                 // 탑승중에 UI가 꺼질 때 오른쪽 레이는 켜두기
-                c.ray.SetActive(DataManager.Instance.playerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
+                c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
             }
         }
         bool curRay = isEnable;
         // 탑승중에 오른손이 현재 UI와 같이 꺼지는 것을 막기
-        if (DataManager.Instance.playerData.isBoarding && !isEnable && !isLeft)
+        if (DataManager.Instance.PlayerData.isBoarding && !isEnable && !isLeft)
         {
             curRay = true;
         }

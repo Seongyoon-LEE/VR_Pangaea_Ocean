@@ -19,7 +19,7 @@ public class GarbageUI : MonoBehaviour
         }
 
         countText.text = $"{cleanTrashCount} / {totalCnt}";
-        scoreText.text = $"{DataManager.Instance.playerData.weight}";
+        scoreText.text = $"{DataManager.Instance.PlayerData.weight}";
     }
     void Start()
     {

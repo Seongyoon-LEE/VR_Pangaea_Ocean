@@ -23,7 +23,7 @@ public class BoatBoarding : ShowCanvas
     {
         if (other.CompareTag(playerTag))
         {
-            DataManager.Instance.playerData.isBoarding = false;
+            DataManager.Instance.PlayerData.isBoarding = false;
             UIEnable(true);
         }
     }
@@ -40,7 +40,7 @@ public class BoatBoarding : ShowCanvas
     {
         if (playerTr != null)
         {
-            DataManager.Instance.playerData.isBoarding = true;
+            DataManager.Instance.PlayerData.isBoarding = true;
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
             for (int i = 0; i < hand.equipmentList.Count; i++)
             {
