@@ -36,4 +36,5 @@ public class InventorySocket : XRSocketInteractor
             keyImg.color = Color.white;
         }
     }
+
 }
