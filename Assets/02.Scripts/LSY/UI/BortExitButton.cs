@@ -13,6 +13,11 @@ public class BortExitButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+        if(playerTr == null)
+            playerTr = GameObject.FindWithTag("Player").transform;
+        if(rightRay == null)
+            rightRay = GameObject.Find("Ray Interactor");
+
         button.onClick.AddListener(() => // 버튼 클릭 시
         {
             playerTr.position = bortTr.position + Vector3.forward * 4; // 플레이어 위치를 쓰레기통 앞쪽으로 이동

@@ -8,13 +8,13 @@ public class BoatGetOff : ShowCanvas
     private readonly string playerTag = "Player";
     private Transform playerTr;
 
-    protected override void Start()
+    protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
         canvas = GameObject.Find("Canvas_GetOff").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        base.Start();
+        return base.Start();
     }
 
     // 버튼 이벤트

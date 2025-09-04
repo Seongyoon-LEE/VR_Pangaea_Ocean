@@ -5,17 +5,22 @@ using UnityEngine;
 
 public class ShowCanvas : MonoBehaviour
 {
-    public GameObject canvas;
-    public GameObject ray; // ����ϴ� ���� Ray - �巡�� �� ���
+    protected GameObject canvas;
+    public GameObject ray; // 드래그 앤 드랍 - 왼손 UI는 제외
     private Transform head;
     private float spawnDistance = 2f;
-    [SerializeField] protected List<GameObject> equipmentsList = new List<GameObject>();
+    protected List<GameObject> equipmentsList = new List<GameObject>();
     public Transform equipments;
-    protected virtual void Start()
+    protected virtual IEnumerator Start()
     {
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
+
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
         if (canvas != null) canvas.SetActive(false);
-        if (ray != null) ray.SetActive(false);
+        if (ray != null && !DataManager.Instance.PlayerData.isBoarding) ray.SetActive(false);
 
         SetEquipments();
     }
@@ -40,7 +45,6 @@ public class ShowCanvas : MonoBehaviour
 
     protected virtual void FollowUI()
     {
-        // ĵ������ �÷��̾� ����ٴϴ� ����
         if (canvas.activeSelf)
         {
             canvas.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, head.forward.z).normalized * spawnDistance;
@@ -51,38 +55,36 @@ public class ShowCanvas : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (canvas != null)
+        if (canvas != null && head != null)
         {
             FollowUI();
         }
         
     }
-    // ĵ������ ���� OnOff
+    // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
         if (isEnable && isLeft)
             LeftUISetting();
 
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
-        // ���� ��� �ް� �ִ� �ٸ� ĵ���� ����
+        // 다른 캔버스를 끄기 위한 로직
         foreach (ShowCanvas c in allCanvas)
         {
-
             if (c.canvas != null && c.canvas != canvas)
             {
                 c.canvas.SetActive(false);
-                // ž���߿� UI�� ���� �� ������ ���̴� �ѵα�
+                // 보트에 탑승하고 오른손이고 비활성화 일 때 레이를 활성화
                 if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
             }
         }
         bool curRay = isEnable;
-        // ž���߿� �������� ���� UI�� ���� ������ ���� ����
+        // 보트 탑승하고 비활성상태, 오른손일 때 레이 활성화
         if (DataManager.Instance.PlayerData.isBoarding && !isEnable && !isLeft)
         {
             curRay = true;
         }
 
-        // ���� ĵ����
         if (canvas != null) canvas.SetActive(isEnable);
         if (ray != null) ray.SetActive(curRay);
     }

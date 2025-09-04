@@ -10,14 +10,17 @@ public class BoatBoarding : ShowCanvas
     private Transform playerTr;
     private BoatCockpit hand;
     private GameObject trashBoard;
-    protected override void Start()
+    protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
         canvas = GameObject.Find("Canvas_Boarding");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        trashBoard = GameObject.Find("GarbageCanavs");
-        base.Start();
+        trashBoard = GameObject.Find("GarbageCanvas");
+        if (!DataManager.Instance.PlayerData.isBoarding)
+            trashBoard.SetActive(false);
+        
+       return base.Start();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,6 +42,7 @@ public class BoatBoarding : ShowCanvas
     // 보트 탑승 버튼
     public void BoardingBtn()
     {
+        if (trashBoard == null) print("aa");
         if (playerTr != null)
         {
             DataManager.Instance.PlayerData.isBoarding = true;

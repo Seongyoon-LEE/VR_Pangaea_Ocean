@@ -39,6 +39,7 @@ public class Turtle : MonoBehaviour
     {
         if (!grass.activeSelf) return;
 
+        transform.GetComponent<BoxCollider>().enabled = false;
         grass.SetActive(false);
         // 스피드 증가 or 무게량 증가 추가예정
 
