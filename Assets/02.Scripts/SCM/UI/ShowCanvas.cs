@@ -20,7 +20,7 @@ public class ShowCanvas : MonoBehaviour
 
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
         if (canvas != null) canvas.SetActive(false);
-        if (ray != null) ray.SetActive(false);
+        if (ray != null && !DataManager.Instance.PlayerData.isBoarding) ray.SetActive(false);
 
         SetEquipments();
     }
