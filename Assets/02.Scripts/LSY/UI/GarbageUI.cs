@@ -7,19 +7,19 @@ using UnityEngine;
 public class GarbageUI : MonoBehaviour
 {
     [Header("Garbage UI")]
-    int cleanTrashCount = 0; // û���� ������ ��
-    int totalCnt = 0; // ��ü ������ ��   
-    [SerializeField] TMP_Text countText; // û���� ������ �� �ؽ�Ʈ
-    [SerializeField] TMP_Text scoreText; // ���� �ؽ�Ʈ
+    int cleanTrashCount = 0; // 청소한 쓰레기 수
+    int totalCnt = 0; // 전체 쓰레기 수    
+    [SerializeField] TMP_Text countText; // 청소한 쓰레기 수 텍스트
+    [SerializeField] TMP_Text scoreText; // 점수 텍스트
 
     [Header("��ũ��Ʈ ����")]
-    [SerializeField] Garbage garbage; // �������� ��ũ��Ʈ
- 
+    [SerializeField] Garbage garbage; // 쓰레기통 스크립트
+
     void Start()
     {
         garbage = GameObject.FindObjectOfType<Garbage>(true);
-        //������ ������ UI ���ΰ�ħ �϶�� ����� ��� UpdateUI �Լ� ����
-        if(garbage != null)
+        //제출이 끝나면 UI 새로고침 하라는 방송을 듣고 UpdateUI 함수 실행
+        if (garbage != null)
             garbage.onTrashSubmitted += UpdateUI;
     }
     private void OnDestroy()
