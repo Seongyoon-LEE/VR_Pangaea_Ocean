@@ -16,7 +16,7 @@ public class BoatBoarding : ShowCanvas
         canvas = GameObject.Find("Canvas_Boarding");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        trashBoard = GameObject.Find("GarbageCanavs");
+        trashBoard = GameObject.Find("GarbageCanvas");
         return base.Start();
     }
 
@@ -39,6 +39,7 @@ public class BoatBoarding : ShowCanvas
     // 보트 탑승 버튼
     public void BoardingBtn()
     {
+        if (trashBoard == null) print("aa");
         if (playerTr != null)
         {
             DataManager.Instance.PlayerData.isBoarding = true;
