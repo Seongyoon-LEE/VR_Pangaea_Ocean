@@ -142,6 +142,7 @@ public class PoolingManager : MonoBehaviour
                 obstacle.GetComponent<ObstacleData>().Info = info; // info를 넣어줌
                 obstacle.SetActive(true);
                 this.obstacleList.Add(obstacle); // 로딩중인 장애물 리스트에 추가
+                return;
             }
         }
         //여기로 나왔다는건 모든 풀이 활성화
