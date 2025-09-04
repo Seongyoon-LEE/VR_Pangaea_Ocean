@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class VacuumCleaner : MonoBehaviour
 {
-    [Header("û�ұ� �߻�")]
+    [Header("청소기 관련")]
     [SerializeField] ParticleSystem inhalationPS;
     [SerializeField] LayerMask layerMask; // 레이저가 충돌할 레이어를 지정합니다.
     [SerializeField] Transform FirePos; // 레이저가 발사되는 위치
@@ -15,6 +15,10 @@ public class VacuumCleaner : MonoBehaviour
     [SerializeField] InputActionProperty rightTriggerAction; // 오른쪽 트리거 액션
     bool isFiring;
     public Action onCleanAction;
+
+    [Header("IK 관련")]
+    public Transform rightHandGrip; // 손이 따라갈 목표 지점
+    CharacterIKController characterIK; // 캐릭터 IK 컨트롤러
 
     private void OnEnable()
     {
@@ -57,6 +61,7 @@ public class VacuumCleaner : MonoBehaviour
                 inhalationPS.Stop();
             print("Stop");
         FirePos = transform.GetChild(2);
+        characterIK = FindObjectOfType<CharacterIKController>();
     }
 
     void Update()
@@ -64,7 +69,21 @@ public class VacuumCleaner : MonoBehaviour
         if (isFiring) RaycastCheck();
         inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
     }
-
+    // 아이템을 장착 했을때 호출되는 함수
+    public void OnEquip()
+    {
+        // 캐릭터에게 손잡이 잡으라고 명령
+        if (characterIK != null && rightHandGrip != null)
+            characterIK.SetHandTarget(rightHandGrip);
+    }
+    // 아이템을 해재 했을때 호출되는 함수
+    public void OnUnEquip()
+    {
+        // 캐릭터에게 손잡이 놓으라고 명령
+        if (characterIK != null)
+            characterIK.ClearHandTarget();
+        StopShoot();
+    }
     public void StopShoot()
     {
         isFiring = false; // 발사 중지
