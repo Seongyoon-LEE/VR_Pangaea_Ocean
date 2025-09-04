@@ -26,9 +26,4 @@ public class BortExitButton : MonoBehaviour
             rightRay.SetActive(false); // 오른손 레이 비활성화
         });
     }
-
-    void Update()
-    {
-        
-    }
 }

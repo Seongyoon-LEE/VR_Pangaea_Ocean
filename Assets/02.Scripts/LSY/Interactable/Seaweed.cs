@@ -5,7 +5,7 @@ using UnityEngine;
 public class Seaweed : MonoBehaviour, IHittable
 {
     [SerializeField] ParticleSystem cutEffect; // 해초가 베일때 이펙트
-
+    
     public void TakeHit(Transform hitPoint)
     {
         print("해초가 베였다 !!");
@@ -16,6 +16,10 @@ public class Seaweed : MonoBehaviour, IHittable
             Destroy(cutFX.gameObject, 1f);
         }
         // 해초는 한방에 베이니까 바로 자기 자신 파괴 
-        this.GetComponent<TrashData>().DisActivate();
+        if (TryGetComponent<TrashData>(out TrashData trash))
+            trash.DisActivate();
+        // 풀 사라지고 거북이 구출되며 스탯 증가 로직 
+        if (TryGetComponent<Turtle>(out Turtle turtle))
+            turtle.GrassDisable();
     }
 }
