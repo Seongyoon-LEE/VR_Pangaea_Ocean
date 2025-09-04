@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public struct InitialTransform // Transform�� ���� �����ϱ� ���� ����ü
+public struct InitialTransform // Transform을 깊은 복사하기 위한 구조체
 {
     public Vector3 localPosition;
     public Quaternion localRotation;
@@ -23,49 +23,49 @@ public class BreakableTrash : TrashData
     private List<GameObject> breakables = new List<GameObject>();
     public Transform modelParent_Po;
     public Transform modelParent_Im;
-    private List<InitialTransform> pieceTransformList = new List<InitialTransform>(); // �������� Transform�� ������ ����Ʈ
+    private List<InitialTransform> pieceTransformList = new List<InitialTransform>(); // 조각들의 Transform을 저장할 리스트
     private void Start()
     {
-        // �������� �⺻ ��ġ�� ����, ������Ʈ Ǯ�� �ٽ� ����� �� �ش� ��ġ�� �ʱ�ȭ
+        // 조각들의 기본 위치를 저장, 오브젝트 풀로 다시 사용할 때 해당 위치로 초기화
         foreach (var piece in breakablePieces)
         {
-            pieceTransformList.Add(new InitialTransform(piece.transform)); // �������� Transform�� ����
+            pieceTransformList.Add(new InitialTransform(piece.transform)); // 조각들의 Transform을 저장
         }
         
     }
     public void SetInnerTrash(List<TrashInfo> infos)
     {
-        //infos : ������ ������
-        this.Info = infos[0]; // ù��° ������ �ʱ�ȭ, ��ġ �����
+        //infos : 내부의 쓰레기
+        this.Info = infos[0]; // 첫번째 정보로 초기화, 위치 적용용
         for (int i = 0; i < this.Info.count; i++)
         {
             this.breakables.Add(this.breakablePieces[i]);
         }
         for (int i = 0; i < infos.Count; i++)
         {
-            breakables[i].GetComponent<BreakedTrash>().Info = infos[i]; // info�� �־���
+            breakables[i].GetComponent<BreakedTrash>().Info = infos[i]; // info를 넣어줌
         }
-        if (infos.Find(x => x.status == (int)TrashStatus.Clean) != null) // û�ҵ� ������ �ϳ��� �ִٸ�
+        if (infos.Find(x => x.status == (int)TrashStatus.Clean) != null) // 청소된 조각이 하나라도 있다면
         {
             this.Break();
             for (int i = 0; i < infos.Count; i++)
             {
                 if (infos[i].status == (int)TrashStatus.Clean)
                 {
-                    this.breakables[i].SetActive(false); // û�ҵ� ������ ��Ȱ��ȭ
+                    this.breakables[i].SetActive(false); // 청소된 조각은 비활성화
                 }
             }
         }
     }
     public void Break()
     {
-        this.GetComponent<BoxCollider>().enabled = false; // �ڽ� �ݶ��̴� ��Ȱ��ȭ
+        this.GetComponent<BoxCollider>().enabled = false; // 박스 콜라이더 비활성화
         foreach (var piece in breakables)
         {
-            piece.transform.parent = this.transform; // ��Ȱ��ȭ�� �� ���� �� ������ �θ�� ����
+            piece.transform.parent = this.transform; // 비활성화할 모델 말고 그 상위를 부모로 설정
             piece.GetComponent<Rigidbody>().useGravity = true;
             piece.GetComponent<MeshCollider>().enabled = true;
-            piece.layer = 6; // �Ϲ� ������ ���̾�� ����
+            piece.layer = 6; // 일반 쓰레기 레이어로 변경
         }
         
         this.modelParent_Po.gameObject.SetActive(false);
@@ -73,25 +73,25 @@ public class BreakableTrash : TrashData
     }
     public override void DisActivate()
     {
-        // Ǯ�� ������ �������� �ٽ� modelParent �θ�� ���� ��������, ��ġ �����ߴ��� �־��ְ�, �߷��̶� �ݶ��̴� ����
-        this.modelParent_Po.gameObject.SetActive(true); // �� �θ� Ȱ��ȭ
+        // 풀에 넣을때 조각들을 다시 modelParent 부모로 갖게 돌려놓고, 위치 저장했던거 넣어주고, 중력이랑 콜라이더 끄고
+        this.modelParent_Po.gameObject.SetActive(true); // 모델 부모를 활성화
         this.modelParent_Im.gameObject.SetActive(true);
         this.GetComponent<BoxCollider>().enabled = true;
         for (int i = 0; i < breakables.Count; i++)
         {
-            breakables[i].transform.parent = this.modelParent_Po; // �� �θ�� ����
-            //�̰� OnDisable���� �θ� ���� ������ �����Ҽ��� ���, ���� ���� �̰� ���� �ϰ� �������ֵ��� �������
+            breakables[i].transform.parent = this.modelParent_Po; // 모델 부모로 설정
+            //이게 OnDisable에서 부모 설정 관련이 실행할수가 없어서, 따로 만들어서 이거 먼저 하고 꺼질수있도록 만들었다
 
-            breakables[i].transform.localPosition = pieceTransformList[i].localPosition; // �ʱ� ��ġ�� �ǵ���
-            breakables[i].transform.localRotation = pieceTransformList[i].localRotation; // �ʱ� ȸ������ �ǵ���
-            breakables[i].transform.localScale = pieceTransformList[i].localScale; // �ʱ� �����Ϸ� �ǵ���
-            breakables[i].GetComponent<Rigidbody>().useGravity = false; // �߷� ��Ȱ��ȭ
-            breakables[i].GetComponent<Rigidbody>().velocity = Vector3.zero; // �ӵ� �ʱ�ȭ
-            breakables[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero; // ȸ���ӵ� �ʱ�ȭ
-            breakables[i].GetComponent<MeshCollider>().enabled = false; // �ݶ��̴� ��Ȱ��ȭ
+            breakables[i].transform.localPosition = pieceTransformList[i].localPosition; // 초기 위치로 되돌림
+            breakables[i].transform.localRotation = pieceTransformList[i].localRotation; // 초기 회전으로 되돌림
+            breakables[i].transform.localScale = pieceTransformList[i].localScale; // 초기 스케일로 되돌림
+            breakables[i].GetComponent<Rigidbody>().useGravity = false; // 중력 비활성화
+            breakables[i].GetComponent<Rigidbody>().velocity = Vector3.zero; // 속도 초기화
+            breakables[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero; // 회전속도 초기화
+            breakables[i].GetComponent<MeshCollider>().enabled = false; // 콜라이더 비활성화
 
-            breakables[i].SetActive(true); // �������� Ȱ��ȭ
-            breakables[i].layer = 8; // ū ������ ���̾�� ����
+            breakables[i].SetActive(true); // 조각들을 활성화
+            breakables[i].layer = 8; // 큰 쓰레기 레이어로 변경
         }
         breakables.Clear();
         base.DisActivate();

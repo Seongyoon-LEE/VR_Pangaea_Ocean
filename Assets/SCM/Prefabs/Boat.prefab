@@ -120,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   ray: {fileID: 0}
+  equipmentsList: []
+  equipments: {fileID: 0}
 --- !u!1 &1794487247189974481
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,12 +317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   ray: {fileID: 0}
-  equipmentList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  equipmentsList: []
+  equipments: {fileID: 0}
   curEquipment: 0
   isCockpit: 0
 --- !u!1 &2786562259143482699
@@ -549,6 +547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   ray: {fileID: 0}
+  equipmentsList: []
+  equipments: {fileID: 0}
 --- !u!1 &7059400759398080486
 GameObject:
   m_ObjectHideFlags: 0
