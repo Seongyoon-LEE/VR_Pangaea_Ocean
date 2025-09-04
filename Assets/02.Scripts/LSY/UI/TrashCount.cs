@@ -12,10 +12,15 @@ public class TrashCount : MonoBehaviour
     [SerializeField] VacuumCleaner vacuumCleaner;
     [SerializeField] Garbage garbageBox;
 
-    void Start()
+    IEnumerator Start()
     {
-        if(trashCountText == null)
-            trashCountText = GameObject.Find("Panel_Count").GetComponentInChildren<TMP_Text>();
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
+
+        if (trashCountText == null)
+            trashCountText = GameObject.Find("StateMenu").transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TMP_Text>();
 
         if (vacuumCleaner == null)
             vacuumCleaner = FindObjectOfType<VacuumCleaner>(true);
