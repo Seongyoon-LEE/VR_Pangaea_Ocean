@@ -8,9 +8,14 @@ public class OxygenAmount : MonoBehaviour
     public Image currentManaGlobe; // 드래그 앤 드롭
     private float maxOxygenPoint = 100f;
     private WaitForSeconds oxygenWs;
-    void Start()
+    IEnumerator Start()
     {
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
         oxygenWs = new WaitForSeconds(1f);
+        
         StartCoroutine(OxygenUpdate());
     }
 
@@ -19,6 +24,7 @@ public class OxygenAmount : MonoBehaviour
     {
         while (true)
         {
+            
             DataManager.Instance.PlayerData.oxygen += GameManager.Instance.state switch
             {
                 GameManager.State.NOMAL => -1, // 평상시 수중
