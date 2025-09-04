@@ -8,11 +8,11 @@ public class MenuEnable : ShowCanvas
 {
     public InputActionProperty mainInput; // 사용하는 버튼 - 드래그 앤 드롭
     private Transform hand;
-    protected override void Start()
+    protected override IEnumerator Start()
     {
         canvas = transform.GetChild(0).gameObject;
         hand = GameObject.Find("LeftHandUIPos").transform;
-        base.Start();
+        return base.Start();
         
     }
 

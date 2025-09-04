@@ -17,12 +17,10 @@ public class InventorySocket : XRSocketInteractor
 
     public override bool CanHover(IXRHoverInteractable interactable)
     {
-        print(interactable.transform.CompareTag(targetTag));
         return base.CanHover(interactable) && interactable.transform.CompareTag(targetTag);
     }
     public override bool CanSelect(IXRSelectInteractable interactable)
     {
-        print(interactable.transform.CompareTag(targetTag));
         return base.CanSelect(interactable) && interactable.transform.CompareTag(targetTag);
     }
 
