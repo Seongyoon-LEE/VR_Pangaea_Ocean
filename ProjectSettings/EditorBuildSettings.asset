@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/KYS/AppScene.unity
     guid: b4aa21c82f0f2d845baafaf82c4a35b2
+  - enabled: 1
+    path: Assets/01.Scenes/KYS/LobbyScene.unity
+    guid: 3741c12cd0470434489f105e4f6dc97e
+  - enabled: 1
+    path: Assets/01.Scenes/KYS/SpawnScene.unity
+    guid: 0094301bea75d17428cd5b07332f5626
+  - enabled: 1
+    path: Assets/01.Scenes/KYS/StageScene.unity
+    guid: 562d833305c0e0747ae056024ff927c7
+  - enabled: 1
+    path: Assets/01.Scenes/KYS/PlayerScene.unity
+    guid: 8caf7e1799839504a912ff773733dba3
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4e19efd626374b3489f207fc749aafe2,
       type: 2}
