@@ -7,18 +7,18 @@ using UnityEngine;
 public class GarbageUI : MonoBehaviour
 {
     [Header("Garbage UI")]
-    int cleanTrashCount = 0; // Ã»¼ÒÇÑ ¾²·¹±â ¼ö
-    int totalCnt = 0; // ÀüÃ¼ ¾²·¹±â ¼ö   
-    [SerializeField] TMP_Text countText; // Ã»¼ÒÇÑ ¾²·¹±â ¼ö ÅØ½ºÆ®
-    [SerializeField] TMP_Text scoreText; // Á¡¼ö ÅØ½ºÆ®
+    int cleanTrashCount = 0; // Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    int totalCnt = 0; // ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   
+    [SerializeField] TMP_Text countText; // Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
+    [SerializeField] TMP_Text scoreText; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
 
-    [Header("½ºÅ©¸³Æ® ÂüÁ¶")]
-    [SerializeField] Garbage garbage; // ¾²·¹±âÅë ½ºÅ©¸³Æ®
+    [Header("ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½")]
+    [SerializeField] Garbage garbage; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®
  
     void Start()
     {
         garbage = GameObject.FindObjectOfType<Garbage>(true);
-        //Á¦ÃâÀÌ ³¡³ª¸é UI »õ·Î°íÄ§ ÇÏ¶ó´Â ¹æ¼ÛÀ» µè°í UpdateUI ÇÔ¼ö ½ÇÇà
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½Î°ï¿½Ä§ ï¿½Ï¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ UpdateUI ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
         if(garbage != null)
             garbage.onTrashSubmitted += UpdateUI;
     }
@@ -62,6 +62,7 @@ public class GarbageUI : MonoBehaviour
         }
 
         countText.text = $"{cleanTrashCount} / {totalCnt}";
-        scoreText.text = $"Total Score : {DataManager.Instance.playerData.score}";
+        scoreText.text = $"Total Score : {DataManager.Instance.PlayerData.score}";
+
     }
 }

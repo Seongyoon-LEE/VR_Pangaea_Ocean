@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShowCanvas : MonoBehaviour
 {
     public GameObject canvas;
-    public GameObject ray; // »ç¿ëÇÏ´Â ¹æÇâ Ray - µå·¡±× ¾Ø µå·Ó
+    public GameObject ray; // ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ray - ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
     private Transform head;
     private float spawnDistance = 2f;
     [SerializeField] protected List<GameObject> equipmentsList = new List<GameObject>();
@@ -40,7 +40,7 @@ public class ShowCanvas : MonoBehaviour
 
     protected virtual void FollowUI()
     {
-        // Äµ´õ½º°¡ ÇÃ·¹ÀÌ¾î µû¶ó´Ù´Ï´Â ·ÎÁ÷
+        // Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½Ù´Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (canvas.activeSelf)
         {
             canvas.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, head.forward.z).normalized * spawnDistance;
@@ -57,32 +57,32 @@ public class ShowCanvas : MonoBehaviour
         }
         
     }
-    // Äµ¹ö½º¶û ·¹ÀÌ OnOff
+    // Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
         if (isEnable && isLeft)
             LeftUISetting();
 
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
-        // ÇöÀç »ó¼Ó ¹Þ°í ÀÖ´Â ´Ù¸¥ Äµ¹ö½º Á¾·á
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ°ï¿½ ï¿½Ö´ï¿½ ï¿½Ù¸ï¿½ Äµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         foreach (ShowCanvas c in allCanvas)
         {
 
             if (c.canvas != null && c.canvas != canvas)
             {
                 c.canvas.SetActive(false);
-                // Å¾½ÂÁß¿¡ UI°¡ ²¨Áú ¶§ ¿À¸¥ÂÊ ·¹ÀÌ´Â ÄÑµÎ±â
-                if (c.ray != null) c.ray.SetActive(DataManager.Instance.playerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
+                // Å¾ï¿½ï¿½ï¿½ß¿ï¿½ UIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ÑµÎ±ï¿½
+                if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
             }
         }
         bool curRay = isEnable;
-        // Å¾½ÂÁß¿¡ ¿À¸¥¼ÕÀÌ ÇöÀç UI¿Í °°ÀÌ ²¨Áö´Â °ÍÀ» ¸·±â
-        if (DataManager.Instance.playerData.isBoarding && !isEnable && !isLeft)
+        // Å¾ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (DataManager.Instance.PlayerData.isBoarding && !isEnable && !isLeft)
         {
             curRay = true;
         }
 
-        // ÇöÀç Äµ¹ö½º
+        // ï¿½ï¿½ï¿½ï¿½ Äµï¿½ï¿½ï¿½ï¿½
         if (canvas != null) canvas.SetActive(isEnable);
         if (ray != null) ray.SetActive(curRay);
     }

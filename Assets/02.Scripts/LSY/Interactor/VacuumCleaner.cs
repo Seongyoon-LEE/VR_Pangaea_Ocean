@@ -7,12 +7,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class VacuumCleaner : MonoBehaviour
 {
-    [Header("Ã»¼Ò±â ¹ß»ç")]
+    [Header("Ã»ï¿½Ò±ï¿½ ï¿½ß»ï¿½")]
     [SerializeField] ParticleSystem inhalationPS;
-    [SerializeField] LayerMask layerMask; // ·¹ÀÌÀú°¡ Ãæµ¹ÇÒ ·¹ÀÌ¾î¸¦ ÁöÁ¤ÇÕ´Ï´Ù.
-    [SerializeField] Transform FirePos; // ·¹ÀÌÀú°¡ ¹ß»çµÇ´Â À§Ä¡
-    [SerializeField] float rayDistance = 10f; // ·¹ÀÌÀúÀÇ ÃÖ´ë °Å¸®
-    [SerializeField] InputActionProperty rightTriggerAction; // ¿À¸¥ÂÊ Æ®¸®°Å ¾×¼Ç
+    [SerializeField] LayerMask layerMask; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+    [SerializeField] Transform FirePos; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½Ç´ï¿½ ï¿½ï¿½Ä¡
+    [SerializeField] float rayDistance = 10f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Å¸ï¿½
+    [SerializeField] InputActionProperty rightTriggerAction; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½
     bool isFiring;
     public Action onCleanAction;
 
@@ -34,8 +34,8 @@ public class VacuumCleaner : MonoBehaviour
     }
     void OnTriggerPressed(InputAction.CallbackContext ctx)
     {
-        // ½ÃÀÛÇÏ±âÀü¿¡ ¹«°Ô°¡ 300ÀÌ ³ÑÀ¸¸é ¹ß»ç ¾ÈµÊ
-        if (DataManager.Instance.playerData.weight >= 300)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô°ï¿½ 300ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½Èµï¿½
+        if (DataManager.Instance.PlayerData.weight >= 300)
         {
             StopShoot();
             return;
@@ -62,13 +62,13 @@ public class VacuumCleaner : MonoBehaviour
     void Update()
     {
         if (isFiring) RaycastCheck();
-        inhalationPS.Simulate(10, true, false); // ÆÄÆ¼Å¬ ½Ã½ºÅÛÀ» ½Ã¹Ä·¹ÀÌ¼ÇÇÕ´Ï´Ù.
+        inhalationPS.Simulate(10, true, false); // ï¿½ï¿½Æ¼Å¬ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¹Ä·ï¿½ï¿½Ì¼ï¿½ï¿½Õ´Ï´ï¿½.
     }
 
     public void StopShoot()
     {
-        isFiring = false; // ¹ß»ç ÁßÁö
-        // ±¤¼± ½î°í ³ª¼­ ¹Ù·Î ÆÄÆ¼Å¬ ÀÜ¿©¹° »ç¶óÁö°Ô
+        isFiring = false; // ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½Æ¼Å¬ ï¿½Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(inhalationPS)
             inhalationPS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);        
     }
@@ -77,11 +77,11 @@ public class VacuumCleaner : MonoBehaviour
         if (!FirePos) return;
         if (Physics.Raycast(FirePos.position, FirePos.forward, out var hit, rayDistance, layerMask))
         {
-            Debug.DrawLine(FirePos.position, hit.point, Color.red); // ·¹ÀÌÀú°¡ Ãæµ¹ÇÑ ÁöÁ¡À» ½Ã°¢ÀûÀ¸·Î Ç¥½ÃÇÕ´Ï´Ù.
+            Debug.DrawLine(FirePos.position, hit.point, Color.red); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
             hit.collider.GetComponent<TrashData>().Clean();
-            hit.collider.GetComponent<TrashData>().DisActivate(); // ·¹ÀÌÀú°¡ Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®¸¦ ºñÈ°¼ºÈ­ÇÕ´Ï´Ù.
-            DataManager.Instance.playerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
-            if(DataManager.Instance.playerData.weight >= 300)
+            hit.collider.GetComponent<TrashData>().DisActivate(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Õ´Ï´ï¿½.
+            DataManager.Instance.PlayerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
+            if(DataManager.Instance.PlayerData.weight >= 300)
             {
                 StopShoot();
             }

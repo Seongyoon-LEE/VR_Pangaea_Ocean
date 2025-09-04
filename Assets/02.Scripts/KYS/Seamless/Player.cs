@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Ray mouseRay;
-    [SerializeField] // 테스트 끝나면 지워도됨
     private PlayerData _playerData; // 플레이어 데이터
     public PlayerData PlayerData
     {
@@ -28,12 +27,12 @@ public class Player : MonoBehaviour
         }
         if (DataManager.Instance.IsPlayerDataExist) // 플레이어 데이터가 존재한다면
         {
-            this.PlayerData = DataManager.Instance.playerData; // 플레이어 데이터를 할당
+            this.PlayerData = DataManager.Instance.PlayerData; // 플레이어 데이터를 할당
         }
         else // 플레이어 데이터가 없다면
         {
             this.PlayerData = new PlayerData(); // 새로운 플레이어 데이터 생성
-            DataManager.Instance.playerData = this.PlayerData; // 데이터 매니저에 플레이어 데이터 할당
+            DataManager.Instance.PlayerData = this.PlayerData; // 데이터 매니저에 플레이어 데이터 할당
         }
     }
     //레이로 쓰래기 클릭 시 흡수
@@ -95,12 +94,12 @@ public class Player : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        DataManager.Instance.playerData.rotX = this.transform.rotation.eulerAngles.x;
-        DataManager.Instance.playerData.rotY = this.transform.rotation.eulerAngles.y;
-        DataManager.Instance.playerData.rotZ = this.transform.rotation.eulerAngles.z;
-        DataManager.Instance.playerData.posX = this.transform.position.x;
-        DataManager.Instance.playerData.posY = this.transform.position.y;
-        DataManager.Instance.playerData.posZ = this.transform.position.z;
+        DataManager.Instance.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
+        DataManager.Instance.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
+        DataManager.Instance.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
+        DataManager.Instance.PlayerData.posX = this.transform.position.x;
+        DataManager.Instance.PlayerData.posY = this.transform.position.y;
+        DataManager.Instance.PlayerData.posZ = this.transform.position.z;
         DataManager.Instance.PlayerDataSaved = true;
     }
 }

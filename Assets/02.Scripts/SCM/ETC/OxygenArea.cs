@@ -42,7 +42,7 @@ public class OxygenArea : MonoBehaviour
         {
             // 플레이어 산소량이 최대가 아닐 때 회복
             // 최대 일 때는 감소도 증가도 하지 않고 대기상태
-            if (DataManager.Instance.playerData.oxygen < 100)
+            if (DataManager.Instance.PlayerData.oxygen < 100)
             {
                 GameManager.Instance.state = GameManager.State.RECOVERY;
                 oxygenPoint--;
