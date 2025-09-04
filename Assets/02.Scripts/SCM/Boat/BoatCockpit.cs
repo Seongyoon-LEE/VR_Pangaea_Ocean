@@ -12,14 +12,14 @@ public class BoatCockpit : ShowCanvas
     private Transform cockpitPos;
     public int curEquipment;
     public bool isCockpit = false;
-    protected override void Start()
+    protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
         cockpitPos = transform.parent.GetChild(4).transform;
         canvas = GameObject.Find("Canvas_BoatCtrl").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoatControll);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        base.Start();
+        return base.Start();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -10,14 +10,14 @@ public class BoatBoarding : ShowCanvas
     private Transform playerTr;
     private BoatCockpit hand;
     private GameObject trashBoard;
-    protected override void Start()
+    protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
         canvas = GameObject.Find("Canvas_Boarding");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         trashBoard = GameObject.Find("GarbageCanavs");
-        base.Start();
+        return base.Start();
     }
 
     private void OnTriggerEnter(Collider other)
