@@ -30,18 +30,18 @@ public class Garbage : MonoBehaviour
     // 쓰레기 제출시 호출되는 함수
     public void SubmitCollectedTrash()
     {
-        float collectedWeight = DataManager.Instance.playerData.weight;
+        float collectedWeight = DataManager.Instance.PlayerData.weight;
         if (collectedWeight <= 0)
         {
             Debug.Log("제출할 쓰레기가 없습니다.");
             return;
         }
         int scoreToAdd = Mathf.RoundToInt(collectedWeight); // 현재 무게를 점수로 환산 (1:1 비율)
-        DataManager.Instance.playerData.score += scoreToAdd; // 점수 추가
-        DataManager.Instance.playerData.weight = 0; // 무게 초기화
-        DataManager.Instance.playerData.trashIdList.Clear(); // 수집한 쓰레기 ID 리스트 초기화
+        DataManager.Instance.PlayerData.score += scoreToAdd; // 점수 추가
+        DataManager.Instance.PlayerData.weight = 0; // 무게 초기화
+        DataManager.Instance.PlayerData.trashIdList.Clear(); // 수집한 쓰레기 ID 리스트 초기화
 
-        Debug.Log($"쓰레기 제출 완료! {scoreToAdd}점 획득! (총 점수: {DataManager.Instance.playerData.score})");
+        Debug.Log($"쓰레기 제출 완료! {scoreToAdd}점 획득! (총 점수: {DataManager.Instance.PlayerData.score})");
         outLineCtrl?.OffOutline();
         UpdateTrashVisuals();
         onTrashSubmitted?.Invoke();

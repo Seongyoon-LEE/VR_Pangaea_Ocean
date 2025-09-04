@@ -11,8 +11,8 @@ public class UIManager : MonoBehaviour
         if(garbageUIObj != null)
         {
             // 보트 탑승 상태와 UI의 활성화 상태가 다르면, 상태를 동기화
-            if (garbageUIObj.activeSelf != DataManager.Instance.playerData.isBoarding)
-                garbageUIObj.SetActive(DataManager.Instance.playerData.isBoarding);
+            if (garbageUIObj.activeSelf != DataManager.Instance.PlayerData.isBoarding)
+                garbageUIObj.SetActive(DataManager.Instance.PlayerData.isBoarding);
         }
     }
 }

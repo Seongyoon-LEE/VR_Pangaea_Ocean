@@ -37,7 +37,7 @@ public class TrashCount : MonoBehaviour
         };
         garbageBox.onTrashSubmitted += () =>
         {
-            trashCountText.text = DataManager.Instance.playerData.weight.ToString("F2") + " kg / 300 kg";
+            trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + " kg / 300 kg";
             trashCountText.color = Color.white;
         };
 

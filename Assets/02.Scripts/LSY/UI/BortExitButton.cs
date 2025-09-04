@@ -16,7 +16,7 @@ public class BortExitButton : MonoBehaviour
         button.onClick.AddListener(() => // 버튼 클릭 시
         {
             playerTr.position = bortTr.position + Vector3.forward * 4; // 플레이어 위치를 쓰레기통 앞쪽으로 이동
-            DataManager.Instance.playerData.isBoarding = false; // 탑승 상태 해제
+            DataManager.Instance.PlayerData.isBoarding = false; // 탑승 상태 해제
             garbageUIObj.SetActive(false); // 쓰레기 UI 비활성화
             rightRay.SetActive(false); // 오른손 레이 비활성화
         });
