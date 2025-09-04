@@ -15,6 +15,8 @@ public class BortExitButton : MonoBehaviour
         button = GetComponent<Button>();
         if(playerTr == null)
             playerTr = GameObject.FindWithTag("Player").transform;
+        if(rightRay == null)
+            rightRay = GameObject.Find("Ray Interactor");
 
         button.onClick.AddListener(() => // 버튼 클릭 시
         {
