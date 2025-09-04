@@ -9,10 +9,10 @@ public class VacuumCleaner : MonoBehaviour
 {
     [Header("û�ұ� �߻�")]
     [SerializeField] ParticleSystem inhalationPS;
-    [SerializeField] LayerMask layerMask; // �������� �浹�� ���̾ �����մϴ�.
-    [SerializeField] Transform FirePos; // �������� �߻�Ǵ� ��ġ
-    [SerializeField] float rayDistance = 10f; // �������� �ִ� �Ÿ�
-    [SerializeField] InputActionProperty rightTriggerAction; // ������ Ʈ���� �׼�
+    [SerializeField] LayerMask layerMask; // 레이저가 충돌할 레이어를 지정합니다.
+    [SerializeField] Transform FirePos; // 레이저가 발사되는 위치
+    [SerializeField] float rayDistance = 10f; // 레이저의 최대 거리
+    [SerializeField] InputActionProperty rightTriggerAction; // 오른쪽 트리거 액션
     bool isFiring;
     public Action onCleanAction;
 
@@ -34,7 +34,7 @@ public class VacuumCleaner : MonoBehaviour
     }
     void OnTriggerPressed(InputAction.CallbackContext ctx)
     {
-        // �����ϱ����� ���԰� 300�� ������ �߻� �ȵ�
+        // 시작하기전에 무게가 300이 넘으면 발사 안됨
         if (DataManager.Instance.PlayerData.weight >= 300)
         {
             StopShoot();
@@ -62,14 +62,14 @@ public class VacuumCleaner : MonoBehaviour
     void Update()
     {
         if (isFiring) RaycastCheck();
-        inhalationPS.Simulate(10, true, false); // ��ƼŬ �ý����� �ùķ��̼��մϴ�.
+        inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
     }
 
     public void StopShoot()
     {
-        isFiring = false; // �߻� ����
-        // ���� ��� ���� �ٷ� ��ƼŬ �ܿ��� �������
-        if(inhalationPS)
+        isFiring = false; // 발사 중지
+        // 광선 쏘고 나서 바로 파티클 잔여물 사라지게
+        if (inhalationPS)
             inhalationPS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);        
     }
     void RaycastCheck()
@@ -77,9 +77,9 @@ public class VacuumCleaner : MonoBehaviour
         if (!FirePos) return;
         if (Physics.Raycast(FirePos.position, FirePos.forward, out var hit, rayDistance, layerMask))
         {
-            Debug.DrawLine(FirePos.position, hit.point, Color.red); // �������� �浹�� ������ �ð������� ǥ���մϴ�.
+            Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
             hit.collider.GetComponent<TrashData>().Clean();
-            hit.collider.GetComponent<TrashData>().DisActivate(); // �������� �浹�� ������Ʈ�� ��Ȱ��ȭ�մϴ�.
+            hit.collider.GetComponent<TrashData>().DisActivate(); // 레이저가 충돌한 오브젝트를 비활성화합니다.
             DataManager.Instance.PlayerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
             if(DataManager.Instance.PlayerData.weight >= 300)
             {
