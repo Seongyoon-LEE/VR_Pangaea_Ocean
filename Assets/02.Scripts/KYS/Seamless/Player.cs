@@ -38,10 +38,6 @@ public class Player : MonoBehaviour
     //레이로 쓰래기 클릭 시 흡수
     private void Update()
     {
-        if(this.PlayerData.oxygen < 0)
-        {
-            this.PlayerDie();
-        }
         this.mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(mouseRay.origin, mouseRay.direction * 100, Color.red);
 
