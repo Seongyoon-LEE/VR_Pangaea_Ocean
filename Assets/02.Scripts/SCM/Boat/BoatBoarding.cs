@@ -17,7 +17,10 @@ public class BoatBoarding : ShowCanvas
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         trashBoard = GameObject.Find("GarbageCanvas");
-        return base.Start();
+        if (!DataManager.Instance.PlayerData.isBoarding)
+            trashBoard.SetActive(false);
+        
+       return base.Start();
     }
 
     private void OnTriggerEnter(Collider other)

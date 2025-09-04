@@ -12,7 +12,6 @@ public class GarbageUI : MonoBehaviour
     [SerializeField] TMP_Text countText; // 청소한 쓰레기 수 텍스트
     [SerializeField] TMP_Text scoreText; // 점수 텍스트
 
-    [Header("��ũ��Ʈ ����")]
     [SerializeField] Garbage garbage; // 쓰레기통 스크립트
 
     void Start()
