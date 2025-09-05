@@ -1623,6 +1623,7 @@ Transform:
   m_Children:
   - {fileID: 63374640}
   - {fileID: 1828331391}
+  - {fileID: 780270278134696233}
   m_Father: {fileID: 1874200707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &525335755
@@ -5794,7 +5795,6 @@ Transform:
   - {fileID: 525335750}
   - {fileID: 1509252556}
   - {fileID: 183653183}
-  - {fileID: 780270278134696233}
   m_Father: {fileID: 715818105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2027492957
@@ -5974,7 +5974,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1874200707}
+  m_Father: {fileID: 525335750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2245313545325013679
 PrefabInstance:
@@ -6219,6 +6219,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8470138962381531343, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6273,7 +6278,7 @@ MonoBehaviour:
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
-  m_PokeDepth: 0.1
+  m_PokeDepth: 0.2
   m_PokeWidth: 0.0075
   m_PokeSelectWidth: 0.015
   m_PokeHoverRadius: 0.015
@@ -6282,7 +6287,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 33
   m_PhysicsTriggerInteraction: 1
-  m_RequirePokeFilter: 1
+  m_RequirePokeFilter: 0
   m_EnableUIInteraction: 1
   m_DebugVisualizationsEnabled: 0
   m_UIHoverEntered:
@@ -6369,6 +6374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780270278134696233}
   - component: {fileID: 2417358719992219807}
+  - component: {fileID: 4125421793094667671}
   m_Layer: 0
   m_Name: Right Poke Interactor
   m_TagString: Untagged
@@ -6376,6 +6382,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!135 &4125421793094667671
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125421793094667670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4246976672705671012
 PrefabInstance:
   m_ObjectHideFlags: 0
