@@ -11,6 +11,7 @@ public class ObstacleData : MonoBehaviour
 {
     [SerializeField] // 데이터 테스트 끝나면 지워도됨
     ObstacleInfo _info;
+    public bool IsChase { get; protected set; } // 추적 중인 상어는 비활성화에서 제외하기 위함
     public ObstacleInfo Info 
     {
         get 

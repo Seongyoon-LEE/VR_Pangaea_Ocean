@@ -13,6 +13,7 @@ public class PoolingManager : MonoBehaviour
                                       // 종류별로 쓰레기(List 둘)
     List<List<GameObject>> obstaclePool; // 장애물 종류별로(List 하나)
                                          // 종류별로 장애물(List 둘)
+    List<GameObject> chasingObstacle = new List<GameObject>(); // 추적중인 장애물에 대해 비활성화 유예용 리스트
 
     Dictionary<int, GameObject> parentObjs = new Dictionary<int, GameObject>(); // 쓰레기 종류별로 부모 오브젝트를 관리하는 딕셔너리
     Dictionary<int, GameObject> obstacleParentObjs = new Dictionary<int, GameObject>(); // 장애물 종류별로 부모 오브젝트를 관리하는 딕셔너리
@@ -194,8 +195,31 @@ public class PoolingManager : MonoBehaviour
         );
         foreach (var obstacle in unloadObstacle)
         {
-            obstacle.GetComponent<ObstacleData>().DisActivate(); // 해당 장애물 비활성화
-            this.obstacleList.Remove(obstacle); // 로딩중인 장애물 리스트에서 제거
+            if (!obstacle.GetComponent<ObstacleData>().IsChase) // 추적중이 아닌애만 비활성화
+            {
+                obstacle.GetComponent<ObstacleData>().DisActivate(); // 해당 장애물 비활성화
+                this.obstacleList.Remove(obstacle); // 로딩중인 장애물 리스트에서 제거
+            }
+            else // 아직 추적중인 애는 비활성화를 유예함
+            {
+                if (!chasingObstacle.Contains(obstacle))
+                {
+                    this.chasingObstacle.Add(obstacle);
+                }
+            }
+        }
+        int i = 0;
+        for(; i < chasingObstacle.Count; i++)// 비활성화를 유예했던 애들에 대해서 여전히 추적중인지 체크 후 비활성화
+                                             // foreach로 돌리면 foreach문 내에서 배열의 내용이 바뀌는 InvalidOperationException가 일어나서
+                                             // 수정함
+        {
+            if (!chasingObstacle[i].GetComponent<ObstacleData>().IsChase)
+            {
+                chasingObstacle[i].GetComponent<ObstacleData>().DisActivate();
+                this.obstacleList.Remove(chasingObstacle[i]);
+                this.chasingObstacle.Remove(chasingObstacle[i]);
+                i--;
+            }
         }
     }
 }
