@@ -12,7 +12,13 @@ public class SharkPatrol : ObstacleData
     Transform target;
     int idx = 0;
 
-    private float speed = 50f;
+
+    [SerializeField]
+    private float normalSpeed = 5f;
+    [SerializeField]
+    private float chaseSpeed = 15f;
+
+    private float speed;
     private float searchDist = 30f;
     private float chaseDist = 100f;
     private float attackDist = 10f;
@@ -24,6 +30,7 @@ public class SharkPatrol : ObstacleData
     }
     private void OnEnable()
     {
+        this.speed = this.normalSpeed;
         this.patrolPointParent.SetParent(null);
         StartCoroutine(PatrolRoutine());
     }
@@ -49,7 +56,8 @@ public class SharkPatrol : ObstacleData
                 if(Vector3.Distance(this.target.position,this.transform.position) < this.searchDist) // 포착 조건
                 {
                     Debug.Log("포착");
-                    this.speed = 200f;
+                    this.speed = this.chaseSpeed;
+                    this.IsChase = true;
                     while(Vector3.Distance(this.target.position, this.transform.position) < this.chaseDist) // 한번 포착된 다음 따라가는 조건
                     {
                         // 공격 관련 로직
@@ -67,7 +75,8 @@ public class SharkPatrol : ObstacleData
                     }
                     break; // 순찰 지점을 향해 LookAt하는게 while밖에 도입부에 있기에 break로 나가고 순찰포인트 변경
                 }
-                this.speed = 50;
+                this.speed = this.normalSpeed;
+                this.IsChase = false;
                 yield return null;
             }
             this.idx = (this.idx + 1) % patrolPoints.Length;
