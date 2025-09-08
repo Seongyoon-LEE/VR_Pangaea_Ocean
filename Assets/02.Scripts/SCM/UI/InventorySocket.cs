@@ -29,11 +29,11 @@ public class InventorySocket : XRSocketInteractor
         var keyTr = key.interactableObject.transform;
         if (keyTr.CompareTag(targetTag)) // 소켓에 들오건것이 Key일 경우
         {
-            keyTr.gameObject.SetActive(false);
+            keyTr.gameObject.SetActive(false); // 소켓에 들어오면 비활성화
             var menu = transform.parent.GetComponent<MenuEnable>();
-            menu.SetEquipment(keyTr.gameObject);
-            keyTr.parent = menu.equipments;
-            keyImg.color = Color.white;
+            menu.SetEquipment(keyTr.gameObject); // 장비 그룹 리스트에 키 넣기
+            keyTr.parent = menu.equipments; // 장비 그룹에 오브젝트 위치 이동
+            keyImg.color = Color.white; // UI 색 변경
         }
     }
 

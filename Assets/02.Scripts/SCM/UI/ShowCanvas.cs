@@ -7,12 +7,13 @@ public class ShowCanvas : MonoBehaviour
 {
     protected GameObject canvas;
     public GameObject ray; // 드래그 앤 드랍 - 왼손 UI는 제외
-    private Transform head;
-    private float spawnDistance = 2f;
-    protected List<GameObject> equipmentsList = new List<GameObject>();
-    public Transform equipments;
+    private Transform head; // 카메라 위치
+    private float spawnDistance = 2f; // 거리
+    protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비
+    public Transform equipments; // 장비 그룹 위치 저장
     protected virtual IEnumerator Start()
     {
+        // 로딩 될 때까지 대기
         while (!DataManager.Instance.IsLoadingFinish)
         {
             yield return null;
@@ -20,11 +21,13 @@ public class ShowCanvas : MonoBehaviour
 
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
         if (canvas != null) canvas.SetActive(false);
+        // 처음 게임 실행했을 때 보트에 탑승중이 아니면 비활성화
         if (ray != null && !DataManager.Instance.PlayerData.isBoarding) ray.SetActive(false);
 
         SetEquipments();
     }
 
+    // 장비들 가져오기
     private void SetEquipments()
     {
         var leftHand = GameObject.Find("Left Hand Model");
@@ -64,6 +67,7 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
+        // 왼손UI 활성화시 Hand모델 활성화
         if (isEnable && isLeft)
             LeftUISetting();
 
