@@ -12,7 +12,7 @@ public class PuzzleReset : MonoBehaviour
     void Start()
     {
         lever = GetComponent<XRLever>();
-        originLayerMask = lever.interactionLayers;
+        originLayerMask = lever.interactionLayers; // 원본 레이어 저장
         puzzle = GameObject.Find("PuzzleWheel").GetComponent<Puzzle>(); // 조명 초기화 메서드 가져오기 위해서
         lever.selectExited.AddListener(x => LightClear());
     }

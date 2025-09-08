@@ -14,7 +14,7 @@ public class BoatGetOff : ShowCanvas
         canvas = GameObject.Find("Canvas_GetOff").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        return base.Start();
+        yield return base.Start();
     }
 
     // 버튼 이벤트
