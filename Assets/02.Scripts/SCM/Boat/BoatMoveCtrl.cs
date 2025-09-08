@@ -18,8 +18,8 @@ public class BoatMoveCtrl : MonoBehaviour
 
     void Update()
     {
-        if (!cockpit.isCockpit) return;
-        cockpit.ray.SetActive(false);
+        if (!cockpit.isCockpit) return; // 보트 조종상태가 아니면 return
+        cockpit.ray.SetActive(false); // 보트 조종할 때는 Ray 끄기
         Vector2 input = moveInput.action.ReadValue<Vector2>();
         Vector3 dir = transform.forward * input.y;
         transform.position += dir * moveSpeed * Time.deltaTime;

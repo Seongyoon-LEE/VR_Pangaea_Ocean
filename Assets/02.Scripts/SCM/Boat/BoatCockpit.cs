@@ -19,7 +19,7 @@ public class BoatCockpit : ShowCanvas
         canvas = GameObject.Find("Canvas_BoatCtrl").gameObject;
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoatControll);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        return base.Start();
+        yield return base.Start();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,9 +55,10 @@ public class BoatCockpit : ShowCanvas
         playerTr.position = isSetting ? transform.position : cockpitPos.position; // 위치
         Quaternion rot = cockpitPos.rotation * Quaternion.Euler(0f, 180f, 0f); // 방향 설정
         playerTr.rotation = isSetting ? rot : cockpitPos.rotation; // 회전 - 후방 : 전방
+        // 플레이어 이동을 막고 보트가 움직이게 하기위해서 두가지 컴포넌트 비활성화
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;
-        playerTr.parent = isSetting ? null : transform.parent;
+        playerTr.parent = isSetting ? null : transform.parent; // 플레이어 오브젝트 위치를 변경
         equipmentsList[curEquipment].SetActive(isSetting);
         if (curEquipment == 0) equipmentsList[1].SetActive(isSetting);
     }

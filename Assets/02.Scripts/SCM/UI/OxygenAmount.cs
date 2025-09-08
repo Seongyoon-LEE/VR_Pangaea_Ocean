@@ -24,7 +24,6 @@ public class OxygenAmount : MonoBehaviour
     {
         while (true)
         {
-            
             DataManager.Instance.PlayerData.oxygen += GameManager.Instance.state switch
             {
                 GameManager.State.NOMAL => -1, // 평상시 수중
@@ -41,6 +40,7 @@ public class OxygenAmount : MonoBehaviour
             yield return oxygenWs;
         }
     }
+    // UI Update
     private void UpdateOxygenAmount()
     {
         //float ratio = GameManager.Instance.oxygenPoint / maxOxygenPoint;

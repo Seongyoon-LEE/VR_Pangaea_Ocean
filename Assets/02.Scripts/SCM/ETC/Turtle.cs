@@ -14,6 +14,7 @@ public class Turtle : MonoBehaviour
     [SerializeField] private MeshRenderer meshRenderer;
     public List<Material> materials; // 머터리얼 넣을 때 퍼즐 정답 순서랑 맞춰서 넣기
     private Material[] originMaterials;
+    
     public int idx = 0; // 거북이 순서에 맞춰 인스펙터에서 수정
     void Start()
     {
@@ -41,7 +42,10 @@ public class Turtle : MonoBehaviour
 
         transform.GetComponent<BoxCollider>().enabled = false;
         grass.SetActive(false);
-        // 스피드 증가 or 무게량 증가 추가예정
+        // 무게량 증가 (중첩 가능)
+        // 스테이지 이동시 초기화
+        // 사망시 초기화
+        GameManager.Instance.BuffApp();
 
         // 3스테이지 일때 키 생성과 거북이 등껍질 색상 변경
         if (stage == 3)
