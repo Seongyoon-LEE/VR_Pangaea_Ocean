@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -18,10 +19,15 @@ public class VacuumCleaner : MonoBehaviour
 
     [Header("IK 관련")]
     public Transform rightHandGrip; // 손이 따라갈 목표 지점
-    CharacterIKController characterIK; // 캐릭터 IK 컨트롤러
+    public Transform leftHandGrip; // 왼손이 따라갈 목표 지점
+    [SerializeField] CharacterIKController characterIK; // 캐릭터 IK 컨트롤러
 
     private void OnEnable()
     {
+        characterIK = FindObjectOfType<CharacterIKController>();
+        OnEquipLeftHand();
+        OnEquipRightHand();
+        print("청소기 활성화");
         if (rightTriggerAction != null && rightTriggerAction.action != null)
         {
             rightTriggerAction.action.performed += OnTriggerPressed;
@@ -30,7 +36,10 @@ public class VacuumCleaner : MonoBehaviour
     }
         void OnDisable()
         {
-            if (rightTriggerAction != null && rightTriggerAction.action != null)
+        OnUnEquipLeftHand();
+        OnUnEquipRightHand();
+        print("청소기 비활성화");
+        if (rightTriggerAction != null && rightTriggerAction.action != null)
             {
                 rightTriggerAction.action.performed -= OnTriggerPressed;
                 rightTriggerAction.action.canceled -= OnTriggerReleased;
@@ -61,7 +70,6 @@ public class VacuumCleaner : MonoBehaviour
                 inhalationPS.Stop();
             print("Stop");
         FirePos = transform.GetChild(2);
-        characterIK = FindObjectOfType<CharacterIKController>();
     }
 
     void Update()
@@ -69,20 +77,32 @@ public class VacuumCleaner : MonoBehaviour
         if (isFiring) RaycastCheck();
         inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
     }
+    
     // 아이템을 장착 했을때 호출되는 함수
-    public void OnEquip()
+    public void OnEquipRightHand()
     {
-        // 캐릭터에게 손잡이 잡으라고 명령
+        // 캐릭터에게 오른손 잡으라고 명령
         if (characterIK != null && rightHandGrip != null)
-            characterIK.SetHandTarget(rightHandGrip);
+            characterIK.SetHandTarget(AvatarIKGoal.RightHand, rightHandGrip);
+    
+    }
+    public void OnEquipLeftHand()
+    {
+        // 캐릭터에게 왼손 잡으라고 명령
+        if (leftHandGrip != null)
+            characterIK.SetHandTarget(AvatarIKGoal.LeftHand, leftHandGrip);
     }
     // 아이템을 해재 했을때 호출되는 함수
-    public void OnUnEquip()
+    public void OnUnEquipRightHand()
     {
-        // 캐릭터에게 손잡이 놓으라고 명령
+        // 캐릭터에게 왼손 놓으라고 명령
         if (characterIK != null)
-            characterIK.ClearHandTarget();
-        StopShoot();
+            characterIK.ClearHandTarget(AvatarIKGoal.LeftHand);
+    }
+    public void OnUnEquipLeftHand()
+    {
+        // 캐릭터에게 오른손 놓으라고 명령
+            characterIK.ClearHandTarget(AvatarIKGoal.RightHand);
     }
     public void StopShoot()
     {
