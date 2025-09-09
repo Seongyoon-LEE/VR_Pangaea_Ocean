@@ -5,7 +5,6 @@ using UnityEngine;
 public class EquipmentChange : MonoBehaviour
 {
     public List<GameObject> equipmentList = new List<GameObject>();
-    private readonly int maxCount = 7; // equipmentList 최대 카운트 수
 
     private void Start()
     {

@@ -20,7 +20,7 @@ public class BoatMoveCtrl : MonoBehaviour
     {
         if (!cockpit.isCockpit) return; // 보트 조종상태가 아니면 return
         cockpit.ray.SetActive(false); // 보트 조종할 때는 Ray 끄기
-        Vector2 input = moveInput.action.ReadValue<Vector2>();
+        Vector2 input = moveInput.action.ReadValue<Vector2>(); 
         Vector3 dir = transform.forward * input.y;
         transform.position += dir * moveSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up, input.x * turnSpeed *  Time.deltaTime);
