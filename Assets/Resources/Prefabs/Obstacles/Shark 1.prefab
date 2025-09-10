@@ -272,6 +272,8 @@ MonoBehaviour:
   - {fileID: 7823966843705192301}
   patrolPointParent: {fileID: 6960308188983381775}
   target: {fileID: 0}
+  normalSpeed: 5
+  chaseSpeed: 15
   test: 0
 --- !u!1 &7819321847286232345
 GameObject:
@@ -375,6 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6960308188983381775}
+  - component: {fileID: 356612780996886419}
   m_Layer: 0
   m_Name: Patrol Points
   m_TagString: Untagged
@@ -405,6 +408,24 @@ Transform:
   - {fileID: 7823966843705192301}
   m_Father: {fileID: 3011841727631515946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356612780996886419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8625790902105461834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957c1a4377ed9f049816169dcec3f016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWorldSize: {x: 200, y: 200, z: 200}
+  nodeRadius: 5
+  terrainMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  drawGizmo: 0
 --- !u!1 &8729640300115066140
 GameObject:
   m_ObjectHideFlags: 0

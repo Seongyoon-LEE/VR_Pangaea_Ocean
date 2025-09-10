@@ -8,22 +8,23 @@ public class Tornardo : MonoBehaviour
 
     public float pullRadius = 500f; // 회오리가 물체를 끌어당기는 반경
 
-    private float currentPullForce = 300f; // 매니저 스크립트로부터 전달받는 현재 당기는 힘
+    private float currentPullForce = 300f; //현재 당기는 힘
 
 
     public void SetPullForce(float force)
     {
-        currentPullForce = Mathf.Abs(force);
+        currentPullForce = Mathf.Abs(force); 
+        //절대값으로 지정
         
     }
 
     void FixedUpdate()
     {
         transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
-        // 당기는 힘이 없으면 아무것도 안함.
+        // 당기는 힘이 없으면 아무것도 안함
         if (currentPullForce <= 0) return;
 
-        // 회오리 주변의 모든 콜라이더(Collider)를 찾음.
+        // 회오리 주변의 모든 콜라이더를 찾음
         Collider[] colliders = Physics.OverlapSphere(transform.position, pullRadius);
 
 
@@ -36,7 +37,7 @@ public class Tornardo : MonoBehaviour
 
             if (hit.CompareTag("Player"))
             {
-                // 리지드바디(Rigidbody)가 있는 오브젝트만 힘을 받음.
+                // 리지드바디가 있는 오브젝트만 힘을 받음
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
