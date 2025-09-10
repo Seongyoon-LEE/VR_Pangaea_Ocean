@@ -38,6 +38,11 @@ public class OxygenAmount : MonoBehaviour
             if (currentManaGlobe.gameObject.activeInHierarchy)
                 UpdateOxygenAmount();
 
+            if (DataManager.Instance.PlayerData.oxygen <= 0)
+            { 
+
+            }
+
             yield return oxygenWs;
         }
     }

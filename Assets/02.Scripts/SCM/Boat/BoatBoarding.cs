@@ -8,7 +8,6 @@ public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
     private Transform playerTr;
-    private BoatCockpit hand;
     private GameObject trashBoard;
     protected override IEnumerator Start()
     {
