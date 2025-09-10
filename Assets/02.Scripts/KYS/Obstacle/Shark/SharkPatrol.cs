@@ -10,6 +10,8 @@ public class SharkPatrol : ObstacleData
     Transform patrolPointParent;
     [SerializeField]
     Transform target;
+
+    GridManager gridManager;
     int idx = 0;
 
 
@@ -27,6 +29,7 @@ public class SharkPatrol : ObstacleData
     private void Awake()
     {
         this.target = GameObject.FindGameObjectWithTag("Player").transform;
+        this.gridManager = GetComponentInChildren<GridManager>();
     }
     private void OnEnable()
     {
@@ -37,6 +40,10 @@ public class SharkPatrol : ObstacleData
     WaitForSeconds wsForAttack = new WaitForSeconds(1);
     IEnumerator PatrolRoutine()
     {
+        while (!this.gridManager.IsGridSet)
+        {
+            yield return null; // grid셋팅까지 대기
+        }
         // 포인트 하나씩 올려가면서 순찰하다가,
         // 앞쪽에 바닥 콜라이더 감지되면 바로 다음 포인트로
         while (true) // 플레이어가 주변에 들어올때까지
@@ -47,7 +54,7 @@ public class SharkPatrol : ObstacleData
                 this.transform.Translate(Vector3.forward * Time.deltaTime * this.speed);
                 // 앞쪽에 바닥 콜라이더 감지되는지 확인
                 if (Physics.Raycast(this.transform.position, this.transform.forward, 4f , 1<< 11)) // 터레인 레이어 11번
-                {
+                { 
                     this.idx = (this.idx + 1) % patrolPoints.Length;
                     this.transform.LookAt(patrolPoints[idx]);
                     continue;
@@ -66,10 +73,34 @@ public class SharkPatrol : ObstacleData
                             Debug.Log("공격");
                             yield return this.wsForAttack;
                         }
-                        else
+                        else // 추적 관련 로직
                         {
                             this.transform.LookAt(this.target.position);
-                            this.transform.Translate(Vector3.forward * Time.deltaTime * this.speed);
+                            if (Physics.Raycast(this.transform.position, this.transform.forward,
+                                Vector3.Distance(this.transform.position, this.target.position), this.gridManager.terrainMask)) //타겟과 상어 사이에 장애물이 있다면
+                            {
+                                Debug.Log("경로 탐색 후 추적");
+                                var path = this.gridManager.FindPath(this.transform.position, this.target.position);
+                                int index = 0;
+                                while (Physics.Raycast(this.transform.position, (this.target.position - this.transform.position).normalized,
+                                    Vector3.Distance(this.transform.position, this.target.position), this.gridManager.terrainMask))
+                                // 상어와 타겟 사이에 장애물이 있는 동안만
+                                {
+                                    if (path == null || index >= path.Count) break;
+
+                                    Vector3 targetPoint = path[index].worldPosition;
+                                    this.transform.LookAt(targetPoint);
+                                    this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+                                    if (Vector3.Distance(transform.position, targetPoint) < this.gridManager.nodeRadius)
+                                        index++;
+                                    yield return null;
+                                }
+                            }
+                            else
+                            {
+                                this.transform.Translate(Vector3.forward * Time.deltaTime * this.speed); //없으면 그대로 직진
+                            }
                             yield return null;
                         }
                     }
