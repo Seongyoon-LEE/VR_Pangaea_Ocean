@@ -34,6 +34,7 @@ public class OxygenAmount : MonoBehaviour
             };
             DataManager.Instance.PlayerData.oxygen = Mathf.Clamp(DataManager.Instance.PlayerData.oxygen, 0, maxOxygenPoint);
 
+            // UI가 활성화 되어있다면 UI 업데이트
             if (currentManaGlobe.gameObject.activeInHierarchy)
                 UpdateOxygenAmount();
 
@@ -44,7 +45,7 @@ public class OxygenAmount : MonoBehaviour
     private void UpdateOxygenAmount()
     {
         //float ratio = GameManager.Instance.oxygenPoint / maxOxygenPoint;
-        float ratio = DataManager.Instance.PlayerData.oxygen / maxOxygenPoint;
+        float ratio = DataManager.Instance.PlayerData.oxygen / maxOxygenPoint; // 비율 계산
         float hight = currentManaGlobe.rectTransform.rect.height * 0.9f;
         currentManaGlobe.rectTransform.localPosition = new Vector3(0, hight * ratio - hight, 0);
     }
