@@ -7,10 +7,18 @@ public class LightOnOff : MonoBehaviour
 {
     public InputActionProperty mainInput;
     private Light _light;
-    void Start()
+    void Awake()
     {
         _light = GetComponent<Light>();
+    }
+
+    private void OnEnable()
+    {
         mainInput.action.started += x => OnOff();
+    }
+    private void OnDisable()
+    {
+        mainInput.action.started -= x => OnOff();
     }
 
     private void OnOff()

@@ -31,7 +31,7 @@ public class OxygenArea : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            GameManager.Instance.state = GameManager.State.NOMAL;
+            GameManager.Instance.state = GameManager.State.NORMAL;
             StopAllCoroutines();
         }
     }
@@ -60,6 +60,6 @@ public class OxygenArea : MonoBehaviour
         }
         // 회복 가능 산소를 다 사용되면
         transform.gameObject.SetActive(false);
-        GameManager.Instance.state = GameManager.State.NOMAL;
+        GameManager.Instance.state = GameManager.State.NORMAL;
     }
 }

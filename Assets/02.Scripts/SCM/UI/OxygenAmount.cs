@@ -26,10 +26,11 @@ public class OxygenAmount : MonoBehaviour
         {
             DataManager.Instance.PlayerData.oxygen += GameManager.Instance.state switch
             {
-                GameManager.State.NOMAL => -1, // 평상시 수중
+                GameManager.State.NORMAL => -1, // 평상시 수중
                 GameManager.State.RECOVERY => 1, // 회복
                 GameManager.State.VOLCANO => -2, // 화산지대
                 GameManager.State.MAGMA => -(maxOxygenPoint * 0.1f), // 용암에 닿았을 때
+                GameManager.State.TORNADO => -maxOxygenPoint,
                 _ => 0 // 기타 사항
             };
             DataManager.Instance.PlayerData.oxygen = Mathf.Clamp(DataManager.Instance.PlayerData.oxygen, 0, maxOxygenPoint);
@@ -38,6 +39,7 @@ public class OxygenAmount : MonoBehaviour
             if (currentManaGlobe.gameObject.activeInHierarchy)
                 UpdateOxygenAmount();
 
+            // 산소량이 0이하일 때 보트로 리스폰
             if (DataManager.Instance.PlayerData.oxygen <= 0)
             { 
 
@@ -49,7 +51,6 @@ public class OxygenAmount : MonoBehaviour
     // UI Update
     private void UpdateOxygenAmount()
     {
-        //float ratio = GameManager.Instance.oxygenPoint / maxOxygenPoint;
         float ratio = DataManager.Instance.PlayerData.oxygen / maxOxygenPoint; // 비율 계산
         float hight = currentManaGlobe.rectTransform.rect.height * 0.9f;
         currentManaGlobe.rectTransform.localPosition = new Vector3(0, hight * ratio - hight, 0);
