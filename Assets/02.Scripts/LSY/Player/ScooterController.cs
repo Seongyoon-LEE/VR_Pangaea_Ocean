@@ -11,19 +11,33 @@ public class ScooterController : MonoBehaviour
     [Header("플레이어 참조")]
     [SerializeField] private SwimMovement swimMovement;
 
+    [Header("IK 참조")]
+    IKGrabbable ikGrabbable;
+
     private CharacterController playerController;
     [SerializeField] Transform rightControllerTr;
+
+    Animator animator;
     private bool isBoosting = false; // 현재 부스터가 켜져 있는지 확인하는 스위치
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
+        ikGrabbable = GetComponent<IKGrabbable>();
         swimMovement = GameObject.FindObjectOfType<SwimMovement>();
         if (swimMovement != null)
         {
             playerController = swimMovement.GetComponent<CharacterController>();
         }
     }
-
+    private void OnEnable()
+    {
+        ikGrabbable.Grab();
+    }
+    private void OnDisable()
+    {
+        ikGrabbable.Release();
+    }
     void Update()
     {
         if (playerController == null || swimMovement == null)
@@ -42,6 +56,7 @@ public class ScooterController : MonoBehaviour
             {
                 isBoosting = true;
                 swimMovement.enabled = false; // 기본 수영 기능 비활성화
+                animator.SetBool("BoostOn", true);
                 Debug.Log("부스터 ON!");
             }
 
@@ -59,6 +74,7 @@ public class ScooterController : MonoBehaviour
             {
                 isBoosting = false;
                 swimMovement.enabled = true; // 기본 수영 기능 다시 활성화
+                animator.SetBool("BoostOn", false);
                 Debug.Log("부스터 OFF!");
             }
         }

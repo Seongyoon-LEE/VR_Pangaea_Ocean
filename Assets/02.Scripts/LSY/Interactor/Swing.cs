@@ -14,16 +14,30 @@ public class Swing : MonoBehaviour
     [Header("레이어")]
     public LayerMask hittableLayers;
 
+    [Header("IK 관련")]
+    IKGrabbable ikGrabbable;
+
     Vector3 prevTipPos; // 이전 프레임 팁 위치
     float curSpeed; // 이번 프레임 팁 속도(거리/시간)
     float lastHitTime = -999f;
 
+    private void Awake()
+    {
+        ikGrabbable = GetComponent<IKGrabbable>();
+    }
+    private void OnEnable()
+    {
+        ikGrabbable.Grab();
+    }
+    private void OnDisable()
+    {
+        ikGrabbable.Release();
+    }
     void Start()
     {
         if (tip == null) tip = this.transform;
         prevTipPos = tip.position;
     }
-
     void Update()
     {
         SwingSpeed();
