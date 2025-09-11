@@ -2071,6 +2071,7 @@ GameObject:
   - component: {fileID: 715818109}
   - component: {fileID: 715818107}
   - component: {fileID: 715818108}
+  - component: {fileID: 715818112}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2263,6 +2264,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 0}
+--- !u!114 &715818112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715818102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fc705c945e7e740b2bccdcadc81d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &787597810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5529,6 +5542,31 @@ PrefabInstance:
       addedObject: {fileID: 1023502879}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!1 &1852727790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 812574585432850048, guid: f5cf17f0870b021478ab890b43cfc849,
+    type: 3}
+  m_PrefabInstance: {fileID: 7077675356962948024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1852727792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852727790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d3abbcd2ccf2e418089b0920fb8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle1Solved: 0
+  puzzle2Solved: 0
+  puzzle3Solved: 0
+  puzzleAddSolved: 0
+  turtle1Solved: 0
+  turtle2Solved: 0
+  turtle3Solved: 0
 --- !u!1 &1874200706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5897,6 +5935,11 @@ PrefabInstance:
       propertyPath: ray
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4554816634782271611, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 5928606172665612797, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5936,6 +5979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007907749328881051, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7127997157757933943, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}
@@ -6516,7 +6564,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 812574585432850048, guid: f5cf17f0870b021478ab890b43cfc849,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1852727792}
   m_SourcePrefab: {fileID: 100100000, guid: f5cf17f0870b021478ab890b43cfc849, type: 3}
 --- !u!1001 &8228725748089897001
 PrefabInstance:

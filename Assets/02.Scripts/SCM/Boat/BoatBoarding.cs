@@ -53,7 +53,8 @@ public class BoatBoarding : ShowCanvas
             // 탑승 후 장비를 Hand모델로 변경
             for (int i = 0; i < equipmentsList.Count; i++)
             {
-                equipmentsList[i].SetActive(i == 0 || i == 1);
+                //equipmentsList[i].SetActive(i == 0 || i == 1);
+                equipmentsList[i].SetActive(false);
             }
         }
     }

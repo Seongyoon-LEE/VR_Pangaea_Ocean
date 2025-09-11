@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Turtle : MonoBehaviour
 {
+    private readonly string[] turtleStr = { "Turtle1", "Turtle2", "Turtle3" };
     private GameObject grass;
     private GameObject key;
     private XRGrabInteractable keyGrab;
@@ -15,7 +16,7 @@ public class Turtle : MonoBehaviour
     public List<Material> materials; // 머터리얼 넣을 때 퍼즐 정답 순서랑 맞춰서 넣기
     private Material[] originMaterials;
     
-    public int idx = 0; // 거북이 순서에 맞춰 인스펙터에서 수정
+    public int idx = 0; // 거북이 순서에 맞춰 인스펙터에서 수정 (0~2)
     void Start()
     {
         grass = transform.GetChild(1).gameObject;
@@ -28,6 +29,13 @@ public class Turtle : MonoBehaviour
         // 3스테이지에서만 보이게
         if (stage != 3)
             key.SetActive(false);
+
+        // 현재 거북이 상태값에 대한 키가 존재하는 지 확인하고 그 값을 가져온다.
+        if (DataManager.Instance.dicPuzzle.TryGetValue(turtleStr[idx], out bool value))
+        {
+            if (value) // true라면 거북이가 해초에서 구해진 상태로 바꾼다.
+                GrassDisable();
+        }
     }
 
     // 테스트용
@@ -42,6 +50,12 @@ public class Turtle : MonoBehaviour
 
         transform.GetComponent<BoxCollider>().enabled = false;
         grass.SetActive(false);
+
+        if (DataManager.Instance.dicPuzzle.ContainsKey(turtleStr[idx])) // 키가 존재한다면 값만 변경
+            DataManager.Instance.dicPuzzle[turtleStr[idx]] = true;
+        else // 키가 존재하지 않으면 키와 값을 넣기
+            DataManager.Instance.dicPuzzle.Add(turtleStr[idx], true);
+
         // 무게량 증가 (중첩 가능)
         // 스테이지 이동시 초기화
         // 사망시 초기화

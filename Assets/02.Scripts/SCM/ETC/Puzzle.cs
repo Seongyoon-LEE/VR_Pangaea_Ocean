@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Puzzle : MonoBehaviour
 {
+    private readonly string[] puzzleStr = { "Puzzle1", "Puzzle2", "Puzzle3" };
     private enum State
     {
         NOMAL, TRUE, FALSE
@@ -36,6 +38,18 @@ public class Puzzle : MonoBehaviour
         originLayerMask = knob.interactionLayers; // 현재 레이어 저장
         vorota = GameObject.Find("Vorota").GetComponentInChildren<Animator>(); // 성문을 열기 위한 애니메이터
         valueImage = GetComponentInChildren<Image>(); // 현재 선택된 색을 보여주기 위한 이미지
+
+        // 퍼즐 정보가 조명색 변경
+        if (DataManager.Instance.dicPuzzle.Count != 0) // 퍼즐 정보가 있다면
+        {
+            for (int i = 0; i < DataManager.Instance.dicPuzzle.Count; i++)
+            {
+                if (DataManager.Instance.dicPuzzle[puzzleStr[i]])
+                    _light[i].MaterialSetting((int)State.TRUE);
+                else
+                    _light[i].MaterialSetting((int)State.FALSE);
+            }
+        }
     }
 
     // 정답 선택
@@ -54,12 +68,21 @@ public class Puzzle : MonoBehaviour
         if (select == GameManager.Instance.answerArr[curQuestion])
         {
             print("정답");
+            // 퍼즐 정보 갱신
+            if (DataManager.Instance.dicPuzzle.ContainsKey(puzzleStr[curQuestion])) // 이미 키가 존재하면 값만 변경
+                DataManager.Instance.dicPuzzle[puzzleStr[curQuestion]] = true;
+            else  // 키가 존재하지 않으면 Add 하여 키와 값 넣기
+                DataManager.Instance.dicPuzzle.Add(puzzleStr[curQuestion], true);
             _light[curQuestion++].MaterialSetting((int)State.TRUE);
             answerCount++;
         }
         else
         {
             print("오답");
+            if (DataManager.Instance.dicPuzzle.ContainsKey(puzzleStr[curQuestion]))
+                DataManager.Instance.dicPuzzle[puzzleStr[curQuestion]] = false;
+            else
+                DataManager.Instance.dicPuzzle.Add(puzzleStr[curQuestion], false);
             _light[curQuestion++].MaterialSetting((int)State.FALSE);
         }
 

@@ -30,10 +30,10 @@ public class ShowCanvas : MonoBehaviour
     // 장비들 가져오기
     private void SetEquipments()
     {
-        var leftHand = GameObject.Find("Left Hand Model");
+        //var leftHand = GameObject.Find("Left Hand Model");
 
-        if (leftHand != null)
-            equipmentsList.Add(leftHand);
+        //if (leftHand != null)
+        //    equipmentsList.Add(leftHand);
 
         equipments = GameObject.Find("Equipments").transform;
 
@@ -97,7 +97,8 @@ public class ShowCanvas : MonoBehaviour
     {
         for (int i = 0; i < equipmentsList.Count; i++)
         {
-            equipmentsList[i].SetActive(i == 0 || i == 1);
+            //equipmentsList[i].SetActive(i == 0 || i == 1);
+            equipmentsList[i].SetActive(false);
         }
     }
 
