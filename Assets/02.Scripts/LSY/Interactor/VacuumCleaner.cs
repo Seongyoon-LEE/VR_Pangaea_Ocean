@@ -18,15 +18,14 @@ public class VacuumCleaner : MonoBehaviour
     public Action onCleanAction;
 
     [Header("IK 관련")]
-    public Transform rightHandGrip; // 손이 따라갈 목표 지점
-    public Transform leftHandGrip; // 왼손이 따라갈 목표 지점
-    [SerializeField] CharacterIKController characterIK; // 캐릭터 IK 컨트롤러
-
+    IKGrabbable ikGrabbable;
+    private void Awake()
+    {
+        ikGrabbable = GetComponent<IKGrabbable>();
+    }
     private void OnEnable()
     {
-        characterIK = FindObjectOfType<CharacterIKController>();
-        OnEquipLeftHand();
-        OnEquipRightHand();
+        ikGrabbable.Grab();
         print("청소기 활성화");
         if (rightTriggerAction != null && rightTriggerAction.action != null)
         {
@@ -36,8 +35,7 @@ public class VacuumCleaner : MonoBehaviour
     }
         void OnDisable()
         {
-        OnUnEquipLeftHand();
-        OnUnEquipRightHand();
+        ikGrabbable.Release();
         print("청소기 비활성화");
         if (rightTriggerAction != null && rightTriggerAction.action != null)
             {
@@ -76,33 +74,6 @@ public class VacuumCleaner : MonoBehaviour
     {
         if (isFiring) RaycastCheck();
         inhalationPS.Simulate(10, true, false); // 파티클 시스템을 시뮬레이션합니다.
-    }
-    
-    // 아이템을 장착 했을때 호출되는 함수
-    public void OnEquipRightHand()
-    {
-        // 캐릭터에게 오른손 잡으라고 명령
-        if (characterIK != null && rightHandGrip != null)
-            characterIK.SetHandTarget(AvatarIKGoal.RightHand, rightHandGrip);
-    
-    }
-    public void OnEquipLeftHand()
-    {
-        // 캐릭터에게 왼손 잡으라고 명령
-        if (leftHandGrip != null)
-            characterIK.SetHandTarget(AvatarIKGoal.LeftHand, leftHandGrip);
-    }
-    // 아이템을 해재 했을때 호출되는 함수
-    public void OnUnEquipRightHand()
-    {
-        // 캐릭터에게 왼손 놓으라고 명령
-        if (characterIK != null)
-            characterIK.ClearHandTarget(AvatarIKGoal.LeftHand);
-    }
-    public void OnUnEquipLeftHand()
-    {
-        // 캐릭터에게 오른손 놓으라고 명령
-            characterIK.ClearHandTarget(AvatarIKGoal.RightHand);
     }
     public void StopShoot()
     {
