@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable()]
 public class PlayerData
@@ -35,6 +36,8 @@ public class PlayerData
     public int score;
 
     public bool isBoarding = false;
+
+    public int stageIdx;
 
     public Dictionary<int, Vector2Int> trashIdList = new Dictionary<int, Vector2Int>();
 }

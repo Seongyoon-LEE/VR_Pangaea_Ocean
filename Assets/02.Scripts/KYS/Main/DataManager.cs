@@ -13,6 +13,7 @@ public class DataManager : MonoBehaviour
     public Dictionary<Vector2Int, List<ObstacleInfo>> dicObstacle = new Dictionary<Vector2Int, List<ObstacleInfo>>(); // 장애물 정보를 담을 딕셔너리
 
     public Dictionary<int, WeightData> dicWeight = new Dictionary<int, WeightData>(); // 쓰레기 종류별 무게 정보가 들어가는 딕셔너리
+    public Dictionary<string,bool> dicPuzzle = new Dictionary<string,bool>(); // 퍼즐 클리어 여부를 담는 딕셔너리
     public PlayerData PlayerData { get; set; }
     public bool PlayerDataSaved { private get; set; } = false; // 플레이어 데이터가 저장되었는지 여부
 
@@ -47,6 +48,10 @@ public class DataManager : MonoBehaviour
                 var obstacleJson = File.ReadAllText("./Assets/Resources/ObstacleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
                 var obstacleData = JsonConvert.DeserializeObject<Dictionary<string, List<ObstacleInfo>>>(obstacleJson); // JSON 데이터를 딕셔너리로 역직렬화
                 this.dicObstacle = obstacleData.ToDictionary(x => Vector2IntParse(x.Key), x => x.Value); // 딕셔너리로 변환
+
+                // PuzzleMapData도 있음
+                var puzzleJson = File.ReadAllText("./Assets/Resources/PuzzleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
+                this.dicPuzzle = JsonConvert.DeserializeObject<Dictionary<string, bool>>(puzzleJson);
             }
 
             if (File.Exists("./Assets/Resources/PlayerData.json"))
@@ -73,9 +78,11 @@ public class DataManager : MonoBehaviour
     }
     public async void SaveData()
     {
+        // OnApplicationQuit이 아닌 인게임에 들어가고 난 다음 게임을 끌때 따로 실행될수 있도록 빼야한다.
         string trashJson = null;
         string obstacleJson = null;
         string playerJson = null;
+        string pJson = null;
 
         while (!this.PlayerDataSaved)
         {
@@ -86,17 +93,20 @@ public class DataManager : MonoBehaviour
         {
             trashJson = JsonConvert.SerializeObject(dicTrash); // 딕셔너리를 JSON으로 직렬화
             obstacleJson = JsonConvert.SerializeObject(dicObstacle); // 딕셔너리를 JSON으로 직렬화
+            pJson = JsonConvert.SerializeObject(dicPuzzle); // 딕셔너리를 JSON으로 직렬화
             playerJson = JsonConvert.SerializeObject(PlayerData); // 플레이어 데이터를 JSON으로 직렬화
         });
         await File.WriteAllTextAsync("./Assets/Resources/TrashMapData.json", trashJson);
         await File.WriteAllTextAsync("./Assets/Resources/ObstacleMapData.json", obstacleJson);
         await File.WriteAllTextAsync("./Assets/Resources/PlayerData.json", playerJson);
+        await File.WriteAllTextAsync("./Assets/Resources/PuzzleMapData.json", pJson);
         Debug.Log("저장됨");
         this.PlayerDataSaved = false; // 저장이 끝났으니 다시 false로 설정
     }
 
     private void OnApplicationQuit()
     {
+        //DataManager안에 들어있는 OnApplicationQuit은 임시용, 추후에 게임안에 있는 쪽으로 따로 빼줘야한다.
         SaveData(); //애플리케이션 종료 시 쓰레기 데이터를 저장
     }
 }
