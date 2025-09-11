@@ -20,7 +20,7 @@ public class BoatGetOff : ShowCanvas
     // 버튼 이벤트
     public void GetOff()
     {
-        // 바라보고 있는 방향 유지 한채 이동
+        // 바라보고 있는 방향 유지한 채 이동
         Vector3 dir = (playerTr.position - transform.parent.position).normalized;
         playerTr.position += dir * 4f;
         DataManager.Instance.PlayerData.isBoarding = false;

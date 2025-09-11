@@ -1646,6 +1646,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LightButton",
+                    "type": "Button",
+                    "id": "cc9fbf1b-e1ff-4b5b-8a25-8f35dda37449",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1822,6 +1831,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa24e2aa-bb6e-4ec5-a1ff-2657ed0f4a5a",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

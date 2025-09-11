@@ -58,7 +58,7 @@ public class Turtle : MonoBehaviour
     private void KeySetting()
     {
         key.transform.parent = null; // 거북이 밖으로 꺼내기
-        key.tag = "Key";
+        key.tag = "Key"; // 키 태그 변경
         key.GetComponent<BoxCollider>().isTrigger = false;
         keyGrab.interactionLayers = originLayerMask; // 원래 레이어로 변경
     }

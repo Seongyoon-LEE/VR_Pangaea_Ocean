@@ -15,7 +15,14 @@ public class LobbyUIManager : MonoBehaviour
         this.startBtn.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(2); // 내부 로직 관련
-            SceneManager.LoadScene(3, LoadSceneMode.Additive); // 스테이지(맵)
+            if (DataManager.Instance.IsPlayerDataExist)
+            {
+                SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive); // 데이터에 해당하는 씬 로딩
+            }
+            else
+            {
+                SceneManager.LoadScene(3, LoadSceneMode.Additive); // 스테이지(맵)
+            }
             SceneManager.LoadScene(4, LoadSceneMode.Additive); // 플레이어
         });
         this.exitBtn.onClick.AddListener(() =>

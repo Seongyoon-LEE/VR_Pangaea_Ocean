@@ -18,7 +18,7 @@ public class VolcanoArea : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            GameManager.Instance.state = GameManager.State.NOMAL;
+            GameManager.Instance.state = GameManager.State.NORMAL;
         }
     }
 }
