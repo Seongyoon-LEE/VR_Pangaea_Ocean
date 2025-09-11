@@ -74,11 +74,13 @@ public class Player : MonoBehaviour
             } 
         }*/
     }
-    private void PlayerDie()
+    public void PlayerDie()
     {
+        var boat = GameObject.Find("Boat").transform;
         // 플레이어가 죽었을 때의 로직
-        this.transform.position = Vector3.zero; // 플레이어 위치 초기화(테스트용)
-        this.transform.rotation = Quaternion.identity; // 플레이어 회전 초기화(테스트용)
+        DataManager.Instance.PlayerData.isBoarding = true;
+        this.transform.position = boat.position + new Vector3(0, 1f, -2f); // 플레이어 위치 초기화
+        this.transform.rotation = boat.rotation; // 플레이어 회전 초기화
 
         foreach (var trash in this.PlayerData.trashIdList)
         {

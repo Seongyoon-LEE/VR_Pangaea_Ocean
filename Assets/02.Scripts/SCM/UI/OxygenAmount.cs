@@ -15,7 +15,10 @@ public class OxygenAmount : MonoBehaviour
             yield return null;
         }
         oxygenWs = new WaitForSeconds(1f);
-        
+
+        if (DataManager.Instance.PlayerData.isBoarding)
+            GameManager.Instance.state = GameManager.State.RECOVERY;
+
         StartCoroutine(OxygenUpdate());
     }
 
@@ -24,10 +27,12 @@ public class OxygenAmount : MonoBehaviour
     {
         while (true)
         {
+            yield return oxygenWs;
+
             DataManager.Instance.PlayerData.oxygen += GameManager.Instance.state switch
             {
                 GameManager.State.NORMAL => -1, // 평상시 수중
-                GameManager.State.RECOVERY => 1, // 회복
+                GameManager.State.RECOVERY => 10, // 회복
                 GameManager.State.VOLCANO => -2, // 화산지대
                 GameManager.State.MAGMA => -(maxOxygenPoint * 0.1f), // 용암에 닿았을 때
                 GameManager.State.TORNADO => -(maxOxygenPoint * 0.2f),
@@ -41,11 +46,12 @@ public class OxygenAmount : MonoBehaviour
 
             // 산소량이 0이하일 때 보트로 리스폰
             if (DataManager.Instance.PlayerData.oxygen <= 0)
-            { 
-
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PlayerDie();
+                UpdateOxygenAmount();
             }
 
-            yield return oxygenWs;
+            
         }
     }
     // UI Update

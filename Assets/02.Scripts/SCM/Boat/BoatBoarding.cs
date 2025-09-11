@@ -47,6 +47,7 @@ public class BoatBoarding : ShowCanvas
         if (playerTr != null)
         {
             DataManager.Instance.PlayerData.isBoarding = true;
+
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
             if (trashBoard != null) 
                 trashBoard.SetActive(true);

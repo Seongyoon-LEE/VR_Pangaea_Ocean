@@ -25,15 +25,21 @@ public class StageExample : MapManager
         else
         {
             // ∆€¡Ò
-            this.puzzle1Solved = DataManager.Instance.dicPuzzle["Puzzle1"];
-            this.puzzle2Solved = DataManager.Instance.dicPuzzle["Puzzle2"];
-            this.puzzle3Solved = DataManager.Instance.dicPuzzle["Puzzle3"];
-            this.puzzleAddSolved = DataManager.Instance.dicPuzzle["PuzzleAdd"];
+            if (DataManager.Instance.dicPuzzle.Count != 0)
+            {
+                this.puzzle1Solved = DataManager.Instance.dicPuzzle["Puzzle1"];
+                this.puzzle2Solved = DataManager.Instance.dicPuzzle["Puzzle2"];
+                this.puzzle3Solved = DataManager.Instance.dicPuzzle["Puzzle3"];
+                this.puzzleAddSolved = DataManager.Instance.dicPuzzle["PuzzleAdd"];
+            }
 
             // ≈Õ∆≤
-            this.turtle1Solved = DataManager.Instance.dicPuzzle["Turtle1"];
-            this.turtle2Solved = DataManager.Instance.dicPuzzle["Turtle2"];
-            this.turtle3Solved = DataManager.Instance.dicPuzzle["Turtle3"];
+            if (DataManager.Instance.dicPuzzle.Count != 0)
+            {
+                this.turtle1Solved = DataManager.Instance.dicPuzzle["Turtle1"];
+                this.turtle2Solved = DataManager.Instance.dicPuzzle["Turtle2"];
+                this.turtle3Solved = DataManager.Instance.dicPuzzle["Turtle3"];
+            }
         }
     }
 

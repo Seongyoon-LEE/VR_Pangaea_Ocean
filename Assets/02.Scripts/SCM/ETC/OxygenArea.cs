@@ -45,7 +45,7 @@ public class OxygenArea : MonoBehaviour
             if (DataManager.Instance.PlayerData.oxygen < 100)
             {
                 GameManager.Instance.state = GameManager.State.RECOVERY;
-                oxygenPoint--;
+                oxygenPoint -= 10;
 
                 materialColor.a = alpha * (oxygenPoint / maxOxygen);
                 mr.material.color = materialColor;
