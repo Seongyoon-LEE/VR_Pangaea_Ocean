@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,14 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
     public ParticleSystem hitEffect; // 히트 이펙트
     public ParticleSystem breakEffect; // 파괴 이펙트
 
-    BreakableTrash breakable;   
+    BreakableTrash breakable;
+    public static event Action OnBigTrashBroken;
     public int hitsLeft;
 
     void Start()
     {
         //2~3회 랜덤 설정
-        hitsLeft = Random.Range(minHits, maxHits + 1);
+        hitsLeft = UnityEngine.Random.Range(minHits, maxHits + 1);
         breakable = GetComponent<BreakableTrash>();
     }
     public void TakeHit(Transform hitPoint)
@@ -34,7 +36,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
                 breakable.Break();
             }
             BreakEffect(); // 파괴 이펙트 함수
-            //Destroy(gameObject, 0.1f);
+            OnBigTrashBroken.Invoke(); // 큰쓰레기 파괴 이벤트
         }
         else
         {

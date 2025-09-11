@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LobbyUI : MonoBehaviour
 {
-    private GameObject canvas;
-    private Transform head;
+    [SerializeField] GameObject canvas;
+    [SerializeField] Transform head;
     private float spawnDistance = 2f;
 
     void  Start()
