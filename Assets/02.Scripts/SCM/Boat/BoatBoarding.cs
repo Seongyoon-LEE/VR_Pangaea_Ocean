@@ -16,7 +16,7 @@ public class BoatBoarding : ShowCanvas
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         trashBoard = GameObject.Find("GarbageCanvas");
-        
+        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
 
         // 보트에 탑승중이지 않을 때 UI비활성화

@@ -5659,6 +5659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boat
       objectReference: {fileID: 0}
+    - target: {fileID: 7707716823624210290, guid: 2a25e742c0f9d1b418959872400cd418,
+        type: 3}
+      propertyPath: ray
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8381774619820117616, guid: 2a25e742c0f9d1b418959872400cd418,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5667,7 +5672,7 @@ PrefabInstance:
     - target: {fileID: 8381774619820117616, guid: 2a25e742c0f9d1b418959872400cd418,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 8381774619820117616, guid: 2a25e742c0f9d1b418959872400cd418,
         type: 3}
@@ -23277,6 +23282,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2463984500848172927, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5928606172665612797, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -23341,6 +23351,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268719245204627670, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268719245204627670, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268719245204627670, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268719245204627670, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268719245204627670, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuEnable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8250890115613597729, guid: 875d5ef7d389fff43a94ab5bdd2b2e4a,
         type: 3}

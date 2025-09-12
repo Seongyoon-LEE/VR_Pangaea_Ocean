@@ -11,9 +11,10 @@ public class BoatGetOff : ShowCanvas
     protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
-        canvas = GameObject.Find("Canvas_GetOff").gameObject;
+        canvas = GameObject.Find("Canvas_GetOff");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
+        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
     }
 

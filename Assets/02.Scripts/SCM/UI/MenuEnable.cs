@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // 왼손에 사용되는 메뉴들
 public class MenuEnable : ShowCanvas
@@ -44,5 +45,10 @@ public class MenuEnable : ShowCanvas
     public void SetEquipment(GameObject item)
     {
         equipmentsList.Add(item);
+    }
+    public void Quit()
+    {
+        DataManager.Instance.SaveData();
+        SceneManager.LoadScene(1);
     }
 }

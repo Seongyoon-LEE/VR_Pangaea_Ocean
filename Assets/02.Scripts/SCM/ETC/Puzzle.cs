@@ -40,14 +40,24 @@ public class Puzzle : MonoBehaviour
         valueImage = GetComponentInChildren<Image>(); // 현재 선택된 색을 보여주기 위한 이미지
 
         // 퍼즐 정보가 조명색 변경
-        if (DataManager.Instance.dicPuzzle.Count != 0) // 퍼즐 정보가 있다면
+        //if (DataManager.Instance.dicPuzzle.Count != 0) // 퍼즐 정보가 있다면
+        //{
+        //    for (int i = 0; i < DataManager.Instance.dicPuzzle.Count; i++)
+        //    {
+        //        if (DataManager.Instance.dicPuzzle[puzzleStr[i]])
+        //            _light[i].MaterialSetting((int)State.TRUE);
+        //        else
+        //            _light[i].MaterialSetting((int)State.FALSE);
+        //    }
+        //}
+
+        for (int i = 0; i < puzzleStr.Length; i++)
         {
-            for (int i = 0; i < DataManager.Instance.dicPuzzle.Count; i++)
+            // 키가 있으면 값을 가져오기
+            if (DataManager.Instance.dicPuzzle.TryGetValue(puzzleStr[i], out bool value))
             {
-                if (DataManager.Instance.dicPuzzle[puzzleStr[i]])
-                    _light[i].MaterialSetting((int)State.TRUE);
-                else
-                    _light[i].MaterialSetting((int)State.FALSE);
+                // True일때 파랑색, False일때 빨강색으로 바꿔준다.
+                _light[i].MaterialSetting(value ? (int)State.TRUE : (int)State.FALSE);
             }
         }
     }

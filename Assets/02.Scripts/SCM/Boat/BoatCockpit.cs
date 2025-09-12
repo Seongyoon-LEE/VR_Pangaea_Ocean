@@ -16,9 +16,10 @@ public class BoatCockpit : ShowCanvas
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
         cockpitPos = transform.parent.GetChild(4).transform;
-        canvas = GameObject.Find("Canvas_BoatCtrl").gameObject;
+        canvas = GameObject.Find("Canvas_BoatCtrl");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoatControll);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
+        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
     }
 

@@ -67,19 +67,22 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
-        // 왼손UI 활성화시 Hand모델 활성화
+        print("진입");
+        // 왼손 UI 활성화시 장비 비활성화
         if (isEnable && isLeft)
             LeftUISetting();
 
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
+        print(allCanvas.Length);
         // 다른 캔버스를 끄기 위한 로직
         foreach (ShowCanvas c in allCanvas)
         {
             if (c.canvas != null && c.canvas != canvas)
             {
+                print(c.canvas.name);
                 c.canvas.SetActive(false);
-                // 보트에 탑승하고 오른손이고 비활성화 일 때 레이를 활성화
-                if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && c.ray.CompareTag("Right") && !isEnable);
+                // 보트에 탑승중에 UI를 비활성화하면 Ray를 활성화
+                if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);
             }
         }
         bool curRay = isEnable;
