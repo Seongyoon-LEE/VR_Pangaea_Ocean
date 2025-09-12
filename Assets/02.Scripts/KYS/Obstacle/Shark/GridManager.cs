@@ -39,20 +39,7 @@ public class GridManager : MonoBehaviour
             - Vector3.forward * gridWorldSize.z / 2; // 중심점 기준으로 그리드의 맨 왼쪽, 맨 아래, 맨 앞쪽 위치 가져오기
                                                      // = 실제 사이즈의 절반만큼 다 빼기
 
-        /*for (int x = 0; x < gridSizeX; x++)
-            for (int y = 0; y < gridSizeY; y++)
-                for (int z = 0; z < gridSizeZ; z++)
-                {
-                    Vector3 worldPoint = worldBottomLeft
-                        + Vector3.right * (x * nodeDiameter + nodeRadius)
-                        + Vector3.up * (y * nodeDiameter + nodeRadius)
-                        + Vector3.forward * (z * nodeDiameter + nodeRadius);
-                    //각 노드의 실제 위치(중심점) 구하기
 
-                    bool walkable = !Physics.CheckSphere(worldPoint, nodeRadius, terrainMask); // 장애물에 해당하는 콜라이더가 없는것을 체크,
-                                                                                               // 없어야 이동 가능
-                    grid[x, y, z] = new Node(walkable, worldPoint, x, y, z); // 값 추가
-                }*/
         for (int x = 0; x < gridSizeX; x++)
         {
             for (int z = 0; z < gridSizeZ; z++)
