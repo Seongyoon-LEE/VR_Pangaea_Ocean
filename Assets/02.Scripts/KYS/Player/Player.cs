@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     }
     private IEnumerator Start()
     {
-        while (!DataManager.Instance.IsLoadingFinish) // 데이터 매니저가 로딩이 끝날 때까지 대기
+        while (!DataManager.Instance.IsPlayerLoading) // 데이터 매니저가 로딩이 끝날 때까지 대기
         {
             yield return null;
         }
