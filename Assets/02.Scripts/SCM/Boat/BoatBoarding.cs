@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
-    private Transform playerTr;
+    [SerializeField] private Transform playerTr;
     [SerializeField] private GameObject trashBoard;
     protected override IEnumerator Start()
     {
@@ -16,7 +16,6 @@ public class BoatBoarding : ShowCanvas
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoardingBtn);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
         trashBoard = GameObject.Find("GarbageCanvas");
-        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
 
         // 보트에 탑승중이지 않을 때 UI비활성화
@@ -49,6 +48,7 @@ public class BoatBoarding : ShowCanvas
             DataManager.Instance.PlayerData.isBoarding = true;
 
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
+
             if (trashBoard != null) 
                 trashBoard.SetActive(true);
             // 탑승 후 장비를 Hand모델로 변경

@@ -40,6 +40,8 @@ public class SwimMovement : MonoBehaviour
         Vector2 leftStickInput = leftMoveAction.action.ReadValue<Vector2>();
         Vector2 rightStickInput = rightMoveAction.action.ReadValue<Vector2>();
 
+        if (leftStickInput == Vector2.zero && rightStickInput == Vector2.zero) return;
+
         // 왼쪽 조이스틱으로 카메라 기준 이동
         Vector3 forwardMove = cameraTr.forward * leftStickInput.y;
         Vector3 rightMove = cameraTr.right * leftStickInput.x;
@@ -66,7 +68,7 @@ public class SwimMovement : MonoBehaviour
         }
         Vector2 leftStickInput = leftMoveAction.action.ReadValue<Vector2>();
         Vector2 rightStickInput = rightMoveAction.action.ReadValue<Vector2>();
-
+        if (leftStickInput == Vector2.zero && rightStickInput == Vector2.zero) return;
         // 보트 위에서는 수평 이동만 가능
         Vector3 forward = cameraTr.forward;
         Vector3 right = cameraTr.right;

@@ -10,6 +10,7 @@ public class ShowCanvas : MonoBehaviour
     private float spawnDistance = 2f; // 거리
     protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비
     public Transform equipments; // 장비 그룹 위치 저장
+    protected bool isLeft = false;
     protected virtual IEnumerator Start()
     {
         // 로딩 될 때까지 대기
@@ -19,6 +20,7 @@ public class ShowCanvas : MonoBehaviour
         }
 
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
+        if (!isLeft) ray = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(3).gameObject;
         if (canvas != null) canvas.SetActive(false);
         // 처음 게임 실행했을 때 보트에 탑승중이 아니면 비활성화
         if (ray != null && !DataManager.Instance.PlayerData.isBoarding) ray.SetActive(false);
@@ -66,6 +68,9 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
+        if (DataManager.Instance.PlayerData.isBoarding && transform.GetComponent<EquipmentChange>() != null)
+            return;
+
         // 왼손 UI 활성화시 장비 비활성화
         if (isEnable && isLeft)
             LeftUISetting();
