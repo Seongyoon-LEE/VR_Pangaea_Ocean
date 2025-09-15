@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
         this.player.CellMoveAction = CellMove; // 플레이어 셀 이동 스크립트에 Cell이 바뀔 때 호출할 액션을 할당
 
         // 데이터 매니저쪽과 연계해서, 데이터 로딩이 이루어진 다음 셋팅하게
-        while (!DataManager.Instance.IsLoadingFinish) // 데이터 매니저가 로딩이 끝날 때까지 대기
+        while (!DataManager.Instance.IsTrashDataLoading) // 데이터 매니저가 로딩이 끝날 때까지 대기
         {
             yield return null;
         }

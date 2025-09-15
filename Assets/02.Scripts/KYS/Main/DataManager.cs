@@ -21,6 +21,7 @@ public class DataManager : MonoBehaviour
     public bool IsTrashDataExist { get; private set; } = false; // 쓰레기 데이터가 존재하는지 여부
     public bool IsPlayerDataExist { get; private set; } = false; // 플레이어 데이터가 존재하는지 여부
     public bool IsPlayerLoading { get; private set; } = false; // 플레이어 데이터 선 로딩
+    public bool IsTrashDataLoading { get; private set; } = false; // 쓰레기 데이터 등 선 로딩
     private void Awake()
     {
         Instance = this;
@@ -63,6 +64,7 @@ public class DataManager : MonoBehaviour
             }
         });
         this.IsPlayerLoading = true;
+        this.IsTrashDataLoading = true;
         // 로딩이 끝나면 정상적으로 게임 진행하는 내용 추가
         while (this.PlayerData == null)
         {
