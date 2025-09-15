@@ -65,11 +65,25 @@ public class BreakableTrash : TrashData
             piece.transform.parent = this.transform; // 비활성화할 모델 말고 그 상위를 부모로 설정
             piece.GetComponent<Rigidbody>().useGravity = true;
             piece.GetComponent<MeshCollider>().enabled = true;
+            GameManager.Instance.StartCoroutine(PieceY(piece));
             piece.layer = 6; // 일반 쓰레기 레이어로 변경
         }
         
         this.modelParent_Po.gameObject.SetActive(false);
         this.modelParent_Im.gameObject.SetActive(false);
+    }
+    IEnumerator PieceY(GameObject piece)
+    {
+        Rigidbody rb = piece.GetComponent<Rigidbody>();
+
+        while (true)
+        {
+            print(piece.transform.position.y);
+            if (piece.transform.position.y >= 0 && rb.velocity.y > 0)
+                rb.velocity = Vector3.zero;
+
+            yield return new WaitForSeconds(0.3f);
+        }
     }
     public override void DisActivate()
     {
