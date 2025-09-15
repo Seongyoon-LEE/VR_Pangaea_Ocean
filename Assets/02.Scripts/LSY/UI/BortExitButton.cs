@@ -30,7 +30,7 @@ public class BortExitButton : MonoBehaviour
             if (playerController != null)
                 playerController.enabled = false;
 
-            playerTr.position = boatTr.position + boatTr.forward * 4;
+            playerTr.position = boatTr.position + boatTr.right * 4;
 
             // 위치 이동후 캐릭터 컨트롤러 재활성화
             if (playerController != null)
