@@ -19,13 +19,13 @@ public class PlayerData
     
     public float posX;
     
-    public float posY;
+    public float posY = 1.5f;
     
     public float posZ;
     
     public float rotX;
     
-    public float rotY;
+    public float rotY = -90f;
     
     public float rotZ;
     
