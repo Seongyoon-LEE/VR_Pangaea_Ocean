@@ -19,13 +19,13 @@ public class PlayerData
     
     public float posX;
     
-    public float posY;
+    public float posY = 1.5f;
     
     public float posZ;
     
     public float rotX;
     
-    public float rotY;
+    public float rotY = -90f;
     
     public float rotZ;
     
@@ -35,7 +35,7 @@ public class PlayerData
 
     public int score;
 
-    public bool isBoarding = false;
+    public bool isBoarding = true;
 
     public int stageIdx;
 

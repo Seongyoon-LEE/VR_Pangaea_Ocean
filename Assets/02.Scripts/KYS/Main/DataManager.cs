@@ -20,6 +20,8 @@ public class DataManager : MonoBehaviour
     public bool IsLoadingFinish { get; private set; } = false; // 쓰레기 로딩이 끝났는지 여부
     public bool IsTrashDataExist { get; private set; } = false; // 쓰레기 데이터가 존재하는지 여부
     public bool IsPlayerDataExist { get; private set; } = false; // 플레이어 데이터가 존재하는지 여부
+    public bool IsPlayerLoading { get; private set; } = false; // 플레이어 데이터 선 로딩
+    public bool IsTrashDataLoading { get; private set; } = false; // 쓰레기 데이터 등 선 로딩
     private void Awake()
     {
         Instance = this;
@@ -61,7 +63,13 @@ public class DataManager : MonoBehaviour
                 this.PlayerData = JsonConvert.DeserializeObject<PlayerData>(json); // JSON 데이터를 역직렬화
             }
         });
+        this.IsPlayerLoading = true;
+        this.IsTrashDataLoading = true;
         // 로딩이 끝나면 정상적으로 게임 진행하는 내용 추가
+        while (this.PlayerData == null)
+        {
+            await Task.Yield(); // 최초 실행 시 플레이어 데이터 생성까지 대기
+        }
         IsLoadingFinish = true; // 로딩 완료
         Debug.Log("로딩 완료");
     }
@@ -83,7 +91,7 @@ public class DataManager : MonoBehaviour
         string obstacleJson = null;
         string playerJson = null;
         string pJson = null;
-
+        Debug.Log("저장시작");
         while (!this.PlayerDataSaved)
         {
             await Task.Yield(); // 플레이어 데이터가 저장될 때까지 대기
@@ -104,11 +112,17 @@ public class DataManager : MonoBehaviour
         this.PlayerDataSaved = false; // 저장이 끝났으니 다시 false로 설정
     }
 
-    private void OnApplicationQuit()
+    /*private void OnApplicationQuit()
     {
-        //DataManager안에 들어있는 OnApplicationQuit은 임시용, 추후에 게임안에 있는 쪽으로 따로 빼줘야한다.
-        SaveData(); //애플리케이션 종료 시 쓰레기 데이터를 저장
+        StartCoroutine(this.QuitRoutine());
     }
+    IEnumerator QuitRoutine()
+    {
+        while (!PlayerDataSaved)
+        {
+            yield return null;
+        }
+    }*/
 }
 
 //Application.persistentDataPath : 빌드할때 저장이 잘 안된다면 경로명으로 이거 사용

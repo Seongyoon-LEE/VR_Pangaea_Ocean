@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     }
     private IEnumerator Start()
     {
-        while (!DataManager.Instance.IsLoadingFinish) // 데이터 매니저가 로딩이 끝날 때까지 대기
+        while (!DataManager.Instance.IsPlayerLoading) // 데이터 매니저가 로딩이 끝날 때까지 대기
         {
             yield return null;
         }
@@ -90,6 +90,16 @@ public class Player : MonoBehaviour
         this.PlayerData.weight = 0; // 가방 용량 초기화
         this.PlayerData.oxygen = 100; // 산소 초기화 (테스트용)
     }
+    public void PlayerPosSave() // 플레이어 위치 저장용
+    {
+        DataManager.Instance.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
+        DataManager.Instance.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
+        DataManager.Instance.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
+        DataManager.Instance.PlayerData.posX = this.transform.position.x;
+        DataManager.Instance.PlayerData.posY = this.transform.position.y;
+        DataManager.Instance.PlayerData.posZ = this.transform.position.z;
+        DataManager.Instance.PlayerDataSaved = true;
+    }
     private void OnApplicationQuit()
     {
         DataManager.Instance.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
@@ -99,5 +109,6 @@ public class Player : MonoBehaviour
         DataManager.Instance.PlayerData.posY = this.transform.position.y;
         DataManager.Instance.PlayerData.posZ = this.transform.position.z;
         DataManager.Instance.PlayerDataSaved = true;
+        DataManager.Instance.SaveData();
     }
 }
