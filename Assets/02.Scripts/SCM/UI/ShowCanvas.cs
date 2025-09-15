@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowCanvas : MonoBehaviour
@@ -11,6 +10,7 @@ public class ShowCanvas : MonoBehaviour
     private float spawnDistance = 2f; // 거리
     protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비
     public Transform equipments; // 장비 그룹 위치 저장
+    protected bool isLeft = false;
     protected virtual IEnumerator Start()
     {
         // 로딩 될 때까지 대기
@@ -20,6 +20,7 @@ public class ShowCanvas : MonoBehaviour
         }
 
         head = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(0).transform;
+        if (!isLeft) ray = GameObject.Find("XR Origin (XR Rig)").transform.GetChild(0).GetChild(3).gameObject;
         if (canvas != null) canvas.SetActive(false);
         // 처음 게임 실행했을 때 보트에 탑승중이 아니면 비활성화
         if (ray != null && !DataManager.Instance.PlayerData.isBoarding) ray.SetActive(false);
@@ -67,19 +68,19 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
-        print("진입");
+        if (DataManager.Instance.PlayerData.isBoarding && transform.GetComponent<EquipmentChange>() != null)
+            return;
+
         // 왼손 UI 활성화시 장비 비활성화
         if (isEnable && isLeft)
             LeftUISetting();
 
         var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
-        print(allCanvas.Length);
         // 다른 캔버스를 끄기 위한 로직
         foreach (ShowCanvas c in allCanvas)
         {
             if (c.canvas != null && c.canvas != canvas)
             {
-                print(c.canvas.name);
                 c.canvas.SetActive(false);
                 // 보트에 탑승중에 UI를 비활성화하면 Ray를 활성화
                 if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);

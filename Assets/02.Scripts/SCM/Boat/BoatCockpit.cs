@@ -19,7 +19,6 @@ public class BoatCockpit : ShowCanvas
         canvas = GameObject.Find("Canvas_BoatCtrl");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(BoatControll);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
     }
 
@@ -42,8 +41,8 @@ public class BoatCockpit : ShowCanvas
     public void BoatControll()
     {
         // 현재 장착 중인 장비 인덱스 값 저장
-        curEquipment = equipmentsList.FindIndex(e => e.activeSelf);
-        curEquipment = curEquipment != -1 ? curEquipment : 0;
+        //curEquipment = equipmentsList.FindIndex(e => e.activeSelf);
+        //curEquipment = curEquipment != -1 ? curEquipment : 0;
 
 
         PlayerEnable(false);
@@ -60,8 +59,8 @@ public class BoatCockpit : ShowCanvas
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;
         playerTr.parent = isSetting ? null : transform.parent; // 플레이어 오브젝트 위치를 변경
-        equipmentsList[curEquipment].SetActive(isSetting);
-        if (curEquipment == 0) equipmentsList[1].SetActive(isSetting);
+        //equipmentsList[curEquipment].SetActive(isSetting);
+        //if (curEquipment == 0) equipmentsList[1].SetActive(isSetting);
     }
 
 }

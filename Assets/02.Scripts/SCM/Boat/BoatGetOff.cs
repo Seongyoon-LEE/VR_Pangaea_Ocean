@@ -14,7 +14,6 @@ public class BoatGetOff : ShowCanvas
         canvas = GameObject.Find("Canvas_GetOff");
         canvas.transform.GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(GetOff);
         canvas.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(Close);
-        ray = GameObject.Find("Ray Interactor");
         yield return base.Start();
     }
 

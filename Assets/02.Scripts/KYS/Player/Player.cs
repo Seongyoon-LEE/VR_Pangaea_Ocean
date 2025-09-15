@@ -77,10 +77,11 @@ public class Player : MonoBehaviour
     public void PlayerDie()
     {
         var boat = GameObject.Find("Boat").transform;
+        boat.GetChild(1).GetComponent<BoatBoarding>().BoardingBtn();
         // 플레이어가 죽었을 때의 로직
-        DataManager.Instance.PlayerData.isBoarding = true;
-        this.transform.position = boat.position + new Vector3(0, 1f, -2f); // 플레이어 위치 초기화
-        this.transform.rotation = boat.rotation; // 플레이어 회전 초기화
+        //DataManager.Instance.PlayerData.isBoarding = true;
+        //this.transform.position = boat.position + new Vector3(0, 1f, -2f); // 플레이어 위치 초기화
+        //this.transform.rotation = boat.rotation; // 플레이어 회전 초기화
 
         foreach (var trash in this.PlayerData.trashIdList)
         {
