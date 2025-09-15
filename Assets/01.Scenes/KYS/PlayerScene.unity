@@ -6052,7 +6052,7 @@ PrefabInstance:
     - target: {fileID: 2784746040355415444, guid: fcdb12c0011022649b9ec1569d29917d,
         type: 3}
       propertyPath: hitSpeedThreshold
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2784746040355415444, guid: fcdb12c0011022649b9ec1569d29917d,
         type: 3}
@@ -13292,7 +13292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tip: {fileID: 0}
-  hitSpeedThreshold: 5
+  hitSpeedThreshold: 7
   hitCooldown: 0.15
   hittableLayers:
     serializedVersion: 2

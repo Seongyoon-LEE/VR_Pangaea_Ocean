@@ -145,6 +145,7 @@ MonoBehaviour:
     rotY: 0
     rotZ: 0
     weight: 0
+    count: 0
 --- !u!114 &7079412966389052181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

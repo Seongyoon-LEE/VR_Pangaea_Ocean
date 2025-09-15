@@ -15,6 +15,7 @@ public class MenuEnable : ShowCanvas
         canvas = transform.GetChild(0).gameObject;
         hand = GameObject.Find("LeftHandUIPos").transform;
         this.player = GameObject.FindObjectOfType<Player>();
+        isLeft = true;
         yield return base.Start();
         
     }
