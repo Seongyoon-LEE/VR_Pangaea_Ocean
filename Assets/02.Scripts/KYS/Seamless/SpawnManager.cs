@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 
 public class SpawnManager : MonoBehaviour
@@ -161,24 +162,21 @@ public class SpawnManager : MonoBehaviour
     private TrashInfo CreateTrash(int id)
     {
         int kind = Random.Range(0, this.poolCtrl.trashPrefabs.Count); // 쓰래기 종류값
-        var x = Random.Range(0.1f, 0.9f);
-        var z = Random.Range(0.1f, 0.9f);
-        float y = terrain.terrainData.GetInterpolatedHeight(x, z);
-
-        //trashinfo에 들어갈 내용
-        var pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
-            , y + terrain.transform.position.y,
-            z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
-        var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
-        
-        
-        int status = (int)TrashStatus.Dirty; // eNum기반 쓰래기 상태값
-
+        float x;
+        float z;
+        float y;
         float rotX;
         float rotY;
         float rotZ;
         float height;
 
+        x = Random.Range(0.1f, 0.9f);
+        z = Random.Range(0.1f, 0.9f);
+        y = terrain.terrainData.GetInterpolatedHeight(x, z);
+        //trashinfo에 들어갈 내용
+        var pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
+            , y + terrain.transform.position.y,
+            z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         if (kind == 13) // 임시 테스트용, 풀에 묶인 쓰레기의 종류값 13
         {
             rotX = 0;
@@ -193,8 +191,9 @@ public class SpawnManager : MonoBehaviour
             rotZ = Random.Range(0f, 360f);
             height = Random.Range(0, 50f);
         }
-            
 
+        var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
+        int status = (int)TrashStatus.Dirty; // eNum기반 쓰래기 상태값
         return new TrashInfo
         {
             id = id, // 쓰레기 ID
@@ -234,20 +233,27 @@ public class SpawnManager : MonoBehaviour
     //단 안에 종류값 체크해서 생성되는 위치를 바꾸는 등의 내용이 추가된다.
     private ObstacleInfo CreateObstacle(int id)
     {
-        int kind = Random.Range(1, this.poolCtrl.obstaclePrefabs.Count); // 장애물 종류값
-                                                                         // 0번에 랜덤 스폰되지 않는 오징어 할당
+        int kind = Random.Range(0, this.poolCtrl.obstaclePrefabs.Count); // 장애물 종류값 (0 : 상어, 1 : 소용돌이)
 
         // 단, 장애물은 종류값에 따라서 생성 설정이 달라질 수 있음
-        // 또한 장애물은 종류값에 따라서 최초 랜덤스폰이 되지않을 수 있음
+        Vector3 pos; 
+        if(kind == 0) // 상어의 경우
+        {
+            var x = Random.Range(0.1f, 0.9f);
+            var z = Random.Range(0.1f, 0.9f);
+            float y = terrain.terrainData.GetInterpolatedHeight(x, z);
 
-        var x = Random.Range(0.1f, 0.9f);
-        var z = Random.Range(0.1f, 0.9f);
-        float y = terrain.terrainData.GetInterpolatedHeight(x, z);
-
-        //trashinfo에 들어갈 내용
-        var pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
-            , y + terrain.transform.position.y + Random.Range(30, 70f),
-            z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
+            //trashinfo에 들어갈 내용
+            pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
+                , y + terrain.transform.position.y + Random.Range(30, 70f),
+                z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
+        }
+        else
+        {
+            //미리 잡혀있던 소용돌이의 좌표
+            //단, 한 곳에 여러번 생기면 안되니 소용돌이 좌표를 컨트롤해줄 스크립트를 따로 짜서 거기서 받아야함
+            pos = Vector3.zero;
+        }
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
 
 
