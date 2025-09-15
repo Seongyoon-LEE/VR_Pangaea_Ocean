@@ -37,6 +37,7 @@ public class ScooterController : MonoBehaviour
     private void OnDisable()
     {
         ikGrabbable.Release();
+        swimMovement.enabled = true;
     }
     void Update()
     {
