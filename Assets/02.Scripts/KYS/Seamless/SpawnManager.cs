@@ -36,9 +36,9 @@ public class SpawnManager : MonoBehaviour
         //로딩이 끝났으니 셋팅 시작
         if (!DataManager.Instance.IsTrashDataExist) // 데이터가 없다면
         {
-            CreateTrashData(200); // 쓰레기 데이터를 생성
+            CreateTrashData(500); // 쓰레기 데이터를 생성
             //Obstacle도 여기서 생성해도 된다. 쓰래기 데이터가 있는데 장애물 데이터가 없는게 말이 안된다.
-            CreateObstacleData(50); // 장애물 데이터를 생성
+            CreateObstacleData(10); // 장애물 데이터를 생성
         }
         //여기까지 왔다면 쓰레기 데이터 셋팅 완료
         this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));
