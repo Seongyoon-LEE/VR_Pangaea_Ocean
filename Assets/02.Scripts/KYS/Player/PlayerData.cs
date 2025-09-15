@@ -35,7 +35,7 @@ public class PlayerData
 
     public int score;
 
-    public bool isBoarding = false;
+    public bool isBoarding = true;
 
     public int stageIdx;
 
