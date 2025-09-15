@@ -30,17 +30,14 @@ public class BortExitButton : MonoBehaviour
             if (playerController != null)
                 playerController.enabled = false;
 
-            playerTr.position = boatTr.position + boatTr.right * 4;
+            playerTr.position = boatTr.position + boatTr.right * 8;
 
             // 위치 이동후 캐릭터 컨트롤러 재활성화
             if (playerController != null)
                 playerController.enabled = true;
 
-            print($"asd{playerTr.position}" );
-            print($"보트탑승 {boatTr.position}");
             DataManager.Instance.PlayerData.isBoarding = false; // 탑승 상태 해제
-            print($"asd{playerTr.position}");
-            print($"보트탑승 {boatTr.position}");
+
             garbageUIObj.SetActive(false); // 쓰레기 UI 비활성화
             rightRay.SetActive(false); // 오른손 레이 비활성화
         });

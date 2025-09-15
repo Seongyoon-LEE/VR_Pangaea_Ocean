@@ -41,15 +41,19 @@ public class ScooterController : MonoBehaviour
     void Update()
     {
         if (playerController == null || swimMovement == null)
-        {
             return;
-        }
 
-        // 오른쪽 그랩 버튼을 얼마나 눌렀는지 값을 읽어온다
-        float grabValue = rightGrabAction.action.ReadValue<float>();
+        BoostOnOff();
+    }
 
-        // 1. 그랩 버튼을 꾹 누르고 있을 때 (부스터 켜기 & 유지)
-        if (grabValue > 0.1f)
+    private void BoostOnOff()
+    {
+        float currentPlayerY = playerController.transform.position.y; // 플레이어의 현재 Y 위치
+        float grabValue = rightGrabAction.action.ReadValue<float>(); // 오른쪽 그랩 액션 값 읽기
+        bool canBoost = (currentPlayerY < 0) && (grabValue > 0.1f); // 물속에 있고 그랩 버튼을 누르고 있는지 확인
+
+        // 1. 그랩 버튼을 꾹 누르고 있고 물속일때 (부스터 켜기 & 유지)
+        if (canBoost)
         {
             // 만약 부스터가 꺼져 있었다면, 켜주는 처리를 한다.
             if (!isBoosting)
@@ -62,9 +66,10 @@ public class ScooterController : MonoBehaviour
 
             // 부스터가 켜져 있는 동안 계속 실행
             // 카메라가 바라보는 정면 방향으로
-            Vector3 moveDirection = rightControllerTr.forward;
-            // 플레이어를 스쿠터 속도에 맞춰 이동!
-            playerController.Move(moveDirection * scooterSpeed * Time.deltaTime);
+                Vector3 moveDirection = rightControllerTr.forward;
+                // 플레이어를 스쿠터 속도에 맞춰 이동!
+                playerController.Move(moveDirection * scooterSpeed * Time.deltaTime);
+            
         }
         // 2. 그랩 버튼에서 손을 뗐을 때 (부스터 끄기)
         else
