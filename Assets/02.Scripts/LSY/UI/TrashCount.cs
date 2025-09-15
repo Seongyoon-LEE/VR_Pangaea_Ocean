@@ -20,7 +20,7 @@ public class TrashCount : MonoBehaviour
         }
 
         if (trashCountText == null)
-            trashCountText = GameObject.Find("StateMenu").transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TMP_Text>();
+            trashCountText = GameObject.Find("StateMenu").transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetComponent<TMP_Text>();
 
         if (vacuumCleaner == null)
             vacuumCleaner = FindObjectOfType<VacuumCleaner>(true);
