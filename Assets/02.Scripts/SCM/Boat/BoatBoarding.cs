@@ -8,7 +8,7 @@ public class BoatBoarding : ShowCanvas
 {
     private readonly string playerTag = "Player";
     private Transform playerTr;
-    private GameObject trashBoard;
+    [SerializeField] private GameObject trashBoard;
     protected override IEnumerator Start()
     {
         playerTr = GameObject.FindWithTag(playerTag).transform;
