@@ -18,14 +18,6 @@ public class MenuEnable : ShowCanvas
         yield return base.Start();
         
     }
-    protected override void Update()
-    {
-        base.Update();
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            this.Quit();
-        }
-    }
     protected override void FollowUI()
     {
         if (canvas.activeSelf)
