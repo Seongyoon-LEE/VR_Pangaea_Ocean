@@ -40,9 +40,24 @@ public class Breakable : MonoBehaviour
         foreach (var piece in breakablePieces)
         {
             piece.transform.parent = null;
-            piece.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            piece.gameObject.GetComponent<MeshCollider>().enabled = true;
+            piece.GetComponent<Rigidbody>().useGravity = true;
+            piece.GetComponent<MeshCollider>().enabled = true;
+            GameManager.Instance.StartCoroutine(PieceY(piece));
         }
         gameObject.SetActive(false);
+    }
+
+    IEnumerator PieceY(GameObject piece)
+    {
+        Rigidbody rb = piece.GetComponent<Rigidbody>();
+
+        while(true)
+        {
+            print(piece.transform.position.y);
+            if (piece.transform.position.y >= 0 && rb.velocity.y > 0)
+                rb.velocity = Vector3.zero;
+
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
