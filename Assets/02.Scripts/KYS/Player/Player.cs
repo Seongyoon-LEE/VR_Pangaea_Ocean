@@ -102,13 +102,7 @@ public class Player : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        DataManager.Instance.PlayerData.rotX = this.transform.rotation.eulerAngles.x;
-        DataManager.Instance.PlayerData.rotY = this.transform.rotation.eulerAngles.y;
-        DataManager.Instance.PlayerData.rotZ = this.transform.rotation.eulerAngles.z;
-        DataManager.Instance.PlayerData.posX = this.transform.position.x;
-        DataManager.Instance.PlayerData.posY = this.transform.position.y;
-        DataManager.Instance.PlayerData.posZ = this.transform.position.z;
-        DataManager.Instance.PlayerDataSaved = true;
+        this.PlayerPosSave();
         DataManager.Instance.SaveData();
     }
 }

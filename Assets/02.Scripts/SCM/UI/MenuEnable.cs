@@ -9,14 +9,23 @@ public class MenuEnable : ShowCanvas
 {
     public InputActionProperty mainInput; // 사용하는 버튼 - 드래그 앤 드롭
     private Transform hand; // UI 위치할 위치
+    private Player player;
     protected override IEnumerator Start()
     {
         canvas = transform.GetChild(0).gameObject;
         hand = GameObject.Find("LeftHandUIPos").transform;
+        this.player = GameObject.FindObjectOfType<Player>();
         yield return base.Start();
         
     }
-
+    protected override void Update()
+    {
+        base.Update();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            this.Quit();
+        }
+    }
     protected override void FollowUI()
     {
         if (canvas.activeSelf)
@@ -48,6 +57,7 @@ public class MenuEnable : ShowCanvas
     }
     public void Quit()
     {
+        this.player.PlayerPosSave();
         DataManager.Instance.SaveData();
         SceneManager.LoadScene(1);
     }
