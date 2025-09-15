@@ -16,14 +16,14 @@ public class SharkPatrol : ObstacleData
 
 
     [SerializeField]
-    private float normalSpeed = 5f;
+    private float normalSpeed = 3f;
     [SerializeField]
-    private float chaseSpeed = 15f;
+    private float chaseSpeed = 9f;
 
     private float speed;
     private float searchDist = 30f;
-    private float chaseDist = 100f;
-    private float attackDist = 10f;
+    private float chaseDist = 50f;
+    private float attackDist = 5f;
 
     public bool test;
     private void Awake()
