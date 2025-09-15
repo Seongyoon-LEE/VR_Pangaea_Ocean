@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Linq;
 using UnityEngine;
 using System.Threading.Tasks;
+using DG.Tweening.Plugins.Core.PathCore;
 
 public class DataManager : MonoBehaviour
 {
@@ -42,6 +43,17 @@ public class DataManager : MonoBehaviour
             {
                 this.IsTrashDataExist = true; // 파일이 존재하면 데이터가 있다고 표시
                 var trashJson = File.ReadAllText("./Assets/Resources/TrashMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
+                /*string trashJson;
+                using (var stream = File.Open("./Assets/Resources/TrashMapData.json", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    
+                    // 파일 읽기/쓰기 작업
+                    using (var reader = new StreamReader(stream))
+                    {
+                        trashJson = reader.ReadToEnd();
+                    }
+                    
+                }*/
                 var trashData = JsonConvert.DeserializeObject<Dictionary<string, List<TrashInfo>>>(trashJson); // JSON 데이터를 딕셔너리로 역직렬화
                 this.dicTrash = trashData.ToDictionary(x => Vector2IntParse(x.Key), x => x.Value); // 딕셔너리로 변환
 
@@ -104,10 +116,14 @@ public class DataManager : MonoBehaviour
             pJson = JsonConvert.SerializeObject(dicPuzzle); // 딕셔너리를 JSON으로 직렬화
             playerJson = JsonConvert.SerializeObject(PlayerData); // 플레이어 데이터를 JSON으로 직렬화
         });
-        await File.WriteAllTextAsync("./Assets/Resources/TrashMapData.json", trashJson);
-        await File.WriteAllTextAsync("./Assets/Resources/ObstacleMapData.json", obstacleJson);
-        await File.WriteAllTextAsync("./Assets/Resources/PlayerData.json", playerJson);
-        await File.WriteAllTextAsync("./Assets/Resources/PuzzleMapData.json", pJson);
+        //await File.WriteAllTextAsync("./Assets/Resources/TrashMapData.json", trashJson);
+        File.WriteAllText("./Assets/Resources/TrashMapData.json", trashJson);
+        //await File.WriteAllTextAsync("./Assets/Resources/ObstacleMapData.json", obstacleJson);
+        File.WriteAllText("./Assets/Resources/ObstacleMapData.json", obstacleJson);
+        File.WriteAllText("./Assets/Resources/PlayerData.json", playerJson);
+        //await File.WriteAllTextAsync("./Assets/Resources/PlayerData.json", playerJson);
+        //await File.WriteAllTextAsync("./Assets/Resources/PuzzleMapData.json", pJson);
+        File.WriteAllText("./Assets/Resources/PuzzleMapData.json", pJson);
         Debug.Log("저장됨");
         this.PlayerDataSaved = false; // 저장이 끝났으니 다시 false로 설정
     }
