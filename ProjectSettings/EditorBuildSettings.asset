@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/KYS/SpawnScene.unity
     guid: 0094301bea75d17428cd5b07332f5626
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/KYS/StageScene.unity
-    guid: 562d833305c0e0747ae056024ff927c7
+    guid: 86257ef8c895723409aad4b7a79263af
   - enabled: 1
     path: Assets/01.Scenes/KYS/PlayerScene.unity
     guid: 8caf7e1799839504a912ff773733dba3
