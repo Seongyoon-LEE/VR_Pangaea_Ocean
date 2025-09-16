@@ -68,6 +68,7 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
+        bool curRay = isEnable;
         if (DataManager.Instance.PlayerData.isBoarding && transform.GetComponent<EquipmentChange>() != null)
             return;
 
@@ -83,12 +84,15 @@ public class ShowCanvas : MonoBehaviour
             {
                 c.canvas.SetActive(false);
                 // 보트에 탑승중에 UI를 비활성화하면 Ray를 활성화
-                if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);
+                if (c.ray != null)
+                {
+                    c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);
+                }
             }
         }
-        bool curRay = isEnable;
-        // 보트 탑승하고 비활성상태, 오른손일 때 레이 활성화
-        if (DataManager.Instance.PlayerData.isBoarding && !isEnable && !isLeft)
+      
+        // 현재 UI 보트 탑승하고 비활성상태 레이 활성화
+        if (DataManager.Instance.PlayerData.isBoarding && !isEnable)
         {
             curRay = true;
         }
