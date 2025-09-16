@@ -7,7 +7,7 @@ public class ShowCanvas : MonoBehaviour
     protected GameObject canvas;
     public GameObject ray; // 드래그 앤 드랍 - 왼손 UI는 제외
     private Transform head; // 카메라 위치
-    private float spawnDistance = 2f; // 거리
+    private float spawnDistance = 1f; // 거리
     protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비
     public Transform equipments; // 장비 그룹 위치 저장
     protected bool isLeft = false;
@@ -68,6 +68,7 @@ public class ShowCanvas : MonoBehaviour
     // 캔버스, 레이 OnOff
     protected void UIEnable(bool isEnable, bool isLeft = false)
     {
+        bool curRay = isEnable;
         if (DataManager.Instance.PlayerData.isBoarding && transform.GetComponent<EquipmentChange>() != null)
             return;
 
@@ -83,12 +84,15 @@ public class ShowCanvas : MonoBehaviour
             {
                 c.canvas.SetActive(false);
                 // 보트에 탑승중에 UI를 비활성화하면 Ray를 활성화
-                if (c.ray != null) c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);
+                if (c.ray != null)
+                {
+                    c.ray.SetActive(DataManager.Instance.PlayerData.isBoarding && !isEnable);
+                }
             }
         }
-        bool curRay = isEnable;
-        // 보트 탑승하고 비활성상태, 오른손일 때 레이 활성화
-        if (DataManager.Instance.PlayerData.isBoarding && !isEnable && !isLeft)
+      
+        // 현재 UI 보트 탑승하고 비활성상태 레이 활성화
+        if (DataManager.Instance.PlayerData.isBoarding && !isEnable)
         {
             curRay = true;
         }
