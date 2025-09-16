@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 86257ef8c895723409aad4b7a79263af
+  m_OcclusionCullingData: {fileID: 36300000, guid: 1cfddb3cb00e5db40aa5864053ed5695,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1051,8 +1052,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b5e8a87afedb0499955843ea761d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 300
-  pullRadius: 500
+  tornardo: {fileID: 0}
+  playerTr: {fileID: 0}
+  scaleSpeed: 10
+  boxCollider: {fileID: 0}
 --- !u!1 &797000389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1671,7 @@ Transform:
   m_GameObject: {fileID: 1318876369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -50, z: 0}
+  m_LocalPosition: {x: -500, y: -50, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1866,7 +1869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1776994424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,7 +2059,7 @@ Transform:
   m_GameObject: {fileID: 1940910532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 425.11816, y: 107.89899, z: 888.1716}
+  m_LocalPosition: {x: -63, y: 107.89899, z: 410}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
