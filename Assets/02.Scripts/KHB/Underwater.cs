@@ -12,7 +12,7 @@ public class Underwater : MonoBehaviour
 
     [Header("수면 / 심해 깊이")]
     public float surfaceY = 0f;     // 수면 높이
-    public float maxDepth = -50f;   // 심해 깊이
+    public float maxDepth = -300f;   // 심해 깊이
 
     [Header("Volume Profiles")]
     public VolumeProfile surface;
