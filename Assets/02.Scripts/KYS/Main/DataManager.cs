@@ -10,11 +10,14 @@ using DG.Tweening.Plugins.Core.PathCore;
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance { get; private set; }
+    public Dictionary<int, WeightData> dicWeight = new Dictionary<int, WeightData>(); // 쓰레기 종류별 무게 정보가 들어가는 딕셔너리
+
+
     public Dictionary<Vector2Int, List<TrashInfo>> dicTrash = new Dictionary<Vector2Int, List<TrashInfo>>(); // 쓰레기 정보를 담을 딕셔너리
     public Dictionary<Vector2Int, List<ObstacleInfo>> dicObstacle = new Dictionary<Vector2Int, List<ObstacleInfo>>(); // 장애물 정보를 담을 딕셔너리
-
-    public Dictionary<int, WeightData> dicWeight = new Dictionary<int, WeightData>(); // 쓰레기 종류별 무게 정보가 들어가는 딕셔너리
     public Dictionary<string,bool> dicPuzzle = new Dictionary<string,bool>(); // 퍼즐 클리어 여부를 담는 딕셔너리
+
+
     public PlayerData PlayerData { get; set; }
     public bool PlayerDataSaved { private get; set; } = false; // 플레이어 데이터가 저장되었는지 여부
 

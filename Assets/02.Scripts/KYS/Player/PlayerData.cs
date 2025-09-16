@@ -19,7 +19,7 @@ public class PlayerData
     
     public float posX;
     
-    public float posY = 1.5f;
+    public float posY = 0.24f;
     
     public float posZ;
     
