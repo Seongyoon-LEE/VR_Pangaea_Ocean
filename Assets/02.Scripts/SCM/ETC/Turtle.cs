@@ -17,8 +17,13 @@ public class Turtle : MonoBehaviour
     private Material[] originMaterials;
     
     public int idx = 0; // 거북이 순서에 맞춰 인스펙터에서 수정 (0~2)
-    void Start()
+    IEnumerator Start()
     {
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
+
         grass = transform.GetChild(1).gameObject;
         key = transform.GetChild(2).gameObject;
         keyGrab = key.GetComponent<XRGrabInteractable>();

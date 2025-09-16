@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StageExample : MapManager
 {
-    public bool puzzle1Solved = false;
-    public bool puzzle2Solved = false;
-    public bool puzzle3Solved = false;
+    private readonly string puzzleStr = "Puzzle";
+    private readonly string turtleStr = "Turtle";
 
-    public bool turtle1Solved = false;
-    public bool turtle2Solved = false;
-    public bool turtle3Solved = false;
+    public bool[] puzzleSolved = { false, false, false };
+    //public bool puzzle1Solved = false;
+    //public bool puzzle2Solved = false;
+    //public bool puzzle3Solved = false;
+
+    public bool[] turtleSolved = { false, false, false };
+    //public bool turtle1Solved = false;
+    //public bool turtle2Solved = false;
+    //public bool turtle3Solved = false;
     private IEnumerator Start()
     {
         while (!DataManager.Instance.IsLoadingFinish) // 데이터 매니저가 로딩이 끝날 때까지 대기
@@ -23,24 +29,24 @@ public class StageExample : MapManager
         }
         else
         {
-            // 퍼즐
-            if (DataManager.Instance.dicPuzzle.Count != 0)
+            foreach(var puzzle in DataManager.Instance.dicPuzzle)
             {
-                this.puzzle1Solved = DataManager.Instance.dicPuzzle["Puzzle1"];
-                this.puzzle2Solved = DataManager.Instance.dicPuzzle["Puzzle2"];
-                this.puzzle3Solved = DataManager.Instance.dicPuzzle["Puzzle3"];
-            }
-
-            // 터틀
-            if (DataManager.Instance.dicPuzzle.Count != 0)
-            {
-                this.turtle1Solved = DataManager.Instance.dicPuzzle["Turtle1"];
-                this.turtle2Solved = DataManager.Instance.dicPuzzle["Turtle2"];
-                this.turtle3Solved = DataManager.Instance.dicPuzzle["Turtle3"];
+                ArraySetting(puzzleStr, puzzleSolved, puzzle);
+                ArraySetting(turtleStr, turtleSolved, puzzle);
             }
         }
     }
 
+    private void ArraySetting(string str, bool[] solved, KeyValuePair<string, bool> puzzle)
+    {
+        if (puzzle.Key.StartsWith(str))
+        {
+            if (int.TryParse(puzzle.Key.Replace(str, ""), out int result))
+            {
+                solved[result - 1] = puzzle.Value;
+            }
+        }
+    }
     public override void PuzzleReset()
     {
         //DataManager.Instance.dicPuzzle.Clear(); // 기존 데이터를 클리어
@@ -51,8 +57,9 @@ public class StageExample : MapManager
         DataManager.Instance.dicPuzzle.Remove("Puzzle3");
 
         //이하 테스트용
-        this.puzzle1Solved = false;
-        this.puzzle2Solved = false;
-        this.puzzle3Solved = false;
+        //this.puzzle1Solved = false;
+        //this.puzzle2Solved = false;
+        //this.puzzle3Solved = false;
+        Array.Fill(this.puzzleSolved, false);
     }
 }
