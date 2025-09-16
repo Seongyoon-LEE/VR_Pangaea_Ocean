@@ -41,7 +41,7 @@ public class Swing : MonoBehaviour
     void Update()
     {
         SwingSpeed();
-        Debug.Log(curSpeed);
+        //Debug.Log(curSpeed);
     }
 
     private void SwingSpeed()
@@ -60,10 +60,11 @@ public class Swing : MonoBehaviour
     }
     void TryHit(Collider other)
     {
+        print("트라이힛");
         // 부딪힌 레이어가 때릴수 있는 레이어인지 확인 
-        if (hittableLayers != (1 << other.gameObject.layer)) return;
+        if ((hittableLayers.value & (1 << other.gameObject.layer)) == 0) return;
         // 속도 및 쿨타임 확인
-
+        print(other.gameObject);
         if (!CanHitNow()) return; // 히트 가능 여부 확인
 
         IHittable hittableObj = other.GetComponent<IHittable>();
