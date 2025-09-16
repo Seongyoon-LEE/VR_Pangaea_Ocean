@@ -8,6 +8,7 @@ using UnityStandardAssets.ImageEffects;
 public class SpawnManager : MonoBehaviour
 {
     public Terrain terrain; // 동적으로 생성될 수 있으니, Terrain을 받아오는 함수가 필요하다.
+    public TornadoPosManager tornadoPosManager;
     public PoolingManager poolCtrl; //코드에서 동적으로 할당
 
     [SerializeField]
@@ -44,12 +45,25 @@ public class SpawnManager : MonoBehaviour
         this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));
         // Cell초기화 이외에도 로딩 전에는 dimImage등을 띄우고 입력값 전부 안받다가 로딩 이후에 입력이 가능하도록 해야한다
     }
+
+    public void SetNextStage()
+    {
+        GetTerrain();
+        // 풀링 전체 언로딩
+        this.poolCtrl.UnloadEverything();
+        CreateTrashData(500); // 쓰레기 데이터를 생성
+        CreateObstacleData(10); // 장애물 데이터를 생성
+        this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));
+    }
+
     private void GetTerrain() // Terrain을 받아오는 함수
     {
-        if (terrain == null)
+        /*if (terrain == null)
         {
             terrain = FindObjectOfType<Terrain>();
-        }
+        }*/
+        terrain = FindObjectOfType<Terrain>(); // 맵이 바뀐 뒤에 다시 받아올수도 있음(null이 아닐 수 있다)
+        this.tornadoPosManager = FindObjectOfType<TornadoPosManager>(); // terrain과 함께 새로 받아온다.
     }
     private void SetPoolingManager()
     {
@@ -248,11 +262,11 @@ public class SpawnManager : MonoBehaviour
                 , y + terrain.transform.position.y + Random.Range(30, 70f),
                 z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         }
-        else
+        else // 소용돌이의 경우
         {
             //미리 잡혀있던 소용돌이의 좌표
             //단, 한 곳에 여러번 생기면 안되니 소용돌이 좌표를 컨트롤해줄 스크립트를 따로 짜서 거기서 받아야함
-            pos = Vector3.zero;
+            pos = this.tornadoPosManager.GetTornadoPos();
         }
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
 

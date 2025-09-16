@@ -222,4 +222,18 @@ public class PoolingManager : MonoBehaviour
             }
         }
     }
+
+    public void UnloadEverything() // 스테이지 이동할때 전부 언로딩 용
+    {
+        foreach(var trash in this.trashList)
+        {
+            trash.GetComponent<TrashData>().DisActivate(); // 해당 쓰레기 비활성화
+        }
+        this.trashList.Clear();
+        foreach(var obstacle in this.obstacleList)
+        {
+            obstacle.GetComponent<ObstacleData>().DisActivate(); // 해당 장애물 비활성화
+        }
+        this.obstacleList.Clear();
+    }
 }

@@ -4,56 +4,60 @@ using UnityEngine;
 
 public class Tornardo : MonoBehaviour
 {
-    public float RotateSpeed = 300f;
+    public Transform tornardo;
+    public Transform playerTr;
 
-    public float pullRadius = 500f; // 회오리가 물체를 끌어당기는 반경
+    public float scaleSpeed = 10f;
 
-    private float currentPullForce = 300f; //현재 당기는 힘
+    public BoxCollider boxCollider;
 
-
-    public void SetPullForce(float force)
+    void Update()
     {
-        currentPullForce = Mathf.Abs(force); 
-        //절대값으로 지정
-        
+        boxCollider = GetComponent<BoxCollider>();
+        tornardoScaleUp();
+        boxColliderScale();
     }
 
-    void FixedUpdate()
+    private void boxColliderScale()
     {
-        transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
-        // 당기는 힘이 없으면 아무것도 안함
-        if (currentPullForce <= 0) return;
+        // 1. 스케일 증가
+        Vector3 scaleIncrease = Vector3.one * scaleSpeed * Time.deltaTime;
+        transform.localScale += scaleIncrease;
 
-        // 회오리 주변의 모든 콜라이더를 찾음
-        Collider[] colliders = Physics.OverlapSphere(transform.position, pullRadius);
-
-
-
-        foreach (Collider hit in colliders)
+        // 2. 콜라이더의 크기 조정
+        if (boxCollider != null)
         {
-            
-                //회오리 오브젝트 자신은 힘을 받지 않도록 스킵
-                if (hit.transform == transform) continue;
+            // 콜라이더의 크기를 현재 transform.localScale에 맞춰 조정
+            // boxCollider.size.y를 직접 수정하기 어려우므로, 새로운 벡터를 만듭니다.
+            Vector3 newSize = new Vector3(boxCollider.size.x, boxCollider.size.y * (1 + scaleIncrease.z), boxCollider.size.y);
+            boxCollider.size = newSize;
 
-            if (hit.CompareTag("Player"))
-            {
-                // 리지드바디가 있는 오브젝트만 힘을 받음
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    // 회오리 중심으로 향하는 방향 벡터
-                    Vector3 direction = transform.position - hit.transform.position;
-
-                    // 이 방향으로 힘을 적용
-                    rb.AddForce(direction.normalized * currentPullForce, ForceMode.Force);
-                }
-            }
+            // 3. 오브젝트의 위치 조정
+            // 오브젝트의 피봇(pivot)이 중앙에 있으므로, 스케일이 커지는 만큼 y축 위치를 올려서 땅 위에 유지
+            transform.position += Vector3.up * scaleIncrease.z * 0.5f;
         }
-        
     }
-    void OnDrawGizmosSelected()
+
+    private void tornardoScaleUp()
     {
-        Gizmos.color = Color.yellow; // 기즈모 색상을 노란색으로 설정
-        Gizmos.DrawSphere(transform.position, pullRadius); // pullRadius 크기의 구를 그림
+        // 현재 오브젝트의 스케일 가져오기
+        Vector3 currentScale = transform.localScale;
+
+        // 시간에 비례하여 스케일 증가량 계산
+        // Time.deltaTime을 곱하여 프레임 속도에 관계없이 동일하게 커지도록 합니다.
+        Vector3 scaleIncrease = Vector3.one * scaleSpeed * Time.deltaTime;
+
+        // 현재 스케일에 증가량을 더해 스케일 업데이트
+        transform.localScale += scaleIncrease;
+    }
+
+    private void TornadoDistance()
+    {
+        float distance = Vector3.Distance(tornardo.position, playerTr.position);
+
+    }
+    void TornadoRotate()
+    {
+        
     }
 }
