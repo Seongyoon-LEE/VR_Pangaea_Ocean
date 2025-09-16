@@ -69,7 +69,10 @@ public class Turtle : MonoBehaviour
         // 3스테이지 일때 키 생성과 거북이 등껍질 색상 변경
         if (stage == 3)
         {
-            KeySetting(); // 키 활성화 및 레이어 변경
+            if (idx == 0)
+            {
+                KeySetting(); // 키 활성화 및 레이어 변경
+            }
             ChangeMaterials(); // 거북이 등껍질 변경
         }
     }
