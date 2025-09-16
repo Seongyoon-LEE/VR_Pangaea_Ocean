@@ -5,38 +5,24 @@ using UnityEngine;
 public class Tornardo : MonoBehaviour
 {
     public Transform tornardo;
-    public Transform playerTr;
 
-    public float scaleSpeed = 10f;
 
-    public BoxCollider boxCollider;
+    //회오리 회전 및 크기 관련 변수
+    public float scaleSpeed = 5f;
+    public float rotateSpeed = 300f; // 회전 속도
+    public Vector3 targetScale = new Vector3(10, 10, 10);
 
+    //끌어당기는 힘 관련 변수
+    public float pullRadius = 300f;    // 물체를 끌어당기는 반경
+    public float minPullForce = 100f;  // 최소 당기는 힘 (작을 때)
+    public float maxPullForce = 500f;  // 최대 당기는 힘 (클 때)
     void Update()
     {
-        boxCollider = GetComponent<BoxCollider>();
         tornardoScaleUp();
-        boxColliderScale();
+        TornadoRotate();
     }
 
-    private void boxColliderScale()
-    {
-        // 1. 스케일 증가
-        Vector3 scaleIncrease = Vector3.one * scaleSpeed * Time.deltaTime;
-        transform.localScale += scaleIncrease;
-
-        // 2. 콜라이더의 크기 조정
-        if (boxCollider != null)
-        {
-            // 콜라이더의 크기를 현재 transform.localScale에 맞춰 조정
-            // boxCollider.size.y를 직접 수정하기 어려우므로, 새로운 벡터를 만듭니다.
-            Vector3 newSize = new Vector3(boxCollider.size.x, boxCollider.size.y * (1 + scaleIncrease.z), boxCollider.size.y);
-            boxCollider.size = newSize;
-
-            // 3. 오브젝트의 위치 조정
-            // 오브젝트의 피봇(pivot)이 중앙에 있으므로, 스케일이 커지는 만큼 y축 위치를 올려서 땅 위에 유지
-            transform.position += Vector3.up * scaleIncrease.z * 0.5f;
-        }
-    }
+   
 
     private void tornardoScaleUp()
     {
@@ -51,13 +37,68 @@ public class Tornardo : MonoBehaviour
         transform.localScale += scaleIncrease;
     }
 
-    private void TornadoDistance()
+    private void TornadoRotate()
     {
-        float distance = Vector3.Distance(tornardo.position, playerTr.position);
+        tornardo.Rotate(Vector3.up,rotateSpeed * Time.deltaTime);
+    }
+    void FixedUpdate()
+    {
+        // 1. 오브젝트의 크기를 부드럽게 키웁니다.
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
+
+        // 2. 현재 크기에 비례하여 당기는 힘을 계산합니다.
+        float currentScaleRatio = transform.localScale.magnitude / targetScale.magnitude;
+        float currentPullForce = Mathf.Lerp(minPullForce, maxPullForce, currentScaleRatio);
+
+        // 3. 당기는 힘이 없으면 아무것도 하지 않습니다.
+        if (currentPullForce <= 0) return;
+
+        // 4. 회오리 주변의 모든 콜라이더를 찾습니다.
+        Collider[] colliders = Physics.OverlapSphere(transform.position, pullRadius);
+
+        // 5. 콜라이더들을 하나씩 검사합니다.
+        foreach (Collider hit in colliders)
+        {
+            // 회오리 오브젝트 자신은 힘을 받지 않도록 스킵
+            if (hit.transform == transform) continue;
+
+            // "Player" 태그를 가진 오브젝트만 대상으로 힘을 적용합니다.
+            if (hit.CompareTag("Player"))
+            {
+                // 리지드바디가 있는 오브젝트만 힘을 받습니다.
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    // 회오리 중심으로 향하는 방향 벡터
+                    Vector3 direction = transform.position - hit.transform.position;
+
+                    // 현재 크기에 따라 계산된 힘을 적용
+                    rb.AddForce(direction.normalized * currentPullForce, ForceMode.Force);
+                }
+
+            }
+        }
 
     }
-    void TornadoRotate()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.state = GameManager.State.TORNADO;
+        }
+    }
+    private void OnCollisionExit(Collision collision) 
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.state = GameManager.State.NORMAL;
+        }
+    }
+    void OnDrawGizmosSelected()
+    {
+        // 유니티 에디터에서 회오리의 영향 범위를 시각적으로 보여줍니다.
+        Gizmos.color = Color.yellow; // 기즈모 색상을 노란색으로 설정
+        Gizmos.DrawWireSphere(transform.position, pullRadius); // pullRadius 크기의 구를 그림
     }
 }
+
