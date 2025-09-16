@@ -46,7 +46,7 @@ public class VacuumCleaner : MonoBehaviour
     void OnTriggerPressed(InputAction.CallbackContext ctx)
     {
         // 시작하기전에 무게가 300이 넘으면 발사 안됨
-        if (DataManager.Instance.PlayerData.weight >= 300)
+        if (DataManager.Instance.PlayerData.weight >= GameManager.Instance.curMaxWeight)
         {
             StopShoot();
             return;
@@ -91,7 +91,7 @@ public class VacuumCleaner : MonoBehaviour
             hit.collider.GetComponent<TrashData>().Clean();
             hit.collider.GetComponent<TrashData>().DisActivate(); // 레이저가 충돌한 오브젝트를 비활성화합니다.
             DataManager.Instance.PlayerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
-            if(DataManager.Instance.PlayerData.weight >= 300)
+            if(DataManager.Instance.PlayerData.weight >= GameManager.Instance.curMaxWeight)
             {
                 StopShoot();
             }
