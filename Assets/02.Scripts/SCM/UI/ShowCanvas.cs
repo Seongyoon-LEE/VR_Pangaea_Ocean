@@ -7,7 +7,7 @@ public class ShowCanvas : MonoBehaviour
     protected GameObject canvas;
     public GameObject ray; // 드래그 앤 드랍 - 왼손 UI는 제외
     private Transform head; // 카메라 위치
-    private float spawnDistance = 1f; // 거리
+    private float spawnDistance = 2f; // 거리
     protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비
     public Transform equipments; // 장비 그룹 위치 저장
     protected bool isLeft = false;

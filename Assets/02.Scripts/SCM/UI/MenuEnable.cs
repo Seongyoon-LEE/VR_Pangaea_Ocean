@@ -15,19 +15,19 @@ public class MenuEnable : ShowCanvas
         canvas = transform.GetChild(0).gameObject;
         hand = GameObject.Find("LeftHandUIPos").transform;
         this.player = GameObject.FindObjectOfType<Player>();
-        //isLeft = true;
+        isLeft = true;
         yield return base.Start();
         
     }
     protected override void FollowUI()
     {
-        //if (canvas.activeSelf)
-        //{
-        //    canvas.transform.position = hand.position + hand.up * 0.3f;
-        //    //Quaternion rot = Quaternion.LookRotation(canvas.transform.position - hand.position);
-        //    canvas.transform.rotation = hand.rotation * Quaternion.Euler(0, -90, 0);
-        //}
-        base.FollowUI();
+        if (canvas.activeSelf)
+        {
+            canvas.transform.position = hand.position + hand.up * 0.3f;
+            //Quaternion rot = Quaternion.LookRotation(canvas.transform.position - hand.position);
+            canvas.transform.rotation = hand.rotation * Quaternion.Euler(0, -90, 0);
+        }
+        //base.FollowUI();
     }
 
     private void OnEnable()
