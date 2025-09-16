@@ -10,7 +10,7 @@ public class Turtle : MonoBehaviour
     private GameObject key;
     private XRGrabInteractable keyGrab;
     private InteractionLayerMask originLayerMask;
-    public int stage = 0; // 스테이지를 인스펙터에서 수정
+    public int stage = 0; // 스테이지를 인스펙터에서 수정 (1 ~ 3)
     public bool test = false;
     [SerializeField] private MeshRenderer meshRenderer;
     public List<Material> materials; // 머터리얼 넣을 때 퍼즐 정답 순서랑 맞춰서 넣기
