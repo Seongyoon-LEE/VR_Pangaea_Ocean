@@ -23,6 +23,7 @@ public class LobbyUIManager : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(1, LoadSceneMode.Additive); // 스테이지(맵)
+
             }
             SceneManager.LoadScene(6, LoadSceneMode.Additive); // 플레이어
         });
