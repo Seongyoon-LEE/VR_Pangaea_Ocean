@@ -130,7 +130,12 @@ public class DataManager : MonoBehaviour
         Debug.Log("저장됨");
         this.PlayerDataSaved = false; // 저장이 끝났으니 다시 false로 설정
     }
-
+    public void UnloadData()
+    {
+        this.dicTrash.Clear();
+        this.dicObstacle.Clear();
+        this.dicPuzzle.Clear();
+    }
     /*private void OnApplicationQuit()
     {
         StartCoroutine(this.QuitRoutine());

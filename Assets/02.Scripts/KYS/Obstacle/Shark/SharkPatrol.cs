@@ -25,19 +25,23 @@ public class SharkPatrol : ObstacleData
     private float chaseDist = 50f;
     private float attackDist = 5f;
 
+    private IEnumerator patrolRoutine;
+
     public bool test;
     private void Awake()
     {
         this.target = GameObject.FindGameObjectWithTag("Player").transform;
         this.gridManager = GetComponentInChildren<GridManager>();
+        this.patrolRoutine = this.PatrolRoutine();
     }
     private void OnEnable()
     {
         this.speed = this.normalSpeed;
         this.patrolPointParent.SetParent(null);
-        StartCoroutine(PatrolRoutine());
+        StartCoroutine(this.patrolRoutine);
+        StartCoroutine(ActiveRoutine());
     }
-    WaitForSeconds wsForAttack = new WaitForSeconds(1);
+    WaitForSeconds wsForAttack = new WaitForSeconds(4);
     IEnumerator PatrolRoutine()
     {
         while (!this.gridManager.IsGridSet)
@@ -70,7 +74,9 @@ public class SharkPatrol : ObstacleData
                         // 공격 관련 로직
                         if(Vector3.Distance(this.target.position,this.transform.position) < this.attackDist) // 공격 가능 거리 조건
                         {
-                            Debug.Log("공격");
+                            //Debug.Log("공격");
+                            //target.GetComponent<Player>().PlayerData.oxygen -= 10; 
+                            DataManager.Instance.PlayerData.oxygen -= 10; //공격 당하면 산소 10 감소
                             yield return this.wsForAttack;
                         }
                         else // 추적 관련 로직
@@ -111,8 +117,20 @@ public class SharkPatrol : ObstacleData
                 yield return null;
             }
             this.idx = (this.idx + 1) % patrolPoints.Length;
-
         }
+    }
+    WaitForSeconds wsForDisActive = new WaitForSeconds(3);
+    IEnumerator ActiveRoutine()
+    {
+        while (this.Info.active)
+        {
+            yield return null;
+        }
+        //기능 정지 내용
+        StopCoroutine(this.patrolRoutine);
+        //n초 뒤 사라지는 내용
+        yield return wsForDisActive;
+        DisActivate();
     }
     private void Update()
     {

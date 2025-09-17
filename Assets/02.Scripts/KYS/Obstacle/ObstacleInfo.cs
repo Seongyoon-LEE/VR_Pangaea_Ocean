@@ -26,4 +26,6 @@ public class ObstacleInfo
     public float posY;
     
     public float posZ;
+
+    public bool active;
 }

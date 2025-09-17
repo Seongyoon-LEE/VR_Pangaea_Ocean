@@ -14,11 +14,14 @@ public class HitShark : MonoBehaviour,IHittable
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] float deathAnimDuration = 2f;
 
+    SharkPatrol shark;
+
     readonly int dieHash = Animator.StringToHash("Die");
     void Awake()
     {
         if(animator == null)
         animator = GetComponent<Animator>();
+        this.shark = gameObject.GetComponent<SharkPatrol>();
     }
     private void Start()
     {
@@ -28,6 +31,7 @@ public class HitShark : MonoBehaviour,IHittable
     {
         print("»ó¾î Á×À½");
         animator.SetTrigger(dieHash);
+        this.shark.Info.active = false;
         Collider col = GetComponent<Collider>();
         if (col != null)
         {

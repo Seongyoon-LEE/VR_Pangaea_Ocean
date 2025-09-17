@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
 
     // cell 값을 id로 갖는, List를 셋팅해서 나중에 cell값을 치면 해당 cell에 있는 쓰래기 전체를 가져올수 있도록
 
-    private int cellSize = 40;
+    private int cellSize = 100; // 셀의 사이즈
 
 
     private IEnumerator Start()
@@ -51,6 +51,7 @@ public class SpawnManager : MonoBehaviour
         GetTerrain();
         // 풀링 전체 언로딩
         this.poolCtrl.UnloadEverything();
+        DataManager.Instance.UnloadData();
         CreateTrashData(500); // 쓰레기 데이터를 생성
         CreateObstacleData(10); // 장애물 데이터를 생성
         this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));
@@ -203,7 +204,7 @@ public class SpawnManager : MonoBehaviour
             rotX = Random.Range(0f, 360f);
             rotY = Random.Range(0f, 360f);
             rotZ = Random.Range(0f, 360f);
-            height = Random.Range(0, 50f);
+            height = Random.Range(0, -(pos.y + 8));
         }
 
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
@@ -259,7 +260,7 @@ public class SpawnManager : MonoBehaviour
 
             //trashinfo에 들어갈 내용
             pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
-                , y + terrain.transform.position.y + Random.Range(30, 70f),
+                , y + terrain.transform.position.y + Random.Range(10, -(y + terrain.transform.position.y)),
                 z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         }
         else // 소용돌이의 경우
