@@ -17,8 +17,8 @@ public class LobbyUIManager : MonoBehaviour
             SceneManager.LoadScene(2); // 내부 로직 관련
             if (DataManager.Instance.IsPlayerDataExist)
             {
-                //SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive); // 데이터에 해당하는 씬 로딩
-                SceneManager.LoadScene(3, LoadSceneMode.Additive); // 스테이지(맵)
+                SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive); // 데이터에 해당하는 씬 로딩
+                //SceneManager.LoadScene(3, LoadSceneMode.Additive); // 스테이지(맵)
             }
             else
             {

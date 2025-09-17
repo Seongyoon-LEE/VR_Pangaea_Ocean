@@ -18,9 +18,9 @@ public class GrassTiedTrash : TrashData
         this.innerTrash = trashes;
         foreach(var trash in trashes)
         {
-            var x = Random.Range(-0.2f, 0.2f); // -0.5 ~ 0.5 사이의 랜덤값
-            var y = Random.Range(-0.2f, 0.2f); // -0.5 ~ 0.5 사이의 랜덤값
-            var z = Random.Range(-0.2f, 0.2f); // -0.5 ~ 0.5 사이의 랜덤값
+            var x = Random.Range(-0.05f, 0.05f); // -0.5 ~ 0.5 사이의 랜덤값
+            var y = Random.Range(-0.05f, 0.05f); // -0.5 ~ 0.5 사이의 랜덤값
+            var z = Random.Range(-0.05f, 0.05f); // -0.5 ~ 0.5 사이의 랜덤값
 
             trash.transform.Translate(x, this.Info.height + y, z); // 높이값을 적용
         }

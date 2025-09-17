@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
 
     // cell 값을 id로 갖는, List를 셋팅해서 나중에 cell값을 치면 해당 cell에 있는 쓰래기 전체를 가져올수 있도록
 
-    private int cellSize = 40;
+    private int cellSize = 100; // 셀의 사이즈
 
 
     private IEnumerator Start()
@@ -51,6 +51,7 @@ public class SpawnManager : MonoBehaviour
         GetTerrain();
         // 풀링 전체 언로딩
         this.poolCtrl.UnloadEverything();
+        DataManager.Instance.UnloadData();
         CreateTrashData(500); // 쓰레기 데이터를 생성
         CreateObstacleData(10); // 장애물 데이터를 생성
         this.player.CellMoveAction(this.GetCellFromPosition(this.player.transform.position));

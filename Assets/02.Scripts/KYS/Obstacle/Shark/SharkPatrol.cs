@@ -37,7 +37,7 @@ public class SharkPatrol : ObstacleData
         this.patrolPointParent.SetParent(null);
         StartCoroutine(PatrolRoutine());
     }
-    WaitForSeconds wsForAttack = new WaitForSeconds(1);
+    WaitForSeconds wsForAttack = new WaitForSeconds(4);
     IEnumerator PatrolRoutine()
     {
         while (!this.gridManager.IsGridSet)
@@ -70,7 +70,9 @@ public class SharkPatrol : ObstacleData
                         // 공격 관련 로직
                         if(Vector3.Distance(this.target.position,this.transform.position) < this.attackDist) // 공격 가능 거리 조건
                         {
-                            Debug.Log("공격");
+                            //Debug.Log("공격");
+                            //target.GetComponent<Player>().PlayerData.oxygen -= 10; 
+                            DataManager.Instance.PlayerData.oxygen -= 10; //공격 당하면 산소 10 감소
                             yield return this.wsForAttack;
                         }
                         else // 추적 관련 로직
@@ -111,7 +113,6 @@ public class SharkPatrol : ObstacleData
                 yield return null;
             }
             this.idx = (this.idx + 1) % patrolPoints.Length;
-
         }
     }
     private void Update()
