@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShowCanvas : MonoBehaviour
 {
     protected GameObject canvas;
-    public GameObject ray; // 드래그 앤 드랍 - 왼손 UI는 제외
+    public GameObject ray;
     private Transform head; // 카메라 위치
     private float spawnDistance = 2f; // 거리
     protected List<GameObject> equipmentsList = new List<GameObject>(); // 장비

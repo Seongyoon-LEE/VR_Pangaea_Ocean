@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     private float initMaxWeight = 300f; // 초기 최대 무게
     public float curMaxWeight = 300f; // 현재 최대 무게
     private readonly string turtleKey = "Turtle";
+    private readonly string puzzleKey = "Puzzle";
+    
     void Awake()
     {
         if (Instance == null)
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+        
         BuffApp();
     }
 
@@ -45,4 +49,29 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    // 퍼즐키 이면 삭제하고 거북이키이면 false로 초기화 한다.
+    public void puzzleDicReset(string dicKey)
+    {
+        // 딕셔너리를 foreach로 돌릴 때 제거를하게 되면 오류가 발생할 수 있다.
+        // 따라서 따로 키를 저장했다가 한번에 삭제한다.
+        List<string> tempKey = new List<string>(); // 키를 임시 저장할 리스트
+        foreach (var dic in DataManager.Instance.dicPuzzle)
+        {
+            if (dic.Key.StartsWith(dicKey))
+            {
+                if (dicKey == turtleKey) DataManager.Instance.dicPuzzle[dic.Key] = false;
+                else if (dicKey == puzzleKey) tempKey.Add(dic.Key);
+            }
+        }
+
+        if (tempKey.Count > 0)
+        {
+            foreach (var key in tempKey)
+            {
+                DataManager.Instance.dicPuzzle.Remove(key);
+            }
+        }
+    }
+
 }

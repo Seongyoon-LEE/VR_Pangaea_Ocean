@@ -49,8 +49,11 @@ public class BoatBoarding : ShowCanvas
 
             playerTr.position = transform.parent.position + new Vector3(0, 1f, -2f);
 
-            if (trashBoard != null) 
+            if (trashBoard != null)
+            {
                 trashBoard.SetActive(true);
+            }
+     
             // 탑승 후 장비를 Hand모델로 변경
             for (int i = 0; i < equipmentsList.Count; i++)
             {

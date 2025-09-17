@@ -52,6 +52,6 @@ public class MenuEnable : ShowCanvas
     {
         this.player.PlayerPosSave();
         DataManager.Instance.SaveData();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 }
