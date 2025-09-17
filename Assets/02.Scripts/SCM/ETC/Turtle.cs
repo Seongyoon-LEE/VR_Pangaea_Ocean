@@ -32,7 +32,7 @@ public class Turtle : MonoBehaviour
         meshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
         
         // 3스테이지에서만 보이게
-        if (stage != 3)
+        if (stage != 3 || idx != 0)
             key.SetActive(false);
 
         // 현재 거북이 상태값에 대한 키가 존재하는 지 확인하고 그 값을 가져온다.

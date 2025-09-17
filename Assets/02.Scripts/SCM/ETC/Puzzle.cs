@@ -24,8 +24,13 @@ public class Puzzle : MonoBehaviour
     private Image valueImage;
     private Coroutine valueUpdate;
     
-    void Start()
+    IEnumerator Start()
     {
+        while (!DataManager.Instance.IsLoadingFinish)
+        {
+            yield return null;
+        }
+
         knob = GetComponent<XRKnob>();
         knob.selectEntered.AddListener(x =>
         {
@@ -39,23 +44,12 @@ public class Puzzle : MonoBehaviour
         vorota = GameObject.Find("Vorota").GetComponentInChildren<Animator>(); // 성문을 열기 위한 애니메이터
         valueImage = GetComponentInChildren<Image>(); // 현재 선택된 색을 보여주기 위한 이미지
 
-        // 퍼즐 정보가 조명색 변경
-        //if (DataManager.Instance.dicPuzzle.Count != 0) // 퍼즐 정보가 있다면
-        //{
-        //    for (int i = 0; i < DataManager.Instance.dicPuzzle.Count; i++)
-        //    {
-        //        if (DataManager.Instance.dicPuzzle[puzzleStr[i]])
-        //            _light[i].MaterialSetting((int)State.TRUE);
-        //        else
-        //            _light[i].MaterialSetting((int)State.FALSE);
-        //    }
-        //}
-
         for (int i = 0; i < puzzleStr.Length; i++)
         {
             // 키가 있으면 값을 가져오기
             if (DataManager.Instance.dicPuzzle.TryGetValue(puzzleStr[i], out bool value))
             {
+                print(puzzleStr[i]);
                 // True일때 파랑색, False일때 빨강색으로 바꿔준다.
                 _light[i].MaterialSetting(value ? (int)State.TRUE : (int)State.FALSE);
             }
@@ -125,11 +119,24 @@ public class Puzzle : MonoBehaviour
         {
             m.MaterialSetting((int)State.NOMAL);
         }
+
+        foreach (string str in puzzleStr)
+        {
+            if (DataManager.Instance.dicPuzzle.ContainsKey(str))
+            {
+                DataManager.Instance.dicPuzzle.Remove(str);
+            }
+        }
         // 레이어를 다시 원래 상태로 되돌리기
         if (knob.interactionLayers == 0)
             knob.interactionLayers = originLayerMask;
         curQuestion = answerCount = 0; // 현재 문제, 맞춘 갯수 초기화
         vorota.SetBool(hashIsOpen, false); // 성문 닫기
+        print("초기화");
+        foreach (var dic in DataManager.Instance.dicPuzzle)
+        {
+            print($"{dic.Key} : {dic.Value}");
+        }
     }
     private float ValueResult()
     {

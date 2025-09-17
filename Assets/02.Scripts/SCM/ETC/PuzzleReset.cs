@@ -23,7 +23,7 @@ public class PuzzleReset : MonoBehaviour
         {
             lever.interactionLayers = 0; // 레이어 Nothing으로
             puzzle.LightClear(); // 조명 초기화
-            DataManager.Instance.dicPuzzle.Clear();
+            //DataManager.Instance.dicPuzzle.Clear();
             StartCoroutine(LeverReset()); // 잠시 대기
         }
     }
