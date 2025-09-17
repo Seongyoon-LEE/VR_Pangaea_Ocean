@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
         //this.transform.position = boat.position + new Vector3(0, 1f, -2f); // 플레이어 위치 초기화
         //this.transform.rotation = boat.rotation; // 플레이어 회전 초기화
 
+        // 저장된 거북이 데이터 초기화
+        GameManager.Instance.puzzleDicReset("Turtle");
+        // 적용된 버프 초기화
+        GameManager.Instance.BuffApp();
+
         foreach (var trash in this.PlayerData.trashIdList)
         {
             DataManager.Instance.dicTrash[trash.Value].Find(x => x.id == trash.Key).status = (int)TrashStatus.Dirty; // 쓰레기 상태를 더러움으로 변경

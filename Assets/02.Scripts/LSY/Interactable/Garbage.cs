@@ -10,6 +10,7 @@ public class Garbage : MonoBehaviour
     Vector3 initPos; // 초기 위치 저장 변수 y값 0.0
     public Action onTrashSubmitted; // 쓰레기 제출시 실행할 델리게이트
     [SerializeField] OutLineCtrl outLineCtrl;
+    private GameObject nextBtn; // 다음 스테이지로 가는 버튼
     IEnumerator Start()
     {
         if (trashPileObj != null)
@@ -21,7 +22,7 @@ public class Garbage : MonoBehaviour
         {
             yield return null;
         }
-
+        nextBtn = GameObject.Find("GarbageCanvas").transform.GetChild(0).GetChild(3).gameObject;
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
 
@@ -63,7 +64,7 @@ public class Garbage : MonoBehaviour
             return;
         }
         float percentage = (float)cleanTrashCount / totalCnt;
-
+        nextBtn.SetActive(percentage >= 0.8);
         // 쓰레기 더미의 y 위치를 청소한 쓰레기 비율에 따라 조정
         if (percentage >= 0.8f)
         {

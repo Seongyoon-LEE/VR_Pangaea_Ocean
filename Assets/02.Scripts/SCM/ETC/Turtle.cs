@@ -35,11 +35,10 @@ public class Turtle : MonoBehaviour
         if (stage != 3 || idx != 0)
             key.SetActive(false);
 
-        // 현재 거북이 상태값에 대한 키가 존재하는 지 확인하고 그 값을 가져온다.
-        if (DataManager.Instance.dicPuzzle.TryGetValue(turtleStr[idx], out bool value))
+        // 현재 거북이 키가 존재한다면 실행한다.
+        if (DataManager.Instance.dicPuzzle.ContainsKey(turtleStr[idx]))
         {
-            if (value) // true라면 거북이가 해초에서 구해진 상태로 바꾼다.
-                GrassDisable();
+            GrassDisable();
         }
     }
 
@@ -56,11 +55,9 @@ public class Turtle : MonoBehaviour
         transform.GetComponent<BoxCollider>().enabled = false;
         grass.SetActive(false);
 
-        if (DataManager.Instance.dicPuzzle.ContainsKey(turtleStr[idx])) // 키가 존재한다면 값만 변경
-            DataManager.Instance.dicPuzzle[turtleStr[idx]] = true;
-        else // 키가 존재하지 않으면 키와 값을 넣기
+        if (!DataManager.Instance.dicPuzzle.ContainsKey(turtleStr[idx])) // 키가 존재하지 않는다면 추가
             DataManager.Instance.dicPuzzle.Add(turtleStr[idx], true);
-
+            
         // 무게량 증가 (중첩 가능)
         // 스테이지 이동시 초기화
         // 사망시 초기화

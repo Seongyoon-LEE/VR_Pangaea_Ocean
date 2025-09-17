@@ -120,13 +120,9 @@ public class Puzzle : MonoBehaviour
             m.MaterialSetting((int)State.NOMAL);
         }
 
-        foreach (string str in puzzleStr)
-        {
-            if (DataManager.Instance.dicPuzzle.ContainsKey(str))
-            {
-                DataManager.Instance.dicPuzzle.Remove(str);
-            }
-        }
+        // 퍼즐 데이터 삭제
+        GameManager.Instance.puzzleDicReset("Puzzle");
+
         // 레이어를 다시 원래 상태로 되돌리기
         if (knob.interactionLayers == 0)
             knob.interactionLayers = originLayerMask;
