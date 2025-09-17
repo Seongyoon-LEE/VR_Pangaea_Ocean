@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Garbage : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Garbage : MonoBehaviour
             yield return null;
         }
         nextBtn = GameObject.Find("GarbageCanvas").transform.GetChild(0).GetChild(3).gameObject;
+        // 다음 스테이지로 가는 버튼 이벤트
+        nextBtn.GetComponent<Button>().onClick.AddListener(() =>
+        {
+
+        });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
 
