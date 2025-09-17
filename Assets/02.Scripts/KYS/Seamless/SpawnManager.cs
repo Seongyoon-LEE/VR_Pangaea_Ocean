@@ -204,7 +204,7 @@ public class SpawnManager : MonoBehaviour
             rotX = Random.Range(0f, 360f);
             rotY = Random.Range(0f, 360f);
             rotZ = Random.Range(0f, 360f);
-            height = Random.Range(0, 50f);
+            height = Random.Range(0, -(pos.y + 8));
         }
 
         var cell = this.GetCellFromPosition(pos); // 저 좌표값을 기반으로 한 cell값
@@ -260,7 +260,7 @@ public class SpawnManager : MonoBehaviour
 
             //trashinfo에 들어갈 내용
             pos = new Vector3(x * terrain.terrainData.size.x + terrain.transform.position.x
-                , y + terrain.transform.position.y + Random.Range(30, 70f),
+                , y + terrain.transform.position.y + Random.Range(10, -(y + terrain.transform.position.y)),
                 z * terrain.terrainData.size.z + terrain.transform.position.z); // 좌표값
         }
         else // 소용돌이의 경우

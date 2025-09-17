@@ -5,6 +5,6 @@ public class App : MonoBehaviour
 {
     void Start()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 }

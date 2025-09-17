@@ -25,17 +25,21 @@ public class SharkPatrol : ObstacleData
     private float chaseDist = 50f;
     private float attackDist = 5f;
 
+    private IEnumerator patrolRoutine;
+
     public bool test;
     private void Awake()
     {
         this.target = GameObject.FindGameObjectWithTag("Player").transform;
         this.gridManager = GetComponentInChildren<GridManager>();
+        this.patrolRoutine = this.PatrolRoutine();
     }
     private void OnEnable()
     {
         this.speed = this.normalSpeed;
         this.patrolPointParent.SetParent(null);
-        StartCoroutine(PatrolRoutine());
+        StartCoroutine(this.patrolRoutine);
+        StartCoroutine(ActiveRoutine());
     }
     WaitForSeconds wsForAttack = new WaitForSeconds(4);
     IEnumerator PatrolRoutine()
@@ -114,6 +118,19 @@ public class SharkPatrol : ObstacleData
             }
             this.idx = (this.idx + 1) % patrolPoints.Length;
         }
+    }
+    WaitForSeconds wsForDisActive = new WaitForSeconds(3);
+    IEnumerator ActiveRoutine()
+    {
+        while (this.Info.active)
+        {
+            yield return null;
+        }
+        //기능 정지 내용
+        StopCoroutine(this.patrolRoutine);
+        //n초 뒤 사라지는 내용
+        yield return wsForDisActive;
+        DisActivate();
     }
     private void Update()
     {
