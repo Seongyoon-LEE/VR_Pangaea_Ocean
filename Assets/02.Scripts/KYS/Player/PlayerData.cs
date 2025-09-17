@@ -37,7 +37,7 @@ public class PlayerData
 
     public bool isBoarding = true;
 
-    public int stageIdx;
+    public int stageIdx = 1;
 
     public Dictionary<int, Vector2Int> trashIdList = new Dictionary<int, Vector2Int>();
 }
