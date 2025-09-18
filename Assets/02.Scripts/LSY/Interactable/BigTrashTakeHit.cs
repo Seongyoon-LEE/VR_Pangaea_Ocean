@@ -13,6 +13,10 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
     public ParticleSystem hitEffect; // 히트 이펙트
     public ParticleSystem breakEffect; // 파괴 이펙트
 
+    [Header("사운드")]
+    public AudioClip hitSound; // 히트 사운드
+    public AudioClip breakSound; // 파괴 사운드
+
     BreakableTrash breakable;
     public static event Action OnBigTrashBroken;
     public int hitsLeft;
@@ -40,6 +44,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
         }
         else
         {
+            SoundManager.s_Instance.PlaySfx(transform.position,hitSound,false);
             // 이펙트 풀링에서 hit 이펙트 꺼내옴
             GameObject hitFX = EffectPoolingManager.Instance.GetFromPool(
                 EffectPoolingManager.Instance.hitEffectPoolList,
@@ -56,6 +61,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
 
     public void BreakEffect()
     {
+        SoundManager.s_Instance.PlaySfx(transform.position, breakSound, false);
         GameObject breakFX = EffectPoolingManager.Instance.GetFromPool(
             EffectPoolingManager.Instance.breakEffectPoolList,
             EffectPoolingManager.Instance.breakEffectPrefab);
