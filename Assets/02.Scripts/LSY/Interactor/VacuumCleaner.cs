@@ -14,6 +14,7 @@ public class VacuumCleaner : MonoBehaviour
     [SerializeField] Transform FirePos; // 레이저가 발사되는 위치
     [SerializeField] float rayDistance = 10f; // 레이저의 최대 거리
     [SerializeField] InputActionProperty rightTriggerAction; // 오른쪽 트리거 액션
+    [SerializeField] AudioClip vacuumClip; // 흡입 사운드 
     bool isFiring;
     public Action onCleanAction;
 
@@ -90,6 +91,7 @@ public class VacuumCleaner : MonoBehaviour
             Debug.DrawLine(FirePos.position, hit.point, Color.red); // 레이저가 충돌한 지점을 시각적으로 표시합니다.
             hit.collider.GetComponent<TrashData>().Clean();
             hit.collider.GetComponent<TrashData>().DisActivate(); // 레이저가 충돌한 오브젝트를 비활성화합니다.
+            SoundManager.s_Instance.PlaySfx(transform.position, vacuumClip, false);
             DataManager.Instance.PlayerData.weight += hit.collider.GetComponent<TrashData>().Info.weight;
             if(DataManager.Instance.PlayerData.weight >= GameManager.Instance.curMaxWeight)
             {
