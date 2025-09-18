@@ -13,7 +13,7 @@ public class InventorySocket : XRSocketInteractor
     protected override void Start()
     {
         base.Start();
-        keyImg = transform.GetChild(0).GetChild(5).GetComponent<Image>();
+        keyImg = transform.GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
     }
 
     public override bool CanHover(IXRHoverInteractable interactable)

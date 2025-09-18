@@ -37,6 +37,8 @@ public class Garbage : MonoBehaviour
             }
             SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx,LoadSceneMode.Additive);
             this.spawnManager.SetNextStage();
+            UpdateTrashVisuals();
+            onTrashSubmitted?.Invoke();
         });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
