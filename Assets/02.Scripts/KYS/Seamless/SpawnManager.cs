@@ -351,18 +351,18 @@ public class SpawnManager : MonoBehaviour
                         var trashCheck = list.Find(x => x.status != (int)TrashStatus.Clean);
                         if(trashCheck == null)
                         {
-                            return; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
+                            continue; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
                         }
                     }
                     if (DataManager.Instance.dicTrash[cell][i - list.Count].status == (int)TrashStatus.Dirty) // 애초에 청소를 안했던 상태라면
                     {
                         this.poolCtrl.GetGrassTrash(list);
-                        return;
+                        continue;
                     }
                     //여기로 나왔다면 청소를 했었는데 플레이어 사망등의 이유로 쓰레기가 원복된것
                     DataManager.Instance.dicTrash[cell][i - list.Count].status = (int)TrashStatus.Damaged; // 위에서 i값을 더하고 있었기 때문에 - Count를 해서 본래 해초가 바뀌도록
                     this.poolCtrl.GetGrassTrash(list);
-                    return;
+                    continue;
                 }
                 if (DataManager.Instance.dicTrash[cell][i].kind >= 14) // 부숴지는 쓰레기는 14번 이상
                 {
@@ -375,11 +375,11 @@ public class SpawnManager : MonoBehaviour
                     var trashCheck = list.Find(x => x.status != (int)TrashStatus.Clean);
                     if (trashCheck == null)
                     {
-                        return; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
+                        continue; // 내부 쓰레기 전부 청소된 상태라면 로딩하지 않는다
                     }
                     //여기로 나왔다면 어떤식으로든 청소가 완료되지 않았었던것
                     this.poolCtrl.GetBreakableTrash(list);
-                    return;
+                    continue;
                 }
 
                 // 그 개수만큼의 info의 status가 전부 clean인지 확인, 만약 clean이라면 생성하지 않는다.
@@ -389,7 +389,7 @@ public class SpawnManager : MonoBehaviour
                 // clean인건 비활성화, damaged인것만 활성화, dirty상태(일부만 주웠는데 플레이어가 사망해서 돌아감)도 활성화
                 // damaged없이 전부 dirty 상태라면 부모오브젝트를 활성화
                 if (DataManager.Instance.dicTrash[cell][i].status == (int)TrashStatus.Clean) // 청소된 상태라면 로딩하지 않는다
-                    return;
+                    continue;
                 this.poolCtrl.GetTrash(DataManager.Instance.dicTrash[cell][i]); // 풀링 매니저에서 쓰레기 가져오기
             }
         }
@@ -398,6 +398,8 @@ public class SpawnManager : MonoBehaviour
         {
             for (int i = 0; i < DataManager.Instance.dicObstacle[cell].Count; i++)
             {
+                if (!DataManager.Instance.dicObstacle[cell][i].active)
+                    continue;
                 this.poolCtrl.GetObstacle(DataManager.Instance.dicObstacle[cell][i]); // 풀링 매니저에서 장애물 가져오기
             }
         }
