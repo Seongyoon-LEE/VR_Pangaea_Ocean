@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EffectPoolingManager : MonoBehaviour
+{
+    public static EffectPoolingManager Instance;
+
+    [Header("Hit Effect Pooling")]
+    public GameObject hitEffectPrefab;
+    public int hitEffectPoolSize = 5;
+    public List<GameObject> hitEffectPoolList = new List<GameObject>();
+
+    [Header("Break Effect Pooling")]
+    public GameObject breakEffectPrefab;
+    public int breakEffectPoolSize = 3;
+    public List<GameObject> breakEffectPoolList = new List<GameObject>();
+
+    [Header("Slash Effect Pooling")]
+    public GameObject slashEffectPrefab;
+    public int slashEffectPoolSize = 3;
+    public List<GameObject> slashEffectPoolList = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
+        // 히트 이펙트 풀 초기화
+        InitializePool(hitEffectPrefab, hitEffectPoolSize, hitEffectPoolList);
+        // 브레이크 이펙트 풀 초기화
+        InitializePool(breakEffectPrefab, breakEffectPoolSize, breakEffectPoolList);
+        // 슬래시 이펙트 풀 초기화
+        InitializePool(slashEffectPrefab, slashEffectPoolSize, slashEffectPoolList);
+    }
+    void InitializePool(GameObject prefab,int poolSize , List<GameObject> poolList)
+    {
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject obj = Instantiate(prefab,transform);
+            obj.SetActive(false);
+            poolList.Add(obj);
+        }
+    }
+    public GameObject GetFromPool(List<GameObject> pool, GameObject prefab)
+    {
+        foreach(var obj in pool)
+        {
+            if (!obj.activeInHierarchy)
+            {
+                return obj;
+            }
+        }
+        // 풀에 사용 가능한 오브젝트가 없으면 새로 생성
+        GameObject newObj = Instantiate(prefab, transform);
+        pool.Add(newObj);
+        return newObj;
+    }
+}

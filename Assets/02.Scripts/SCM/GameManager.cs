@@ -36,8 +36,11 @@ public class GameManager : MonoBehaviour
         BuffApp();
     }
 
-    // 버프 적용
-    // 초기화 후에도 실행하여 버프 초기화
+    // 버프
+    // 무게량 증가 (중첩 가능)
+    // 무게량 버프 초기화 시에도 사용
+    // 스테이지 이동시 초기화
+    // 사망시 초기화
     public void BuffApp()
     {
         curMaxWeight = initMaxWeight;
@@ -51,6 +54,8 @@ public class GameManager : MonoBehaviour
     }
 
     // 퍼즐키 이면 삭제하고 거북이키이면 false로 초기화 한다.
+    // 퍼즐은 기본, 정답, 오답으로 3종이며 키가 없으면 기본, 키가 있을때 true 정답, false 오답
+    // 거북이이는 키가 없다면 구조 전, 키가 있을 때 true면 버프를 받고 false면 버프를 받지 아
     public void puzzleDicReset(string dicKey)
     {
         // 딕셔너리를 foreach로 돌릴 때 제거를하게 되면 오류가 발생할 수 있다.

@@ -212,8 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6cb7d7c8c0c1b4382b58ba2e5ed530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutEffect: {fileID: 4130493427641228859, guid: 14afadf501e7f5f4ba0f308281c5958b,
-    type: 3}
+  slashSound: {fileID: 8300000, guid: 341e6bcae743a1544a167497db5236d0, type: 3}
 --- !u!65 &8160687242986078187
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -55,12 +55,12 @@ public class Turtle : MonoBehaviour
         transform.GetComponent<BoxCollider>().enabled = false;
         grass.SetActive(false);
 
+        // 키가 존재하면 이미 구조를 한것으로 판정
+        // 키가 true일 때 버프를 받고 false일 때는 버프를 받지 않는다.
         if (!DataManager.Instance.dicPuzzle.ContainsKey(turtleStr[idx])) // 키가 존재하지 않는다면 추가
             DataManager.Instance.dicPuzzle.Add(turtleStr[idx], true);
             
-        // 무게량 증가 (중첩 가능)
-        // 스테이지 이동시 초기화
-        // 사망시 초기화
+        // 버프 (무게량 증가)
         GameManager.Instance.BuffApp();
 
         // 3스테이지 일때 키 생성과 거북이 등껍질 색상 변경

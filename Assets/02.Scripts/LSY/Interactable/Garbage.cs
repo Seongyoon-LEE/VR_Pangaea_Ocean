@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class Garbage : MonoBehaviour
     [SerializeField] OutLineCtrl outLineCtrl;
     private GameObject nextBtn; // 다음 스테이지로 가는 버튼
     private SpawnManager spawnManager;
+    [SerializeField]
+    private Image dimImage;
     IEnumerator Start()
     {
         if (trashPileObj != null)
@@ -30,13 +33,21 @@ public class Garbage : MonoBehaviour
         // 다음 스테이지로 가는 버튼 이벤트
         nextBtn.GetComponent<Button>().onClick.AddListener(() =>
         {
-            SceneManager.UnloadSceneAsync(DataManager.Instance.PlayerData.stageIdx++);
-            if(DataManager.Instance.PlayerData.stageIdx > 3)
+            dimImage.gameObject.SetActive(true);
+            this.dimImage.DOFade(1, 2f).OnComplete(() =>
             {
-                DataManager.Instance.PlayerData.stageIdx = 3;
-            }
-            SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx,LoadSceneMode.Additive);
-            this.spawnManager.SetNextStage();
+                SceneManager.UnloadSceneAsync(DataManager.Instance.PlayerData.stageIdx++);
+                if (DataManager.Instance.PlayerData.stageIdx > 3)
+                {
+                    DataManager.Instance.PlayerData.stageIdx = 3;
+                }
+                SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive);
+                this.spawnManager.SetNextStage();
+                UpdateTrashVisuals();
+                onTrashSubmitted?.Invoke();
+                this.dimImage.DOFade(0, 2f);
+                this.dimImage.gameObject.SetActive(false);
+            });
         });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
