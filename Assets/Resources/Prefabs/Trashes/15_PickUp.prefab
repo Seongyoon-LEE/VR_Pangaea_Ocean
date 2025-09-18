@@ -5333,6 +5333,8 @@ MonoBehaviour:
     type: 3}
   breakEffect: {fileID: 8786822359077997505, guid: c1b2caa4371ba154fa8e57d2351d83e3,
     type: 3}
+  hitSound: {fileID: 8300000, guid: 7682bb679de36324dab67ebdfab1172f, type: 3}
+  breakSound: {fileID: 8300000, guid: a0c8796a705222748a91a987b0809f5f, type: 3}
   hitsLeft: 0
 --- !u!1 &4484378939210324279
 GameObject:
