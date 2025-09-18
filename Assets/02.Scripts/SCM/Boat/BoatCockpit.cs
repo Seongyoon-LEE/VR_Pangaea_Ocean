@@ -58,6 +58,7 @@ public class BoatCockpit : ShowCanvas
         // 플레이어 이동을 막고 보트가 움직이게 하기위해서 두가지 컴포넌트 비활성화
         playerTr.GetComponent<ContinuousMoveProviderBase>().enabled = isSetting;
         playerTr.GetComponent<ContinuousTurnProviderBase>().enabled = isSetting;
+        playerTr.GetComponent<SwimMovement>().enabled = isSetting;
         playerTr.parent = isSetting ? null : transform.parent; // 플레이어 오브젝트 위치를 변경
         //equipmentsList[curEquipment].SetActive(isSetting);
         //if (curEquipment == 0) equipmentsList[1].SetActive(isSetting);
