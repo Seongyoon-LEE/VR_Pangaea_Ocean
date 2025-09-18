@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject dimImageCanvas; // 화면 가리개 캔버스
     private void Start()
     {
-        this.dimImageCanvas.GetComponentInChildren<Image>().DOFade(0, 0.5f).OnComplete(() =>
+        this.dimImageCanvas.GetComponentInChildren<Image>().DOFade(0, 2f).OnComplete(() =>
         {
             Debug.Log("로딩 완료");
             this.dimImageCanvas.SetActive(false);
