@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Garbage : MonoBehaviour
@@ -12,6 +13,7 @@ public class Garbage : MonoBehaviour
     public Action onTrashSubmitted; // 쓰레기 제출시 실행할 델리게이트
     [SerializeField] OutLineCtrl outLineCtrl;
     private GameObject nextBtn; // 다음 스테이지로 가는 버튼
+    private SpawnManager spawnManager;
     IEnumerator Start()
     {
         if (trashPileObj != null)
@@ -23,11 +25,18 @@ public class Garbage : MonoBehaviour
         {
             yield return null;
         }
+        this.spawnManager = GameObject.FindObjectOfType<SpawnManager>();
         nextBtn = GameObject.Find("GarbageCanvas").transform.GetChild(0).GetChild(3).gameObject;
         // 다음 스테이지로 가는 버튼 이벤트
         nextBtn.GetComponent<Button>().onClick.AddListener(() =>
         {
-
+            SceneManager.UnloadSceneAsync(DataManager.Instance.PlayerData.stageIdx++);
+            if(DataManager.Instance.PlayerData.stageIdx > 3)
+            {
+                DataManager.Instance.PlayerData.stageIdx = 3;
+            }
+            SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx,LoadSceneMode.Additive);
+            this.spawnManager.SetNextStage();
         });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
