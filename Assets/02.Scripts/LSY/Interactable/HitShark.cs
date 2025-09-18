@@ -47,11 +47,15 @@ public class HitShark : MonoBehaviour,IHittable
         curentHp--;
         print($"상어 피격! 남은 체력 : {curentHp}/{maxHp}");
 
-        // 피격 이펙트 재생
-        if (hitEffect != null)
+        GameObject slashFX = EffectPoolingManager.Instance.GetFromPool(
+            EffectPoolingManager.Instance.slashEffectPoolList,
+            EffectPoolingManager.Instance.slashEffectPrefab);
+        if (slashFX != null)
         {
-            var effect = Instantiate(hitEffect, hitPoint.position, Quaternion.identity);
-            Destroy(effect.gameObject, 1f);
+            // 위치와 방향 설정
+            slashFX.transform.position = hitPoint.position;
+            slashFX.transform.rotation = Quaternion.LookRotation(-hitPoint.forward);
+            slashFX.SetActive(true); // 이펙트 활성화
         }
 
         if (curentHp <= 0)

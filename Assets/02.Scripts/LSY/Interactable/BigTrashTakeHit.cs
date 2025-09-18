@@ -40,15 +40,30 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
         }
         else
         {
-            var hitFX = Instantiate(hitEffect, hitPoint.position, Quaternion.LookRotation(-hitPoint.forward));
-            Destroy(hitFX.gameObject, 1f);
+            // 이펙트 풀링에서 hit 이펙트 꺼내옴
+            GameObject hitFX = EffectPoolingManager.Instance.GetFromPool(
+                EffectPoolingManager.Instance.hitEffectPoolList,
+                EffectPoolingManager.Instance.hitEffectPrefab);
+            if (hitFX != null)
+            {
+                // 위치와 방향 설정
+                hitFX.transform.position = hitPoint.position;
+                hitFX.transform.rotation = Quaternion.LookRotation(-hitPoint.forward);
+                hitFX.SetActive(true); // 이펙트 활성화
+            }
         }
     }
 
     public void BreakEffect()
     {
-        var breakFX = Instantiate(breakEffect, transform.position, Quaternion.identity);
-        breakEffect.Play(); // 파괴 이펙트 재생
-        Destroy(breakFX.gameObject,1f); // 오브젝트 파괴
+        GameObject breakFX = EffectPoolingManager.Instance.GetFromPool(
+            EffectPoolingManager.Instance.breakEffectPoolList,
+            EffectPoolingManager.Instance.breakEffectPrefab);
+        if (breakFX != null)
+        {
+            breakFX.transform.position = transform.position;
+            breakFX.transform.rotation = Quaternion.identity;
+            breakFX.SetActive(true);
+        }
     }
 }
