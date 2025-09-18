@@ -14,6 +14,9 @@ public class HitShark : MonoBehaviour,IHittable
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] float deathAnimDuration = 2f;
 
+    [Header("사운드")]
+    [SerializeField] AudioClip slashClip;
+
     SharkPatrol shark;
 
     readonly int dieHash = Animator.StringToHash("Die");
@@ -42,7 +45,7 @@ public class HitShark : MonoBehaviour,IHittable
     void IHittable.TakeHit(Transform hitPoint)
     {
         if (curentHp <= 0) return; // 이미 죽었다면 리턴
-
+        SoundManager.s_Instance.PlaySfx(transform.position, slashClip, false); // 베는 사운드 재생
         // 체력 감소
         curentHp--;
         print($"상어 피격! 남은 체력 : {curentHp}/{maxHp}");

@@ -12,22 +12,16 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (s_Instance == null)
-        {
             s_Instance = this;
-        }
-        else if(s_Instance != this)
-        {
-            Destroy(gameObject);
-        }
+            DontDestroyOnLoad(gameObject);
     }
     public void SetPlayerVolum(float volume)
     {
         playerVolume = volume;
     }
-    public void PlaySfx(Vector3 pos, AudioClip clip, bool isLooped)
+    public GameObject PlaySfx(Vector3 pos, AudioClip clip, bool isLooped)
     {
-        if(isMute) return;
+        if(isMute) return null;
         GameObject soundObject = new GameObject("-Sound SFX-");
         soundObject.transform.position = pos;
         AudioSource audioSource = soundObject.AddComponent<AudioSource>();
@@ -41,6 +35,7 @@ public class SoundManager : MonoBehaviour
 
         if (!isLooped)
             Destroy(soundObject, clip.length);
+        return soundObject;
     }
 }
 

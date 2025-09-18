@@ -20871,6 +20871,10 @@ MonoBehaviour:
     type: 3}
   breakEffectPoolSize: 3
   breakEffectPoolList: []
+  slashEffectPrefab: {fileID: 607914935907159708, guid: 14afadf501e7f5f4ba0f308281c5958b,
+    type: 3}
+  slashEffectPoolSize: 3
+  slashEffectPoolList: []
 --- !u!4 &1638206200
 Transform:
   m_ObjectHideFlags: 0

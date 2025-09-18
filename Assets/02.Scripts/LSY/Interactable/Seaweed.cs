@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Seaweed : MonoBehaviour, IHittable
 {
-    //[SerializeField] ParticleSystem cutEffect; // 해초가 베일때 이펙트
-    
+    public AudioClip slashSound; // 베는 사운드
+
     public void TakeHit(Transform hitPoint)
     {
         print("해초가 베였다 !!");
-        
-        GameObject slashFX = EffectPoolingManager.Instance.GetFromPool(
+        SoundManager.s_Instance.PlaySfx(transform.position,slashSound, false); // 베는 사운드 재생
+        GameObject slashFX = EffectPoolingManager.Instance.GetFromPool( // 베는 파티클
             EffectPoolingManager.Instance.slashEffectPoolList,
             EffectPoolingManager.Instance.slashEffectPrefab);
         if (slashFX != null)
