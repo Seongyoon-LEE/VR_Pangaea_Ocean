@@ -76,7 +76,8 @@ public class ShowCanvas : MonoBehaviour
         if (isEnable && isLeft)
             LeftUISetting();
 
-        var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
+        //var allCanvas = GameObject.FindObjectsOfType<ShowCanvas>();
+        var allCanvas = GameObject.FindObjectsByType<ShowCanvas>(FindObjectsSortMode.None);
         // 다른 캔버스를 끄기 위한 로직
         foreach (ShowCanvas c in allCanvas)
         {
