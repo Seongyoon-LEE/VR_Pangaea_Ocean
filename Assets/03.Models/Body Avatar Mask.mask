@@ -1,0 +1,1199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Body Avatar Mask
+  m_Mask: 00000000000000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot/Bip001-L-Toe0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot/Bip001-L-Toe0/Bn_Shape_Bip001_L_Toe0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot/Bip001-L-Toe0/Bn_Shape_Bip001_L_Toe0/Bn_Shape_Bip001_L_Toe0_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot/Bn_Shape_Ankle_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bip001-L-Foot/Bn_Shape_Ankle_L/Bn_Shape_Ankle_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Bip001_Calf_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Bip001_Calf_L/Bn_Shape_Knee_L_Down1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Bip001_Calf_L/Bn_Shape_Knee_L_Down1/Bn_Shape_Knee_L_Down1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Bip001_Calf_L/Bn_Shape_Knee_L_Down2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Bip001_Calf_L/Bn_Shape_Knee_L_Down2/Bn_Shape_Knee_L_Down2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L/Bn_Shape_Knee_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L1/Bn_Shape_Knee_L1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Shape_Knee_L2/Bn_Shape_Knee_L2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Socket_L_Calf
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/Bn_Socket_L_Calf/Bn_Socket_L_Calf_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Bunny_Leg_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Bunny_Leg_L_01/FX_Bunny_Leg_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Esiemo_Leg_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Esiemo_Leg_L_01/FX_Esiemo_Leg_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Esiemo_Leg_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Esiemo_Leg_L_02/FX_Esiemo_Leg_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_Leg_Gyro_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_Leg_Gyro_L_01/FX_Kyle_Leg_Gyro_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_Leg_Gyro_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_Leg_Gyro_L_02/FX_Kyle_Leg_Gyro_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_LegBoost_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Kyle_LegBoost_01/FX_Kyle_LegBoost_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_L_Leg_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_L_Leg_01/FX_L_Leg_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Pedro_Leg_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Pedro_Leg_L_01/FX_Pedro_Leg_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Pedro_Leg_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bip001-L-Calf/FX_Pedro_Leg_L_02/FX_Pedro_Leg_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Bip001_Thigh_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Bip001_Thigh_L/Bn_Shape_Knee_L_Up1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Bip001_Thigh_L/Bn_Shape_Knee_L_Up1/Bn_Shape_Knee_L_Up1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Bip001_Thigh_L/Bn_Shape_Knee_L_Up2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Bip001_Thigh_L/Bn_Shape_Knee_L_Up2/Bn_Shape_Knee_L_Up2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Hip_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Hip_L/Bn_Shape_Hip_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Pelvis_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Pelvis_L/Bn_Shape_Pelvis_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Pelvis_L/Bn_Shape_Pelvis_L1/Bn_Shape_Pelvis_L11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Shape_Pelvis_L/Bn_Shape_Pelvis_L1/Bn_Shape_Pelvis_L11/Bn_Shape_Pelvis_L11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Socket_L_Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Socket_L_Thigh/Bn_Socket_L_Thigh_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Shape_CrotchTw_L_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Shape_CrotchTw_L_Parent/Bn_Shape_CrotchTw_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Shape_CrotchTw_L_Parent/Bn_Shape_CrotchTw_L1/Bn_Shape_CrotchTw_L11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Shape_CrotchTw_L_Parent/Bn_Shape_CrotchTw_L1/Bn_Shape_CrotchTw_L11/Bn_Shape_CrotchTw_L11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_Hip_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_Hip_L1/Bn_Shape_Hip_L11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_Hip_L1/Bn_Shape_Hip_L11/Bn_Shape_Hip_L11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_ThighTw1_L1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_ThighTw1_L1_Parent/Bn_Shape_ThighTw1_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Shape_ThighTw1_L1_Parent/Bn_Shape_ThighTw1_L1/Bn_Shape_ThighTw1_L1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2/Bn_Shape_Twist_Bip001_L_Thigh2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2/Bn_Shape_Twist_Bip001_L_Thigh2/Bn_Shape_Twist_Bip001_L_Thigh2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2/Bn_Twist_Bip001_L_Thigh3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2/Bn_Twist_Bip001_L_Thigh3/Bn_Shape_Twist_Bip001_L_Thigh3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/Bn_Twist_Bip001_L_Thigh_Parent/Bn_Twist_Bip001_L_Thigh/Bn_Twist_Bip001_L_Thigh1/Bn_Twist_Bip001_L_Thigh2/Bn_Twist_Bip001_L_Thigh3/Bn_Shape_Twist_Bip001_L_Thigh3/Bn_Shape_Twist_Bip001_L_Thigh3_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Bunny_Thigh_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Bunny_Thigh_L_01/FX_Bunny_Thigh_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Bunny_Thigh_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Bunny_Thigh_L_02/FX_Bunny_Thigh_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_L_Thigh_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_L_Thigh_01/FX_L_Thigh_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_01/FX_Viessa_Leg_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_02/FX_Viessa_Leg_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_03
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_03/FX_Viessa_Leg_L_03_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_04
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-L-Thigh/FX_Viessa_Leg_L_04/FX_Viessa_Leg_L_04_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot/Bip001-R-Toe0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot/Bip001-R-Toe0/Bn_Shape_Bip001_R_Toe0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot/Bip001-R-Toe0/Bn_Shape_Bip001_R_Toe0/Bn_Shape_Bip001_R_Toe0_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot/Bn_Shape_Ankle_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bip001-R-Foot/Bn_Shape_Ankle_R/Bn_Shape_Ankle_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Bip001_Calf_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Bip001_Calf_R/Bn_Shape_Knee_R_Down1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Bip001_Calf_R/Bn_Shape_Knee_R_Down1/Bn_Shape_Knee_R_Down1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Bip001_Calf_R/Bn_Shape_Knee_R_Down2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Bip001_Calf_R/Bn_Shape_Knee_R_Down2/Bn_Shape_Knee_R_Down2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R/Bn_Shape_Knee_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R1/Bn_Shape_Knee_R1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Shape_Knee_R2/Bn_Shape_Knee_R2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Socket_R_Calf
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/Bn_Socket_R_Calf/Bn_Socket_R_Calf_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Bunny_Leg_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Bunny_Leg_R_01/FX_Bunny_Leg_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Esiemo_Leg_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Esiemo_Leg_R_01/FX_Esiemo_Leg_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Esiemo_Leg_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Esiemo_Leg_R_02/FX_Esiemo_Leg_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_Leg_Gyro_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_Leg_Gyro_R_01/FX_Kyle_Leg_Gyro_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_Leg_Gyro_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_Leg_Gyro_R_02/FX_Kyle_Leg_Gyro_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_LegBoost_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Kyle_LegBoost_02/FX_Kyle_LegBoost_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Pedro_Leg_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Pedro_Leg_R_01/FX_Pedro_Leg_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Pedro_Leg_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_Pedro_Leg_R_02/FX_Pedro_Leg_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_R_Leg_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bip001-R-Calf/FX_R_Leg_01/FX_R_Leg_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Bip001_Thigh_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Bip001_Thigh_R/Bn_Shape_Knee_R_Up1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Bip001_Thigh_R/Bn_Shape_Knee_R_Up1/Bn_Shape_Knee_R_Up1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Bip001_Thigh_R/Bn_Shape_Knee_R_Up2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Bip001_Thigh_R/Bn_Shape_Knee_R_Up2/Bn_Shape_Knee_R_Up2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Hip_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Hip_R/Bn_Shape_Hip_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Pelvis_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Pelvis_R/Bn_Shape_Pelvis_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Pelvis_R/Bn_Shape_Pelvis_R1/Bn_Shape_Pelvis_R11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Shape_Pelvis_R/Bn_Shape_Pelvis_R1/Bn_Shape_Pelvis_R11/Bn_Shape_Pelvis_R11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Socket_R_Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Socket_R_Thigh/Bn_Socket_R_Thigh_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Shape_CrotchTw_R1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Shape_CrotchTw_R1_Parent/Bn_Shape_CrotchTw_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Shape_CrotchTw_R1_Parent/Bn_Shape_CrotchTw_R1/Bn_Shape_CrotchTw_R11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Shape_CrotchTw_R1_Parent/Bn_Shape_CrotchTw_R1/Bn_Shape_CrotchTw_R11/Bn_Shape_CrotchTw_R11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_Hip_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_Hip_R1/Bn_Shape_Hip_R11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_Hip_R1/Bn_Shape_Hip_R11/Bn_Shape_Hip_R11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_ThighTw1_R1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_ThighTw1_R1_Parent/Bn_Shape_ThighTw1_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Shape_ThighTw1_R1_Parent/Bn_Shape_ThighTw1_R1/Bn_Shape_ThighTw1_R1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2/Bn_Shape_Twist_Bip001_R_Thigh2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2/Bn_Shape_Twist_Bip001_R_Thigh2/Bn_Shape_Twist_Bip001_R_Thigh2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2/Bn_Twist_Bip001_R_Thigh3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2/Bn_Twist_Bip001_R_Thigh3/Bn_Shape_Twist_Bip001_R_Thigh3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/Bn_Twist_Bip001_R_Thigh_Parent/Bn_Twist_Bip001_R_Thigh/Bn_Twist_Bip001_R_Thigh1/Bn_Twist_Bip001_R_Thigh2/Bn_Twist_Bip001_R_Thigh3/Bn_Shape_Twist_Bip001_R_Thigh3/Bn_Shape_Twist_Bip001_R_Thigh3_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Bunny_Thigh_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Bunny_Thigh_R_01/FX_Bunny_Thigh_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Bunny_Thigh_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Bunny_Thigh_R_02/FX_Bunny_Thigh_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_R_Thigh_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_R_Thigh_01/FX_R_Thigh_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_01/FX_Viessa_Leg_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_02/FX_Viessa_Leg_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_03
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_03/FX_Viessa_Leg_R_03_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_04
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-R-Thigh/FX_Viessa_Leg_R_04/FX_Viessa_Leg_R_04_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger0/Bip001-L-Finger01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger0/Bip001-L-Finger01/Bip001-L-Finger02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger0/Bip001-L-Finger01/Bip001-L-Finger02/Bip001-L-Finger02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger1/Bip001-L-Finger11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger1/Bip001-L-Finger11/Bip001-L-Finger12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger1/Bip001-L-Finger11/Bip001-L-Finger12/Bip001-L-Finger12_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger2/Bip001-L-Finger21
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger2/Bip001-L-Finger21/Bip001-L-Finger22
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger2/Bip001-L-Finger21/Bip001-L-Finger22/FX_Esiemo_Finger_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger2/Bip001-L-Finger21/Bip001-L-Finger22/FX_Esiemo_Finger_L_01/FX_Esiemo_Finger_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger3/Bip001-L-Finger31
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger3/Bip001-L-Finger31/Bip001-L-Finger32
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger3/Bip001-L-Finger31/Bip001-L-Finger32/Bip001-L-Finger32_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger4
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger4/Bip001-L-Finger41
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger4/Bip001-L-Finger41/Bip001-L-Finger42
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bip001-L-Finger4/Bip001-L-Finger41/Bip001-L-Finger42/Bip001-L-Finger42_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Shape_Wrist_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Shape_Wrist_L/Bn_Shape_Wrist_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Socket_L_Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Socket_L_Hand/Pt_LWristCover1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Socket_L_Hand/Pt_LWristCover1_Parent/Bn_LWristCover1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/Bn_Socket_L_Hand/Pt_LWristCover1_Parent/Bn_LWristCover1/Bn_LWristCover1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/FX_Leonard_L_Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/FX_Leonard_L_Hand/FX_Leonard_L_Hand_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/FX_RedCard_F
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/FX_RedCard_F/FX_RedCard_F_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandBeamSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandBeamSocket/LHandBeamSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandMagazineSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandMagazineSocket/LHandMagazineSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandWeaponSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bip001-L-Hand/LHandWeaponSocket/LHandWeaponSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Shape_Elbow_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Shape_Elbow_L/FX_L_Elbow_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Shape_Elbow_L/FX_L_Elbow_02/FX_L_Elbow_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Socket_L_Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Socket_L_Forearm/Bn_Socket_L_Forearm_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1/Bn_Twist_Bip001_L_Forearm2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1/Bn_Twist_Bip001_L_Forearm2/Bn_Twist_Bip001_L_Forearm3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1/Bn_Twist_Bip001_L_Forearm2/Bn_Twist_Bip001_L_Forearm3/Pt_LWristCover11_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1/Bn_Twist_Bip001_L_Forearm2/Bn_Twist_Bip001_L_Forearm3/Pt_LWristCover11_Parent/Bn_LWristCover11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/Bn_Twist_Bip001_L_Forearm_Parent/Bn_Twist_Bip001_L_Forearm/Bn_Twist_Bip001_L_Forearm1/Bn_Twist_Bip001_L_Forearm2/Bn_Twist_Bip001_L_Forearm3/Pt_LWristCover11_Parent/Bn_LWristCover11/Bn_LWristCover11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Bunny_Arm_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Bunny_Arm_L_01/FX_Bunny_Arm_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_L_Arm_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_L_Arm_01/FX_L_Arm_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Viessa_ArmParts_L_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Viessa_ArmParts_L_01/FX_Viessa_ArmParts_L_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Viessa_ArmParts_L_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bip001-L-Forearm/FX_Viessa_ArmParts_L_02/FX_Viessa_ArmParts_L_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Shape_Armpit_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Shape_Armpit_L/Bn_Shape_Armpit_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Shape_Shoulder_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Shape_Shoulder_L/Bn_Shape_Shoulder_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Socket_L_UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Socket_L_UpperArm/Bn_Socket_L_UpperArm_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Bn_Twist_Bip001_L_UpperArm2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Bn_Twist_Bip001_L_UpperArm2/Bn_Twist_Bip001_L_UpperArm3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Bn_Twist_Bip001_L_UpperArm2/Bn_Twist_Bip001_L_UpperArm3/Bn_Twist_Bip001_L_UpperArm3_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr1_Parent/Bn_LArmCoverr1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr1_Parent/Bn_LArmCoverr1/Bn_LArmCoverr1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr11_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr11_Parent/Bn_LArmCoverr11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr11_Parent/Bn_LArmCoverr11/Bn_LArmCoverr11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr12_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr12_Parent/Bn_LArmCoverr12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bip001-L-UpperArm/Bn_Twist_Bip001_L_UpperArm_Parent/Bn_Twist_Bip001_L_UpperArm/Bn_Twist_Bip001_L_UpperArm1/Pt_LArmCoverr12_Parent/Bn_LArmCoverr12/Bn_LArmCoverr12_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bn_Socket_L_Clavicle
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/Bn_Socket_L_Clavicle/Bn_Socket_L_Clavicle_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/FX_Esiemo_Hologram_Launcher
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-L-Clavicle/FX_Esiemo_Hologram_Launcher/FX_Esiemo_Hologram_Launcher_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_L/Bn_FEye_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_L/Bn_FEye_L1/Bn_FEye_L1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_R/Bn_FEye_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Facial_Root/Bn_FEye_Root/Bn_FEye_R/Bn_FEye_R1/Bn_FEye_R1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Socket_Hair
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Socket_Hair/Bn_Socket_Hair_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Socket_Head
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Socket_Head/Pt_Helmet
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/Bn_Socket_Head/Pt_Helmet/Pt_Helmet_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/CustomizeHeadSkinSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/CustomizeHeadSkinSocket/CustomizeHeadSkinSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Enzo_Headgear_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Enzo_Headgear_01/FX_Enzo_Headgear_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Jayber_Ear_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Jayber_Ear_L/FX_Jayber_Ear_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Jayber_Head
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bip001-Head/FX_Jayber_Head/FX_Jayber_Head_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11/Bn_Scarf12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11/Bn_Scarf12/Bn_Scarf13
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11/Bn_Scarf12/Bn_Scarf13/Bn_Scarf14
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11/Bn_Scarf12/Bn_Scarf13/Bn_Scarf14/Bn_Scarf15
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Shape_Neck/Bn_Scarf1_Parent/Bn_Scarf1/Bn_Scarf11/Bn_Scarf12/Bn_Scarf13/Bn_Scarf14/Bn_Scarf15/Bn_Scarf15_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Socket_Neck
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Socket_Neck/Bn_Socket_Neck_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Twist_Bip001_Neck
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Twist_Bip001_Neck/Bn_Twist_Bip001_Neck1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Twist_Bip001_Neck/Bn_Twist_Bip001_Neck1/Bn_Twist_Bip001_Neck2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-Neck/Bn_Twist_Bip001_Neck/Bn_Twist_Bip001_Neck1/Bn_Twist_Bip001_Neck2/Bn_Twist_Bip001_Neck2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger0
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger0/Bip001-R-Finger01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger0/Bip001-R-Finger01/Bip001-R-Finger02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger0/Bip001-R-Finger01/Bip001-R-Finger02/Bip001-R-Finger02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger1/Bip001-R-Finger11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger1/Bip001-R-Finger11/Bip001-R-Finger12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger1/Bip001-R-Finger11/Bip001-R-Finger12/FX_Jayber_R_Finger12_S4
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger1/Bip001-R-Finger11/Bip001-R-Finger12/FX_Jayber_R_Finger12_S4/FX_Jayber_R_Finger12_S4_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger2/Bip001-R-Finger21
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger2/Bip001-R-Finger21/Bip001-R-Finger22
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger2/Bip001-R-Finger21/Bip001-R-Finger22/FX_Esiemo_Finger_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger2/Bip001-R-Finger21/Bip001-R-Finger22/FX_Esiemo_Finger_R_01/FX_Esiemo_Finger_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger3/Bip001-R-Finger31
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger3/Bip001-R-Finger31/Bip001-R-Finger32
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger3/Bip001-R-Finger31/Bip001-R-Finger32/Bip001-R-Finger32_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger4
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger4/Bip001-R-Finger41
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger4/Bip001-R-Finger41/Bip001-R-Finger42
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bip001-R-Finger4/Bip001-R-Finger41/Bip001-R-Finger42/Bip001-R-Finger42_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Shape_Wrist_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Shape_Wrist_R/Bn_Shape_Wrist_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand/FX_Jayber_R_Hand_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand/FX_Jayber_R_Hand_02/FX_Jayber_R_Hand_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand/Pt_RWristCover1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand/Pt_RWristCover1_Parent/Bn_RWristCover1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/Bn_Socket_R_Hand/Pt_RWristCover1_Parent/Bn_RWristCover1/Bn_RWristCover1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Esiemo_Hand_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Esiemo_Hand_R/FX_Esiemo_Hand_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Pedro_Hand_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Pedro_Hand_R/FX_Pedro_Hand_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_RedCard_M
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_RedCard_M/FX_RedCard_M_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Social_ShootMuzzle
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/FX_Social_ShootMuzzle/FX_Social_ShootMuzzle_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandMagazineSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandMagazineSocket/RHandMagazineSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_FireWorks_Muzzle_F
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_FireWorks_Muzzle_F/FX_FireWorks_Muzzle_F_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_FireWorks_Muzzle_M
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_FireWorks_Muzzle_M/FX_FireWorks_Muzzle_M_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_Social_R_Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/FX_Social_R_Hand/FX_Social_R_Hand_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/RHandEquipSupplySocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bip001-R-Hand/RHandWeaponSocket/RHandEquipSupplySocket/RHandEquipSupplySocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Shape_Elbow_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Shape_Elbow_R/Bn_Shape_Elbow_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Socket_R_Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Socket_R_Forearm/Bn_Socket_R_Forearm_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/Bn_Twist_Bip001_R_Forearm3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/Bn_Twist_Bip001_R_Forearm3/Pt_RWristCover11_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/Bn_Twist_Bip001_R_Forearm3/Pt_RWristCover11_Parent/Bn_RWristCover11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/Bn_Twist_Bip001_R_Forearm3/Pt_RWristCover11_Parent/Bn_RWristCover11/Bn_RWristCover11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/FX_Jayber_R_Hand
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/Bn_Twist_Bip001_R_Forearm_Parent/Bn_Twist_Bip001_R_Forearm/Bn_Twist_Bip001_R_Forearm1/Bn_Twist_Bip001_R_Forearm2/FX_Jayber_R_Hand/FX_Jayber_R_Hand_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Bunny_Arm_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Bunny_Arm_R_01/FX_Bunny_Arm_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Lepic_ForeArm_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Lepic_ForeArm_R_01/FX_Lepic_ForeArm_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Lepic_ForeArm_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Lepic_ForeArm_R_02/FX_Lepic_ForeArm_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_R_Arm_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_R_Arm_01/FX_R_Arm_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Viessa_ArmParts_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Viessa_ArmParts_R_01/FX_Viessa_ArmParts_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Viessa_ArmParts_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bip001-R-Forearm/FX_Viessa_ArmParts_R_02/FX_Viessa_ArmParts_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Shape_Armpit_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Shape_Armpit_R/Bn_Shape_Armpit_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Shape_Shoulder_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Shape_Shoulder_R/Bn_Shape_Shoulder_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Socket_R_UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Socket_R_UpperArm/Bn_Socket_R_UpperArm_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Bn_Twist_Bip001_R_UpperArm2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Bn_Twist_Bip001_R_UpperArm2/Bn_Twist_Bip001_R_UpperArm3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Bn_Twist_Bip001_R_UpperArm2/Bn_Twist_Bip001_R_UpperArm3/Bn_Twist_Bip001_R_UpperArm3_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr1_Parent/Bn_RArmCoverr1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr1_Parent/Bn_RArmCoverr1/Bn_RArmCoverr1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr11_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr11_Parent/Bn_RArmCoverr11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr11_Parent/Bn_RArmCoverr11/Bn_RArmCoverr11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr12_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr12_Parent/Bn_RArmCoverr12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/Bn_Twist_Bip001_R_UpperArm1/Pt_RArmCoverr12_Parent/Bn_RArmCoverr12/Bn_RArmCoverr12_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/FX_Jayber_R_UpperArm
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/Bn_Twist_Bip001_R_UpperArm_Parent/Bn_Twist_Bip001_R_UpperArm/FX_Jayber_R_UpperArm/FX_Jayber_R_UpperArm_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/FX_Lepic_UpperArm_R_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/FX_Lepic_UpperArm_R_01/FX_Lepic_UpperArm_R_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/FX_Lepic_UpperArm_R_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bip001-R-UpperArm/FX_Lepic_UpperArm_R_02/FX_Lepic_UpperArm_R_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bn_Socket_R_Clavicle
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bip001-R-Clavicle/Bn_Socket_R_Clavicle/Bn_Socket_R_Clavicle_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Bip001_Spine3_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Bip001_Spine3_L/Bn_Shape_Bip001_Spine3_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Bip001_Spine3_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Bip001_Spine3_R/Bn_Shape_Bip001_Spine3_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_L/Bn_Shape_Chest_L_End
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_L/Bn_Shape_Chest_L_End/Bn_Shape_Chest_L_End_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_R/Bn_Shape_Chest_R_End
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Shape_Chest_R/Bn_Shape_Chest_R_End/Bn_Shape_Chest_R_End_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangBack
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangBack/Bn_Acc_HangBack_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangChest_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangChest_L/Bn_Acc_HangChest_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangChest_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Acc_HangChest_R/Bn_Acc_HangChest_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Hood1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Hood1/Bn_Hood11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_Hood1/Bn_Hood11/Bn_Hood11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15/Bn_LHoodString16
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15/Bn_LHoodString16/Bn_LHoodString17
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15/Bn_LHoodString16/Bn_LHoodString17/Bn_LHoodString18
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15/Bn_LHoodString16/Bn_LHoodString17/Bn_LHoodString18/Bn_LHoodString19
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LHoodString1/Bn_LHoodString11/Bn_LHoodString12/Bn_LHoodString13/Bn_LHoodString14/Bn_LHoodString15/Bn_LHoodString16/Bn_LHoodString17/Bn_LHoodString18/Bn_LHoodString19/Bn_LHoodString19_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LJumper1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LJumper1/Bn_LJumper11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_LJumper1/Bn_LJumper11/Bn_LJumper11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15/Bn_RHoodString16
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15/Bn_RHoodString16/Bn_RHoodString17
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15/Bn_RHoodString16/Bn_RHoodString17/Bn_RHoodString18
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15/Bn_RHoodString16/Bn_RHoodString17/Bn_RHoodString18/Bn_RHoodString19
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RHoodString1/Bn_RHoodString11/Bn_RHoodString12/Bn_RHoodString13/Bn_RHoodString14/Bn_RHoodString15/Bn_RHoodString16/Bn_RHoodString17/Bn_RHoodString18/Bn_RHoodString19/Bn_RHoodString19_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RJumper1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RJumper1/Bn_RJumper11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Bn_RJumper1/Bn_RJumper11/Bn_RJumper11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_01/FX_Kyle_BackBoost_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_02/FX_Kyle_BackBoost_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_03
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Kyle_BackBoost_03/FX_Kyle_BackBoost_03_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Lepic_Ult_Back_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Lepic_Ult_Back_L/FX_Lepic_Ult_Back_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Lepic_Ult_Back_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/FX_Lepic_Ult_Back_R/FX_Lepic_Ult_Back_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan1_Parent/Pt_Fan1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan1_Parent/Pt_Fan1/Pt_Fan1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan11_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan11_Parent/Pt_Fan11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan11_Parent/Pt_Fan11/Pt_Fan11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan12_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan12_Parent/Pt_Fan12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/Bn_Socket_Spine3/Pt_Fan12_Parent/Pt_Fan12/Pt_Fan12_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/CustomizeBackSkinSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/CustomizeBackSkinSocket/CustomizeBackSkinSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/CustomizeChestSkinSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/CustomizeChestSkinSocket/CustomizeChestSkinSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/FX_Body_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/FX_Body_01/FX_Body_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/FX_Esiemo_Body
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/FX_Esiemo_Body/FX_Esiemo_Body_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/HangBackpack
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/HangBackpack/HangBackpack_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/HangWeapon1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bip001-Spine3/HangWeapon1/HangWeapon1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Shape_Bip001_Spine2_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Shape_Bip001_Spine2_L/Bn_Shape_Bip001_Spine2_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Shape_Bip001_Spine2_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Shape_Bip001_Spine2_R/Bn_Shape_Bip001_Spine2_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12/Bn_LJumperBelt13
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12/Bn_LJumperBelt13/Bn_LJumperBelt14
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12/Bn_LJumperBelt13/Bn_LJumperBelt14/Bn_LJumperBelt15
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12/Bn_LJumperBelt13/Bn_LJumperBelt14/Bn_LJumperBelt15/Bn_LJumperBelt16
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_LJumperBelt1/Bn_LJumperBelt11/Bn_LJumperBelt12/Bn_LJumperBelt13/Bn_LJumperBelt14/Bn_LJumperBelt15/Bn_LJumperBelt16/Bn_LJumperBelt16_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12/Bn_RJumperBelt13
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12/Bn_RJumperBelt13/Bn_RJumperBelt14
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12/Bn_RJumperBelt13/Bn_RJumperBelt14/Bn_RJumperBelt15
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12/Bn_RJumperBelt13/Bn_RJumperBelt14/Bn_RJumperBelt15/Bn_RJumperBelt16
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bip001-Spine2/Bn_Socket_Spine2/Bn_RJumperBelt1/Bn_RJumperBelt11/Bn_RJumperBelt12/Bn_RJumperBelt13/Bn_RJumperBelt14/Bn_RJumperBelt15/Bn_RJumperBelt16/Bn_RJumperBelt16_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bn_Socket_Spine1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Bip001-Spine1/Bn_Socket_Spine1/Bn_Socket_Spine1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Design_Center_02
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/Design_Center_02/Design_Center_02_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/FX_Spine_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bip001-Spine/FX_Spine_01/FX_Spine_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_Crotch_L2_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_Crotch_L2_Parent/Bn_Shape_Crotch_L2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_Crotch_L2_Parent/Bn_Shape_Crotch_L2/Bn_Shape_Crotch_L2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_Crotch_L11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_Crotch_L11/Bn_Shape_Crotch_L11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_ThighTw_L1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_ThighTw_L1_Parent/Bn_Shape_ThighTw_L1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_L_Parent/Bn_Shape_Crotch_L1/Bn_Shape_ThighTw_L1_Parent/Bn_Shape_ThighTw_L1/Bn_Shape_ThighTw_L1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_Crotch_R2_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_Crotch_R2_Parent/Bn_Shape_Crotch_R2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_Crotch_R2_Parent/Bn_Shape_Crotch_R2/Bn_Shape_Crotch_R2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_Crotch_R11
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_Crotch_R11/Bn_Shape_Crotch_R11_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_ThighTw_R1_Parent
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_ThighTw_R1_Parent/Bn_Shape_ThighTw_R1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Shape_Crotch_R1_Parent/Bn_Shape_Crotch_R1/Bn_Shape_ThighTw_R1_Parent/Bn_Shape_ThighTw_R1/Bn_Shape_ThighTw_R1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Blair_Pelvis_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Blair_Pelvis_01/FX_Blair_Pelvis_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank/FX_Esiemo_Tank_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01/FX_Esiemo_Tank_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01_L
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01_L/FX_Esiemo_Tank_01_L_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01_R
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/Bn_Socket_Pelvis/FX_Esiemo_Tank_01_R/FX_Esiemo_Tank_01_R_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/FX_Pelvis_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/FX_Pelvis_01/FX_Pelvis_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/HangWeapon2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Bip001/Bip001-Pelvis/HangWeapon2/HangWeapon2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/BunnyActive01Socket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/BunnyActive01Socket/BunnyActive01Socket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Bottom_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Bottom_01/Design_Bottom_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Center_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Center_01/Design_Center_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Top_01
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Design_Top_01/Design_Top_01_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/EnzoDroneSkill03Socket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/EnzoDroneSkill03Socket/EnzoDroneSkill03Socket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/EnzoDroneSkill04Socket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/EnzoDroneSkill04Socket/EnzoDroneSkill04Socket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/FX_Enzo_Skill02_Start_Point_001
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/FX_Enzo_Skill02_Start_Point_001/FX_Enzo_Skill02_Start_Point_001_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop1
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop1/Fx_Prop1_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop2
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop2/Fx_Prop2_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop3
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop3/Fx_Prop3_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop4
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop4/Fx_Prop4_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop5
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Prop5/Fx_Prop5_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Screen
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/Fx_Screen/Fx_Screen_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/NameTagSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/NameTagSocket/NameTagSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaActive01Socket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaActive01Socket/ViessaActive01Socket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveCenterSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveCenterSocket/ViessaPassiveCenterSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveLeftSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveLeftSocket/ViessaPassiveLeftSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveLeftUpperSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveLeftUpperSocket/ViessaPassiveLeftUpperSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveRightSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveRightSocket/ViessaPassiveRightSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveRightUpperSocket
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.ao/Dummy_Root/ViessaPassiveRightUpperSocket/ViessaPassiveRightUpperSocket_end
+    m_Weight: 1
+  - m_Path: PC_010_A_VAR_BODY_000.mo
+    m_Weight: 1
