@@ -8,12 +8,16 @@ public class BoatMoveCtrl : MonoBehaviour
 {
     public InputActionProperty moveInput; // 이동 - 드래그 앤 드롭
     public InputActionProperty activateInput; // 트리거 - 드래그 앤 드롭
+
+    public AudioClip boatSFX;
+    
     private BoatCockpit cockpit;
     private float moveSpeed = 5f;
     private float turnSpeed = 20f;
     void Start()
     {
         cockpit = transform.GetChild(2).GetComponent<BoatCockpit>();
+        SoundManager.s_Instance.PlaySfx(this.transform.position, this.boatSFX, true);
     }
 
     void Update()

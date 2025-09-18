@@ -6037,6 +6037,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 2758169097476253485, guid: 2a25e742c0f9d1b418959872400cd418,
+        type: 3}
+      propertyPath: boatSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 42e0dede9e708e94da5f0824c5a79ebc, type: 3}
     - target: {fileID: 2925425309054216540, guid: 2a25e742c0f9d1b418959872400cd418,
         type: 3}
       propertyPath: m_Layer
@@ -20871,6 +20876,9 @@ MonoBehaviour:
     type: 3}
   breakEffectPoolSize: 3
   breakEffectPoolList: []
+  slashEffectPrefab: {fileID: 0}
+  slashEffectPoolSize: 3
+  slashEffectPoolList: []
 --- !u!4 &1638206200
 Transform:
   m_ObjectHideFlags: 0
