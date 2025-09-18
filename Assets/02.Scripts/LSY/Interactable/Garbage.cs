@@ -33,6 +33,7 @@ public class Garbage : MonoBehaviour
         // 다음 스테이지로 가는 버튼 이벤트
         nextBtn.GetComponent<Button>().onClick.AddListener(() =>
         {
+            dimImage.gameObject.SetActive(true);
             this.dimImage.DOFade(1, 2f).OnComplete(() =>
             {
                 SceneManager.UnloadSceneAsync(DataManager.Instance.PlayerData.stageIdx++);
@@ -45,6 +46,7 @@ public class Garbage : MonoBehaviour
                 UpdateTrashVisuals();
                 onTrashSubmitted?.Invoke();
                 this.dimImage.DOFade(0, 2f);
+                this.dimImage.gameObject.SetActive(false);
             });
         });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
