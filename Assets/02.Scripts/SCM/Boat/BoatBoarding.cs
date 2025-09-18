@@ -49,7 +49,7 @@ public class BoatBoarding : ShowCanvas
 
             playerTr.position = transform.parent.position + new Vector3(-3f, 1f, 0f);
             Vector3 rot = transform.parent.localEulerAngles;
-            rot.y = 180f;
+            rot.y -= 180f;
             playerTr.localEulerAngles = rot;
             if (trashBoard != null)
             {
