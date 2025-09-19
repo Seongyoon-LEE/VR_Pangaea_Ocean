@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 304745724384633776}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3404316621222244684}
   - component: {fileID: 5937302664880049018}
   - component: {fileID: 97109117229610883}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7796424223097592157}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7823966843705192301}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7291066551954975471}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6945653052802810395}
   - component: {fileID: 8177540221775676032}
   - component: {fileID: 589229403535892527}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ MonoBehaviour:
     posX: 0
     posY: 0
     posZ: 0
-    active: 0
+    active: 1
   patrolPoints:
   - {fileID: 3222391540012194120}
   - {fileID: 7291066551954975471}
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7400054014183507539}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048245964842995293}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8517612573300433606}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6960308188983381775}
   - component: {fileID: 356612780996886419}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Patrol Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3222391540012194120}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -59,8 +59,8 @@ MonoBehaviour:
   rotateSpeed: 300
   targetScale: {x: 10, y: 10, z: 10}
   pullRadius: 150
-  minPullForce: 100
-  maxPullForce: 300
+  minPullForce: 400
+  maxPullForce: 900
 --- !u!1001 &6260780932567679433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495222862128970904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89b5e8a87afedb0499955843ea761d77, type: 3}
   m_Name: 
@@ -190,8 +190,8 @@ MonoBehaviour:
   rotateSpeed: 300
   targetScale: {x: 10, y: 10, z: 10}
   pullRadius: 300
-  minPullForce: 100
-  maxPullForce: 500
+  minPullForce: 400
+  maxPullForce: 900
 --- !u!64 &2376149671122512854
 MeshCollider:
   m_ObjectHideFlags: 0

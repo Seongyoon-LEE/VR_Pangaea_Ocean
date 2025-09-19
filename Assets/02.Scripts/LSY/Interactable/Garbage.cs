@@ -36,24 +36,33 @@ public class Garbage : MonoBehaviour
             dimImage.gameObject.SetActive(true);
             this.dimImage.DOFade(1, 2f).OnComplete(() =>
             {
+                this.spawnManager.terrain = null;
                 SceneManager.UnloadSceneAsync(DataManager.Instance.PlayerData.stageIdx++);
                 if (DataManager.Instance.PlayerData.stageIdx > 3)
                 {
                     DataManager.Instance.PlayerData.stageIdx = 3;
                 }
-                SceneManager.LoadScene(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive);
-                this.spawnManager.SetNextStage();
-                UpdateTrashVisuals();
-                onTrashSubmitted?.Invoke();
-                this.dimImage.DOFade(0, 2f);
-                this.dimImage.gameObject.SetActive(false);
+
+                StartCoroutine(SceneLoadRoutine());
             });
         });
         // 시작할때 한번 현재 상태에 맞게 쓰레기통 모습 업데이트
         UpdateTrashVisuals();
 
     }
-
+    IEnumerator SceneLoadRoutine()
+    {
+        var async = SceneManager.LoadSceneAsync(DataManager.Instance.PlayerData.stageIdx, LoadSceneMode.Additive);
+        while (!async.isDone)
+        {
+            yield return null;
+        }
+        this.spawnManager.SetNextStage();
+        UpdateTrashVisuals();
+        onTrashSubmitted?.Invoke();
+        this.dimImage.DOFade(0, 2f);
+        this.dimImage.gameObject.SetActive(false);
+    }
     // 쓰레기 제출시 호출되는 함수
     public void SubmitCollectedTrash()
     {

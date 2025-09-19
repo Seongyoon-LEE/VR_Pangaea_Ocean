@@ -31,7 +31,7 @@ public class OxygenAmount : MonoBehaviour
 
             DataManager.Instance.PlayerData.oxygen += GameManager.Instance.state switch
             {
-                GameManager.State.NORMAL => 0, // 평상시 수중
+                GameManager.State.NORMAL => -0.1f, // 평상시 수중
                 GameManager.State.RECOVERY => 10, // 회복
                 GameManager.State.VOLCANO => -2, // 화산지대
                 GameManager.State.MAGMA => -(maxOxygenPoint * 0.1f), // 용암에 닿았을 때

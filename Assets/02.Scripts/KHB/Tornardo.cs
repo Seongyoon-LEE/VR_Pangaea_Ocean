@@ -14,8 +14,8 @@ public class Tornardo : ObstacleData
 
     //끌어당기는 힘 관련 변수
     public float pullRadius = 300f;    // 물체를 끌어당기는 반경
-    public float minPullForce = 100f;  // 최소 당기는 힘 (작을 때)
-    public float maxPullForce = 500f;  // 최대 당기는 힘 (클 때)
+    public float minPullForce = 300f;  // 최소 당기는 힘 (작을 때)
+    public float maxPullForce = 900f;  // 최대 당기는 힘 (클 때)
     void Update()
     {
         tornardoScaleUp();

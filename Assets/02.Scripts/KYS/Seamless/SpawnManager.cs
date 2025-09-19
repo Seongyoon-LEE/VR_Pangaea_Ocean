@@ -48,7 +48,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SetNextStage()
     {
+        
         GetTerrain();
+        
         // 풀링 전체 언로딩
         this.poolCtrl.UnloadEverything();
         DataManager.Instance.UnloadData();
@@ -65,6 +67,7 @@ public class SpawnManager : MonoBehaviour
         }*/
         terrain = FindObjectOfType<Terrain>(); // 맵이 바뀐 뒤에 다시 받아올수도 있음(null이 아닐 수 있다)
         this.tornadoPosManager = FindObjectOfType<TornadoPosManager>(); // terrain과 함께 새로 받아온다.
+        this.tornadoPosManager.Init();
     }
     private void SetPoolingManager()
     {
