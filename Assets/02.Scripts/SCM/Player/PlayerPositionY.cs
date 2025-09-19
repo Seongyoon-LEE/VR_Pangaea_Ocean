@@ -7,6 +7,7 @@ public class PlayerPositionY : MonoBehaviour
 {
     private WaitForSeconds ws;
     private Transform water;
+    private bool isEnter = false;
     private IEnumerator Start()
     {
         // 로딩 될 때까지 대기
@@ -24,14 +25,15 @@ public class PlayerPositionY : MonoBehaviour
 
     IEnumerator PlayerPosition()
     {
+        isEnter = !(transform.position.y > -1.3f);
         while (true)
         {
             yield return ws;
-
+            
             if (transform.position.y > -1.3f)
             {
+                isEnter = false;
                 GameManager.Instance.state = GameManager.State.RECOVERY;
-
                 try
                 {
                     water.rotation = new Quaternion(0, 0, 0, 0);
@@ -45,8 +47,9 @@ public class PlayerPositionY : MonoBehaviour
             else
             {
                 water.rotation = new Quaternion(1, 0, 0, 0);
-                if (GameManager.Instance.state == GameManager.State.RECOVERY)
+                if (!isEnter)
                 {
+                    isEnter = true;
                     GameManager.Instance.state = GameManager.State.NORMAL;
                 }
             }
