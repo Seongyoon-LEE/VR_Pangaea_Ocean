@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
         var boat = GameObject.Find("Boat").transform;
         this.GetComponent<PlayerCellCheck>().CellMoveAction(new Vector2Int(1557,1601));
         boat.GetChild(1).GetComponent<BoatBoarding>().BoardingBtn();
+        boat.GetChild(1).GetComponent<BoatBoarding>().ray.SetActive(true);
         // 플레이어가 죽었을 때의 로직
         //DataManager.Instance.PlayerData.isBoarding = true;
         //this.transform.position = boat.position + new Vector3(0, 1f, -2f); // 플레이어 위치 초기화
