@@ -17723,6 +17723,9 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  splashInSound: {fileID: 0}
+  splashOutSound: {fileID: 0}
+  isUnderwaterNow: 0
 --- !u!114 &1300555567
 MonoBehaviour:
   m_ObjectHideFlags: 0
