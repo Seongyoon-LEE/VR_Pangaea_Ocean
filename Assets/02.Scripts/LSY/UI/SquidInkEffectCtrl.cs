@@ -20,15 +20,15 @@ public class SquidInkEffectCtrl : MonoBehaviour
     }
     void TrySquidInkAttack()
     {
-        if(Random.value < 0.33f)
-        {
+        //if(Random.value < 0.33f)
+        //{
             print("¿ÀÂ¡¾î ¸Ô¹° °ø°Ý!");
             StartCoroutine(ShowInkSplat());
-        }
-        else
-        {
+        //}
+        //else
+        //{
             print("¿ÀÂ¡¾î ¸Ô¹° °ø°Ý ½ÇÆÐ!");
-        }
+        //}
     }
     IEnumerator ShowInkSplat()
     {
