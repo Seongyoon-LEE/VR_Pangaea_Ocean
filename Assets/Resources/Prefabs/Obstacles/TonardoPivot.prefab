@@ -45,8 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b5e8a87afedb0499955843ea761d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _info:
+    id: 0
+    kind: 0
+    cellX: 0
+    cellY: 0
+    posX: 0
+    posY: 0
+    posZ: 0
+    active: 1
   tornardo: {fileID: 6239667535358333517}
-  playerTr: {fileID: 0}
   scaleSpeed: 0.1
   rotateSpeed: 300
   targetScale: {x: 10, y: 10, z: 10}
@@ -168,8 +176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b5e8a87afedb0499955843ea761d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _info:
+    id: 0
+    kind: 0
+    cellX: 0
+    cellY: 0
+    posX: 0
+    posY: 0
+    posZ: 0
+    active: 1
   tornardo: {fileID: 0}
-  playerTr: {fileID: 0}
   scaleSpeed: 100
   rotateSpeed: 300
   targetScale: {x: 10, y: 10, z: 10}

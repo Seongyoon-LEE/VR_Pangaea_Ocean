@@ -14,6 +14,7 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         swimMovement = GetComponent<SwimMovement>();
+        if(bubbleSpawnPoint != null )
         bubbleSpawnPoint = transform.GetChild(2).GetComponent<Transform>();
         // 10檬付促 芭前 积己 内风凭
         StartCoroutine(SpawnBubblesRoutine());

@@ -23,7 +23,7 @@ public class SharkPatrol : ObstacleData
     private float speed;
     private float searchDist = 30f;
     private float chaseDist = 50f;
-    private float attackDist = 5f;
+    private float attackDist = 13f;
 
     private IEnumerator patrolRoutine;
 
