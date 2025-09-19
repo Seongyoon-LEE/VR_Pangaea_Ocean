@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
     public void PlayerDie()
     {
         var boat = GameObject.Find("Boat").transform;
+        this.GetComponent<PlayerCellCheck>().CellMoveAction(new Vector2Int(1557,1601));
         boat.GetChild(1).GetComponent<BoatBoarding>().BoardingBtn();
         // 플레이어가 죽었을 때의 로직
         //DataManager.Instance.PlayerData.isBoarding = true;

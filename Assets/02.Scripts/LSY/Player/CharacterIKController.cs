@@ -30,14 +30,12 @@ public class CharacterIKController : MonoBehaviour
         if (rightHandTarget != null)
         {
             // 오른손의 위치와 회전을 타겟에 맞춤
-            print("as");
             animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandTarget.position);
             animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandTarget.rotation);
         }
         if (leftHandTarget != null)
         {
             // 왼손의 위치와 회전을 타겟에 맞춤
-            print("왼손");
             animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandTarget.position);
             animator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandTarget.rotation);
         }

@@ -78,7 +78,6 @@ public class BreakableTrash : TrashData
 
         while (true)
         {
-            print(piece.transform.position.y);
             if (piece.transform.position.y >= 0 && rb.velocity.y > 0)
                 rb.velocity = Vector3.zero;
 
