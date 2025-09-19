@@ -5328,7 +5328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce4bfc5406d6c8408d92e4b4ef1baa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHits: 3
+  minHits: 5
   maxHits: 10
   hitEffect: {fileID: 5292830082072807135, guid: 409a05aabcb286e49a3095a857d52078,
     type: 3}
@@ -5349,7 +5349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e1ebc69f4d5ac459d1f019b5dedf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squidInkImage: {fileID: 0}
+  squidInkImage:
+  - {fileID: 0}
   inkDuration: 3
   fadeDuration: 0.5
 --- !u!1 &4484378939210324279
