@@ -17,7 +17,11 @@ public class BoatMoveCtrl : MonoBehaviour
     void Start()
     {
         cockpit = transform.GetChild(2).GetComponent<BoatCockpit>();
-        SoundManager.s_Instance.PlaySfx(this.transform.position, this.boatSFX, true);
+        var sound = SoundManager.s_Instance.PlaySfx(this.transform.position, this.boatSFX, true);
+        if (sound != null)
+        {
+            sound.transform.SetParent(this.transform);
+        }
     }
 
     void Update()
