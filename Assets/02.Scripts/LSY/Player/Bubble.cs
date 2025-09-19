@@ -29,7 +29,7 @@ public class Bubble : MonoBehaviour
     }
     void SpawnBubble()
     {
-        if (swimMovement != null && swimMovement.isUnderwaterNow)
+        if (swimMovement != null && swimMovement.IsUnderwater)
         {
             SoundManager.s_Instance.PlaySfx(transform.position,bubbleClip, false);
             // 이펙트 풀링에서 거품 이펙트 가져오기
