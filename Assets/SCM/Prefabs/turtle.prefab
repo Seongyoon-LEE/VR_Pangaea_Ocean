@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 334988788631090349}
   - component: {fileID: 8093593252257923766}
   - component: {fileID: 5887184091522630010}
-  m_Layer: 0
+  - component: {fileID: 4013433981035027765}
+  m_Layer: 10
   m_Name: turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,8 +98,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6cb7d7c8c0c1b4382b58ba2e5ed530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutEffect: {fileID: 4130493427641228859, guid: 14afadf501e7f5f4ba0f308281c5958b,
-    type: 3}
+  slashSound: {fileID: 8300000, guid: 341e6bcae743a1544a167497db5236d0, type: 3}
+--- !u!54 &4013433981035027765
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387331830103377656}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4033906734693528630
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +138,7 @@ GameObject:
   - component: {fileID: 5175439553934786834}
   - component: {fileID: 7640576306499287487}
   - component: {fileID: 428684101888294614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +250,7 @@ GameObject:
   - component: {fileID: 1081899618968093181}
   - component: {fileID: 4405389593170667094}
   - component: {fileID: 1503629462087297736}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +534,7 @@ GameObject:
   - component: {fileID: 446913695408207997}
   - component: {fileID: 7555363445745648593}
   - component: {fileID: 325076384542942210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612280500655575048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -261,6 +261,7 @@ MonoBehaviour:
     posX: 0
     posY: 0
     posZ: 0
+    active: 0
   patrolPoints:
   - {fileID: 3222391540012194120}
   - {fileID: 7291066551954975471}
