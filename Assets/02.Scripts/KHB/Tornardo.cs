@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tornardo : MonoBehaviour
+public class Tornardo : ObstacleData
 {
     public Transform tornardo;
 

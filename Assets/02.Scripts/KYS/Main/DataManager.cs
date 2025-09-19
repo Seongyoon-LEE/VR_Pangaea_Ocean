@@ -39,16 +39,17 @@ public class DataManager : MonoBehaviour
         // 로딩 전에 dimImage로 화면 가리고, 입력 막는 등의 내용 추가
         await Task.Run(() =>
         {
-            var weightJson = File.ReadAllText("./Assets/Resources/WeightData.json"); // 쓰레기 무게 데이터 파일 읽기
-            var configJson = File.ReadAllText("./Assets/Resources/FogData.json"); // 카메라 fog 데이터 파일 읽기
+            var weightJson = Resources.Load<TextAsset>("WeightData").text; // 쓰레기 무게 데이터 파일 읽기
+            var configJson = Resources.Load<TextAsset>("FogData").text; // 카메라 fog 데이터 파일 읽기
+
             var weightData = JsonConvert.DeserializeObject<WeightData[]>(weightJson); // JSON 데이터를 역직렬화
-            
             this.dicWeight = weightData.ToDictionary(x => x.id); // 역직렬화된 데이터를 딕셔너리에 추가
-            this.dicFogConfig = JsonConvert.DeserializeObject<Dictionary<int,FogConfig>>(configJson); // JSON 데이터를 역직렬화
-            if (File.Exists("./Assets/Resources/TrashMapData.json"))
+            this.dicFogConfig = JsonConvert.DeserializeObject<Dictionary<int, FogConfig>>(configJson); // JSON 데이터를 역직렬화
+
+            if (File.Exists(Application.persistentDataPath + "\\TrashMapData.json"))
             {
                 this.IsTrashDataExist = true; // 파일이 존재하면 데이터가 있다고 표시
-                var trashJson = File.ReadAllText("./Assets/Resources/TrashMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
+                var trashJson = File.ReadAllText(Application.persistentDataPath + "\\TrashMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
                 /*string trashJson;
                 using (var stream = File.Open("./Assets/Resources/TrashMapData.json", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
                 {
@@ -65,19 +66,19 @@ public class DataManager : MonoBehaviour
 
                 // TrashMapData가 있다면 당연히 ObstacleMapData도 있음
 
-                var obstacleJson = File.ReadAllText("./Assets/Resources/ObstacleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
+                var obstacleJson = File.ReadAllText(Application.persistentDataPath + "\\ObstacleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
                 var obstacleData = JsonConvert.DeserializeObject<Dictionary<string, List<ObstacleInfo>>>(obstacleJson); // JSON 데이터를 딕셔너리로 역직렬화
                 this.dicObstacle = obstacleData.ToDictionary(x => Vector2IntParse(x.Key), x => x.Value); // 딕셔너리로 변환
 
                 // PuzzleMapData도 있음
-                var puzzleJson = File.ReadAllText("./Assets/Resources/PuzzleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
+                var puzzleJson = File.ReadAllText(Application.persistentDataPath + "\\PuzzleMapData.json"); // 파일이 존재하면 해당 파일을 읽어옴
                 this.dicPuzzle = JsonConvert.DeserializeObject<Dictionary<string, bool>>(puzzleJson);
             }
 
-            if (File.Exists("./Assets/Resources/PlayerData.json"))
+            if (File.Exists(Application.persistentDataPath + "\\PlayerData.json"))
             {
                 this.IsPlayerDataExist = true; // 플레이어 데이터 파일이 존재하면 데이터가 있다고 표시
-                var json = File.ReadAllText("./Assets/Resources/PlayerData.json"); // 플레이어 데이터 파일 읽기
+                var json = File.ReadAllText(Application.persistentDataPath + "\\PlayerData.json"); // 플레이어 데이터 파일 읽기
                 this.PlayerData = JsonConvert.DeserializeObject<PlayerData>(json); // JSON 데이터를 역직렬화
             }
         });
@@ -102,7 +103,7 @@ public class DataManager : MonoBehaviour
 
         return new Vector2Int(x, y);
     }
-    public async void SaveData()
+    public /*async*/ void SaveData()
     {
         // OnApplicationQuit이 아닌 인게임에 들어가고 난 다음 게임을 끌때 따로 실행될수 있도록 빼야한다.
         string trashJson = null;
@@ -110,26 +111,30 @@ public class DataManager : MonoBehaviour
         string playerJson = null;
         string pJson = null;
         Debug.Log("저장시작");
-        while (!this.PlayerDataSaved)
+        /*while (!this.PlayerDataSaved)
         {
             await Task.Yield(); // 플레이어 데이터가 저장될 때까지 대기
-        }
+        }*/
 
-        await Task.Run(() =>
+        /*await Task.Run(() =>
         {
             trashJson = JsonConvert.SerializeObject(dicTrash); // 딕셔너리를 JSON으로 직렬화
             obstacleJson = JsonConvert.SerializeObject(dicObstacle); // 딕셔너리를 JSON으로 직렬화
             pJson = JsonConvert.SerializeObject(dicPuzzle); // 딕셔너리를 JSON으로 직렬화
             playerJson = JsonConvert.SerializeObject(PlayerData); // 플레이어 데이터를 JSON으로 직렬화
-        });
+        });*/
+        trashJson = JsonConvert.SerializeObject(dicTrash); // 딕셔너리를 JSON으로 직렬화
+        obstacleJson = JsonConvert.SerializeObject(dicObstacle); // 딕셔너리를 JSON으로 직렬화
+        pJson = JsonConvert.SerializeObject(dicPuzzle); // 딕셔너리를 JSON으로 직렬화
+        playerJson = JsonConvert.SerializeObject(PlayerData); // 플레이어 데이터를 JSON으로 직렬화
         //await File.WriteAllTextAsync("./Assets/Resources/TrashMapData.json", trashJson);
-        File.WriteAllText("./Assets/Resources/TrashMapData.json", trashJson);
+        File.WriteAllText(Application.persistentDataPath + "\\TrashMapData.json", trashJson);
         //await File.WriteAllTextAsync("./Assets/Resources/ObstacleMapData.json", obstacleJson);
-        File.WriteAllText("./Assets/Resources/ObstacleMapData.json", obstacleJson);
-        File.WriteAllText("./Assets/Resources/PlayerData.json", playerJson);
+        File.WriteAllText(Application.persistentDataPath + "\\ObstacleMapData.json", obstacleJson);
+        File.WriteAllText(Application.persistentDataPath + "\\PlayerData.json", playerJson);
         //await File.WriteAllTextAsync("./Assets/Resources/PlayerData.json", playerJson);
         //await File.WriteAllTextAsync("./Assets/Resources/PuzzleMapData.json", pJson);
-        File.WriteAllText("./Assets/Resources/PuzzleMapData.json", pJson);
+        File.WriteAllText(Application.persistentDataPath + "\\PuzzleMapData.json", pJson);
         Debug.Log("저장됨");
         this.PlayerDataSaved = false; // 저장이 끝났으니 다시 false로 설정
     }
