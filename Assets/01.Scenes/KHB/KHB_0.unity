@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 1318876372}
   - component: {fileID: 1318876371}
   - component: {fileID: 1318876373}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Terrain_Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}

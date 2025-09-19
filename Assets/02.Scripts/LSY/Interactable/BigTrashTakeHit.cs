@@ -18,7 +18,7 @@ public class BigTrashTakeHit : MonoBehaviour,IHittable
     public AudioClip breakSound; // 파괴 사운드
 
     BreakableTrash breakable;
-    public static event Action OnBigTrashBroken;
+    public event Action OnBigTrashBroken;
     public int hitsLeft;
 
     void Start()

@@ -1,22 +1,24 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class SquidInkEffectCtrl : MonoBehaviour
 {
     [Header("오징어 먹물 UI")]
-    [SerializeField] Image squidInkImage;
+    [SerializeField] List<Image> squidInkImage;
     [SerializeField] int inkDuration = 3;
     [SerializeField] float fadeDuration = 0.5f;
 
-    private void OnEnable()
+    BigTrashTakeHit bigTrashTakeHit;
+    private void Awake()
     {
-        BigTrashTakeHit.OnBigTrashBroken += TrySquidInkAttack;
-    }
-    private void OnDisable()
-    {
-        BigTrashTakeHit.OnBigTrashBroken -= TrySquidInkAttack;
+        bigTrashTakeHit = GetComponent<BigTrashTakeHit>();
+        bigTrashTakeHit.OnBigTrashBroken += TrySquidInkAttack;
+        squidInkImage = GameObject.Find("PlayerUICanvas").GetComponentsInChildren<Image>(true).ToList();
     }
     void TrySquidInkAttack()
     {
@@ -32,29 +34,42 @@ public class SquidInkEffectCtrl : MonoBehaviour
     }
     IEnumerator ShowInkSplat()
     {
-        // 부드럽게 (페이드인) 나타나기
-        squidInkImage.gameObject.SetActive(true);
-        float timer = 0f;
-        while (timer < fadeDuration)
+        //// 부드럽게 (페이드인) 나타나기
+        //squidInkImage.gameObject.SetActive(true);
+        //float timer = 0f;
+        //while (timer < fadeDuration)
+        //{
+        //    timer += Time.deltaTime;
+        //    Color color = squidInkImage.color;
+        //    color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+        //    squidInkImage.color = color;
+        //    yield return null;
+        //}
+        foreach (var squidInkImage in squidInkImage)
         {
-            timer += Time.deltaTime;
-            Color color = squidInkImage.color;
-            color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
-            squidInkImage.color = color;
-            yield return null;
+            if (squidInkImage == null) continue;
+
+            squidInkImage.gameObject.SetActive(true);
+            squidInkImage.DOFade(1, 1);
         }
         yield return new WaitForSeconds(inkDuration); // 3초동안 보여주기
-
-        // 부드럽게 (페이드아웃) 사라지기
-        timer = 0f;
-        while(timer < fadeDuration)
+        foreach (var squidInkImage in squidInkImage)
         {
-            timer += Time.deltaTime;
-            Color color = squidInkImage.color;
-            color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-            squidInkImage.color = color;
-            yield return null;
+            squidInkImage.DOFade(0, 1).OnComplete(() =>
+            {
+                squidInkImage.gameObject.SetActive(false);
+            });
         }
-        squidInkImage.gameObject.SetActive(false);
+        // 부드럽게 (페이드아웃) 사라지기
+        //timer = 0f;
+        //while(timer < fadeDuration)
+        //{
+        //    timer += Time.deltaTime;
+        //    Color color = squidInkImage.color;
+        //    color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+        //    squidInkImage.color = color;
+        //    yield return null;
+        //}
+        //squidInkImage.gameObject.SetActive(false);
     }
 }

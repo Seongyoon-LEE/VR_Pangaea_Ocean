@@ -4049,7 +4049,7 @@ GameObject:
   - component: {fileID: 608927989}
   - component: {fileID: 608927988}
   - component: {fileID: 608927987}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

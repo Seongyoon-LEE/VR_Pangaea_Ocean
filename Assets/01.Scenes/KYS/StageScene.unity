@@ -898,9 +898,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tornardo: {fileID: 0}
-  playerTr: {fileID: 0}
   scaleSpeed: 10
-  boxCollider: {fileID: 0}
+  rotateSpeed: 300
+  targetScale: {x: 10, y: 10, z: 10}
+  pullRadius: 300
+  minPullForce: 100
+  maxPullForce: 500
 --- !u!1 &797000389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1558,7 @@ GameObject:
   - component: {fileID: 1318876372}
   - component: {fileID: 1318876371}
   - component: {fileID: 1318876373}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Terrain_Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}

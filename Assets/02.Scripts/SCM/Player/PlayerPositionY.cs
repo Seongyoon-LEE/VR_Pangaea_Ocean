@@ -16,20 +16,31 @@ public class PlayerPositionY : MonoBehaviour
         }
 
         ws = new WaitForSeconds(0.5f);
+
         water = GameObject.FindFirstObjectByType<WaterShaderController>().transform;
+
         StartCoroutine(PlayerPosition());
     }
 
     IEnumerator PlayerPosition()
     {
-        while(true)
+        while (true)
         {
             yield return ws;
 
             if (transform.position.y > -1.3f)
             {
                 GameManager.Instance.state = GameManager.State.RECOVERY;
-                water.rotation = new Quaternion(0, 0, 0, 0);
+
+                try
+                {
+                    water.rotation = new Quaternion(0, 0, 0, 0);
+                }
+                catch
+                {
+                    water = GameObject.FindFirstObjectByType<WaterShaderController>().transform;
+                    water.rotation = new Quaternion(0, 0, 0, 0);
+                }
             }
             else
             {
