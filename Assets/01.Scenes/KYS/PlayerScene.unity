@@ -1580,7 +1580,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_TargetDisplay: 0
 --- !u!1 &147750354
 GameObject:
@@ -9467,7 +9467,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24664,7 +24664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1954982915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26886,12 +26886,12 @@ MonoBehaviour:
   maincamera: {fileID: 2059764639}
   postprocessingVolume: {fileID: 86742769}
   surfaceY: 0
-  maxDepth: -300
+  maxDepth: -50
   surface: {fileID: 11400000, guid: 2a9403a4532880c49896ced678eef867, type: 2}
   underwater: {fileID: 11400000, guid: 1168e1f840b0b764886f0eb8ea5b8c8a, type: 2}
-  shallowColor: {r: 0.3, g: 0.7, b: 0.8, a: 1}
-  deepColor: {r: 0, g: 0.05, b: 0.2, a: 1}
-  minUnderwaterEffect: 0.2
+  shallowColor: {r: 0.4172698, g: 0.85657394, b: 0.9685534, a: 1}
+  deepColor: {r: 0.2570704, g: 0.40636563, b: 0.84276724, a: 1}
+  minUnderwaterEffect: 0.5
   minFogDensity: 0.001
   maxFogDensity: 0.004
   sunLight: {fileID: 0}

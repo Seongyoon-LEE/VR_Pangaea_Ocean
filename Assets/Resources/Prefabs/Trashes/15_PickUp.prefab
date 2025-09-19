@@ -5189,6 +5189,7 @@ GameObject:
   - component: {fileID: 897951273417118117}
   - component: {fileID: 3765011772740890208}
   - component: {fileID: 6117599036236439273}
+  - component: {fileID: -595890012059448683}
   m_Layer: 8
   m_Name: 15_PickUp
   m_TagString: BigTrash
@@ -5336,6 +5337,21 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 7682bb679de36324dab67ebdfab1172f, type: 3}
   breakSound: {fileID: 8300000, guid: a0c8796a705222748a91a987b0809f5f, type: 3}
   hitsLeft: 0
+--- !u!114 &-595890012059448683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390814751826019589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e1ebc69f4d5ac459d1f019b5dedf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squidInkImage: {fileID: 0}
+  inkDuration: 3
+  fadeDuration: 0.5
 --- !u!1 &4484378939210324279
 GameObject:
   m_ObjectHideFlags: 0
