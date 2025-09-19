@@ -60,7 +60,7 @@ public class Swing : MonoBehaviour
     }
     void TryHit(Collider other)
     {
-        print("트라이힛");
+        print("hit" + other.name);
         // 부딪힌 레이어가 때릴수 있는 레이어인지 확인 
         if ((hittableLayers.value & (1 << other.gameObject.layer)) == 0) return;
         // 속도 및 쿨타임 확인
