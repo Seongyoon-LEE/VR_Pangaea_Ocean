@@ -28,21 +28,21 @@ public class TrashCount : MonoBehaviour
         if (garbageBox == null)
             garbageBox = FindObjectOfType<Garbage>(true);
 
-        trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + " kg / 300 kg";
+        trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + $" kg / {GameManager.Instance.curMaxWeight} kg";
 
 
         vacuumCleaner.onCleanAction += () =>
         {
             
-            trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + " kg / 300 kg";
-            if(DataManager.Instance.PlayerData.weight >= 300)
+            trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + $" kg / {GameManager.Instance.curMaxWeight} kg";
+            if (DataManager.Instance.PlayerData.weight >= 300)
             {
                 trashCountText.color = Color.red;
             }
         };
         garbageBox.onTrashSubmitted += () =>
         {
-            trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + " kg / 300 kg";
+            trashCountText.text = DataManager.Instance.PlayerData.weight.ToString("F2") + $" kg / {GameManager.Instance.curMaxWeight} kg";
             trashCountText.color = Color.white;
         };
 
