@@ -293,9 +293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   curentHp: 0
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 4130493427641228859, guid: 14afadf501e7f5f4ba0f308281c5958b,
+    type: 3}
   deathAnimDuration: 2
-  slashClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  slashClip: {fileID: 8300000, guid: af84b0a80fab16048ac2c4281ddc2e2e, type: 3}
 --- !u!136 &8177540221775676032
 CapsuleCollider:
   m_ObjectHideFlags: 0
