@@ -28,6 +28,7 @@ public class EffectPoolingManager : MonoBehaviour
 
         // 히트 이펙트 풀 초기화
         InitializePool(hitEffectPrefab, hitEffectPoolSize, hitEffectPoolList);
+        print(" 힛 이펙트 풀링");
         // 브레이크 이펙트 풀 초기화
         InitializePool(breakEffectPrefab, breakEffectPoolSize, breakEffectPoolList);
         // 슬래시 이펙트 풀 초기화
