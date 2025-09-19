@@ -14,7 +14,7 @@ public class GateTrigger : MonoBehaviour
     void Start()
     {
         socketInteractor = GetComponent<XRSocketInteractor>();
-        keyImg = GameObject.Find("Canvas_ChangUI").transform.GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
+        keyImg = GameObject.Find("EquipmentMenu").transform.GetChild(0).GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
         // 소켓에 열쇠가 들어갔을 때(Select Entered) 호출될 함수 연결
         if (socketInteractor != null)
         {
