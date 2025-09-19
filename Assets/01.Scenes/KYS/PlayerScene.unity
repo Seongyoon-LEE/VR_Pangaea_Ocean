@@ -8529,6 +8529,7 @@ GameObject:
   - component: {fileID: 649345370}
   - component: {fileID: 649345369}
   - component: {fileID: 649345380}
+  - component: {fileID: 649345381}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -8600,6 +8601,9 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  splashInSound: {fileID: 8300000, guid: 7f5b1f76d0c380549a767231ee0f7db6, type: 3}
+  splashOutSound: {fileID: 8300000, guid: fd5a93f5276cd3a41ac9fff9e4c1aa1a, type: 3}
+  isUnderwaterNow: 0
 --- !u!114 &649345372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8789,6 +8793,7 @@ Transform:
   m_Children:
   - {fileID: 1219854787}
   - {fileID: 1555952559}
+  - {fileID: 1458930020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &649345380
@@ -8803,6 +8808,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f008d44b1b363cb4bb59a5ed5e0a74a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &649345381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649345368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa7daa160526e545a8a044a3ce705f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swimMovement: {fileID: 0}
+  bubbleSpawnPoint: {fileID: 0}
+  bubbleClip: {fileID: 8300000, guid: f7ee04e7ba45e384c85677b28b9fecf9, type: 3}
+  bubbleInterval: 10
 --- !u!1 &654235421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9345,7 +9366,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13693,7 +13714,7 @@ MonoBehaviour:
   hitCooldown: 0.15
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
 --- !u!1 &1114372135
 GameObject:
   m_ObjectHideFlags: 0
@@ -17952,6 +17973,37 @@ Transform:
   - {fileID: 1302656572}
   m_Father: {fileID: 1629830842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458930019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458930020}
+  m_Layer: 0
+  m_Name: BubbleSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458930020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458930019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.489, z: 0.152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 649345379}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461533020
 GameObject:
   m_ObjectHideFlags: 0
@@ -20634,6 +20686,10 @@ MonoBehaviour:
     type: 3}
   slashEffectPoolSize: 3
   slashEffectPoolList: []
+  bubbleEffectPrefab: {fileID: 1115684341042808, guid: d8b56b4d9f7ade24082aebbe30daa6c3,
+    type: 3}
+  bubbleEffectPoolSize: 3
+  bubbleEffectPoolList: []
 --- !u!4 &1638206200
 Transform:
   m_ObjectHideFlags: 0

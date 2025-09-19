@@ -21,6 +21,11 @@ public class EffectPoolingManager : MonoBehaviour
     public int slashEffectPoolSize = 3;
     public List<GameObject> slashEffectPoolList = new List<GameObject>();
 
+    [Header("Bubble Effect Pooling")]
+    public GameObject bubbleEffectPrefab;
+    public int bubbleEffectPoolSize = 3;
+    public List<GameObject> bubbleEffectPoolList = new List<GameObject>();
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -33,6 +38,8 @@ public class EffectPoolingManager : MonoBehaviour
         InitializePool(breakEffectPrefab, breakEffectPoolSize, breakEffectPoolList);
         // 슬래시 이펙트 풀 초기화
         InitializePool(slashEffectPrefab, slashEffectPoolSize, slashEffectPoolList);
+        // 버블 이펙트 풀 초기화
+        InitializePool(bubbleEffectPrefab, bubbleEffectPoolSize, bubbleEffectPoolList);
     }
     void InitializePool(GameObject prefab,int poolSize , List<GameObject> poolList)
     {

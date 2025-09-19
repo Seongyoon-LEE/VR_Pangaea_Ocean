@@ -13,18 +13,44 @@ public class SwimMovement : MonoBehaviour
     [SerializeField] InputActionProperty leftMoveAction; // 왼쪽 조이스틱
     [SerializeField] InputActionProperty rightMoveAction; // 오른쪽 조이스틱 
 
+    [Header("사운드 설정")]
+    [SerializeField] private AudioClip splashInSound;  // 물에 들어갈 때 사운드
+    [SerializeField] private AudioClip splashOutSound; // 물에서 나올 때 사운드
+
+    bool wasUnderwaterLastFrame; // '지난 프레임에 물 속에 있었나?'를 기억하는
+    public bool isUnderwaterNow = false;
     // 중력 처리를 위한 변수
     Vector3 playerVelocity;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         cameraTr = Camera.main.transform;
+
+        // ? 게임 시작 시, 현재 물 속에 있는지 아닌지 미리 기억해둔다
+        wasUnderwaterLastFrame = transform.position.y < 0;
     }
 
     void Update()
     {
+        // ? 1. '지금' 물 속에 있는지 확인
+        isUnderwaterNow = transform.position.y < 0;
+
+        // ? 2. '지난 프레임'과 '지금'의 상태를 비교해서 변화를 감지!
+        // 만약 (지난 프레임엔 물 속이었는데) && (지금은 물 밖이라면)
+        if (wasUnderwaterLastFrame && !isUnderwaterNow)
+        {
+            // 물 밖으로 나옴
+            SoundManager.s_Instance.PlaySfx(transform.position, splashOutSound, false);
+        }
+        // 만약 (지난 프레임엔 물 밖이었는데) && (지금은 물 속이라면)
+        else if (!wasUnderwaterLastFrame && isUnderwaterNow)
+        {
+            // 물 속으로 들어감
+            SoundManager.s_Instance.PlaySfx(transform.position, splashInSound, false);
+        }
+
         // 현재 위치가 수면(y=0)보다 아래인지 위인지 분리
-        if(transform.position.y < 0)
+        if (transform.position.y < 0)
         {
             // 물속에 있을때 (수영)
             HandleSwimming();
@@ -34,6 +60,8 @@ public class SwimMovement : MonoBehaviour
             // 물밖에 있을때 (걷기)
             HandleWalking();
         }
+        // ? 3. '지금' 상태를 '지난 프레임' 상태로 저장
+        wasUnderwaterLastFrame = isUnderwaterNow;
     }
     void HandleSwimming()
     {
