@@ -11,6 +11,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance { get; private set; }
     public Dictionary<int, WeightData> dicWeight = new Dictionary<int, WeightData>(); // 쓰레기 종류별 무게 정보가 들어가는 딕셔너리
+    public Dictionary<int, FogConfig> dicFogConfig = new Dictionary<int, FogConfig>(); // 카메라 설정값 정보 저장할 딕셔너리
 
 
     public Dictionary<Vector2Int, List<TrashInfo>> dicTrash = new Dictionary<Vector2Int, List<TrashInfo>>(); // 쓰레기 정보를 담을 딕셔너리
@@ -39,9 +40,11 @@ public class DataManager : MonoBehaviour
         await Task.Run(() =>
         {
             var weightJson = File.ReadAllText("./Assets/Resources/WeightData.json"); // 쓰레기 무게 데이터 파일 읽기
+            var configJson = File.ReadAllText("./Assets/Resources/FogData.json"); // 카메라 fog 데이터 파일 읽기
             var weightData = JsonConvert.DeserializeObject<WeightData[]>(weightJson); // JSON 데이터를 역직렬화
+            
             this.dicWeight = weightData.ToDictionary(x => x.id); // 역직렬화된 데이터를 딕셔너리에 추가
-
+            this.dicFogConfig = JsonConvert.DeserializeObject<Dictionary<int,FogConfig>>(configJson); // JSON 데이터를 역직렬화
             if (File.Exists("./Assets/Resources/TrashMapData.json"))
             {
                 this.IsTrashDataExist = true; // 파일이 존재하면 데이터가 있다고 표시
